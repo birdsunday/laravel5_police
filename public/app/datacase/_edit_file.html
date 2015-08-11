@@ -1,0 +1,57 @@
+<div class="" ng-controller="CaseFileController as pc">
+
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-12">
+            <div class="box">
+
+                <div class="box-content">
+                    <h4 class="page-header">อัพโหลดไฟล์คดี</h4>
+
+                    <form class="form-horizontal" role="form">
+
+                        <div flow-init flow-object="pc.myFlow"
+                             flow-file-success="pc.addFileToList($file, $message, $flow)"
+                             flow-file-added="!!{doc:1,docx:1,pdf:1}[$file.getExtension()]"
+                             flow-complete="$root.$broadcast('httpResponse', {})"
+                             flow-upload-started="$root.$broadcast('httpRequest', {})"
+                                >
+
+
+
+                            <div class="text-center">
+                                <hr class="soften"/>
+                                <div >
+                                    <button flow-btn class="btn btn-warning" ng-if="!caseFile.file_case">Selete File</button>
+                                    <button ng-if="$flow.files.length>0" ng-click="pc.uploadFile()" class="btn btn-success">Upload File
+                                    </button>
+                                    <p>
+                                        Only doc,docx,pdf
+                                    </p>
+                                </div>
+
+                                <div class="content" >
+                                    <% file.name %>
+                                </div>
+
+                                <div ng-if="$flow.files.length==0 && caseFile.file_case" class="">
+                                    <a href="<% caseFile.file_case %>" class="btn btn-primary" _blank>ดูไฟล์คดี</a>
+                                </div>
+
+
+                                <div>
+
+
+
+                        </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+

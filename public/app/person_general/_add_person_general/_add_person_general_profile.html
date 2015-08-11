@@ -1,0 +1,127 @@
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog" role="document" style="width: auto">
+        <div class="modal-content" >
+            <div class="modal-header">
+                <h3>ข้อมูลบุคคลทั่วไป ที่มีเลขบัตร <% person.idcard %></h3>
+            </div>
+            <div class="modal-body">
+                <div ng-include="'/app/person_general/_viewdata_person_general.html'"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="modal fade" id="exampleModa2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog" role="document" style="width: auto">
+        <div class="modal-content" >
+            <div class="modal-header">
+                <h3>ข้อมูลบุคคลที่เกี่ยวข้องกับอาชญากรรม ที่มีเลขบัตร <% guest.idcard %></h3>
+            </div>
+            <div class="modal-body">
+                <div ng-include="'/app/person_general/_viewdata_person_crime.html'"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-xs-12 col-sm-12">
+        <div class="box">
+
+            <div class="box-content">
+                <h4 class="page-header">ข้อมูลส่วนตัว</h4>
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+
+                        <label class="col-sm-4 control-label" style=" width: auto">หมายเลขบัตร</label>
+
+                        <div class="col-sm-6">
+                            <input ng-change="searchDataPerson(guest)" ng-model="guest.idcard" type="text" class="form-control">
+
+
+                            <label  ng-if="dataperson_crime.length" class="control-label" style="width: auto;color: red"> บุลคลนี้เคยมีประวัติเกี่ยวข้องกับอาชญากรรมแล้ว</label>
+
+                            <button ng-if="dataperson_crime.length" type="button" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#exampleModa2" data-whatever="@mdo">ดูข้อมูล</button>
+
+                            <label  ng-if="dataperson_general.length" class="control-label" style="width: auto;color: red"> บุลคลนี้เคยมีประวัติทั่วไปแล้ว</label>
+                            <button ng-if="dataperson_general.length" type="button" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#exampleModal" data-whatever="@mdo">ดูข้อมูล</button>
+                        </div>
+
+                        <label class="col-sm-1 control-label" style="width: auto">ประเภทบุคคล</label>
+
+                        <div class="col-sm-3">
+                            <input ng-model="guest.typepeople" type="text" class="form-control">
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-1 control-label"  style=" width: auto">คำนำหน้า</label>
+
+                        <div class="col-sm-3">
+                            <select ng-model="guest.nametitle" class="form-control css-require" ng-options="opt as opt.name_title for opt in nametitles">
+                            </select>
+                        </div>
+                        <label class="col-sm-1 control-label"  style=" width: auto">ชื่อ</label>
+
+                        <div class="col-sm-3">
+                            <input ng-model="guest.name" type="text" class="form-control">
+                        </div>
+                        <label class="col-sm-1 control-label"  style=" width: auto">ชื่อสกุล</label>
+
+                        <div class="col-sm-3">
+                            <input ng-model="guest.surname" type="text" class="form-control">
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label class="col-sm-1 control-label"  style=" width: auto">ว/ด/ป เกิด</label>
+
+                        <div class="col-sm-3">
+                            <input ng-model="guest.birth" type="date" class="form-control">
+
+                        </div>
+
+                        <label class="col-sm-1 control-label"  style=" width: auto">อาชีพ</label>
+
+                        <div class="col-sm-3">
+                            <input ng-model="guest.career" type="text" class="form-control">
+                        </div>
+                        <label class="col-sm-1 control-label"  style=" width: auto">การศึกษา</label>
+
+                        <div class="col-sm-3">
+                            <input ng-model="guest.education" type="text" class="form-control">
+                        </div>
+
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
