@@ -1,0 +1,89 @@
+
+<div class="row">
+    <div class="col-xs-12 col-sm-12">
+        <div class="box">
+
+            <div class="box-content">
+                <h4 class="page-header">ข้อมูลส่วนตัว</h4>
+                <form class="form-horizontal" role="form">
+
+                    <div class="form-group">
+
+                        <label class="col-sm-1 control-label" style="width: auto">ประเภทบุคคล</label>
+
+                        <div class="col-sm-3">
+                            <input ng-model="person.typepeople" type="text" class="form-control">
+                        </div>
+                        <label class="col-sm-4 control-label" style="width: auto">หมายเลขบัตรประชาชน</label>
+
+                        <div class="col-sm-5">
+                            <input ng-model="person.idcard" type="text" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-1 control-label" style="width: auto">คำนำหน้า</label>
+
+                        <div class="col-sm-3">
+                            <select ng-model="person.nametitle" class="form-control css-require" ng-options="opt as opt.name_title for opt in nametitles">
+                            </select>
+                        </div>
+                        <label class="col-sm-1 control-label" style="width: auto">ชื่อ</label>
+
+                        <div class="col-sm-3">
+                            <input ng-model="person.name" type="text" class="form-control">
+                        </div>
+                        <label class="col-sm-1 control-label" style="width: auto">ชื่อสกุล</label>
+
+                        <div class="col-sm-3">
+                            <input ng-model="person.surname" type="text" class="form-control">
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label class="col-sm-1 control-label" style="width: auto">นามเเฝง</label>
+
+                        <div class="col-sm-3">
+                            <input ng-model="person.alias" type="text" class="form-control">
+
+                        </div>
+                        <label class="col-sm-1 control-label" style="width: auto">ว/ด/ป เกิด</label>
+
+                        <div class="col-sm-3">
+                            <input ng-model="person.birth" type="text" class="form-control" disabled>
+
+                        </div>
+
+                        <label class="col-sm-1 control-label" style="width: auto">อาชีพ</label>
+
+                        <div class="col-sm-3">
+                            <input type="text" ng-model="person.career" class="form-control" >
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-1 control-label" style="width: auto">วันที่จับกุม</label>
+
+                        <div class="col-sm-3">
+                            <input type="text" ng-model="person.date" class="form-control" disabled>
+                        </div>
+                        <label class="col-sm-1 control-label" style="width: auto">การศึกษา</label>
+
+                        <div class="col-sm-3">
+                            <input type="text" ng-model="person.education" class="form-control" >
+                        </div>
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

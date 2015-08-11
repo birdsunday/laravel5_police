@@ -1,0 +1,89 @@
+<div class="" ng-controller="PhotoController as pc">
+
+
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-12">
+            <div class="box">
+
+                <div class="box-content">
+                    <h4 class="page-header">รูปภาพ</h4>
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <button  type="button" class="ui positive submit button"  ng-click="pc.printphoto()" target = "_blank">
+                                พิมพ์รูปภาพ
+                            </button>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="field" flow-init flow-object="myFlow"
+                                 flow-file-success="$file.msg = $message"
+                                 flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]"
+                                 flow-file-success="flowSuccess($file,$message)" align="center">
+
+                                <div flow-drop class="ui bordered medium" style="border: 1px dotted;">
+
+                                    <input type="file" flow-btn/>
+
+                                    <table>
+                                        <tr ng-repeat="file in $flow.files">
+                                            <td><% $index+1 %></td>
+                                            <td><% file.name %></td>
+                                        </tr>
+                                    </table>
+
+
+
+                                    <div ng-if="$flow.files.length==0 &&  !person.photo" class="">
+                                        <img src="/img/square-image.png" width="128" height="128"/>
+                                    </div>
+
+
+                                    <div ng-if="$flow.files.length==0 && person.photo" class="">
+                                        <div id="simple_gallery" class="box-content">
+                                            <a class="fancybox" ng-href="<% person.photo %>" title="Westfield Waterfalls - Middletown CT Lower (Graham_CS)">
+                                                <img ng-src="<% person.photo %>" alt="" width="256" height="256" />
+                                            </a>
+
+                                        </div>
+                                    </div>
+
+
+                                    <div ng-repeat="file in myFlow.files">
+                                        <div class="">
+                                            <a ng-if="file.isComplete()" href="#" class="">
+                                                <i class=""></i>
+                                            </a>
+                                            <img flow-img="file"/>
+                                            <div class="" ng-if="file.isUploading()">
+                                                <div class="" data-percent="<% file.progress() %>"></div>
+                                            </div>
+                                        </div>
+
+                                        <br/>
+
+                                        <button ng-if="!file.isComplete()" ng-click="pc.uploadFile()" type="button" class="ui positive submit button">
+                                            Apply Image
+                                        </button>
+
+                                        <button ng-if="!file.isComplete()" ng-click="pc.cancelFile(file)" type="button" class="ui default submit button">
+                                            Remove
+                                        </button>
+
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>

@@ -1,0 +1,297 @@
+
+<div class="row">
+    <div class="col-xs-12 col-sm-12">
+        <div class="box">
+
+            <div class="box-content">
+                <h4 class="page-header">ตำหนิรูปพรรณ</h4>
+                <form class="form-horizontal" role="form">
+
+                    <div class="form-group">
+
+                        <label class="col-sm-1 control-label" style="">รูปร่าง</label>
+
+                        <div class="col-sm-3">
+
+                            <select ng-model="person.shape" class="form-control">
+
+                                <option value="สันทัด">สันทัด</option>
+                                <option value="อ้วน">อ้วน</option>
+                                <option value="เตี้ย">เตี้ย</option>
+                                <option value="ผอม">ผอม</option>
+                                <option value="สูง">สูง</option>
+                                <option value="อื่นๆ">อื่นๆ</option>
+                            </select>
+
+                        </div>
+                        <label class="col-sm-1 control-label">ฟัน</label>
+
+                        <div class="col-sm-3">
+                            <select ng-model="person.teeth" class="form-control">
+
+                                <option value="ปกติ">ปกติ</option>
+                                <option value="เหยิน">เหยิน</option>
+                                <option value="หลอ">หลอ</option>
+                                <option value="ขาว">ขาว</option>
+                                <option value="อื่นๆ">อื่นๆ</option>
+                            </select>
+
+                        </div>
+                        <label class="col-sm-1 control-label" >คิ้ว</label>
+
+                        <div class="col-sm-3">
+                            <select ng-model="person.eyebrow" class="form-control">
+
+                                <option value="หนา">หนา</option>
+                                <option value="บาง">บาง</option>
+                                <option value="คิ้วต่อ">คิ้วต่อ</option>
+                                <option value="อื่นๆ">อื่นๆ</option>
+
+                            </select>
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+
+                        <label class="col-sm-1 control-label">ผิว</label>
+
+                        <div class="col-sm-3">
+                            <select ng-model="person.skin" class="form-control">
+
+                                <option value="ดำ">ดำ</option>
+                                <option value="ขาว">ขาว</option>
+                                <option value="ดำแดง">ดำแดง</option>
+                                <option value="ขาวเหลือง">ขาวเหลือง</option>
+                                <option value="อื่นๆ">อื่นๆ</option>
+
+                            </select>
+
+                        </div>
+                        <label class="col-sm-1 control-label" >ทรงผม</label>
+
+                        <div class="col-sm-3">
+                            <select ng-model="person.hairstyles" class="form-control">
+
+                                <option value="รองทรง">รองทรง</option>
+                                <option value="สั้นเกรียน">สั้นเกรียน</option>
+                                <option value="แสกซ้าย">แสกซ้าย</option>
+                                <option value="หยิกหยักโศก">หยิกหยักโศก</option>
+                                <option value="ยาวประป่า">ยาวประป่า</option>
+                                <option value="อื่นๆ">อื่นๆ</option>
+
+
+                            </select>
+
+                        </div>
+                        <label class="col-sm-1 control-label">ศีรษะ</label>
+
+                        <div class="col-sm-3">
+                            <select ng-model="person.head" class="form-control">
+
+                                <option value="สามเหลี่ยม">สามเหลี่ยม</option>
+                                <option value="สี่เหลี่ยม">สี่เหลี่ยม</option>
+                                <option value="กลม">กลม</option>
+                                <option value="รูปไข่">รูปไข</option>
+                                <option value="หัวล้าน">หัวล้าน</option>
+                                <option value="อื่นๆ">อื่นๆ</option>
+
+                            </select>
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+
+                        <label class="col-sm-1 control-label" >ใบหน้า</label>
+
+                        <div class="col-sm-3">
+                            <select ng-model="person.face" class="form-control">
+
+                                <option value="รูปไข่">รูปไข่</option>
+                                <option value="สี่เหลี่ยม">สี่เหลี่ยม</option>
+                                <option value="สามเหลี่ยม">สามเหลี่ยม</option>
+                                <option value="อื่นๆ">อื่นๆ</option>
+
+                            </select>
+
+                        </div>
+                        <label class="col-sm-1 control-label" >ตา</label>
+
+                        <div class="col-sm-3">
+                            <select ng-model="person.eye" class="form-control">
+
+                                <option value="เล็ก">เล็ก</option>
+                                <option value="ตี่">ตี่</option>
+                                <option value="ตาสองชั้น">ตาสองชั้น</option>
+                                <option value="ชั้นเดียว">ชั้นเดียว</option>
+                                <option value="ตาเหล่">ตาเหล่</option>
+                                <option value="ตาบอด">ตาบอด</option>
+                                <option value="อื่นๆ">อื่นๆ</option>
+
+                            </select>
+
+                        </div>
+                        <label class="col-sm-1 control-label" >หู</label>
+
+                        <div class="col-sm-3">
+                            <select ng-model="person.ear" class="form-control">
+
+                                <option value="กวง">กาง</option>
+                                <option value="บาน">บาน</option>
+                                <option value="แหว่ง">แหว่ง</option>
+                                <option value="ปกติ">ปกติ</option>
+                                <option value="อื่นๆ">อื่นๆ</option>
+
+                            </select>
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+
+                        <label class="col-sm-1 control-label" >จมูก</label>
+
+                        <div class="col-sm-3">
+                            <select ng-model="person.nose" class="form-control">
+
+                                <option value="โด่ง">โด่ง</option>
+                                <option value="แบน">แบน</option>
+                                <option value="โหว่">โหว่</option>
+                                <option value="ธรรมดา">ธรรมดา</option>
+                                <option value="อื่นๆ">อื่นๆ</option>
+
+                            </select>
+
+                        </div>
+                        <label class="col-sm-1 control-label" >ปาก</label>
+
+                        <div class="col-sm-3">
+                            <select ng-model="person.mouth" class="form-control">
+
+                                <option value="หนา">หนา</option>
+                                <option value="บาง">บาง</option>
+                                <option value="แหว่ง">แหว่ง</option>
+                                <option value="กว้าง">กว้าง</option>
+                                <option value="กระจับ">กระจับ</option>
+                                <option value="อื่นๆ">อื่นๆ</option>
+
+                            </select>
+
+                        </div>
+                        <label class="col-sm-1 control-label" >คาง</label>
+
+                        <div class="col-sm-3">
+                            <select ng-model="person.chin" class="form-control">
+
+                                <option value="สี่เหลี่ยม">สี่เหลี่ยม</option>
+                                <option value="สามเหลี่ยม">สามเหลี่ยม</option>
+                                <option value="มน">มน</option>
+                                <option value="อื่นๆ">อื่นๆ</option>
+
+                            </select>
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+
+                        <label class="col-sm-1 control-label" style="font-size: 11px;">หนวด/เครา</label>
+
+                        <div class="col-sm-3">
+                            <select ng-model="person.mirror" class="form-control">
+
+                                <option value="หนวดยาว">หนวดยาว</option>
+                                <option value="หนาวสั้น">หนาวสั้น</option>
+                                <option value="มีเครา">มีเครา</option>
+                                <option value="ไม่มีเครา">ไม่มีเครา</option>
+                                <option value="อื่นๆ">อื่นๆ</option>
+                            </select>
+
+                        </div>
+                        <label class="col-sm-1 control-label">ตำหนิ:</label>
+
+                        <div class="col-sm-3">
+                            <select ng-model="person.scar" class="form-control">
+                                <option value="ไฝ">ไฝ</option>
+                                <option value="ปาน">ปาน</option>
+                                <option value="รอยเเผลเป็น">รอยเเผลเป็น</option>
+                                <option value="อื่นๆ">อื่นๆ</option>
+
+                            </select>
+
+                        </div>
+                        <label class="col-sm-1 control-label">สำเนียง:</label>
+
+                        <div class="col-sm-3">
+                            <select ng-model="person.accent" class="form-control">
+
+                                <option value="ภาคกลาง">ภาคกลาง</option>
+                                <option value="ภาคอีสาน">ภาคอีสาน</option>
+                                <option value="ภาคเหนือ">ภาคเหนือ</option>
+                                <option value="ภาคใต้">ภาคใต้</option>
+
+                            </select>
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+
+                        <label class="col-sm-1 control-label" style="font-size: 11px;">ลักษณะเด่น</label>
+
+                        <div class="col-sm-3">
+                            <select ng-model="person.nature" class="form-control">
+
+                                <option value="ตาเหล่">ตาเหล่</option>
+                                <option value="ตาบอด">ตาบอด</option>
+                                <option value="นิ้วหัวเเม่มืดซ้ายด้วน">นิ้วหัวเเม่มืดซ้ายด้วน</option>
+                                <option value="ขาเป้">ขาเป้</option>
+                                <option value="อื่นๆ">อื่นๆ</option>
+                            </select>
+
+                        </div>
+                        <label class="col-sm-1 control-label">อุนิสัย:</label>
+
+                        <div class="col-sm-3">
+                            <input ng-model="person.personality" type="text" class="form-control" id="concept"
+                                   name="concept">
+                        </div>
+                        <label class="col-sm-1 control-label" style="font-size: 11px;">สถานที่เที่ยวเตร่</label>
+
+                        <div class="col-sm-3">
+                            <input ng-model="person.location_gallivent" type="text" class="form-control" id="concept"
+                                   name="concept">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-1 control-label">ส่วนสูง</label>
+
+                        <div class="col-sm-3">
+                            <select ng-model="person.height" class="form-control">
+
+                                <?php  for ($height = 1; $height <= 200; $height++) {   ?>
+
+                                <option value="{{ $height }}">{{ $height }}  เซนติเมตร</option>
+
+
+                                <?php } ?>
+                            </select>
+                        </div>
+                        <label class="col-sm-1 control-label">น้ำหนัก</label>
+
+                        <div class="col-sm-3">
+                            <select ng-model="person.weight" class="form-control">
+                                <?php
+                          for ($weight = 1; $weight <= 250; $weight++) {   ?>
+
+                                <option value="{{ $weight }}">{{ $weight }}  กิโลกรัม</option>
+
+
+                                <?php } ?>
+                            </select>
+                        </div>
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
