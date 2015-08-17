@@ -5,6 +5,7 @@
     <style>
         body {
             font-size: 16pt;
+            font-family: TH SarabunIT;
         }
         h1 {
             font-size: 5pt;
