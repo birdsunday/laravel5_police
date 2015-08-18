@@ -206,6 +206,39 @@ app.controller("AddController", function ($scope, $http, $state, $timeout, namet
     $scope.nametitles = nametitle.data;
 
 
+
+
+
+    var numbers = [];
+    for(var i=1;i==300;i++) {
+        numbers.push(i);
+    }
+    $scope.number = numbers;
+
+    console.log($scope.number);
+
+    $scope.clear = function () {
+        $scope.dt = null;
+    };
+
+    $scope.open_start = function($event) {
+        $event.preventDefault();
+        $event.stopPropagation();
+
+        $scope.opened_start = true;
+    };
+
+    $scope.open_end = function($event) {
+        $event.preventDefault();
+        $event.stopPropagation();
+
+        $scope.opened_end = true;
+    };
+
+
+    $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
+    $scope.format = $scope.formats[1];
+
     $scope.keyword = {};
     $scope.tempFilterTextName = '';
     $scope.filterTextTimeout;

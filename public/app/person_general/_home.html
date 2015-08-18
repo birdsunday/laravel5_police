@@ -29,7 +29,7 @@
                 <thead>
                 <tr>
                     <th class="text-center">
-                        <input ng-model="search.idcard" type="text" class="form-control" ng-model="keyword.idcard" />
+                        <input onkeyup="autoTab(this)" ng-model="search.idcard" type="text" class="form-control" ng-model="keyword.idcard" />
                     </th>
                     <th class="text-center">
                         <input ng-model="search.typepeople" type="text" class="form-control" ng-model="keyword.typepeople" />

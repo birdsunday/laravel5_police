@@ -6,8 +6,8 @@
         </div>
 
         <div class="profile-userpic">
-            <img src="<% Auth::user()->photo ? Auth::user()->photo : '/img/square-image.png' %>" class="img-responsive"
-                 style="width: 170px;height: 170px" alt="">
+            <img src="<% Auth::user()->photo ? Auth::user()->photo : '/img/square-image.png' %>"
+                 class="img-responsive" style="width: 170px;height: 170px" alt="">
         </div>
         <!-- END SIDEBAR USERPIC -->
         <!-- SIDEBAR USER TITLE -->

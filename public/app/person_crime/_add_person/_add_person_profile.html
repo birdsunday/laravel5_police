@@ -49,7 +49,7 @@
                               <label class="col-sm-4 control-label" style="width: auto">หมายเลขบัตร</label>
 
                               <div class="col-sm-6">
-                                  <input ng-change="searchDataPerson(person)" ng-model="person.idcard" type="text" class="form-control">
+                                  <input  onkeyup="autoTab(this)" ng-change="searchDataPerson(person)" ng-model="person.idcard" type="" class="form-control">
 
                                   <label  ng-if="dataperson_crime.length" class="control-label" style="width: auto;color: red"> บุลคลนี้เคยมีประวัติเกี่ยวข้องกับอาชญากรรมแล้ว</label>
 
