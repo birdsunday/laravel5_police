@@ -467,8 +467,6 @@ class GuestHistoryApiController extends Controller {
         $ext = Input::file('file')->getClientOriginalExtension();
         //$jpg = ".jpg";
         Input::file('file')->move($destination_path,"$uuid.$ext");
-
-
         $photo->photo = "/photo/person_general/$id/$uuid.$ext";
         $photo->save();
         return $photo;

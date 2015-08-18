@@ -2,8 +2,8 @@
 <div class="row">
     <div id="breadcrumb" class="col-xs-12">
         <ol class="breadcrumb">
-            <li><a href="#">หน้าหลัก</a></li>
-            <li><a href="#">ข้อมูลคด + บุคคลที่เกี่ยวข้องกับอาชญากรรมี</a></li>
+            <li><a href="/police/index">หน้าหลัก</a></li>
+            <li><a ui-sref ="home">ข้อมูลคดี</a></li>
         </ol>
     </div>
 </div>
@@ -34,9 +34,15 @@
                             <input ng-model="search.number_case" type="text" class="form-control" ng-model="keyword.typepeople" />
                         </th>
                         <th class="text-center">
+                            <input ng-model="search.year_number_case" type="text" class="form-control" ng-model="keyword.typepeople" />
+                        </th>
+                        <th class="text-center">
+                            <input ng-model="search.station_number_case" type="text" class="form-control" ng-model="keyword.typepeople" />
+                        </th>
+                        <th class="text-center">
                             </th>
                         <th class="text-center">
-                            <input ng-model="search.name_police" type="text" class="form-control" ng-model="keyword.name" />
+                            <input ng-model="search.created_at" type="text" class="form-control" ng-model="keyword.name" />
                         </th>
                         <th class="text-center">
 
@@ -47,8 +53,9 @@
                     </tr>
                     <tr>
                         <th  class="text-center" style="width: 15%">คดี/ข้อหา</th>
-                        <th  class="text-center"  style="width: 15%">เลขคดี</th>
-
+                        <th  class="text-center"  style="width: 6%">เลขคดี</th>
+                        <th  class="text-center"  style="width: 6%">ปี</th>
+                        <th  class="text-center"  style="width: 8%">สถานีตำรวจ</th>
                         <th  class="text-center" style="width: 15%">บุคคล</th>
                         <th  class="text-center" style="width: 15%">วันที่บันทึกคดี</th>
                         <th  class="text-center" style="width: 15%">สถานะ</th>
@@ -60,15 +67,21 @@
 
                     <tbody>
 
-                    <tr ng-repeat="datacases in datacase | filter:search" >
+                    <tr ng-repeat="datacases in datacase | filter:search as results" >
 
                         <td ng-bind="datacases.name_case"></td>
-                        <td ng-bind="datacases.number_case+' '+datacases.year_number_case+' '+datacases.station_number_case"></td>
-                       <td >
+                        <td ng-bind="datacases.number_case"></td>
+                        <td ng-bind="datacases.year_number_case"></td>
+
+                        <td ng-bind="datacases.station_number_case"></td>
+
+
+
+                        <td >
                             <table>
                                 <tbody>
                                 <tr ng-repeat="person in datacases.criminalhistory" bgcolor="">
-                                    <td ><a ng-bind="' <% $index+1 %>. '+person.nametitle.name_title+' ' +person.name + ' ' +person.surname"></a></td>
+                                    <td ><a target="_blank" href="person_crime#/preview_person/<% person.id %>" ng-bind="' <% $index+1 %>. '+person.nametitle.name_title+' ' +person.name + ' ' +person.surname" ></a></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -106,6 +119,10 @@
                                 <i class="fa fa-remove fa-1x" popover="ลบคดี" popover-trigger="mouseenter"></i></a>
 
                         </td>
+
+                    </tr>
+                    <tr class="animate-repeat" ng-if="results.length == 0">
+                        <td class="text-center" colspan="8"> ไม่พบข้อมูล!!! </td>
 
                     </tr>
 

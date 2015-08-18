@@ -14,7 +14,7 @@
             <h3 class="">จัดการประวัติบุคคลที่เกี่ยวข้องกับอาชญากรรม</h3>
         </div>
         <div class="col-sm-4 text-right padding-top-20">
-            <a class="btn btn-success" ui-sref="form_add.add" title="บันทึกประวัติบุคคลที่เกี่ยวข้องกับอาชญากรรม"><i class="fa fa-user-plus" ></i> บันทึกประวัติบุคคลที่เกี่ยวข้องกับอาชญากรรม</a>
+            <a class="btn btn-success" ui-sref="form_add.add" title="บันทึกประวัติบุคคลที่เกี่ยวข้องกับอาชญากรรม"><i class="fa fa-user-plus" ></i> เพิ่มประวัติบุคคลที่เกี่ยวข้องกับอาชญากรรม</a>
         </div>
     </div>
 
@@ -48,7 +48,10 @@
                                 <input ng-model="search.name" type="text" class="form-control" />
                             </th>
                             <th class="text-center">
-                                <input ng-model="search.created_at" type="text" class="form-control"/>
+                                <input ng-model="search.surname" type="text" class="form-control" />
+                            </th>
+                            <th class="text-center">
+                                <input ng-model="search.date" type="text" class="form-control"/>
                             </th>
                             <th class="text-center">
                             </th>
@@ -62,8 +65,9 @@
                             <th class="text-center">เลขบัตร</th>
                             <th class="text-center" style="width: 15%">ประเภทบุคคล</th>
                             <th class="text-center" style="width: 15%">คำนำหน้า</th>
-                            <th class="text-center">ชื่อ - นามสกุล</th>
-                            <th class="text-center">วันเวลาที่บันทึก</th>
+                            <th class="text-center">ชื่อ</th>
+                            <th class="text-center">นามสกุล</th>
+                            <th class="text-center">วันที่จับ</th>
                             <th class="text-center">สถานะ</th>
                             <th class="text-center" style="width: 11%"></th>
                         </tr>
@@ -71,13 +75,14 @@
 
                         <tbody >
 
-                        <tr ng-repeat="person in dataperson | filter:search">
+                        <tr ng-repeat="person in dataperson | filter:search as results"">
 
                             <td class="text-center" ng-bind="person.idcard"></td>
                             <td class="text-center" ng-bind="person.typepeople"></td>
                             <td class="text-center" ng-bind="person.nametitle.name_title"></td>
                             <td class="text-center" ng-bind="person.name"></td>
                             <td class="text-center" ng-bind="person.surname"></td>
+                            <td class="text-center" ng-bind="person.date"></td>
                             <td class="text-center">
                                 <i ng-if="person.status == 'complete' && person.photo" class="fa fa-check-circle fa-1x " style="color: #008000"
                                    popover="ประวัติบุคคลนี้สมบูรณ์แล้ว" popover-trigger="mouseenter"></i>
@@ -100,6 +105,10 @@
                                                                                                                    popover="ลบประวัติบุคคล" popover-trigger="mouseenter"></i></a>
 
                             </td>
+
+                        </tr>
+                        <tr class="animate-repeat" ng-if="results.length == 0">
+                            <td class="text-center" colspan="8"> ไม่พบข้อมูล!!! </td>
 
                         </tr>
 

@@ -17,6 +17,21 @@
         current_role = "<% Auth::user()->role->key %>"
 
     </script>
+    <script>
+
+
+        // Create fancybox2 gallery
+        function DemoGallery(){
+            $('.fancybox').fancybox({
+                openEffect	: 'none',
+                closeEffect	: 'none'
+            });
+        }
+        $(document).ready(function() {
+            // Load Fancybox2 and make gallery in callback
+            LoadFancyboxScript(DemoGallery);
+        });
+    </script>
 
 @stop
 

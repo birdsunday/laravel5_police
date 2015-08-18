@@ -413,47 +413,40 @@ app.controller("AddController", function ($scope, $http,$state,$modal,$window,$t
         saveCaseFile = "ต้องการบันทึกทะเบียร์ประวัตินี้ ใช่หรือ ไม่";
 
         if (confirm(saveCaseFile)) {
-            $scope.person.status = "complete";
-            $scope.caseFile.status = "complete";
+            if($scope.person.name && $scope.person.nametitle && $scope.person.date){
+                $scope.person.status = "complete";
+                $scope.caseFile.status = "complete";
 
-            sendObj ={
-                person : $scope.person,
-                caseFile : $scope.caseFile
+                sendObj ={
+                    person : $scope.person,
+                    caseFile : $scope.caseFile
+                }
+
+                $http({
+                    url : "/api/person_crime",
+                    method : "post",
+                    data : sendObj
+
+                }).success(function(response){
+                    $scope.myFlow.opts.target = '/api/person_crime/'+ response.id +'/photo';
+
+                    $scope.myFlow.upload();
+                    $state.go("form_add.complete",{id:response.id})
+
+                })
+
+            }else{
+                massged = "กรุณา กรอก อย่างน้อย 3 ช่องนี้ คำนำหน้าชื่อ , ชื่อ , วันที่จับกุม";
+                alert(massged);
             }
 
-            $http({
-                url : "/api/person_crime",
-                method : "post",
-                data : sendObj
-
-            }).success(function(response){
-                $scope.myFlow.opts.target = '/api/person_crime/'+ response.id +'/photo';
-
-                $scope.myFlow.upload();
-                 $state.go("form_add.complete",{id:response.id})
-
-            })
-
-
 
 
         }
 
     }
 
-    $scope.savepresonError = function(){
 
-        saveCaseFile = "ต้องการบันทึกทะเบียร์ประวัตินี้ ใช่หรือ ไม่";
-
-        if (confirm(saveCaseFile)) {
-
-            massged = "กรุณา กรอก อย่างน้อย 3 ช่องนี้ คำนำหน้าชื่อ , ชื่อ , วันที่จับกุม";
-            alert(massged);
-
-
-        }
-
-    }
 
     $scope.myFlow = new Flow({
        // target: '/api/person_crime/'+ response.id +'/photo',
@@ -636,7 +629,7 @@ app.controller("EditController", function ($scope, $http,$stateParams,$state,$ro
 
 });
 
-app.controller("PhotoController", function ($scope, $http,$window) {
+app.controller("PhotoController", function ($scope, $http,$window,$state) {
     console.log("PhotoController.start");
     var self = this;
     self.person = $scope.person;
@@ -650,6 +643,9 @@ app.controller("PhotoController", function ($scope, $http,$window) {
 
     self.uploadFile = function(){
         $scope.myFlow.upload();
+        massged = "อัพโหลดรูปภาพเสร็จสมบูรณ์";
+        alert(massged);
+        $state.go("home")
         //console.log($scope.myFlow);
     }
     self.cancelFile = function (file){
