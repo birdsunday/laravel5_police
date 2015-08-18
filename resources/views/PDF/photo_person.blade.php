@@ -3,7 +3,6 @@
 <style>
     body {
         font-size: 20pt;
-        font-family: TH SarabunIT;
     }
     h5{
         font-family: garuda;
