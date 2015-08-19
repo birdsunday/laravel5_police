@@ -264,26 +264,15 @@
 
                         <div class="col-sm-3">
                             <select ng-model="person.height" class="form-control">
-
-                                <?php  for ($height = 1; $height <= 200; $height++) {   ?>
-
-                                <option value="{{ $height }}">{{ $height }}  เซนติเมตร</option>
-
-
-                                <?php } ?>
+                                <option ng-repeat="n in number" value="<% n %> เซนติเมตร"><% n %> เซนติเมตร</option>
                             </select>
                         </div>
                         <label class="col-sm-1 control-label">น้ำหนัก</label>
 
                         <div class="col-sm-3">
                             <select ng-model="person.weight" class="form-control">
-                                <?php
-                          for ($weight = 1; $weight <= 250; $weight++) {   ?>
 
-                                <option value="{{ $weight }}">{{ $weight }}  กิโลกรัม</option>
-
-
-                                <?php } ?>
+                                <option ng-repeat="n in number" value="<% n %> กิโลกรัม"><% n %> กิโลกรัม</option>
                             </select>
                         </div>
 

@@ -271,6 +271,16 @@ app.controller("AddController", function ($scope, $http,$state,$modal,$window,$t
     };
 
 
+
+    var numbers = [];
+    for(var i=1;i<=300;i++) {
+        numbers.push(i);
+    }
+    $scope.number = numbers;
+    //console.log($scope.number);
+
+
+
     $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
     $scope.format = $scope.formats[0];
 
@@ -511,6 +521,12 @@ app.controller("EditController", function ($scope, $http,$stateParams,$state,$ro
     console.log($scope.person );
     $scope.nametitles = nametitle.data;
 
+    var numbers = [];
+    for(var i=1;i<=300;i++) {
+        numbers.push(i);
+    }
+    $scope.number = numbers;
+    //console.log($scope.number);
 
     function init() {
 

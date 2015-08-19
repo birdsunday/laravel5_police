@@ -27,7 +27,7 @@
         </li>
         <li>
             <a href="/police/user" class="<% Request::is('police/user') ? 'active' : '' %>">
-                <i class="fa fa-home"></i>
+                <i class="fa fa-users"></i>
                 <span class="hidden-xs">จัดการข้อมูลสมาชิก</span>
             </a>
         </li>

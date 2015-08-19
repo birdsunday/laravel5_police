@@ -207,16 +207,6 @@ app.controller("AddController", function ($scope, $http, $state, $timeout, namet
 
 
 
-
-
-    var numbers = [];
-    for(var i=1;i==300;i++) {
-        numbers.push(i);
-    }
-    $scope.number = numbers;
-
-    console.log($scope.number);
-
     $scope.clear = function () {
         $scope.dt = null;
     };
@@ -355,19 +345,27 @@ app.controller("AddController", function ($scope, $http, $state, $timeout, namet
         saveCaseFile = "ต้องการบันทึกทะเบียร์ประวัตินี้ ใช่หรือ ไม่";
 
         if (confirm(saveCaseFile)) {
-            $scope.guest.status = "complete";
+            if($scope.guest.name && $scope.guest.nametitle){
+                $scope.guest.status = "complete";
 
-            $http({
-                url: "/api/guesthistory",
-                method: "post",
-                data: $scope.guest
-            }).success(function (response) {
-                $scope.myFlow.opts.target = '/api/guesthistory/' + response.id + '/photo';
-                $scope.myFlow.upload();
-                $state.go("form_add.complete", {id: response.id})
+                $http({
+                    url: "/api/guesthistory",
+                    method: "post",
+                    data: $scope.guest
+                }).success(function (response) {
+                    $scope.myFlow.opts.target = '/api/guesthistory/' + response.id + '/photo';
+                    $scope.myFlow.upload();
+                    $state.go("form_add.complete", {id: response.id})
+
+                })
+
+            }else{
+                massged = "กรุณา กรอก อย่างน้อย 2 ช่องนี้ คำนำหน้าชื่อ , ชื่อ";
+                alert(massged);
+            }
 
 
-            })
+
 
         }
 

@@ -320,7 +320,7 @@
 
                         <div class="col-sm-3">
                             <select ng-model="person.height" class="form-control">
-
+                                <option ng-repeat="n in number" value="<% n %> เซนติเมตร"><% n %> เซนติเมตร</option>
                             </select>
                         </div>
                         <label class="col-sm-1 control-label">น้ำหนัก</label>
@@ -328,7 +328,7 @@
                         <div class="col-sm-3">
                             <select ng-model="person.weight" class="form-control">
 
-                                <option ng-repeat="n in number"><% n %> กิโลกรัม</option>
+                                <option ng-repeat="n in number" value="<% n %> กิโลกรัม"><% n %> กิโลกรัม</option>
                             </select>
                         </div>
 
