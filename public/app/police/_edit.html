@@ -3,8 +3,8 @@
     <div id="breadcrumb" class="col-xs-12">
         <ol class="breadcrumb">
             <li><a href="/police/index">หน้าหลัก</a></li>
-            <li><a ui-sref="home">จัดการข้อมูลสมาชิก</a></li>
-            <li><a href="#">แก้ไขข้อมูลสมาชิก</a></li>
+            <li><a ui-sref="home">จัดการข้อมูลเจ้าหน้าที่</a></li>
+            <li><a href="#">แก้ไขข้อมูลเจ้าหน้าที่</a></li>
         </ol>
     </div>
 </div>
@@ -15,7 +15,7 @@
             <div class="box-header">
                 <div class="box-name">
                     <i class="fa fa-search"></i>
-                    <span>แก้ไขข้อมูลสมาชิก</span>
+                    <span>แก้ไขข้อมูลเจ้าหน้าที่</span>
                 </div>
                 <div class="box-icons">
                     <a ui-sref="home">
@@ -35,10 +35,10 @@
             <div class="box-content">
                 <div class="row page-header">
                     <div class="col-sm-6">
-                        <h4 class="">แก้ไขข้อมูลสมาชิกr</h4>
+                        <h4 class="">แก้ไขข้อมูลเจ้าหน้าที่</h4>
                     </div>
                     <div class="col-sm-6 text-right padding-top-20">
-                        <a class="btn btn-default" ui-sref="home" title="Back"><i class="fa fa-arrow-left" ></i> Back</a>
+                        <a class="btn btn-default" ui-sref="home" title="Back"><i class="fa fa-arrow-left" ></i> กลับ</a>
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
@@ -55,15 +55,15 @@
                                 <hr class="soften"/>
 
                                 <button  class="btn btn-primary" ng-hide="$flow.files.length"
-                                         flow-btn flow-attrs="{accept:'image/*'}">Select image</button>
+                                         flow-btn flow-attrs="{accept:'image/*'}">เลือกรูปภาพ..</button>
                                 <div ng-repeat="file in myFlow.files">
 
                                     <button  ng-if="!file.isComplete()" class="btn btn-warning" ng-show="$flow.files.length"
-                                             flow-btn flow-attrs="{accept:'image/*'}">Change</button>
+                                             flow-btn flow-attrs="{accept:'image/*'}">เปลี่ยนรูปภาพ</button>
                                     <button  ng-if="!file.isComplete()" class="btn btn-success" ng-show="$flow.files.length"
-                                             ng-click="uploadFile()">Apply Image</button>
+                                             ng-click="uploadFile()">ยืนยัน</button>
                                     <button  class="btn btn-danger"  ng-if="!file.isComplete()" ng-click="cancelFile(file)">
-                                        Remove
+                                        ลบรูป
                                     </button>
 
                                 </div>
@@ -79,7 +79,6 @@
                                     </div>
 
                                     <div ng-if="$flow.files.length==0 && police.photo" class="">
-                                        <img ng-src="<% police.photo %>" width="256" height="256"/>
                                         <div id="simple_gallery" class="box-content">
                                             <a class="fancybox" ng-href="<% police.photo %>" title="<% police.name_police %> <% police.surname_police %>">
                                                 <img ng-src="<% police.photo %>" alt="" width="256" height="256" />
@@ -280,6 +279,8 @@
                             </button>
                         </div>
                     </div>
+
+
 
 
                 </form>

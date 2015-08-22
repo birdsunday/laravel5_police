@@ -4,7 +4,7 @@
         <ol class="breadcrumb">
             <li><a href="/police/index">หน้าหลัก</a></li>
             <li><a ui-sref="home">จัดการข้อมูลสมาชิก</a></li>
-            <li><a href="#">เพิ่มสมาชิก</a></li>
+            <li><a href="#">เพิ่มเจ้าหน้าที่</a></li>
         </ol>
     </div>
 </div>
@@ -16,7 +16,7 @@
             <div class="box-header">
                 <div class="box-name">
                     <i class="fa fa-search"></i>
-                    <span>เพิ่มสมาชิก</span>
+                    <span>เพิ่มเจ้าหน้าที่</span>
                 </div>
                 <div class="box-icons">
                     <a ui-sref="home">
@@ -36,7 +36,7 @@
             <div class="box-content">
                 <div class="row page-header">
                     <div class="col-sm-6">
-                        <h4 class="">เพิ่มสมาชิก</h4>
+                        <h4 class="">เพิ่มเจ้าหน้าที่</h4>
                     </div>
                     <div class="col-sm-6 text-right padding-top-20">
                         <a class="btn btn-default" ui-sref="home" title="Back"><i class="fa fa-arrow-left" ></i> Back</a>
@@ -165,13 +165,13 @@
                     <div class="form-group" ng-if="!error.tel_police">
                         <label class="col-md-4 control-label">เบอร์โทร</label>
                         <div class="col-md-6">
-                            <input ng-model="police.tel_police" type="text" class="form-control" name="tel">
+                            <input onkeyup="autoTab(this)" ng-model="police.tel_police" type="text" class="form-control" name="tel">
                         </div>
                     </div>
                     <div class="form-group has-error has-feedback" ng-if="error.tel_police" ng-repeat="error_tel_police in error.tel_police">
                         <label class="col-md-4 control-label">เบอร์โทร</label>
                         <div class="col-md-6">
-                            <input type="text" class="form-control" ng-model="police.tel_police">
+                            <input onkeyup="autoTab(this)" type="text" class="form-control" ng-model="police.tel_police">
                             <span class="fa fa-remove form-control-feedback" aria-hidden="true"></span>
                             <span class="control-label color-red" for="username" ng-bind="' '+ error_tel_police"></span>
                         </div>
