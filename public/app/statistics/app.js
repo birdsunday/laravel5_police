@@ -56,12 +56,7 @@ app.controller("HomeController", function ($scope,$window, $http,$stateParams ) 
 
     $scope.search_statistics = function(){
 
-        search = "ต้องการบันทึกทะเบียร์ประวัตินี้ ใช่หรือ ไม่";
-        console.log($scope.statistics);
-        if (confirm(search)) {
-
-            console.log($scope.person);
-
+        if($scope.statistics.end_date && $scope.statistics.start_date){
             $http({
                 url : "/api/statistics/search",
                 method : "post",
@@ -78,7 +73,12 @@ app.controller("HomeController", function ($scope,$window, $http,$stateParams ) 
                 console.log($scope.datacase);
 
             })
+        }else{
+            massged = "กรุณาเลือกช่วงเวลาที่ต้องการดูสถิติ";
+            alert(massged);
         }
+
+
     }
 
     $scope.print_statistics = function(){

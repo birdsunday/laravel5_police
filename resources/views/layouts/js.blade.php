@@ -20,3 +20,6 @@
 <script src="/assets/plugins/justified-gallery/jquery.justifiedgallery.min.js"></script>
 <!-- All functions for this theme + document.ready processing -->
 <script src="/assets/js/devoops.js"></script>
+<script src="/assets/js/moment.js"></script>
+<script src="/assets/datetime/jquery.datetimepicker.js"></script>
+

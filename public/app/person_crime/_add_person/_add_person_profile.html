@@ -106,22 +106,23 @@
                               <label class="col-sm-1 control-label" style="width: auto">ว/ด/ป เกิด</label>
 
                               <div class="col-sm-3">
-                                  <input ng-model="person.birth" type="date" class="form-control">
+                                  <input ng-model="person.birth" type="text" class="form-control" name="mydateth" id="mydateth" >
 
                               </div>
-
                               <label class="col-sm-1 control-label" style="width: auto">อาชีพ</label>
 
                               <div class="col-sm-3">
                                   <input type="text" ng-model="person.career" class="form-control" >
                               </div>
+
                           </div>
 
                           <div class="form-group">
+
                               <label class="col-sm-1 control-label" style="width: auto">วันที่จับกุม</label>
 
                               <div class="col-sm-3">
-                                  <input type="date" ng-model="person.date" class="form-control" >
+                                  <input ng-model="person.date" type="text" class="form-control css_datetime_picker" name="date_product[]" value="" id="id_datetime_picker0" >
                               </div>
                               <label class="col-sm-1 control-label" style="width: auto">การศึกษา</label>
 
@@ -137,7 +138,69 @@
           </div>
       </div>
 
+<script type="text/javascript">
+    $(function () {
+
+
+        $("#id_datetime_picker0").datetimepicker({
+            format:'d-m-Y H:m',
+            lang:'th',  // แสดงภาษาไทย
+            yearOffset:543,  // ใช้ปี พ.ศ. บวก 543 เพิ่มเข้าไปในปี ค.ศ
+            closeOnDateSelect:true
+        });
+
+
+        $(".css_i_select").on("change",function(){
+            var i_select=$(this).val();
+            if(i_select=="A"){
+                $(this).parents("tr").find(".css_more").show();
+            }else{
+                $(this).parents("tr").find(".css_more").hide();
+            }
+        });
+
+
+        $("#addRow").on("click",function(){
+            // ส่วนของการ clone ข้อมูลด้วย jquery clone() ค่า true คือ
+            // การกำหนดให้ ไม่ต้องมีการ ดึงข้อมูลจากค่าเดิมมาใช้งาน
+            // รีเซ้ตเป็นค่าว่าง ถ้ามีข้อมูลอยู่แล้ว ทั้ง select หรือ input
+
+            $(".datarow:eq(0)").clone(true)
+                    .find("input").attr("value","").end()
+                    .find("select").attr("value","").end()  //
+                    .appendTo($(".place-datarow"));
+            var lastIndex=$(".css_datetime_picker").size()-1; // หา index ของตัว input ล่าสุด
+            var newId="id_datetime_picker"+lastIndex;
+            var objID="#"+newId;
+            var placeParent=$(".css_datetime_picker:eq("+lastIndex+")").parents("td");
+            // แทนด้วย input ใหม่ ทับตัวเก่าไปเลย
+            $(placeParent).html("<input type=\"text\" class=\"form-control css_datetime_picker\" name=\"date_product[]\" >");
+            $(".css_datetime_picker:eq("+lastIndex+")")
+                    .attr("id", newId) // - กำหนด id เป็นค่าใหม่
+                    .unbind(); // - ยกเลิกการจัดการทั้งหมด ที่ได้มาจากตัว clone
+            $(objID).datetimepicker(); // - เรียกใช้ datetimepicker() ใหม่อีกครั้ง
+
+        });
+
+
+    });
+</script>
+
+<script type="text/javascript">
+    $(function(){
+
+
+        $("#mydateth").datetimepicker({
+            timepicker:false,  // กำหนด ไม่แสดงตัวเลือกเวลา
+            format:'d-m-Y',  // กำหนดรูปแบบวันที่ ที่ใช้ เป็น 00-00-0000
+            lang:'th',  // แสดงภาษาไทย
+            yearStart:1914,  // ช่วงเลือกปีเริ่มต้น ใช้ ค.ศ.
+            yearOffset:543,  // ใช้ปี พ.ศ. บวก 543 เพิ่มเข้าไปในปี ค.ศ
+
+            closeOnDateSelect:true // ปิด ถ้าเลือกวันที่แล้ว
+        });
 
 
 
-
+    });
+</script>

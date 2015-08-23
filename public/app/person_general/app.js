@@ -342,7 +342,27 @@ app.controller("AddController", function ($scope, $http, $state, $timeout, namet
 
 
     $scope.saveDataGuest = function () {
+        if($scope.guest.birth){
+            var dayBirth=$scope.guest.birth;
+            var getdayBirth=dayBirth.split("-");
+            var YB=getdayBirth[2]-543;
+            var MB=getdayBirth[1];
+            var DB=getdayBirth[0];
+
+            var setdayBirth=moment(YB+"-"+MB+"-"+DB);
+            var setNowDate=moment();
+            var yearData=setNowDate.diff(setdayBirth, 'years', true); // ข้อมูลปีแบบทศนิยม
+            var yearFinal=Math.round(setNowDate.diff(setdayBirth, 'years', true),0); // ปีเต็ม
+            var yearReal=setNowDate.diff(setdayBirth, 'years'); // ปีจริง
+            var monthDiff=Math.floor((yearData-yearReal)*12); // เดือน
+            var str_year_month=yearReal+" ปี "+monthDiff+" เดือน"; // ต่อวันเดือนปี
+            $scope.guest.age = str_year_month;
+        }
+        console.log($scope.guest.age);
         saveCaseFile = "ต้องการบันทึกทะเบียร์ประวัตินี้ ใช่หรือ ไม่";
+
+
+
 
         if (confirm(saveCaseFile)) {
             if($scope.guest.name && $scope.guest.nametitle){
