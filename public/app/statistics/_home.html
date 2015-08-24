@@ -69,7 +69,6 @@
                             <th class="text-center" style="width: 5px">ลำดับ</th>
                             <th class="text-center">ชื่อคดี</th>
                             <th class="text-center">เลขคดี/ปี/สถานนีตำรวจ</th>
-                            <th class="text-center">พฤติการณ์คดี</th>
                             <th class="text-center">วันที่เกิดเหตุ</th>
                             <th class="text-center">บุคคลกระทำความผิด</th>
 
@@ -80,15 +79,15 @@
 
                         <tr ng-repeat="data_case in datacase">
                             <td class="text-center"><% $index+1 %></td>
-                            <td class="text-center" ng-bind="data_case.name_case"></td>
+                            <td class="text-center" ><a ng-click="viewCase(data_case)" ng-bind="data_case.name_case"></a></td>
                             <td class="text-center" ng-bind="data_case.number_case+'/'+data_case.year_number_case+'/'+data_case.station_number_case"></td>
-                            <td class="text-center" ng-bind="data_case.circumstances_case"></td>
+
                             <td class="text-center" ng-bind="data_case.date_case"></td>
                             <td  >
                                 <table>
                                     <tbody>
                                     <tr ng-repeat="person in data_case.criminalhistory" bgcolor="">
-                                        <td ><a ng-bind="' <% $index+1 %>. '+person.nametitle.name_title+' ' +person.name + ' ' +person.surname"></a></td>
+                                        <td ><a ng-click="viewPerson(person)" ng-bind="' <% $index+1 %>. '+person.nametitle.name_title+' ' +person.name + ' ' +person.surname"></a></td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -138,7 +137,7 @@
                                 <table>
                                     <tbody>
                                     <tr ng-repeat="data_cases in person.datacase" bgcolor="">
-                                        <td ><a ng-bind="' <% $index+1 %>. '+data_cases.name_case+' เลขคดี ' +data_cases.number_case + '/' +data_cases.year_number_case+'/'+data_cases.station_number_case"></a></td>
+                                        <td ><a  ng-click="viewCase(data_case)" ng-bind="' <% $index+1 %>. '+data_cases.name_case+' เลขคดี ' +data_cases.number_case + '/' +data_cases.year_number_case+'/'+data_cases.station_number_case"></a></td>
                                     </tr>
                                     </tbody>
                                 </table>

@@ -379,7 +379,7 @@ class DatabaseSeeder extends Seeder {
         $datafather1->save();
 
         $guesthistory = new \App\Models\GuestHistory();
-        $guesthistory->idcard = ('1xxxxxxxxxxxx');
+        $guesthistory->idcard = ('1-5603-00222-2-33');
         $guesthistory->typepeople = ('บุคคลทั่วไป');
         $guesthistory->name = ('สมรัก');
         $guesthistory->surname = ('นาดี');
@@ -402,9 +402,10 @@ class DatabaseSeeder extends Seeder {
         $criminalhistory->name = ('อยู่ดี');
         $criminalhistory->surname = ('มีสุข');
         $criminalhistory->alias = ('เสือใหญ่');
-        $criminalhistory->idcard = ('1560000000001');
-        $criminalhistory->birth =('25/5/2555');
-        $criminalhistory->age = ('21');
+        $criminalhistory->idcard = ('1-5603-00222-2-22');
+        $criminalhistory->birth =('25-5-2555');
+        $criminalhistory->age = ('21 ปี 0 เดือน');
+        $criminalhistory->date = ('25-5-2555 18:00');
         $criminalhistory->education = ('ประถมศึษา');
         $criminalhistory->career=('โปรแกรมเมอร์');
         $criminalhistory->height = ('177');

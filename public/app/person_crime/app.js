@@ -152,6 +152,7 @@ app.controller("PreviewPersonController", function ($scope,$window, $http,$state
     console.log("PreviewPersonController.start");
     $scope.person = person.data;
     console.log($scope.person);
+
     $scope.printPerson = function(){
 
         console.log($scope.person.id);
@@ -279,8 +280,13 @@ app.controller("AddController", function ($scope, $http,$state,$modal,$window,$t
     for(var i=1;i<=300;i++) {
         numbers.push(i);
     }
-    $scope.number = numbers;
-    //console.log($scope.number);
+
+    var ages = [];
+    for(var i=1;i<=120;i++) {
+        ages.push(i);
+    }
+    $scope.age = ages;
+    //console.log($scope.age);
 
 
 
@@ -410,6 +416,16 @@ app.controller("AddController", function ($scope, $http,$state,$modal,$window,$t
     $scope.inputPersonCrime = function(person){
         console.log(person);
         $scope.person = person;
+
+
+    }
+
+    $scope.viewCase = function(datacase){
+
+        console.log(datacase.id);
+
+        //window.location= "/api/case/"+ $scope.caseFile.id +"/generated_pdf_case";
+        $window.open('/police/case#/view/'+datacase.id, '_blank');
 
 
     }
@@ -557,6 +573,12 @@ app.controller("EditController", function ($scope, $http,$stateParams,$state,$ro
     $scope.number = numbers;
     //console.log($scope.number);
 
+
+    var ages = [];
+    for(var i=1;i<=120;i++) {
+        ages.push(i);
+    }
+    $scope.age = ages;
     function init() {
 
         if($scope.person.nametitle){

@@ -132,7 +132,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
 
 
-app.controller("HomeController",function($scope,$http,datacase,$timeout,$rootScope){
+app.controller("HomeController",function($scope,$window,$http,datacase,$timeout,$rootScope){
     console.log("HomeController.start");
     $scope.datacase = datacase.data;
 
@@ -170,6 +170,12 @@ app.controller("HomeController",function($scope,$http,datacase,$timeout,$rootSco
 
             })
         }
+
+    }
+
+    $scope.print_case = function(datacases){
+
+        $window.open('/api/case/'+ datacases.id +'/generated_pdf_case', '_blank');
 
     }
 
@@ -287,7 +293,8 @@ app.controller("AddPersonController",function($scope,$http,$stateParams,$timeout
                 method : "post",
                 data : $scope.casePerson
             }).success(function(){
-
+                massged = "ลบข้อมูลคดีเสร็จสมบูรณ์";
+                alert(massged);
                 $state.go("home");
             })
         }
@@ -318,7 +325,6 @@ app.controller("PreviewPersonController",function($scope,$http,$stateParams
                 method : "post",
                 data : $scope.casePerson
             }).success(function(){
-                console.log(response);
                 massged = "ลบข้อมูลคดีเสร็จสมบูรณ์";
                 alert(massged);
                 $state.go("home");
@@ -856,7 +862,7 @@ app.controller("PersonController",function($scope,$http,$state,$timeout){
             } else {
 
                 $http({
-                    url : "/api/person/case/search",
+                    url : "/api/person_crime/case/search",
                     method : "post",
                     data : $keyword
 

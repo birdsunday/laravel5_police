@@ -54,6 +54,14 @@ app.controller("HomeController", function ($scope,$window, $http,$stateParams ) 
 
     $scope.statistics = {};
 
+
+    $scope.viewPerson = function(person) {
+        $window.open('/police/person_crime#/preview_person/'+ person.id , '_blank');
+    };
+
+    $scope.viewCase = function(data_case) {
+        $window.open('/police/case#/view/'+ data_case.id , '_blank');
+    };
     $scope.search_statistics = function(){
 
         if($scope.statistics.end_date && $scope.statistics.start_date){

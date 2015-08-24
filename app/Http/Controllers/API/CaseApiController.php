@@ -151,6 +151,9 @@ class CaseApiController extends Controller
         //return $datacase;
         $dataperson =  DataCase::find($id)->criminalhistory()->with('datacase')->get();
 
+
+
+
        //return $dataperson;
 //$pdf = \App::make('mpdf.wrapper',['ภาษา','ขนาดการดาษ-L=แนวนอน ไม่- แนวตั้ง','','',ขอบซ้ายกระดาษ,ขอบขวากระดาษ,ขอบขนกระดาษ,ขอบล่างกระดาษ,ระยะ title,ระยะ footter]);
 
@@ -200,7 +203,7 @@ class CaseApiController extends Controller
 
             $pdf->AddPage('P');
             $html = view('PDF.person')->with('datacase',$datacase)->with('dataperson',$person)->render();
-           //return $html;
+           return $html;
             $pdf->WriteHTML($html);
         }
         $pdf->stream();

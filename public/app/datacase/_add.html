@@ -84,7 +84,7 @@
                 <div class="no-move"></div>
 
             </div>
-                <div class="box-content" id="scroll_add">
+                <div class="box-content">
 
                     <form class="form-horizontal" role="form">
 
@@ -112,85 +112,6 @@
 
                             </div>
                         </div>
-
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label" style="font-size: 14px">อาวุธที่ใช้กระทำความผิด:</label>
-                            <div class="col-sm-4">
-                                <input ng-model="Weapon.name_weapon" type="text" class="form-control" id="amount" name="amount">
-                            </div>
-                            <div class="col-sm-1">
-                                <button type="button"  ng-click="addweapon()" class="btn btn-default" >เพิ่มอาวุธ</button>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label" style="font-size: 14px">รายการอาวุธที่ใช้:</label>
-
-                            <div class="col-sm-5">
-                                <ui ng-repeat="dataweapon in caseFile.weapon" type=”1″>
-                                    <li><label ng-bind="dataweapon.name_weapon"></label><button type="button"  ng-click="delweapon(dataweapon)" >ลบ</button>
-
-                                </ui>
-                            </div>
-
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label" style="font-size: 14px">พาหนะที่ใช้ ยี่ห้อ :</label>
-                            <div class="col-sm-2">
-                                <input ng-model="Vehicle.vehicle_brand" type="text" class="form-control" id="amount" name="amount">
-                            </div>
-                            <label class="col-sm-1 control-label" style="font-size: 14px;width: auto">รุ่น :</label>
-                            <div class="col-sm-2">
-                                <input ng-model="Vehicle.vehicle_generation" type="text" class="form-control" id="amount" name="amount">
-                            </div>
-                            <label class="col-sm-1 control-label" style="font-size: 14px;width: auto">สี :</label>
-                            <div class="col-sm-2">
-                                <input ng-model="Vehicle.vehicl_color" type="text" class="form-control" id="amount" name="amount">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label" style="font-size: 14px">หมายเลขทะเบียน หมวด:</label>
-                            <div class="col-sm-2">
-                                <input ng-model="Vehicle.vehicle_group" type="text" class="form-control" id="amount" name="amount">
-                            </div>
-
-                            <label class="col-sm-1 control-label" style="font-size: 14px;width:auto">เลข:</label>
-                            <div class="col-sm-2">
-                                <input ng-model="Vehicle.vehicle_number" type="text" class="form-control" id="amount" name="amount">
-                            </div>
-
-                            <label class="col-sm-1 control-label" style="font-size: 14px;width:auto">จังหวัด:</label>
-                            <div class="col-sm-2">
-                                <input ng-model="Vehicle.vehicle_province" type="text" class="form-control" id="amount" name="amount">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label" style="font-size: 14px">
-                            </label>
-                            <div class="col-sm-2">
-                                <button type="button"  ng-click="addvehicle()" class="btn btn-default" >เพิ่มพาหนะ</button>
-                            </div>
-
-                        </div>
-
-
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label" style="font-size: 14px">รายการพาหนะที่ใช้:</label>
-
-                            <div class="col-sm-9">
-                                <ui ng-repeat="datavehicle in caseFile.vehicle">
-                                    <li><label ng-bind="'ยี่ห้อ : ' + datavehicle.vehicle_brand + ' รุ่น : ' + datavehicle.vehicle_generation
-                                                +' สี : ' + datavehicle.vehicl_color + ' ทะเบียน :' + datavehicle.vehicle_group + ' '+ datavehicle.vehicle_number+' ' + datavehicle.vehicle_province">
-
-                                    </label><button type="button"  ng-click="delvehicle(datavehicle)" >ลบ</button>
-
-                                </ui>
-                            </div>
-
-                        </div>
-
 
                         <div class="form-group">
                             <label class="col-sm-3 control-label" style="font-size: 14px">พฤติการณ์คดี:</label>
@@ -296,6 +217,87 @@
                                 <input type="text"  ng-model="caseFile.tel_police" class="form-control" id="" name="amount">
                             </div>
                         </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" style="font-size: 14px">อาวุธที่ใช้กระทำความผิด:</label>
+                            <div class="col-sm-4">
+                                <input ng-model="Weapon.name_weapon" type="text" class="form-control" id="amount" name="amount">
+                            </div>
+                            <div class="col-sm-1">
+                                <button type="button"  ng-click="addweapon()" class="btn btn-default" >เพิ่มอาวุธ</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" style="font-size: 14px">รายการอาวุธที่ใช้:</label>
+
+                            <div class="col-sm-5">
+                                <ui ng-repeat="dataweapon in caseFile.weapon" type=”1″>
+                                    <li><label ng-bind="dataweapon.name_weapon"></label><button type="button"  ng-click="delweapon(dataweapon)" >ลบ</button>
+
+                                </ui>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" style="font-size: 14px">พาหนะที่ใช้ ยี่ห้อ :</label>
+                            <div class="col-sm-2">
+                                <input ng-model="Vehicle.vehicle_brand" type="text" class="form-control" id="amount" name="amount">
+                            </div>
+                            <label class="col-sm-1 control-label" style="font-size: 14px;width: auto">รุ่น :</label>
+                            <div class="col-sm-2">
+                                <input ng-model="Vehicle.vehicle_generation" type="text" class="form-control" id="amount" name="amount">
+                            </div>
+                            <label class="col-sm-1 control-label" style="font-size: 14px;width: auto">สี :</label>
+                            <div class="col-sm-2">
+                                <input ng-model="Vehicle.vehicl_color" type="text" class="form-control" id="amount" name="amount">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" style="font-size: 14px">หมายเลขทะเบียน หมวด:</label>
+                            <div class="col-sm-2">
+                                <input ng-model="Vehicle.vehicle_group" type="text" class="form-control" id="amount" name="amount">
+                            </div>
+
+                            <label class="col-sm-1 control-label" style="font-size: 14px;width:auto">เลข:</label>
+                            <div class="col-sm-2">
+                                <input ng-model="Vehicle.vehicle_number" type="text" class="form-control" id="amount" name="amount">
+                            </div>
+
+                            <label class="col-sm-1 control-label" style="font-size: 14px;width:auto">จังหวัด:</label>
+                            <div class="col-sm-2">
+                                <input ng-model="Vehicle.vehicle_province" type="text" class="form-control" id="amount" name="amount">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" style="font-size: 14px">
+                            </label>
+                            <div class="col-sm-2">
+                                <button type="button"  ng-click="addvehicle()" class="btn btn-default" >เพิ่มพาหนะ</button>
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" style="font-size: 14px">รายการพาหนะที่ใช้:</label>
+
+                            <div class="col-sm-9">
+                                <ui ng-repeat="datavehicle in caseFile.vehicle">
+                                    <li><label ng-bind="'ยี่ห้อ : ' + datavehicle.vehicle_brand + ' รุ่น : ' + datavehicle.vehicle_generation
+                                                +' สี : ' + datavehicle.vehicl_color + ' ทะเบียน :' + datavehicle.vehicle_group + ' '+ datavehicle.vehicle_number+' ' + datavehicle.vehicle_province">
+
+                                    </label><button type="button"  ng-click="delvehicle(datavehicle)" >ลบ</button>
+
+                                </ui>
+                            </div>
+
+                        </div>
+
+
+
 
                     </form>
 

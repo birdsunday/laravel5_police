@@ -53,11 +53,14 @@
         </tr>
         <tr>
             @if($dataperson->alias)
-                <td colspan="3"><li>อายุ : <label><?php echo $dataperson->age ?></label></td>
+                <td colspan="3">
+                    <li>อายุ : <label><?php echo $dataperson->age ?></label>
+                </td>
             @else
-                <td colspan="3"><li>อายุ : <label> - </label></td>
+                <td colspan="3">
+                    <li>อายุ : <label> - </label>
+                </td>
             @endif
-
 
 
         </tr>
@@ -346,7 +349,7 @@
         <tr>
 
             <td colspan="4">
-                <li>ชื่อบุตร
+                <li>บุตร
             </td>
 
 
@@ -474,126 +477,127 @@
         <tr>
 
             <td colspan="4">
-                <li>การกระทำความผิด
+                <li>ประวัติการกระทำความผิด
             </td>
 
 
         </tr>
         <ol>
-            <?php foreach($dataperson->datacase as $person_datacase) : ?>
+            <?php foreach($datacases as $person_datacases) : ?>
+                <?php foreach($person_datacases->datacase as $person_datacase) : ?>
 
-            <tr>
-                @if($person_datacase->name_case)
-                    <td colspan="4">
-                        <li>ชื่อคดี :<label><?php echo $person_datacase->name_case ?></label>
-                    </td>
-                @else
-                    <td colspan="4">
-                        <li>ชื่อคดี :<label> - </label>
-                    </td>
-                @endif
-
-            </tr>
-            <tr>
-
-                @if($person_datacase->number_case || $person_datacase->year_number_case || $person_datacase->station_number_case)
-
-                    <td colspan="4">เลขคดี : <label> <?php echo $person_datacase->number_case ?>
-                            <?php echo $person_datacase->year_number_case ?>
-                            <?php echo $person_datacase->station_number_case ?>
-                        </label></td>
-                @else
-                    <td colspan="4">เลขคดี : <label> -
-                        </label></td>
-
-                @endif
-            </tr>
-            <tr>
-                @if($person_datacase->circumstances_case)
-
-                    <td colspan="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;พฤติการคดี :
-                        <label><?php echo $person_datacase->circumstances_case ?></label>
-                    </td>
-                @else
-                    <td colspan="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;พฤติการคดี : <label> -
-                        </label></td>
-
-                @endif
-            </tr>
-            <ol>
-                @foreach($person_datacase->vehicle as $vehicle)
-                    <tr>
+                <tr>
+                    @if($person_datacase->name_case)
                         <td colspan="4">
-                            <li>ภาหนะที่ใช้ก่อเหตุ : <label>
+                            <li>ชื่อคดี :<label><?php echo $person_datacase->name_case ?></label>
+                        </td>
+                    @else
+                        <td colspan="4">
+                            <li>ชื่อคดี :<label> - </label>
+                        </td>
+                    @endif
+
+                </tr>
+                <tr>
+
+                    @if($person_datacase->number_case || $person_datacase->year_number_case || $person_datacase->station_number_case)
+
+                        <td colspan="4">เลขคดี : <label> <?php echo $person_datacase->number_case ?>
+                                <?php echo $person_datacase->year_number_case ?>
+                                <?php echo $person_datacase->station_number_case ?>
+                            </label></td>
+                    @else
+                        <td colspan="4">เลขคดี : <label> -
+                            </label></td>
+
+                    @endif
+                </tr>
+                <tr>
+                    @if($person_datacase->circumstances_case)
+
+                        <td colspan="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;พฤติการคดี :
+                            <label><?php echo $person_datacase->circumstances_case ?></label>
+                        </td>
+                    @else
+                        <td colspan="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;พฤติการคดี : <label> -
+                            </label></td>
+
+                    @endif
+                </tr>
+                <ol>
+                    @foreach($person_datacase->vehicle as $vehicle)
+                        <tr>
+                            <td colspan="4">
+                                <li>ภาหนะที่ใช้ก่อเหตุ : <label>
 
 
-                                    @if($vehicle)
+                                        @if($vehicle)
 
-                                        <label>
-                                            @if($vehicle->vehicle_brand)
-                                                ยี่ห้อ : <?php echo $vehicle->vehicle_brand ?>
-                                            @endif
-                                            @if($vehicle->vehicle_generation)
-                                                รุ่น : <?php echo $vehicle->vehicle_generation ?>
-                                            @endif
-                                            @if($vehicle->vehicl_color)
-                                                สี : <?php echo $vehicle->vehicl_color ?>
-                                            @endif
-                                            @if($vehicle->vehicle_number || $vehicle->vehicle_group || $vehicle->vehicle_province)
-                                                เลขทะเบียน
-                                                : <?php echo $vehicle->vehicle_number ?> <?php echo $vehicle->vehicle_group ?> <?php echo $vehicle->vehicle_province ?>
-                                            @endif
+                                            <label>
+                                                @if($vehicle->vehicle_brand)
+                                                    ยี่ห้อ : <?php echo $vehicle->vehicle_brand ?>
+                                                @endif
+                                                @if($vehicle->vehicle_generation)
+                                                    รุ่น : <?php echo $vehicle->vehicle_generation ?>
+                                                @endif
+                                                @if($vehicle->vehicl_color)
+                                                    สี : <?php echo $vehicle->vehicl_color ?>
+                                                @endif
+                                                @if($vehicle->vehicle_number || $vehicle->vehicle_group || $vehicle->vehicle_province)
+                                                    เลขทะเบียน
+                                                    : <?php echo $vehicle->vehicle_number ?> <?php echo $vehicle->vehicle_group ?> <?php echo $vehicle->vehicle_province ?>
+                                                @endif
 
-                                        </label>
+                                            </label>
 
-                                    @endif
+                                        @endif
 
 
-                                </label>
+                                    </label>
+                            </td>
+
+                        </tr>
+                    @endforeach
+                </ol>
+                <ol>
+                    @foreach($person_datacase->weapon as $weapon)
+                        <tr>
+                            <td colspan="4">
+                                <li>อาวุธที่ใช้ก่อเหตุ : <label>
+
+
+                                        @if($vehicle)
+
+                                            <label>
+                                                @if($vehicle->vehicle_brand)
+                                                    <?php echo $weapon->name_weapon ?>
+                                                @endif
+
+
+                                            </label>
+
+                                        @endif
+
+
+                                    </label>
+                            </td>
+
+                        </tr>
+                    @endforeach
+                </ol>
+                <tr>
+                    @if($person_datacase->date_case)
+
+                        <td colspan="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;วันที่เกิดเหตุ :
+                            <label><?php echo $person_datacase->date_case ?></label>
                         </td>
 
-                    </tr>
-                @endforeach
-            </ol>
-            <ol>
-                @foreach($person_datacase->weapon as $weapon)
-                    <tr>
-                        <td colspan="4">
-                            <li>อาวุธที่ใช้ก่อเหตุ : <label>
+
+                    @endif
+                </tr>
 
 
-                                    @if($vehicle)
-
-                                        <label>
-                                            @if($vehicle->vehicle_brand)
-                                                <?php echo $weapon->name_weapon ?>
-                                            @endif
-
-
-                                        </label>
-
-                                    @endif
-
-
-                                </label>
-                        </td>
-
-                    </tr>
-                @endforeach
-            </ol>
-            <tr>
-                @if($person_datacase->date_case)
-
-                    <td colspan="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;วันที่เกิดเหตุ :
-                        <label><?php echo $person_datacase->date_case ?></label>
-                    </td>
-
-
-                @endif
-            </tr>
-
-
-
+                <?php endforeach; ?>
             <?php endforeach; ?>
         </ol>
 

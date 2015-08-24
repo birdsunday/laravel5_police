@@ -107,6 +107,8 @@
                             <a  ui-sref="view({id:datacases.id})" type="submit" type="button">
                                 <i class="fa fa-street-view fa-1x" popover="ดูข้อมูลคดี" popover-trigger="mouseenter"></i></a>
 
+                            <a ng-click="print_case(datacases)" class="edit"><i class="fa fa-print"
+                                                                               popover="พิมพ์ข้อมูลคดี" popover-trigger="mouseenter"></i></a>
                             <a  ng-if="!datacases.number_case"  ui-sref="input_number_case({id:datacases.id})" type="submit" type="button">
                                 <i class="fa fa-wrench fa-1x" popover="เพิ่มเลขคดี" popover-trigger="mouseenter"></i></a>
 

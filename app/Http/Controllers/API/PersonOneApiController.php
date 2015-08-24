@@ -33,38 +33,39 @@ use \Input;
 use Rhumsaa\Uuid\Uuid;
 use Symfony\Component\VarDumper\Cloner\Data;
 
-class PersonOneApiController extends Controller {
+class PersonOneApiController extends Controller
+{
 
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-        return CriminalHistory::with('datacase','nametitle','addresspresent',
-            'addressoriginal','datafather','datamother','dataspouse','dataspouse.nametitle','datachild','datachild.nametitle'
-            ,'addressoffice','datacase.vehicle','datacase.weapon')->get();
-	}
+    /**
+     * Display a listing of the resource.
+     *
+     * @return Response
+     */
+    public function index()
+    {
+        return CriminalHistory::with('datacase', 'nametitle', 'addresspresent',
+            'addressoriginal', 'datafather', 'datamother', 'dataspouse', 'dataspouse.nametitle', 'datachild', 'datachild.nametitle'
+            , 'addressoffice', 'datacase.vehicle', 'datacase.weapon')->get();
+    }
 
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		//
-	}
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return Response
+     */
+    public function create()
+    {
+        //
+    }
 
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-     //  return Input::all();
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @return Response
+     */
+    public function store()
+    {
+        //  return Input::all();
 
         $caseFile = Input::get('caseFile');
         $person = Input::get('person');
@@ -80,34 +81,33 @@ class PersonOneApiController extends Controller {
         $original_address = Input::get('person.addressoriginal.original_address');
 
 
-
-        if($present_address!=null){
+        if ($present_address != null) {
             $addresspresent = new AddressPresent();
             $addresspresent->fill(Input::get('person.addresspresent'));
             $addresspresent->save();
         }
-        if($original_address!=null){
+        if ($original_address != null) {
             $addressoriginal = new AddressOriginal();
             $addressoriginal->fill(Input::get('person.addressoriginal'));
             $addressoriginal->save();
         }
 
-        if($name_mother!=null || $surname_mother!=null){
+        if ($name_mother != null || $surname_mother != null) {
             $datamother = new DataMother();
             $datamother->fill(Input::get('person.datamother'));
             $datamother->save();
         }
 
-        if($name_father!=null || $surname_father!=null){
+        if ($name_father != null || $surname_father != null) {
             $datafather = new DataFather();
             $datafather->fill(Input::get('person.datafather'));
             $datafather->save();
         }
 
-        if($name_spouse!=null || $surname_spouse!=null){
+        if ($name_spouse != null || $surname_spouse != null) {
             $dataspouse = new DataSpouse();
             $dataspouse->fill(Input::get('person.dataspouse'));
-            if(Input::has('person.dataspouse.nametitle.id')){
+            if (Input::has('person.dataspouse.nametitle.id')) {
                 $nametitle = NameTitle::find(Input::get('person.dataspouse.nametitle.id'));
                 $dataspouse->nametitle()->associate($nametitle);
             }
@@ -116,29 +116,28 @@ class PersonOneApiController extends Controller {
         }
 
 
-
         $criminalhistory = new CriminalHistory();
         //$criminalhistory->fill(Input::except(["person.data_casefile","person.addressoffice","person.datachild"]));
         $criminalhistory->fill($person);
 
-        if($datamother!=null){
+        if ($datamother != null) {
             $criminalhistory->datamother()->associate($datamother);
         }
 
-        if($datafather!=null){
+        if ($datafather != null) {
             $criminalhistory->datafather()->associate($datafather);
         }
 
-        if($dataspouse!=null){
+        if ($dataspouse != null) {
             $criminalhistory->dataspouse()->associate($dataspouse);
         }
-        if($addressoriginal!=null){
+        if ($addressoriginal != null) {
             $criminalhistory->addressoriginal()->associate($addressoriginal);
         }
-        if($addresspresent!=null){
+        if ($addresspresent != null) {
             $criminalhistory->addresspresent()->associate($addresspresent);
         }
-        if(Input::has('person.nametitle.id')){
+        if (Input::has('person.nametitle.id')) {
             $nametitle = NameTitle::find(Input::get('person.nametitle.id'));
             $criminalhistory->nametitle()->associate($nametitle);
         }
@@ -166,7 +165,7 @@ class PersonOneApiController extends Controller {
         $circumstances_case = Input::get('caseFile.circumstances_case');
 
 
-        if ($name_case!=null || $circumstances_case!=null) {
+        if ($name_case != null || $circumstances_case != null) {
 
 
             $datacase = new DataCase();
@@ -198,20 +197,22 @@ class PersonOneApiController extends Controller {
         Event::fire(new AddDataPersonCrimeEvent($criminalhistory));
         return $criminalhistory;
 
-	}
+    }
 
 
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-        $criminalhistory = CriminalHistory::with('datacase','nametitle','addresspresent',
-            'addressoriginal','datafather','datamother','dataspouse','dataspouse.nametitle','datachild','datachild.nametitle'
-            ,'addressoffice','datacase.vehicle','datacase.weapon')->find($id);
+    /**
+     * Display the specified resource.
+     *
+     * @param  int $id
+     * @return Response
+     */
+    public function show($id)
+    {
+
+
+        $criminalhistory = CriminalHistory::with('datacase', 'nametitle', 'addresspresent',
+            'addressoriginal', 'datafather', 'datamother', 'dataspouse', 'dataspouse.nametitle', 'datachild', 'datachild.nametitle'
+            , 'addressoffice', 'datacase.vehicle', 'datacase.weapon')->find($id);
 
 
         Event::fire(new ViewDataPersonCrimeEvent($criminalhistory));
@@ -222,25 +223,25 @@ class PersonOneApiController extends Controller {
 
     }
 
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int $id
+     * @return Response
+     */
+    public function edit($id)
+    {
 
-	}
+    }
 
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  int $id
+     * @return Response
+     */
+    public function update($id)
+    {
 
 
         $id_father = Input::get('datafather.id');
@@ -256,7 +257,6 @@ class PersonOneApiController extends Controller {
         $originaladdress = Input::get('addressoriginal');
 
 
-
         $name_father = Input::get('datafather.father_name');
         $surname_father = Input::get('datafather.father_surname');
         $name_mother = Input::get('datamother.mother_name');
@@ -267,70 +267,69 @@ class PersonOneApiController extends Controller {
         $original_address = Input::get('addressoriginal.original_address');
 
 
-
-        if(!$id_present_address){
-            if($present_address!=null){
+        if (!$id_present_address) {
+            if ($present_address != null) {
                 $addresspresent = new AddressPresent();
                 $addresspresent->fill($presentaddress);
                 $addresspresent->save();
             }
-        }else{
+        } else {
             $addresspresent1 = AddressPresent::find($id_present_address);
             $addresspresent1->fill($presentaddress);
             $addresspresent1->save();
         }
 
 
-        if(!$id_original_address){
-            if($original_address!=null){
+        if (!$id_original_address) {
+            if ($original_address != null) {
                 $addressoriginal = new AddressOriginal();
                 $addressoriginal->fill($originaladdress);
                 $addressoriginal->save();
             }
-        }else{
+        } else {
             $addressoriginal1 = AddressOriginal::find($id_original_address);
             $addressoriginal1->fill($originaladdress);
             $addressoriginal1->save();
         }
 
-        if(!$id_mother){
-            if($name_mother!=null || $surname_mother!=null){
+        if (!$id_mother) {
+            if ($name_mother != null || $surname_mother != null) {
                 $datamother = new DataMother();
                 $datamother->fill($mother);
                 $datamother->save();
             }
-        }else{
+        } else {
             $datamother1 = DataMother::find($id_mother);
             $datamother1->fill($mother);
             $datamother1->save();
         }
 
-        if(!$id_father){
-            if($name_father!=null || $surname_father!=null){
+        if (!$id_father) {
+            if ($name_father != null || $surname_father != null) {
                 $datafather = new DataFather();
                 $datafather->fill($father);
                 $datafather->save();
             }
-        }else{
+        } else {
             $datafather1 = DataFather::find($id_father);
             $datafather1->fill($father);
             $datafather1->save();
         }
 
-        if(!$id_spouse){
-            if($name_spouse!=null || $surname_spouse!=null){
+        if (!$id_spouse) {
+            if ($name_spouse != null || $surname_spouse != null) {
                 $dataspouse = new DataSpouse();
                 $dataspouse->fill($spouse);
-                if(Input::has('dataspouse.nametitle.id')){
+                if (Input::has('dataspouse.nametitle.id')) {
                     $nametitle = NameTitle::find(Input::get('dataspouse.nametitle.id'));
                     $dataspouse->nametitle()->associate($nametitle);
                 }
                 $dataspouse->save();
             }
-        }else{
+        } else {
             $dataspouse1 = DataSpouse::find($id_spouse);
             $dataspouse1->fill($spouse);
-            if(Input::has('dataspouse.nametitle.id')){
+            if (Input::has('dataspouse.nametitle.id')) {
                 $nametitle = NameTitle::find(Input::get('dataspouse.nametitle.id'));
                 $dataspouse1->nametitle()->associate($nametitle);
             }
@@ -339,58 +338,53 @@ class PersonOneApiController extends Controller {
 
 
         $criminalhistory = CriminalHistory::find($id);
-        $criminalhistory->fill(Input::except(["datacase", "addressoffice","addressoriginal","addresspresent"
-                                        ,"datachild","datafather","datamother","dataspouse"]));
+        $criminalhistory->fill(Input::except(["datacase", "addressoffice", "addressoriginal", "addresspresent"
+            , "datachild", "datafather", "datamother", "dataspouse"]));
 
-        if(Input::has('nametitle.id')){
+        if (Input::has('nametitle.id')) {
             $nametitle = NameTitle::find(Input::get('nametitle.id'));
             $criminalhistory->nametitle()->associate($nametitle);
         }
-        if($datamother!=null){
+        if ($datamother != null) {
             $criminalhistory->datamother()->associate($datamother);
         }
 
-        if($datafather!=null){
+        if ($datafather != null) {
             $criminalhistory->datafather()->associate($datafather);
         }
 
-        if($dataspouse!=null){
+        if ($dataspouse != null) {
             $criminalhistory->dataspouse()->associate($dataspouse);
         }
-        if($addressoriginal!=null){
+        if ($addressoriginal != null) {
             $criminalhistory->addressoriginal()->associate($addressoriginal);
         }
-        if($addresspresent!=null){
+        if ($addresspresent != null) {
             $criminalhistory->addresspresent()->associate($addresspresent);
         }
         $criminalhistory->save();
-
 
 
         Event::fire(new EditDataPersonCrimeEvent($criminalhistory));
         return $criminalhistory;
 
 
-
-
-
     }
 
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int $id
+     * @return Response
+     */
+    public function destroy($id)
+    {
 
 
         $criminalhistory = CriminalHistory::find($id);
 
 
         Event::fire(new DeleteDataPersonCrimeEvent($criminalhistory));
-
 
 
         $dataspouse = $criminalhistory->dataspouse;
@@ -413,31 +407,31 @@ class PersonOneApiController extends Controller {
             DataChild::find($datachildId)->delete();
         }
 
-        if($criminalhistory){
+        if ($criminalhistory) {
 
             CriminalHistory::find($id)->delete();
         }
 
 
-        if($dataspouse){
+        if ($dataspouse) {
             $spouseId = $dataspouse->id;
             DataSpouse::find($spouseId)->delete();
         }
 
-        if($datamother){
+        if ($datamother) {
             $motherId = $datamother->id;
             DataMother::find($motherId)->delete();
         }
 
-        if($datafather){
+        if ($datafather) {
             $fatherId = $datafather->id;
             DataFather::find($fatherId)->delete();
         }
-        if($datapresentaddress){
+        if ($datapresentaddress) {
             $presentId = $datapresentaddress->id;
             AddressPresent::find($presentId)->delete();
         }
-        if($dataoriginaladdress){
+        if ($dataoriginaladdress) {
             $original = $dataoriginaladdress->id;
             AddressOriginal::find($original)->delete();
         }
@@ -446,23 +440,22 @@ class PersonOneApiController extends Controller {
         return $criminalhistory;
 
 
-	}
-
+    }
 
 
     public function savePhotoPerson($id)
     {
-       // return $id;
+        // return $id;
         $photo = CriminalHistory::find($id);
 
         $uuid = Uuid::uuid4();
-        $public_path= "photo/person_crime/$id/";
+        $public_path = "photo/person_crime/$id/";
         $destination_path = public_path($public_path);
 
         //$jpg = ".jpg";
         $ext = Input::file('file')->getClientOriginalExtension();
 
-        Input::file('file')->move($destination_path,"$uuid.$ext");
+        Input::file('file')->move($destination_path, "$uuid.$ext");
 
 
         $photo->photo = "/photo/person_crime/$id/$uuid.$ext";
@@ -499,17 +492,18 @@ class PersonOneApiController extends Controller {
 
 
     }
+
     public function searchIdCardPersonCrime()
     {
 
         $idcard_keyword = Input::get('idcard');
 
 
-        $person_crime = CriminalHistory::with('datacase','nametitle','addresspresent',
-            'addressoriginal','datafather','datamother','dataspouse','datachild','addressoffice',
-            'datacase.vehicle','datacase.weapon')
-            ->where(function($q) use ($idcard_keyword){
-                return $q->where('idcard','=',"$idcard_keyword");
+        $person_crime = CriminalHistory::with('datacase', 'nametitle', 'addresspresent',
+            'addressoriginal', 'datafather', 'datamother', 'dataspouse', 'datachild', 'addressoffice',
+            'datacase.vehicle', 'datacase.weapon')
+            ->where(function ($q) use ($idcard_keyword) {
+                return $q->where('idcard', '=', "$idcard_keyword");
             })
             ->get();
 
@@ -522,18 +516,19 @@ class PersonOneApiController extends Controller {
 
 
     }
+
     public function searchIdCardPersonGeneral()
     {
 
         $idcard_keyword = Input::get('idcard');
 
-        $person_general =  GuestHistory::with('datachild','datachild.nametitle','employee','employee.nametitle',
-            'personfamily','personfamily.nametitle','addresspresent','vehicle','addressoriginal',
-            'datafather','datamother','dataspouse','dataspouse.nametitle'
-            ,'nametitle','addressoffice')
-            ->where(function($q) use ($idcard_keyword){
-            return $q->where('idcard','=',"$idcard_keyword");
-        })
+        $person_general = GuestHistory::with('datachild', 'datachild.nametitle', 'employee', 'employee.nametitle',
+            'personfamily', 'personfamily.nametitle', 'addresspresent', 'vehicle', 'addressoriginal',
+            'datafather', 'datamother', 'dataspouse', 'dataspouse.nametitle'
+            , 'nametitle', 'addressoffice')
+            ->where(function ($q) use ($idcard_keyword) {
+                return $q->where('idcard', '=', "$idcard_keyword");
+            })
             ->get();
 
 
@@ -557,10 +552,9 @@ class PersonOneApiController extends Controller {
         $date_keyword = Input::get('date');
 
         $person = CriminalHistory::with('datacase')
-
-            ->where(function($q) use ($idcard_keyword,$typepeople_keyword,$name_keyword,$surname_keyword){
-                return $q->where('idcard','LIKE',"%$idcard_keyword%")->where('name','LIKE',"%$name_keyword%")
-                    ->where('typepeople','LIKE',"%$typepeople_keyword%")->where('surname','LIKE',"%$surname_keyword%");
+            ->where(function ($q) use ($idcard_keyword, $typepeople_keyword, $name_keyword, $surname_keyword) {
+                return $q->where('idcard', 'LIKE', "%$idcard_keyword%")->where('name', 'LIKE', "%$name_keyword%")
+                    ->where('typepeople', 'LIKE', "%$typepeople_keyword%")->where('surname', 'LIKE', "%$surname_keyword%");
 
             })
             ->get();
@@ -576,17 +570,17 @@ class PersonOneApiController extends Controller {
         //return $id;
         $criminalhistory = CriminalHistory::with('nametitle')->find($id);
         Event::fire(new PrintPhotoDataPersonCrimeEvent($criminalhistory));
-     //   return $criminalhistory;
+        //   return $criminalhistory;
 
 //$pdf = \App::make('mpdf.wrapper',['ภาษา','ขนาดการดาษ-L=แนวนอน ไม่- แนวตั้ง','','',ขอบซ้ายกระดาษ,ขอบขวากระดาษ,ขอบขนกระดาษ,ขอบล่างกระดาษ,ระยะ title,ระยะ footter]);
-        $pdf = \App::make('mpdf.wrapper',['th','A4','','',20,15,20,25,10,10,]);
+        $pdf = \App::make('mpdf.wrapper', ['th', 'A4', '', '', 20, 15, 20, 25, 10, 10,]);
 
         $pdf->SetWatermarkText("TEST");
 
         $pdf->SetDisplayMode('fullpage');
 
-        $html = view('PDF.photo_person')->with('criminalhistory',$criminalhistory)->render();
-       // return $html;
+        $html = view('PDF.photo_person')->with('criminalhistory', $criminalhistory)->render();
+        // return $html;
 
         $pdf->WriteHTML($html);
 
@@ -594,19 +588,33 @@ class PersonOneApiController extends Controller {
 
 
     }
+
     public function generatedPdfPerson($id)
     {
 
-        $criminalhistory = CriminalHistory::with('datacase','nametitle','addresspresent',
-            'addressoriginal','datafather','datamother','dataspouse','datachild'
-            ,'addressoffice','datacase.vehicle','datacase.weapon')->find($id);
+      $criminalhistory = CriminalHistory::find($id);
+
+        $idcard = $criminalhistory->idcard;
+
+
+        $datacasesPerson = CriminalHistory::with('datacase', 'nametitle', 'addresspresent',
+            'addressoriginal', 'datafather', 'datamother', 'dataspouse', 'datachild'
+            , 'addressoffice', 'datacase.vehicle', 'datacase.weapon')
+            ->where(function ($q) use ($idcard) {
+            return $q->where('idcard', '=', "$idcard");
+        })
+            ->get();
+
+        $criminalhistory = CriminalHistory::with('datacase', 'nametitle', 'addresspresent',
+            'addressoriginal', 'datafather', 'datamother', 'dataspouse', 'datachild'
+            , 'addressoffice', 'datacase.vehicle', 'datacase.weapon')->find($id);
 
         Event::fire(new PrintPdfDataPersonCrimeEvent($criminalhistory));
         //return $dataperson;
-//$pdf = \App::make('mpdf.wrapper',['ภาษา','ขนาดการดาษ-L=แนวนอน ไม่- แนวตั้ง','','',ขอบซ้ายกระดาษ,ขอบขวากระดาษ,ขอบขนกระดาษ,ขอบล่างกระดาษ,ระยะ title,ระยะ footter]);
+        //$pdf = \App::make('mpdf.wrapper',['ภาษา','ขนาดการดาษ-L=แนวนอน ไม่- แนวตั้ง','','',ขอบซ้ายกระดาษ,ขอบขวากระดาษ,ขอบขนกระดาษ,ขอบล่างกระดาษ,ระยะ title,ระยะ footter]);
 
         //return $datacase;
-        $pdf = \App::make('mpdf.wrapper',['th','A4','','',20,15,20,25,10,10,]);
+        $pdf = \App::make('mpdf.wrapper', ['th', 'A4', '', '', 20, 15, 20, 25, 10, 10,]);
 
         //$pdf->SetHeader('|{PAGENO}/{nbpg}|สำนักงานตำรวจตรวจคนเข้าเมือง จังหวัด เชียงราย');
 
@@ -614,9 +622,9 @@ class PersonOneApiController extends Controller {
 
         $pdf->SetHeader('
         <table width="100%" style="vertical-align: bottom; font-family: TH SarabunPSK; font-size: 14pt; color: #000000; font-weight: bold; font-style: italic;"><tr>
-        <td width="20%"><img src="img/police.jpg" width="20" height="20"></td>
+        <td width="20%"></td>
         <td width="30%" style="text-align: right; ">{PAGENO}</td>
-        <td width="55%" style="text-align: right; "> สำนักงานตำรวจตรวจคนเข้าเมือง จังหวัด เชียงราย</td>
+        <td width="55%" style="text-align: right; "> ตำรวจตรวจคนเข้าเมือง จังหวัด เชียงราย</td>
         </tr></table>
         ');
         $pdf->SetFooter('
@@ -633,9 +641,9 @@ class PersonOneApiController extends Controller {
         $pdf->SetDisplayMode('fullpage');
 
 
-            $html = view('PDF.personOne')->with('dataperson',$criminalhistory)->render();
-            //return $html;
-            $pdf->WriteHTML($html);
+        $html = view('PDF.personOne')->with('dataperson', $criminalhistory)->with('datacases',$datacasesPerson)->render();
+        return $html;
+        $pdf->WriteHTML($html);
 
         $pdf->stream();
 
