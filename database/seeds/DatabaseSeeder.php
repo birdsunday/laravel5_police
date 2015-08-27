@@ -258,25 +258,29 @@ class DatabaseSeeder extends Seeder {
         $policeimmigration->position()->associate($position);
         $policeimmigration->save();
 
+
+        ///ประทวน
         $policeimmigration1 = new \App\Models\Policeimmigration();
-        $policeimmigration1->name_police = ('NemeMember');
-        $policeimmigration1->surname_police = ('SurnameMember');
+        $policeimmigration1->name_police = ('ประทวน');
+        $policeimmigration1->surname_police = ('ประทวน');
         $policeimmigration1->tel_police = ('08x-xxxxxxx');
         $policeimmigration1->username = ('member1');
         $policeimmigration1->password = Hash::make('member1');
-        $policeimmigration1->rank()->associate($rank1);
-        $policeimmigration1->role()->associate($role1);
+        $policeimmigration1->rank()->associate($rank2);
+        $policeimmigration1->role()->associate($role2);
         $policeimmigration1->position()->associate($position);
         $policeimmigration1->save();
 
+
+        //สัญบัตร
         $policeimmigration1 = new \App\Models\Policeimmigration();
-        $policeimmigration1->name_police = ('NemeMember');
-        $policeimmigration1->surname_police = ('SurnameMember');
+        $policeimmigration1->name_police = ('สัญญาบัตร');
+        $policeimmigration1->surname_police = ('สัญญาบัตร');
         $policeimmigration1->tel_police = ('08x-xxxxxxx');
         $policeimmigration1->username = ('member2');
         $policeimmigration1->password = Hash::make('member2');
-        $policeimmigration1->rank()->associate($rank1);
-        $policeimmigration1->role()->associate($role2);
+        $policeimmigration1->rank()->associate($rank9);
+        $policeimmigration1->role()->associate($role1);
         $policeimmigration1->position()->associate($position);
         $policeimmigration1->save();
 
@@ -405,7 +409,7 @@ class DatabaseSeeder extends Seeder {
         $criminalhistory->idcard = ('1-5603-00222-2-22');
         $criminalhistory->birth =('25-5-2555');
         $criminalhistory->age = ('21 ปี 0 เดือน');
-        $criminalhistory->date = ('25-5-2555 18:00');
+        $criminalhistory->date = ('วัน อังคาร ที่ 22 เดือน สิงหาคม พ.ศ. 2558 เวลาประมาณ 23:43 นาฟิกา');
         $criminalhistory->education = ('ประถมศึษา');
         $criminalhistory->career=('โปรแกรมเมอร์');
         $criminalhistory->height = ('177');

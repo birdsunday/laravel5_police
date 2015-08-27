@@ -31,30 +31,7 @@
                 <span class="hidden-xs">จัดการข้อมูลสมาชิก</span>
             </a>
         </li>
-        <li>
-            <a href="/police/person_crime" class="<% Request::is('police/person_crime') ? 'active' : '' %>">
-                <i class="fa fa-user-secret"></i>
-                <span class="hidden-xs" style="font-size: 12px;">บุคคลที่เกี่ยวข้องกับอาชญากรรม</span>
-            </a>
-        </li>
-        <li>
-            <a href="/police/person_general" class="<% Request::is('police/person_general') ? 'active' : '' %>">
-                <i class="fa  fa-user"></i>
-                <span class="hidden-xs">บุคคลทั่วไป</span>
-            </a>
-        </li>
-        <li>
-            <a href="/police/case" class="<% Request::is('police/case') ? 'active' : '' %>">
-                <i class="fa  fa-laptop"></i>
-                <span class="hidden-xs">บันทึกคดี</span>
-            </a>
-        </li>
-        <li>
-            <a href="/police/statistics" class="<% Request::is('police/statistics') ? 'active' : '' %>">
-                <i class="fa fa-bar-chart-o"></i>
-                <span class="hidden-xs">สถิติ</span>
-            </a>
-        </li>
+
 
         <li>
             <a href="/police/mylog" class="<% Request::is('police/mylog') ? 'active' : '' %>">

@@ -66,13 +66,22 @@ Route::get('/', function () {
 Route::group(['middleware'=>'admin'],function(){
 
     Route::get('/police/user', 'Admin\PoliceController@index');
+    Route::get('/police/mylog', 'Admin\MyLogController@index');
+    Route::get('/police/getmylog', 'Admin\MyLogController@getMyLog');
+
+
+});
+
+
+Route::group(['middleware'=>'member'],function(){
+
+
     Route::get('/police/case', 'Admin\CaseController@index');
     Route::get('/police/person', 'Admin\PresonController@index');
     Route::get('/police/person_crime', 'Admin\PersonOneController@index');
     Route::get('/police/person_general', 'Admin\GuestHistoryController@index');
     Route::get('/police/statistics', 'Admin\StatisticsController@index');
-    Route::get('/police/mylog', 'Admin\MyLogController@index');
-    Route::get('/police/getmylog', 'Admin\MyLogController@getMyLog');
+
 
 
 });

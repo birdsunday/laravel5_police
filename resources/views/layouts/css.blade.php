@@ -5,3 +5,4 @@
 <link href="/assets/plugins/fancybox/jquery.fancybox.css" rel="stylesheet">
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <link href="/assets/datetime/jquery.datetimepicker.css" rel="stylesheet">
+<link href="/assets/datetime/bootstrap-datetimepicker.css" rel="stylesheet">

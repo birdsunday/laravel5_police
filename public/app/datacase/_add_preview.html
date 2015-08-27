@@ -59,10 +59,10 @@
 
         </div>
         <div class="col-sm-8 text-right padding-top-20">
-            <button type="button" ui-sref="add_person({id:caseFile.id})" class="btn btn-default"><i
+            <button type="button" ui-sref="add_person({id:caseFile.id})" class="btn btn-warning"><i
                     class="fa fa-arrow-left"></i> แก้ไขข้อมูลก่อนหน้า
             </button>
-            <button type="button" ng-click="confirm_case()" class="btn btn-primary" ng-if="caseFile.name_case"><i
+            <button type="button" ng-click="confirm_case()" class="btn btn-success" ng-if="caseFile.name_case"><i
                     class="fa fa-floppy-o"></i> ยืนยันและบันทึกข้อมูล
             </button>
             <button disabled="disabled" type="button" ng-click="confirm_case()" class="btn btn-primary"
@@ -70,8 +70,7 @@
             </button>
             <button type="button" ng-click="cancel_case()" class="btn btn-danger"><i class="fa fa-trash"></i> ลบ
             </button>
-            <button type="button" ui-sref="home" class="btn btn-warning"><i class="fa fa-home"></i> หน้าหลัก</button>
-        </div>
+             </div>
         <!-- /.col-lg-12 -->
     </div>
 

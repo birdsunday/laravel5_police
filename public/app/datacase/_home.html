@@ -42,7 +42,7 @@
                         <th class="text-center">
                             </th>
                         <th class="text-center">
-                            <input ng-model="search.created_at" type="text" class="form-control" ng-model="keyword.name" />
+                            <input ng-model="search.date_case"  id="id_datetime_picker1"  type="text" class="form-control" ng-model="keyword.name" />
                         </th>
                         <th class="text-center">
 
@@ -57,7 +57,7 @@
                         <th  class="text-center"  style="width: 6%">ปี</th>
                         <th  class="text-center"  style="width: 8%">สถานีตำรวจ</th>
                         <th  class="text-center" style="width: 15%">บุคคล</th>
-                        <th  class="text-center" style="width: 15%">วันที่บันทึกคดี</th>
+                        <th  class="text-center" style="width: 15%">วันที่เกิดเหตุ</th>
                         <th  class="text-center" style="width: 15%">สถานะ</th>
                         <th  class="text-center" style="width: 10%">#</th>
                     </tr>
@@ -86,7 +86,7 @@
                                 </tbody>
                             </table>
                         </td>
-                        <td ng-bind="datacases.created_at"></td>
+                        <td ng-bind="datacases.date_case"></td>
 
 
                         <td class="text-center">
@@ -117,7 +117,7 @@
                                 <i class="fa fa-wrench fa-1x" popover="แก้ไขคดี" popover-trigger="mouseenter"></i></a>
 
 
-                            <a ng-if="current_role == 'admin'" ng-click="delete_case(datacases)" type="submit" type="button">
+                            <a ng-if="current_role == 'Member_Commissioned_Officers'" ng-click="delete_case(datacases)" type="submit" type="button">
                                 <i class="fa fa-remove fa-1x" popover="ลบคดี" popover-trigger="mouseenter"></i></a>
 
                         </td>
@@ -137,6 +137,22 @@
 
 
 
+<script type="text/javascript">
+    $(function () {
 
+
+        $("#id_datetime_picker1").datetimepicker({
+            timepicker:true,
+            format:'วัน l ที่ d เดือน F พ.ศ. Y ',
+            lang:'th',  // แสดงภาษาไทย
+            yearOffset:543,  // ใช้ปี พ.ศ. บวก 543 เพิ่มเข้าไปในปี ค.ศ
+            closeOnDateSelect:true
+        });
+
+
+
+
+    });
+</script>
 
 

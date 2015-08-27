@@ -51,7 +51,7 @@
                                 <input ng-model="search.surname" type="text" class="form-control" />
                             </th>
                             <th class="text-center">
-                                <input ng-model="search.date" type="text" class="form-control"/>
+                                <input ng-model="search.date" id="mydateth" type="text" class="form-control"/>
                             </th>
                             <th class="text-center">
                             </th>
@@ -67,7 +67,7 @@
                             <th class="text-center" style="width: 15%">คำนำหน้า</th>
                             <th class="text-center">ชื่อ</th>
                             <th class="text-center">นามสกุล</th>
-                            <th class="text-center">วันที่จับ</th>
+                            <th class="text-center" style="width: 15%">วันที่จับกุม</th>
                             <th class="text-center">สถานะ</th>
                             <th class="text-center" style="width: 11%"></th>
                         </tr>
@@ -101,7 +101,7 @@
                                                                                    popover="พิมพ์รูปบุคคล" popover-trigger="mouseenter"></i></a>
                                 <a ng-if="current_role == 'admin' || current_role == 'Member_Commissioned_Officers' " ui-sref="edit({id:person.id})" class="edit"><i class="fa fa-edit"
                                                                                                                   popover="แก้ไขประวัติ" popover-trigger="mouseenter"></i></a>
-                                <a ng-if="current_role == 'admin'" ng-click="delete_person(person)" class="del"><i class="fa fa-times"
+                                <a ng-if="current_role == 'Member_Commissioned_Officers'" ng-click="delete_person(person)" class="del"><i class="fa fa-times"
                                                                                                                    popover="ลบประวัติบุคคล" popover-trigger="mouseenter"></i></a>
 
                             </td>
@@ -114,12 +114,31 @@
 
                         </tbody>
                     </table>
+
+
+                    <script type="text/javascript">
+                        $(function(){
+
+
+                            $("#mydateth").datetimepicker({
+                                timepicker:false,  // กำหนด ไม่แสดงตัวเลือกเวลา
+                                format:'วัน l ที่ d เดือน F พ.ศ. Y',  // กำหนดรูปแบบวันที่ ที่ใช้ เป็น 00-00-0000
+                                lang:'th',  // แสดงภาษาไทย
+                                yearStart:1914,  // ช่วงเลือกปีเริ่มต้น ใช้ ค.ศ.
+                                yearOffset:543,  // ใช้ปี พ.ศ. บวก 543 เพิ่มเข้าไปในปี ค.ศ
+
+                                closeOnDateSelect:true // ปิด ถ้าเลือกวันที่แล้ว
+                            });
+
+
+
+                        });
+                    </script>
+
+
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-
-
 

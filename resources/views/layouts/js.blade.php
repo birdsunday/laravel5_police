@@ -22,4 +22,3 @@
 <script src="/assets/js/devoops.js"></script>
 <script src="/assets/js/moment.js"></script>
 <script src="/assets/datetime/jquery.datetimepicker.js"></script>
-

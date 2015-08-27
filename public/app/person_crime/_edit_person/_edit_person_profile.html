@@ -71,16 +71,22 @@
                         <div class="col-sm-3">
                             <input type="text" ng-model="person.career" class="form-control" >
                         </div>
-                        <label class="col-sm-1 control-label" style="width: auto">วันที่จับกุม</label>
 
-                        <div class="col-sm-3">
-                            <input ng-model="person.date" type="text" class="form-control" disabled>
-                        </div>
                         <label class="col-sm-1 control-label" style="width: auto">การศึกษา</label>
 
                         <div class="col-sm-3">
                             <input type="text" ng-model="person.education" class="form-control" >
                         </div>
+
+                    </div>
+                    <div class="form-group">
+
+                        <label class="col-sm-1 control-label" style="width: auto">วันที่จับกุม</label>
+
+                        <div class="col-sm-6">
+                            <label ng-bind="person.date"  class="control-label" disabled></label>
+                        </div>
+
 
                     </div>
 

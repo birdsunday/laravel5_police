@@ -60,12 +60,12 @@
 
         </div>
         <div class="col-sm-4 text-right padding-top-20">
-            <button type="button" ng-click="edit_case()" class="btn btn-primary"><i class="fa fa-floppy-o"></i>
+            <button type="button" ng-click="edit_case()" class="btn btn-primary"><i class="fa fa-arrow-right"></i>
                 ขั้นตอนต่อไป
             </button>
             <button type="button" ng-click="cancel_case()" class="btn btn-danger"><i class="fa fa-trash"></i> ลบ
             </button>
-            <button type="button" ui-sref="home" class="btn btn-warning"><i class="fa fa-home"></i> หน้าหลัก</button>
+
             <!-- /.col-lg-12 -->
         </div>
 
@@ -97,7 +97,7 @@
                     <div class="no-move"></div>
 
                 </div>
-                <div class="box-content" id="scroll_add">
+                <div class="box-content">
 
                     <form class="form-horizontal" role="form">
 
@@ -138,19 +138,13 @@
                         </div>
 
 
+
                         <div class="form-group">
                             <label class="col-sm-3 control-label" style="font-size: 14px">วันที่เกิดเหตุ:</label>
 
                             <div class="col-md-7">
-                                <p class="input-group">
-                                    <input type="text" class="form-control" datepicker-popup="<% format %>"
-                                           ng-model="caseFile.date_case" is-open="opened_start"
-                                           ng-required="true"/>
-                        <span class="input-group-btn">
-                        <button type="button" class="btn btn-default"
-                                ng-click="open_start($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-                        </span>
-                                </p>
+                                <input ng-model="caseFile.date_case" type="text" class="form-control css_datetime_picker" name="date_product[]" value="" id="id_datetime_picker5" >
+
                             </div>
                         </div>
 
@@ -254,7 +248,7 @@
                                    style="font-size: 14px">อาวุธที่ใช้กระทำความผิด:</label>
 
                             <div class="col-sm-4">
-                                <input ng-model="Weapon.name_weapon" type="text" class="form-control" id="amount"
+                                <input ng-model="Weapon.name_weapon" type="text" class="form-control"
                                        name="amount">
                             </div>
                             <div class="col-sm-1">
@@ -278,19 +272,19 @@
                             <label class="col-sm-3 control-label" style="font-size: 14px">พาหนะที่ใช้ ยี่ห้อ :</label>
 
                             <div class="col-sm-2">
-                                <input ng-model="Vehicle.vehicle_brand" type="text" class="form-control" id="amount"
+                                <input ng-model="Vehicle.vehicle_brand" type="text" class="form-control"
                                        name="amount">
                             </div>
                             <label class="col-sm-1 control-label" style="font-size: 14px;width: auto">รุ่น :</label>
 
                             <div class="col-sm-2">
                                 <input ng-model="Vehicle.vehicle_generation" type="text" class="form-control"
-                                       id="amount" name="amount">
+                                        name="amount">
                             </div>
                             <label class="col-sm-1 control-label" style="font-size: 14px;width: auto">สี :</label>
 
                             <div class="col-sm-2">
-                                <input ng-model="Vehicle.vehicl_color" type="text" class="form-control" id="amount"
+                                <input ng-model="Vehicle.vehicl_color" type="text" class="form-control"
                                        name="amount">
                             </div>
                         </div>
@@ -299,21 +293,21 @@
                             <label class="col-sm-3 control-label" style="font-size: 14px">หมายเลขทะเบียน หมวด:</label>
 
                             <div class="col-sm-2">
-                                <input ng-model="Vehicle.vehicle_group" type="text" class="form-control" id="amount"
+                                <input ng-model="Vehicle.vehicle_group" type="text" class="form-control"
                                        name="amount">
                             </div>
 
                             <label class="col-sm-1 control-label" style="font-size: 14px;width:auto">เลข:</label>
 
                             <div class="col-sm-2">
-                                <input ng-model="Vehicle.vehicle_number" type="text" class="form-control" id="amount"
+                                <input ng-model="Vehicle.vehicle_number" type="text" class="form-control"
                                        name="amount">
                             </div>
 
                             <label class="col-sm-1 control-label" style="font-size: 14px;width:auto">จังหวัด:</label>
 
                             <div class="col-sm-2">
-                                <input ng-model="Vehicle.vehicle_province" type="text" class="form-control" id="amount"
+                                <input ng-model="Vehicle.vehicle_province" type="text" class="form-control"
                                        name="amount">
                             </div>
                         </div>
@@ -353,8 +347,26 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+        $(function () {
 
+
+            $("#id_datetime_picker5").datetimepicker({
+                format:'วัน l ที่ d เดือน F พ.ศ. Y เวลาประมาณ H:i นาฟิกา',
+                lang:'th',  // แสดงภาษาไทย
+                yearOffset:543,  // ใช้ปี พ.ศ. บวก 543 เพิ่มเข้าไปในปี ค.ศ
+                closeOnDateSelect:true
+            });
+
+
+
+
+        });
+    </script>
 </div>
+
+
+
 <div class="row" ng-if="caseFile.status == 'complete'">
     <div class="col-xs-12 text-center page-404">
         <h2>คดีนี้มีการยืนยันเสร็จสมบูรณ์แล้ว!!</h2>

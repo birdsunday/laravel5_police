@@ -126,15 +126,8 @@
                             <label class="col-sm-3 control-label" style="font-size: 14px">วันที่เกิดเหตุ:</label>
 
                             <div class="col-md-7">
-                                <p class="input-group">
-                                    <input type="text" class="form-control" datepicker-popup="<% format %>"
-                                           ng-model="caseFile.date_case" is-open="opened_start"
-                                           ng-required="true"/>
-                        <span class="input-group-btn">
-                        <button type="button" class="btn btn-default"
-                                ng-click="open_start($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-                        </span>
-                                </p>
+                                <input ng-model="caseFile.date_case" type="text" class="form-control css_datetime_picker" name="date_product[]" value="" id="id_datetime_picker1" >
+
                             </div>
                         </div>
 
@@ -296,9 +289,6 @@
 
                         </div>
 
-
-
-
                     </form>
 
                 </div>
@@ -307,3 +297,19 @@
 </div>
 
 
+<script type="text/javascript">
+    $(function () {
+
+
+        $("#id_datetime_picker1").datetimepicker({
+            format:'วัน l ที่ d เดือน F พ.ศ. Y เวลาประมาณ H:i นาฟิกา',
+            lang:'th',  // แสดงภาษาไทย
+            yearOffset:543,  // ใช้ปี พ.ศ. บวก 543 เพิ่มเข้าไปในปี ค.ศ
+            closeOnDateSelect:true
+        });
+
+
+
+
+    });
+</script>

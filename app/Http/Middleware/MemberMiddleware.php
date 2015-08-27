@@ -9,7 +9,7 @@ use App\AssignedRoles;
 use Illuminate\Support\Facades\Auth;
 
 
-class AdminMiddleware {
+class MemberMiddleware {
 
     protected $auth;
     protected $response;
@@ -31,12 +31,13 @@ class AdminMiddleware {
     public function handle($request, Closure $next){
         if ($this->auth->check()){
            // return Auth::user()->role->key;
-            if(Auth::user()->role->key == 'admin'){
+            if( Auth::user()->role->key == 'Member_Commissioned_Officers'
+            || Auth::user()->role->key == 'Member_Non-Commissioned_Officer'){
                 return $next($request);
             }
-            return redirect()->guest('auth/login')->with('message',"ไม่มีสิทธในการใช้งานส่วนนี้ กรุณาเข้าสู่ระบบใหม่!!!");
+            return redirect()->guest('auth/login');
         }
-        return redirect()->guest('auth/login')->with('message',"กรุณาเข้าสู่ระบบ!!!");
+        return redirect()->guest('auth/login')->with('message',"กรุณาเข้าสู่ระบบ");
 
     }
 }
