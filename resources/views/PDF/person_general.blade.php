@@ -445,13 +445,13 @@
         </tr>
 
 
-        {{--<tr>--}}
-            {{--@if($dataperson->created_at)--}}
-                {{--<td colspan="4">วันเวลาที่บันทึก (YYYY-MM-DD) : <label><?php echo $dataperson->created_at ?></label></td>--}}
-            {{--@else--}}
-                {{--<td colspan="4">วันเวลาที่บันทึก (YYYY-MM-DD) : <label> - </label></td>--}}
-            {{--@endif--}}
-        {{--</tr>--}}
+        <tr>
+            @if($dataperson->created_at)
+                <td colspan="4">วันเวลาที่บันทึก : <label><?php echo $dataperson->date ?></label></td>
+            @else
+                <td colspan="4">วันเวลาที่บันทึก : <label> - </label></td>
+            @endif
+        </tr>
 
         <tr>
             <td colspan="2"></td>

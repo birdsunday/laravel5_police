@@ -42,7 +42,7 @@ class StatisticsApiController extends Controller {
 
 
         $person_general = GuestHistory::with('nametitle')
-        ->whereBetween('created_at', [$start_date, $end_date])
+        ->whereBetween('date', [$start_date, $end_date])
             ->get();
 
 
@@ -50,54 +50,7 @@ class StatisticsApiController extends Controller {
         $data = [$person,$person_general,$datacase];
 
 
-        $start_date = Input::get('start_date');
-        $end_date = Input::get('end_date');
 
-        // return $start_date;
-        $datacase = DataCase::with('criminalhistory','criminalhistory.nametitle')
-            ->whereBetween('date_case', [$start_date, $end_date])
-            ->get();
-
-        $person = CriminalHistory::with('datacase','nametitle')
-            ->whereBetween('date', [$start_date, $end_date])
-            ->get();
-
-
-
-
-        $person_general = GuestHistory::with('nametitle')
-            ->whereBetween('created_at', [$start_date, $end_date])
-            ->get();
-
-
-        $data = [$person,$person_general,$datacase];
-
-        $pdf = \App::make('mpdf.wrapper',['th','A4','','',20,15,20,25,10,10,]);
-
-        $pdf->SetHeader('
-        <table width="100%" style="vertical-align: bottom; font-family: TH SarabunPSK; font-size: 14pt; color: #000000; font-weight: bold; font-style: italic;"><tr>
-        <td width="20%"><img src="img/police.jpg" width="20" height="20"></td>
-        <td width="30%" style="text-align: right; ">{PAGENO}</td>
-        <td width="55%" style="text-align: right; "> สำนักงานตำรวจตรวจคนเข้าเมือง จังหวัด เชียงราย</td>
-        </tr></table>
-        ');
-        $pdf->SetFooter('
-        <table width="100%" style="vertical-align: bottom; font-family: garuda; font-size: 8pt; color: #000000; font-weight: bold; font-style: italic;"><tr>
-        <td width="33%"></td>
-        <td width="33%"></td>
-        <td width="55%" style="text-align: right; ">พิมพ์เมื่อ {DATE D} ที่ {DATE j-m-Y} เวลา {DATE H:i:s}  </td>
-        </tr></table>
-        ');
-
-
-        $pdf->SetWatermarkText("");
-
-        $pdf->SetDisplayMode('fullpage');
-
-
-        $html = view('PDF.statistic')->with('data',$data)->render();
-//        return $html;
-            $pdf->WriteHTML($html);
 
 
 
