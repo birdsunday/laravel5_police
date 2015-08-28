@@ -60,6 +60,7 @@ app.controller("HomeController", function ($scope,$window, $http,$stateParams ) 
     };
 
     $scope.viewCase = function(data_case) {
+        console.log(data_case);
         $window.open('/police/case#/view/'+ data_case.id , '_blank');
     };
     $scope.search_statistics = function(){

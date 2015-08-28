@@ -53,7 +53,10 @@
         <td colspan="4"> <label>ที่อยู่ : <?php echo $guesthistory->addresspresent->present_address ?> </label></td>
 
     </tr>
+    <tr>
+        <td colspan="4"> <label>วันที่บันทึก : <?php echo $guesthistory->date ?> </label></td>
 
+    </tr>
 
 </table>
 
