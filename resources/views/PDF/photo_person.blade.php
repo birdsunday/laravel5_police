@@ -24,7 +24,7 @@
         <td colspan="4" align="center" style="font-family : sans-serif, Arial;">
 
             <?php if($criminalhistory->photo != null) :  ?>
-                <img src="<?php echo $criminalhistory->photo;?>" width="524" height="550">
+                <img src="<?php echo $criminalhistory->photo;?>" width="514" height="514">
             <?php else : ?>
                 <img src="/img/square-image.png" width="514" height="514">
             <?php endif ?>
@@ -58,11 +58,21 @@
 
             <td colspan="2"> <label>คดี/ข้อหา : <?php echo $datacase->name_case ?> </label></td>
 
-            @if($datacase->data_case)
-            <td colspan="2"> <label>วันเดือนปี เกิดเหตุ : <?php echo $datacase->data_case ?> </label></td>
-            @else
-                <td colspan="2"> <label>วันเดือนปี เกิดเหตุ : - </label></td>
-            @endif
+
+        <?php endforeach; ?>
+
+    </tr>
+    <tr>
+
+        <?php foreach($criminalhistory->datacase as $datacase) : ?>
+
+
+
+        @if($datacase->data_case)
+            <td colspan="2"> <label>วันที่เกิดเหตุ : <?php echo $datacase->data_case ?> </label></td>
+        @else
+            <td colspan="2"> <label>วันที่เกิดเหตุ : - </label></td>
+        @endif
         <?php endforeach; ?>
 
     </tr>

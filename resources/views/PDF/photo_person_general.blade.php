@@ -24,7 +24,7 @@
         <td colspan="4" align="center" style="font-family : sans-serif, Arial;">
 
             <?php if($guesthistory->photo != null) :  ?>
-                <img src="<?php echo $guesthistory->photo;?>" width="605" height="794">
+                <img src="<?php echo $guesthistory->photo;?>" width="514" height="514">
             <?php else : ?>
                 <img src="/img/square-image.png" width="514" height="514">
             <?php endif ?>
