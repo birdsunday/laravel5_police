@@ -68,7 +68,7 @@
             @if($dataperson->alias)
                 <td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;นามเเฝง : <label><?php echo $dataperson->alias ?></label></td>
             @else
-                <td colspan="3">นามเเฝง : <label> - </label></td>
+                <td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;นามเเฝง : <label> - </label></td>
             @endif
 
         </tr>

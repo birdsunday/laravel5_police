@@ -71,7 +71,7 @@ class DatabaseSeeder extends Seeder {
         $nametitle6->name_title = ('Miss');
         $nametitle6->save();
 
-        
+
 
 
         $position = new \App\Models\Position();

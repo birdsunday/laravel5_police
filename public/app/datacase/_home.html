@@ -52,10 +52,11 @@
 
                     </tr>
                     <tr>
-                        <th  class="text-center" style="width: 15%">คดี/ข้อหา</th>
+
                         <th  class="text-center"  style="width: 6%">เลขคดี</th>
                         <th  class="text-center"  style="width: 6%">ปี</th>
                         <th  class="text-center"  style="width: 8%">สถานีตำรวจ</th>
+                        <th  class="text-center" style="width: 15%">คดี/ข้อหา</th>
                         <th  class="text-center" style="width: 15%">บุคคล</th>
                         <th  class="text-center" style="width: 15%">วันที่เกิดเหตุ</th>
                         <th  class="text-center" style="width: 15%">สถานะ</th>
@@ -69,12 +70,12 @@
 
                     <tr ng-repeat="datacases in datacase | filter:search as results" >
 
-                        <td ng-bind="datacases.name_case"></td>
+
                         <td ng-bind="datacases.number_case"></td>
                         <td ng-bind="datacases.year_number_case"></td>
 
                         <td ng-bind="datacases.station_number_case"></td>
-
+                        <td ng-bind="datacases.name_case"></td>
 
 
                         <td >

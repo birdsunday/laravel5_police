@@ -203,7 +203,7 @@ class CaseApiController extends Controller
 
             $pdf->AddPage('P');
             $html = view('PDF.person')->with('datacase',$datacase)->with('dataperson',$person)->render();
-           return $html;
+
             $pdf->WriteHTML($html);
         }
         $pdf->stream();

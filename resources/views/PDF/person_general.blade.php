@@ -27,7 +27,7 @@
                 <td colspan="3">ประเภทบุคคล : <label> - </label></td>
             @endif
 
-            <td rowspan="5" align="center" style="font-family : sans-serif, Arial;">
+            <td rowspan="4" align="center" style="font-family : sans-serif, Arial;">
                 <?php if($dataperson->photo != null) :  ?>
                 <img src="<?php echo $dataperson->photo;?>" width="128" height="128">
                 <?php else : ?>
