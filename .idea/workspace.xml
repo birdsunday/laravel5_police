@@ -28,8 +28,13 @@
       <file leaf-file-name="_add_person_general_profile.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/app/person_general/_add_person_general/_add_person_general_profile.html">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state vertical-scroll-proportion="-10.5" vertical-offset="679" max-vertical-offset="2958">
               <caret line="56" column="153" selection-start-line="56" selection-start-column="122" selection-end-line="56" selection-end-column="153" />
+=======
+            <state vertical-scroll-proportion="-15.730769" vertical-offset="1954" max-vertical-offset="2958">
+              <caret line="139" column="12" selection-start-line="139" selection-start-column="12" selection-end-line="139" selection-end-column="45" />
+>>>>>>> origin/police
               <folding>
                 <element signature="n#style#0;n#label#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#label#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
@@ -39,46 +44,79 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="_add_person_profile.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/app/person_crime/_add_person/_add_person_profile.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-13.115385" vertical-offset="577" max-vertical-offset="3111">
               <caret line="54" column="159" selection-start-line="54" selection-start-column="159" selection-end-line="54" selection-end-column="159" />
+=======
+      <file leaf-file-name="_comfirm_person.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/app/person_general/_add_person_general/_comfirm_person_general/_comfirm_person.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="146.42308" vertical-offset="3807" max-vertical-offset="4505">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> origin/police
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="person.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/PDF/person.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="55.153847" vertical-offset="10070" max-vertical-offset="12121">
               <caret line="508" column="84" selection-start-line="508" selection-start-column="84" selection-end-line="508" selection-end-column="84" />
+=======
+      <file leaf-file-name="_preview_person_general.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/app/person_general/_preview_person_general.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="128.76923" vertical-offset="3348" max-vertical-offset="3893">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> origin/police
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/app/statistics/app.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="612" max-vertical-offset="1836">
               <caret line="62" column="29" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
+=======
+      <file leaf-file-name="_home.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/app/person_general/_home.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-17.0" vertical-offset="1581" max-vertical-offset="2431">
+              <caret line="119" column="37" selection-start-line="119" selection-start-column="37" selection-end-line="119" selection-end-column="37" />
+>>>>>>> origin/police
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="_home.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/app/person_general/_home.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-9.846154" vertical-offset="1784" max-vertical-offset="2431">
               <caret line="120" column="27" selection-start-line="120" selection-start-column="27" selection-end-line="120" selection-end-column="27" />
+=======
+      <file leaf-file-name="person_general.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/PDF/person_general.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-11.961538" vertical-offset="7322" max-vertical-offset="9129">
+              <caret line="449" column="86" selection-start-line="449" selection-start-column="86" selection-end-line="449" selection-end-column="86" />
+>>>>>>> origin/police
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="_home.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/app/statistics/_home.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -88,45 +126,86 @@
                 <element signature="n#style#0;n#th#5;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#4;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#th#6;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#4;n#!!top" expanded="true" />
               </folding>
+=======
+      <file leaf-file-name="photo_person_general.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/PDF/photo_person_general.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-16.384615" vertical-offset="526" max-vertical-offset="1275">
+              <caret line="56" column="77" selection-start-line="56" selection-start-column="77" selection-end-line="56" selection-end-column="77" />
+              <folding />
+>>>>>>> origin/police
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="_view_case.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/app/datacase/_view_case.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="22.192308" vertical-offset="1172" max-vertical-offset="1717">
               <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+=======
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="2856">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> origin/police
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="_edit_preview_case.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/app/datacase/_edit_preview_case.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="1598">
               <caret line="4" column="40" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
+=======
+      <file leaf-file-name="StatisticsApiController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/StatisticsApiController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-17.0" vertical-offset="102" max-vertical-offset="1054">
+              <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+>>>>>>> origin/police
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="_add_preview.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/app/datacase/_add_preview.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.43669724" vertical-offset="0" max-vertical-offset="4624">
               <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding />
+=======
+      <file leaf-file-name="_home.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/app/statistics/_home.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.8846154" vertical-offset="1581" max-vertical-offset="3757">
+              <caret line="102" column="81" selection-start-line="102" selection-start-column="81" selection-end-line="102" selection-end-column="81" />
+              <folding>
+                <element signature="n#style#0;n#th#5;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#6;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+              </folding>
+>>>>>>> origin/police
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_home.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/app/person_crime/_home.html">
+      <file leaf-file-name="DatabaseSeeder.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state vertical-scroll-proportion="-7.8846154" vertical-offset="1903" max-vertical-offset="2550">
               <caret line="124" column="43" selection-start-line="124" selection-start-column="43" selection-end-line="124" selection-end-column="43" />
+=======
+            <state vertical-scroll-proportion="-0.27889907" vertical-offset="9026" max-vertical-offset="9571">
+              <caret line="523" column="33" selection-start-line="523" selection-start-column="33" selection-end-line="523" selection-end-column="33" />
+>>>>>>> origin/police
               <folding />
             </state>
           </provider>
@@ -137,6 +216,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
+=======
+        <option value="$PROJECT_DIR$/public/app/mylog/app.js" />
+        <option value="$PROJECT_DIR$/public/app/mylog/_home.html" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/menu.blade.php" />
+>>>>>>> origin/police
         <option value="$PROJECT_DIR$/public/app/datacase/_add_preview.html" />
         <option value="$PROJECT_DIR$/public/app/datacase/_add_print.html" />
         <option value="$PROJECT_DIR$/public/app/profile_police/_editProfile.html" />
@@ -154,6 +239,10 @@
         <option value="$PROJECT_DIR$/app/Http/Requests/LoginRequest.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/AuthApiController.php" />
         <option value="$PROJECT_DIR$/public/app/person_crime/_add_person/_complete_person/_complete_person.html" />
+<<<<<<< HEAD
+=======
+        <option value="$PROJECT_DIR$/public/app/person_crime/_home.html" />
+>>>>>>> origin/police
         <option value="$PROJECT_DIR$/public/app/person_crime/_add_person/_add_person_datacase.html" />
         <option value="$PROJECT_DIR$/public/app/datacase/_add.html" />
         <option value="$PROJECT_DIR$/public/app/datacase/_edit_case.html" />
@@ -166,13 +255,20 @@
         <option value="$PROJECT_DIR$/public/app/police/_edit.html" />
         <option value="$PROJECT_DIR$/public/app/datacase/_home.html" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/CaseApiController.php" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/resources/views/PDF/personOne.blade.php" />
+=======
+        <option value="$PROJECT_DIR$/resources/views/PDF/person.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/PDF/personOne.blade.php" />
+        <option value="$PROJECT_DIR$/public/app/person_crime/_add_person/_add_person_profile.html" />
+>>>>>>> origin/police
         <option value="$PROJECT_DIR$/public/app/person_crime/_edit_person/_edit_person_profile.html" />
         <option value="$PROJECT_DIR$/public/app/person_general/_photo_person_geneal.html" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/PersonOneApiController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/GuestHistoryApiController.php" />
         <option value="$PROJECT_DIR$/resources/views/PDF/photo_person.blade.php" />
         <option value="$PROJECT_DIR$/public/app/person_general/app.js" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/public/app/person_general/_edit_person_general/_edit_person_general_profile.html" />
         <option value="$PROJECT_DIR$/resources/views/PDF/person_general.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/PDF/photo_person_general.blade.php" />
@@ -188,6 +284,16 @@
         <option value="$PROJECT_DIR$/public/app/statistics/_home.html" />
         <option value="$PROJECT_DIR$/public/app/datacase/_view_case.html" />
         <option value="$PROJECT_DIR$/public/app/datacase/_edit_preview_case.html" />
+=======
+        <option value="$PROJECT_DIR$/public/app/person_general/_add_person_general/_add_person_general_profile.html" />
+        <option value="$PROJECT_DIR$/public/app/person_general/_edit_person_general/_edit_person_general_profile.html" />
+        <option value="$PROJECT_DIR$/public/app/person_general/_home.html" />
+        <option value="$PROJECT_DIR$/resources/views/PDF/person_general.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/PDF/photo_person_general.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/API/StatisticsApiController.php" />
+        <option value="$PROJECT_DIR$/public/app/statistics/_home.html" />
+        <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
+>>>>>>> origin/police
       </list>
     </option>
   </component>
@@ -238,6 +344,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< HEAD
               <option name="myItemId" value="laravel5_police" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -279,6 +386,9 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="PDF" />
+=======
+              <option name="myItemId" value="laravel5_police" />
+>>>>>>> origin/police
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -295,6 +405,13 @@
               <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+<<<<<<< HEAD
+=======
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+>>>>>>> origin/police
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -302,6 +419,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< HEAD
               <option name="myItemId" value="laravel5_police" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -357,6 +475,37 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="laravel5_police" />
+=======
+              <option name="myItemId" value="laravel5_police" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel5_police" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel5_police" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel5_police" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel5_police" />
+>>>>>>> origin/police
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -379,6 +528,7 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="laravel5_police" />
+<<<<<<< HEAD
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -441,6 +591,94 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="laravel5_police" />
+=======
+>>>>>>> origin/police
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel5_police" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+<<<<<<< HEAD
+              <option name="myItemId" value="laravel5_police" />
+=======
+              <option name="myItemId" value="laravel5_police" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="person_general" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel5_police" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel5_police" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+>>>>>>> origin/police
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+<<<<<<< HEAD
+=======
+            <PATH_ELEMENT>
+              <option name="myItemId" value="person_crime" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+>>>>>>> origin/police
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel5_police" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+<<<<<<< HEAD
+              <option name="myItemId" value="laravel5_police" />
+=======
+              <option name="myItemId" value="laravel5_police" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="database" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel5_police" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel5_police" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -459,12 +697,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="laravel5_police" />
+>>>>>>> origin/police
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+<<<<<<< HEAD
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+=======
+>>>>>>> origin/police
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -472,6 +718,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< HEAD
+              <option name="myItemId" value="laravel5_police" />
+=======
               <option name="myItemId" value="laravel5_police" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -491,6 +740,7 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="laravel5_police" />
+>>>>>>> origin/police
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -605,7 +855,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -712,6 +962,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-16.576923" vertical-offset="130" max-vertical-offset="714">
           <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+<<<<<<< HEAD
         </state>
       </provider>
     </entry>
@@ -761,11 +1012,28 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="18.923077" vertical-offset="3161" max-vertical-offset="4471">
           <caret line="169" column="29" selection-start-line="169" selection-start-column="29" selection-end-line="169" selection-end-column="29" />
+=======
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/LoginRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.23077" vertical-offset="215" max-vertical-offset="799">
+          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/MemberMiddleware.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.923077" vertical-offset="147" max-vertical-offset="731">
+          <caret line="39" column="83" selection-start-line="39" selection-start-column="7" selection-end-line="39" selection-end-column="83" />
+>>>>>>> origin/police
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/PersonCaseApiController.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="31.384615" vertical-offset="816" max-vertical-offset="1802">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
@@ -786,11 +1054,16 @@
             <marker date="1440774161560" expanded="true" signature="-1:-1" placeholder="..." />
             <marker date="1440774161560" expanded="false" signature="-1:-1" placeholder="..." />
           </folding>
+=======
+        <state vertical-scroll-proportion="0.7692308" vertical-offset="904" max-vertical-offset="1462">
+          <caret line="52" column="56" selection-start-line="52" selection-start-column="56" selection-end-line="52" selection-end-column="56" />
+>>>>>>> origin/police
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/GuestHistoryApiController.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.0" vertical-offset="8584" max-vertical-offset="9129">
           <caret line="549" column="32" selection-start-line="549" selection-start-column="32" selection-end-line="549" selection-end-column="32" />
           <folding>
@@ -832,30 +1105,49 @@
         <state vertical-scroll-proportion="146.42308" vertical-offset="3807" max-vertical-offset="4505">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+=======
+        <state vertical-scroll-proportion="-9.807693" vertical-offset="1377" max-vertical-offset="2771">
+          <caret line="109" column="13" selection-start-line="109" selection-start-column="13" selection-end-line="109" selection-end-column="13" />
+>>>>>>> origin/police
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/app/person_general/_preview_person_general.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="128.76923" vertical-offset="3348" max-vertical-offset="3893">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+=======
+        <state vertical-scroll-proportion="31.538462" vertical-offset="1670" max-vertical-offset="2125">
+          <caret line="65" column="13" selection-start-line="65" selection-start-column="13" selection-end-line="65" selection-end-column="13" />
+>>>>>>> origin/police
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/PDF/person_general.blade.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="-11.961538" vertical-offset="7322" max-vertical-offset="9129">
           <caret line="449" column="86" selection-start-line="449" selection-start-column="86" selection-end-line="449" selection-end-column="86" />
           <folding />
+=======
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2142">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> origin/police
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/PDF/photo_person_general.blade.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="-16.384615" vertical-offset="526" max-vertical-offset="1275">
           <caret line="56" column="77" selection-start-line="56" selection-start-column="77" selection-end-line="56" selection-end-column="77" />
           <folding />
+=======
+        <state vertical-scroll-proportion="18.923077" vertical-offset="3161" max-vertical-offset="4471">
+          <caret line="169" column="29" selection-start-line="169" selection-start-column="29" selection-end-line="169" selection-end-column="29" />
+>>>>>>> origin/police
         </state>
       </provider>
     </entry>
@@ -863,10 +1155,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2856">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/StatisticsApiController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-17.0" vertical-offset="102" max-vertical-offset="1054">
@@ -879,10 +1171,53 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-16.384615" vertical-offset="3059" max-vertical-offset="9571">
           <caret line="206" column="0" selection-start-line="206" selection-start-column="0" selection-end-line="206" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/PersonOneApiController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.384615" vertical-offset="9129" max-vertical-offset="10744">
+          <caret line="591" column="23" selection-start-line="591" selection-start-column="23" selection-end-line="591" selection-end-column="23" />
+          <folding>
+            <marker date="1440774161560" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1440774161560" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1440774161560" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1440774161560" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1440774161560" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1440774161560" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1440774161560" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1440774161560" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1440774161560" expanded="false" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/GuestHistoryApiController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="8584" max-vertical-offset="9129">
+          <caret line="549" column="32" selection-start-line="549" selection-start-column="32" selection-end-line="549" selection-end-column="32" />
+          <folding>
+            <marker date="1440774199645" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1440774199645" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1440774199645" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1440774199645" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1440774199645" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1440774199645" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1440774199645" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1440774199645" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1440774199645" expanded="false" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/person_crime/_add_person/_add_person_profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.269231" vertical-offset="2260" max-vertical-offset="3111">
+          <caret line="141" column="0" selection-start-line="141" selection-start-column="0" selection-end-line="158" selection-end-column="9" />
+>>>>>>> origin/police
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/public/app/person_general/_edit_person_general/_edit_person_general_vehicle.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.461538" vertical-offset="612" max-vertical-offset="1887">
@@ -895,22 +1230,60 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.8846154" vertical-offset="1903" max-vertical-offset="2550">
           <caret line="124" column="43" selection-start-line="124" selection-start-column="43" selection-end-line="124" selection-end-column="43" />
+=======
+    <entry file="file://$PROJECT_DIR$/public/app/person_crime/_edit_person/_edit_person_profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.346153" vertical-offset="1122" max-vertical-offset="1751">
+          <caret line="91" column="26" selection-start-line="82" selection-start-column="17" selection-end-line="91" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/person_general/_edit_person_general/_edit_person_general_profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.6153846" vertical-offset="985" max-vertical-offset="1530">
+          <caret line="65" column="94" selection-start-line="65" selection-start-column="94" selection-end-line="65" selection-end-column="94" />
+          <folding>
+            <element signature="n#style#0;n#label#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/person_general/_add_person_general/_comfirm_person_general/_comfirm_person.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="146.42308" vertical-offset="3807" max-vertical-offset="4505">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> origin/police
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/public/app/person_general/_home.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.846154" vertical-offset="1784" max-vertical-offset="2431">
           <caret line="120" column="27" selection-start-line="120" selection-start-column="27" selection-end-line="120" selection-end-column="27" />
+=======
+    <entry file="file://$PROJECT_DIR$/public/app/person_general/_preview_person_general.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="128.76923" vertical-offset="3348" max-vertical-offset="3893">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> origin/police
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/app/person_general/_add_person_general/_add_person_general_profile.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="-10.5" vertical-offset="679" max-vertical-offset="2958">
           <caret line="56" column="153" selection-start-line="56" selection-start-column="122" selection-end-line="56" selection-end-column="153" />
+=======
+        <state vertical-scroll-proportion="-15.730769" vertical-offset="1954" max-vertical-offset="2958">
+          <caret line="139" column="12" selection-start-line="139" selection-start-column="12" selection-end-line="139" selection-end-column="45" />
+>>>>>>> origin/police
           <folding>
             <element signature="n#style#0;n#label#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
             <element signature="n#style#0;n#label#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
@@ -919,30 +1292,52 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/public/app/person_crime/_add_person/_add_person_profile.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.115385" vertical-offset="577" max-vertical-offset="3111">
           <caret line="54" column="159" selection-start-line="54" selection-start-column="159" selection-end-line="54" selection-end-column="159" />
+=======
+    <entry file="file://$PROJECT_DIR$/public/app/person_general/_home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.0" vertical-offset="1581" max-vertical-offset="2431">
+          <caret line="119" column="37" selection-start-line="119" selection-start-column="37" selection-end-line="119" selection-end-column="37" />
+>>>>>>> origin/police
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/resources/views/PDF/person.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="55.153847" vertical-offset="10070" max-vertical-offset="12121">
           <caret line="508" column="84" selection-start-line="508" selection-start-column="84" selection-end-line="508" selection-end-column="84" />
+=======
+    <entry file="file://$PROJECT_DIR$/resources/views/PDF/person_general.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.961538" vertical-offset="7322" max-vertical-offset="9129">
+          <caret line="449" column="86" selection-start-line="449" selection-start-column="86" selection-end-line="449" selection-end-column="86" />
+>>>>>>> origin/police
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/public/app/statistics/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="612" max-vertical-offset="1836">
           <caret line="62" column="29" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
+=======
+    <entry file="file://$PROJECT_DIR$/resources/views/PDF/photo_person_general.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.384615" vertical-offset="526" max-vertical-offset="1275">
+          <caret line="56" column="77" selection-start-line="56" selection-start-column="77" selection-end-line="56" selection-end-column="77" />
+>>>>>>> origin/police
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/public/app/statistics/_home.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.5" vertical-offset="1836" max-vertical-offset="3757">
@@ -958,10 +1353,25 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="22.192308" vertical-offset="1172" max-vertical-offset="1717">
           <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2856">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/StatisticsApiController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.0" vertical-offset="102" max-vertical-offset="1054">
+          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+>>>>>>> origin/police
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/public/app/datacase/_edit_preview_case.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="1598">
@@ -974,6 +1384,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.43669724" vertical-offset="0" max-vertical-offset="4624">
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/public/app/statistics/_home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.8846154" vertical-offset="1581" max-vertical-offset="3757">
+          <caret line="102" column="81" selection-start-line="102" selection-start-column="81" selection-end-line="102" selection-end-column="81" />
+          <folding>
+            <element signature="n#style#0;n#th#5;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#6;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.27889907" vertical-offset="9026" max-vertical-offset="9571">
+          <caret line="523" column="33" selection-start-line="523" selection-start-column="33" selection-end-line="523" selection-end-column="33" />
+>>>>>>> origin/police
           <folding />
         </state>
       </provider>
