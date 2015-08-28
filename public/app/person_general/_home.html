@@ -51,7 +51,7 @@
 
                     </th>
                     <th class="text-center">
-                        <input id="mydateth" ng-model="search.created_at" type="text" class="form-control" ng-model="keyword.surname" />
+                        <input id="mydateth" ng-model="search.date" type="text" class="form-control" ng-model="keyword.surname" />
                     </th>
                     <th class="text-center">
                     </th>
@@ -82,7 +82,7 @@
                     <td class="text-center" ng-bind="person_general.nametitle.name_title"></td>
                     <td class="text-center" ng-bind="person_general.name"></td>
                     <td class="text-center" ng-bind="person_general.surname"></td>
-                    <td class="text-center" ng-bind="person_general.created_at | date : 'dd/MM/yyyy'"></td>
+                    <td class="text-center" ng-bind="person_general.date"></td>
                     <td class="text-center">
                         <i ng-if="person_general.status == 'complete' && person_general.photo" class="fa fa-check-circle fa-1x " style="color: #008000"
                            popover="ประวัติบุคคลนี้สมบูรณ์แล้ว" popover-trigger="mouseenter"></i>
@@ -116,7 +116,7 @@
 
                         $("#mydateth").datetimepicker({
                             timepicker:false,  // กำหนด ไม่แสดงตัวเลือกเวลา
-                            format:'Y-m-d',  // กำหนดรูปแบบวันที่ ที่ใช้ เป็น 00-00-0000
+                            format:'วันที่ d เดือน F พ.ศ. Y',
                             lang:'th',  // แสดงภาษาไทย
                            // yearStart:1914,  // ช่วงเลือกปีเริ่มต้น ใช้ ค.ศ.
                           //  yearOffset:543,  // ใช้ปี พ.ศ. บวก 543 เพิ่มเข้าไปในปี ค.ศ

@@ -405,7 +405,7 @@ app.controller("PreviewPersonController", function ($scope, $window, $http, $sta
         console.log($scope.guest.id);
 
         //window.location= "/api/case/"+ $scope.caseFile.id +"/generated_pdf_case";
-        $window.open('/api/guesthistory/' + $scope.guest.id + '/generated_pdf_person', '_blank');
+        $window.open('/api/guesthistory/' + $scope.guest.id + '/generated_pdf_case', '_blank');
 
 
     }

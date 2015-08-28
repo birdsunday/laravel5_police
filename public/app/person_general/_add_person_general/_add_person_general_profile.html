@@ -114,6 +114,16 @@
 
 
                     </div>
+                    <div class="form-group">
+
+                        <label class="col-sm-1 control-label" style="width: auto">วันที่บันทึก</label>
+
+                        <div class="col-sm-5">
+                            <input ng-model="guest.date" type="text" class="form-control" value="" id="id_datetime_picker0" >
+                        </div>
+
+
+                    </div>
 
                 </form>
             </div>
@@ -121,7 +131,24 @@
     </div>
 </div>
 
+<script type="text/javascript">
+    $(function () {
 
+
+        $("#id_datetime_picker0").datetimepicker({
+            timepicker:false,
+            format:'วันที่ d เดือน F พ.ศ. Y',
+            lang:'th',  // แสดงภาษาไทย
+            yearStart:1914,  // ช่วงเลือกปีเริ่มต้น ใช้ ค.ศ.
+            yearOffset:543,  // ใช้ปี พ.ศ. บวก 543 เพิ่มเข้าไปในปี ค.ศ
+            closeOnDateSelect:true
+        });
+
+
+
+
+    });
+</script>
 <script type="text/javascript">
     $(function(){
 
