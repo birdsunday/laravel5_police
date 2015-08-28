@@ -510,13 +510,13 @@
                         <label class="col-sm-2 control-label">ส่วนสูง (เซนติเมตร)</label>
 
                         <div class="col-sm-3">
-                            <input type="text" ng-model="person.height" class="form-control">
+                            <input onKeyUp="IsNumeric(this.value,this)" type="text" ng-model="person.height" class="form-control">
 
                         </div>
                         <label class="col-sm-2 control-label">น้ำหนัก (กิโลกรัม)</label>
 
                         <div class="col-sm-3">
-                            <input type="text" ng-model="person.weight" class="form-control">
+                            <input onKeyUp="IsNumeric(this.value,this)" type="text" ng-model="person.weight" class="form-control">
 
                         </div>
 

@@ -31,7 +31,7 @@
                         <thead>
                         <tr>
                             <th class="text-center">
-                                <input onkeyup="autoTab(this)" ng-model="search.idcard" type="text" class="form-control"  />
+                                <input ng-model="search.idcard" type="text" class="form-control"  />
                             </th>
                             <th class="text-center">
                                 <input ng-model="search.typepeople" type="text" class="form-control"  />
@@ -99,7 +99,7 @@
                                                                                             popover="พิมพ์ประวัติบุคคล" popover-trigger="mouseenter"></i></a>
                                 <a ng-if="person.photo" ng-click="print_Photoperson(person)" class="edit"><i class="fa fa-picture-o"
                                                                                    popover="พิมพ์รูปบุคคล" popover-trigger="mouseenter"></i></a>
-                                <a ng-if="current_role == 'admin' || current_role == 'Member_Commissioned_Officers' " ui-sref="edit({id:person.id})" class="edit"><i class="fa fa-edit"
+                                <a ng-if=" current_role == 'Member_Commissioned_Officers' " ui-sref="edit({id:person.id})" class="edit"><i class="fa fa-edit"
                                                                                                                   popover="แก้ไขประวัติ" popover-trigger="mouseenter"></i></a>
                                 <a ng-if="current_role == 'Member_Commissioned_Officers'" ng-click="delete_person(person)" class="del"><i class="fa fa-times"
                                                                                                                    popover="ลบประวัติบุคคล" popover-trigger="mouseenter"></i></a>

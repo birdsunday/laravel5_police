@@ -8,6 +8,7 @@ use App\Events\PrintPhotoDataPersonCrimeEvent;
 use App\Events\TestAddEvent;
 use App\Events\ViewDataPersonCrimeEvent;
 use App\Models\GuestHistory;
+use Carbon\Carbon;
 use \Event;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -473,21 +474,25 @@ class PersonOneApiController extends Controller
         $name_keyword = Input::get('name');
         $surname_keyword = Input::get('surname');
 
-        $person = DB::table('criminalhistory')
-            ->orderBy('idcard', 'desc')
-            ->distinct()
+//        $person = DB::table('criminalhistory')
+//            ->orderBy('idcard', 'desc')
+//            ->distinct()
+//            ->get();
+        $person = CriminalHistory::with('datacase', 'nametitle', 'addresspresent',
+            'addressoriginal', 'datafather', 'datamother', 'dataspouse', 'datachild', 'addressoffice',
+            'datacase.vehicle', 'datacase.weapon')
+            ->whereBetween('created_at',
+                array(Carbon::today()->toDateTimeString(),
+                    Carbon::tomorrow()->toDateTimeString())
+            )
+            ->where(function ($q) use ($idcard_keyword, $name_keyword, $surname_keyword) {
+                return $q->where('idcard', 'LIKE', "%$idcard_keyword%")
+                    ->where('name', 'LIKE', "%$name_keyword%")
+                    ->where('surname', 'LIKE', "%$surname_keyword%");
+            })
+            ->orderBy('created_at','desc')
+            ->take(1)
             ->get();
-//       $person = CriminalHistory::with('datacase','nametitle','addresspresent',
-//            'addressoriginal','datafather','datamother','dataspouse','datachild','addressoffice',
-//            'datacase.vehicle','datacase.weapon')
-//
-//            ->where(function($q) use ($idcard_keyword,$name_keyword,$surname_keyword){
-//                return $q->where('idcard','LIKE',"%$idcard_keyword%")->where('name','LIKE',"%$name_keyword%")
-//                    ->where('surname','LIKE',"%$surname_keyword%");
-//            })
-//           ->take(10)
-//
-//           ->get();
         return $person;
 
 
@@ -592,7 +597,7 @@ class PersonOneApiController extends Controller
     public function generatedPdfPerson($id)
     {
 
-      $criminalhistory = CriminalHistory::find($id);
+        $criminalhistory = CriminalHistory::find($id);
 
         $idcard = $criminalhistory->idcard;
 
@@ -601,8 +606,8 @@ class PersonOneApiController extends Controller
             'addressoriginal', 'datafather', 'datamother', 'dataspouse', 'datachild'
             , 'addressoffice', 'datacase.vehicle', 'datacase.weapon')
             ->where(function ($q) use ($idcard) {
-            return $q->where('idcard', '=', "$idcard");
-        })
+                return $q->where('idcard', '=', "$idcard");
+            })
             ->get();
 
         $criminalhistory = CriminalHistory::with('datacase', 'nametitle', 'addresspresent',
@@ -641,7 +646,7 @@ class PersonOneApiController extends Controller
         $pdf->SetDisplayMode('fullpage');
 
 
-        $html = view('PDF.personOne')->with('dataperson', $criminalhistory)->with('datacases',$datacasesPerson)->render();
+        $html = view('PDF.personOne')->with('dataperson', $criminalhistory)->with('datacases', $datacasesPerson)->render();
         return $html;
         $pdf->WriteHTML($html);
 

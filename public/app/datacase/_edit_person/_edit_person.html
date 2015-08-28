@@ -22,7 +22,7 @@
                                 <th>
                                     <input ng-change="pc.searchPerson(keyword)" class="form-control" ng-model="keyword.surname" type="text" placeholder="ค้นหา นามสกุล...">
                                 </th>
-                                <th>
+                                <th>วันที่จับกุม
                                 </th>
                             </tr>
                             </thead>
@@ -37,12 +37,24 @@
                                 <td ng-bind="person.surname"></td>
                                 <td ng-bind="person.date"></td>
 
-
                                 <td>
                                     <a ng-click="pc.add_person(person)" type="submit" type="button" name="deletepolice"><i
-                                            class="fa fa-plus-circle"></i></a>
+                                            class="fa fa-plus-circle fa-2x"></i></a>
 
                                 </td>
+
+                            </tr>
+
+
+                            </tbody>
+                            <tbody>
+
+
+                            <tr ng-if="!pc.dataPerson.length">
+
+
+                                <td class="text-center" colspan="4"> ไม่พบข้อมูล!!! </td>
+
 
                             </tr>
 

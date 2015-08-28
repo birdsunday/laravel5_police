@@ -11,15 +11,16 @@
             <div class="container">
                 <hr class="soften"/>
 
-                <div>
-                    <button  class="btn btn-primary" ng-hide="$flow.files.length"
-                             flow-btn flow-attrs="{accept:'image/*'}">Select image</button>
-                    <button  class="btn btn-warning" ng-show="$flow.files.length"
-                             flow-btn flow-attrs="{accept:'image/*'}">Change</button>
-                    <button  class="btn btn-success" ng-show="$flow.files.length"
-                             ng-click="pc.uploadFile()">Apply Image</button>
-                    <button  class="btn btn-danger"  ng-if="!file.isComplete()" ng-click="cancelFile(file)">
-                        Remove
+                <button  class="btn btn-primary" ng-hide="$flow.files.length"
+                         flow-btn flow-attrs="{accept:'image/*'}">เลือกรูปภาพ</button>
+                <div ng-repeat="file in myFlow.files">
+
+                    <button  ng-if="!file.isComplete()" class="btn btn-warning" ng-show="$flow.files.length"
+                             flow-btn flow-attrs="{accept:'image/*'}">เปลี่ยนรูปภาพ</button>
+                    <button  ng-if="!file.isComplete()" class="btn btn-success" ng-show="$flow.files.length"
+                             ng-click="pc.uploadFile()">ยืนยัน</button>
+                    <button  class="btn btn-danger"  ng-if="!file.isComplete()" ng-click="pc.cancelFile(file)">
+                        ลบรูปภาพ
                     </button>
 
                 </div>

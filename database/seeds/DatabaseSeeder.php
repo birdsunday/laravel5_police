@@ -383,7 +383,7 @@ class DatabaseSeeder extends Seeder {
         $datafather1->save();
 
         $guesthistory = new \App\Models\GuestHistory();
-        $guesthistory->idcard = ('1-5603-00222-2-33');
+        $guesthistory->idcard = ('1560300222233');
         $guesthistory->typepeople = ('บุคคลทั่วไป');
         $guesthistory->name = ('สมรัก');
         $guesthistory->surname = ('นาดี');
@@ -402,11 +402,11 @@ class DatabaseSeeder extends Seeder {
 
 
         $criminalhistory = new \App\Models\CriminalHistory();
-        $criminalhistory->typepeople = ('บุคคลเกี่ยวข้องกับอาชญากรรม');
+        $criminalhistory->typepeople = ('ผู้ต้องหา');
         $criminalhistory->name = ('อยู่ดี');
         $criminalhistory->surname = ('มีสุข');
         $criminalhistory->alias = ('เสือใหญ่');
-        $criminalhistory->idcard = ('1-5603-00222-2-22');
+        $criminalhistory->idcard = ('1560300222222');
         $criminalhistory->birth =('25-5-2555');
         $criminalhistory->age = ('21 ปี 0 เดือน');
         $criminalhistory->date = ('วัน อังคาร ที่ 22 เดือน สิงหาคม พ.ศ. 2558 เวลาประมาณ 23:43 นาฟิกา');
@@ -432,7 +432,7 @@ class DatabaseSeeder extends Seeder {
         $criminalhistory->nature = ('ขาเป้');
         $criminalhistory->personality = ('ใจร้อน');
         $criminalhistory->location_gallivent = ('ผับ/ร้านเหล้า');
-        $criminalhistory->other = ('!@#!@$$#^');
+        $criminalhistory->other = ('ไม่มีหนังสือเดินทาง ใช้บัตรผ่านแดน(บอร์เดอร์พาส) เดินทางเข้ามาและหลบหนีอยู่ในราชอาณาจักร');
         $criminalhistory->status = ('complete');
         $criminalhistory->dataspouse()->associate($dataspouse);
         $criminalhistory->datamother()->associate($datamother);
@@ -500,12 +500,12 @@ class DatabaseSeeder extends Seeder {
         $datacase = new \App\Models\DataCase();
         $datacase->file_case=('222');
         $datacase->number_case=('120');
-        $datacase->name_case =('หลบหนีเข้าเมือง');
-        $datacase->circumstances_case=('ลักลอบเข้าเมืองมาทางเเม่น้ำปิง');
+        $datacase->name_case =('เป็นคนต่างด้าวเข้ามาและอยู่ในราชอาณาจักรโดยไม่ได้รับอนุญาต');
+        $datacase->circumstances_case=('ตามวันเวลาเกิดเหตุ เจ้าหน้าที่ชุดจับกุมได้ออกตรวจพื้นที่ พบบุคคลต้องสงสัย ทราบชื่อภายหลังคือ นายโล๊ะ ฮอคเส็ง (ทราบภายหลัง) มีลักษณะคล้ายคนต่างด้าว จึงได้ขอตรวจหนังสือเดินทาง ซึ่งผู้ถูกจับนี้รับว่าไม่มีหนังสือเดินทาง ได้หลบหนีเข้าเมืองมาทางด่านปาดังเบซาร์ และหลบหนีอยู่ในราชอาณาจักร จนถูกจับกุมได้ดังกล่าว');
         $datacase->number_case = ('1234');
         $datacase->year_number_case = ('2556');
         $datacase->station_number_case = ('สภ.แม่สาย');
-        $datacase->date_case=('00/00/0000');
+        $datacase->date_case=('วัน อังคาร ที่ 22 เดือน สิงหาคม พ.ศ. 2558 เวลาประมาณ 23:43 นาฟิกา');
         $datacase->houseno_case=('4');
         $datacase->villageno_case=('5');
         $datacase->road_case=('อาราย');

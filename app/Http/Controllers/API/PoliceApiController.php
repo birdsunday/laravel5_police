@@ -105,8 +105,12 @@ class PoliceApiController extends Controller {
 	{
 
         $user = PoliceImmigration::find($id);;
-        $user->fill(Input::except(['_token']));
-        $user->password = Hash::make(Input::get('password'));
+        $user->fill(Input::except(['_token','password']));
+        if(Input::get('password') == Input::get('vpassword')){
+           // return Input::get('password');
+            $user->password = Hash::make(Input::get('password'));
+        }
+
         if(Input::has('position.id')){
             $position = Position::find(Input::get('position.id'));
             $user->position()->associate($position);

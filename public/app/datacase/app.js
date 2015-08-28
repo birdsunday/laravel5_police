@@ -73,6 +73,34 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
             }
         })
+        .state('add_file', {
+            url: "/add_file/:id",
+            templateUrl: "/app/datacase/_add_file.html",
+            controller: "AddFileController",
+            resolve: {
+                datacase: function ($http,$stateParams) {
+                    return $http.get('/api/case/' + $stateParams.id);
+                },
+                caseperson: function ($http,$stateParams) {
+                    return $http.get('/api/case/' + $stateParams.id + '/person/');
+                }
+
+            }
+        })
+        .state('upload_file', {
+            url: "/upload_file/:id",
+            templateUrl: "/app/datacase/_upload_file.html",
+            controller: "UploadFileController",
+            resolve: {
+                datacase: function ($http,$stateParams) {
+                    return $http.get('/api/case/' + $stateParams.id);
+                },
+                caseperson: function ($http,$stateParams) {
+                    return $http.get('/api/case/' + $stateParams.id + '/person/');
+                }
+
+            }
+        })
         .state('add_print', {
             url: "/add_print/:id",
             templateUrl: "/app/datacase/_add_print.html",
@@ -586,16 +614,111 @@ app.controller("PrintController",function($scope,$http,$stateParams,$window
 
 
 
+app.controller("UploadFileController",function($scope,$http,$stateParams,$state,datacase,caseperson){
+    console.log("UploadFileController.start");
+
+    function init(){
+        $scope.caseFile = datacase.data;
+        $scope.casePerson = caseperson.data;
+
+    }
+
+
+    init();
+
+
+
+    $scope.myFlow = new Flow({
+        target: '/api/case/'+ $scope.caseFile.id +'/file',
+        singleFile: true,
+        method: 'post',
+        testChunks: false
+    })
+
+    $scope.uploadFile = function(){
+        $scope.myFlow.upload();
+        massged = "อัพโหลดไฟล์เสร็จสมบูรณ์";
+        alert(massged);
+        $state.go("home");
+    }
+    $scope.cancelFile = function (file){
+
+        var index = $scope.myFlow.files.indexOf(file)
+        $scope.myFlow.files.splice(index,1);
+
+
+    }
+
+
+
+
+});
+
+
+app.controller("AddFileController",function($scope,$http,$stateParams,$state,datacase,caseperson){
+    console.log("AddFileController.start");
+    $scope.caseFile = datacase.data;
+    $scope.casePerson = caseperson.data;
+
+    $scope.caseFile = {};
+    $scope.Vehicle = {};
+    $scope.Weapon = {};
+
+
+    $scope.caseFile.weapon = [];
+    $scope.caseFile.vehicle = [];
+
+
+
+    function init(){
+        $scope.caseFile = datacase.data;
+        $scope.casePerson = caseperson.data;
+        console.log($scope.caseFile);
+        console.log($scope.casePerson);
+    }
+
+
+    init();
+
+
+
+    $scope.myFlow = new Flow({
+        target: '/api/case/'+ $scope.caseFile.id +'/file',
+        singleFile: true,
+        method: 'post',
+        testChunks: false
+    })
+
+    $scope.uploadFile = function(){
+        $scope.myFlow.upload();
+        $state.go("preview",{id:$scope.caseFile.id});
+    }
+    $scope.cancelFile = function (file){
+
+        var index = $scope.myFlow.files.indexOf(file)
+        $scope.myFlow.files.splice(index,1);
+
+
+    }
+
+
+
+
+});
+
+
+
 app.controller("EditController",function($scope,$http,$stateParams,$state,datacase,caseperson){
     console.log("EditController.start");
     $scope.caseFile = datacase.data;
     $scope.casePerson = caseperson.data;
-   // $scope.dataperson = dataperson.data;
+    // $scope.dataperson = dataperson.data;
     console.log($scope.casePerson);
 
     $scope.clear = function () {
         $scope.dt = null;
     };
+
 
     $scope.open_start = function($event) {
         $event.preventDefault();
@@ -898,6 +1021,10 @@ app.controller("CaseFileController", function ($scope, $state) {
 
     self.uploadFile = function(){
         self.myFlow.upload();
+        massged = "อัพโหลดไฟล์เสร็จสมบูรณ์";
+        alert(massged);
+        $state.go("home")
+
         //console.log($scope.myFlow);
     }
     self.cancelFile = function (file){

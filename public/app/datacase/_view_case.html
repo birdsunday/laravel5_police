@@ -15,8 +15,9 @@
         <h3 class="">ดูข้อมูลคดี</h3>
     </div>
     <div class="col-sm-4 text-right padding-top-20">
-        <a type="button" ng-click="edit_case()" class="btn btn-default" data-dismiss="modal">บันทึก</a>
-        <a type="button" ui-sref="home" class="btn btn-primary" data-dismiss="modal"> กลับ</a>
+        <a type="button" ng-if="caseFile.file_case" href="<% caseFile.file_case %>" class="btn btn-warning" data-dismiss="modal"
+           target = "_blank"><i class="fa fa-file-pdf-o"></i> ดูไฟล์คดี</a>
+        <a type="button" ui-sref="home" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-home"></i> กลับ</a>
     </div>
 </div>
 <div class="row" >

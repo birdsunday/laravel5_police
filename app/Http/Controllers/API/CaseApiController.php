@@ -167,9 +167,9 @@ class CaseApiController extends Controller
 
         $pdf->SetHeader('
         <table width="100%" style="vertical-align: bottom; font-family: TH SarabunPSK; font-size: 14pt; color: #000000; font-weight: bold; font-style: italic;"><tr>
-        <td width="20%"><img src="img/police.jpg" width="20" height="20"></td>
+        <td width="20%"></td>
         <td width="30%" style="text-align: right; ">{PAGENO}</td>
-        <td width="55%" style="text-align: right; "> สำนักงานตำรวจตรวจคนเข้าเมือง จังหวัด เชียงราย</td>
+        <td width="55%" style="text-align: right; "> ตำรวจตรวจคนเข้าเมือง จังหวัด เชียงราย</td>
         </tr></table>
         ');
         $pdf->SetFooter('

@@ -76,10 +76,10 @@
 
         <tr>
             @if($dataperson->idcard)
-                <td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;หมายเลขประจำตัวประชาชน :
+                <td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;หมายเลขบัตร :
                     <label><?php echo $dataperson->idcard ?> </label></td>
             @else
-                <td colspan="3">หมายเลขประจำตัวประชาชน : <label> - </label></td>
+                <td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;หมายเลขบัตร : <label> - </label></td>
             @endif
 
         </tr>

@@ -72,7 +72,12 @@
                     <div class="form-group text-center">
 
                         <button type="button" ui-sref="home" class="btn btn-primary btn-app-sm"  style="width: 3cm"><i class="fa fa-home"> หน้าหลัก</i></button>
+
+                    </div>
+                    <div class="form-group text-center">
+
                         <button type="button" ng-click="printPerson()" class="btn btn-success btn-app-sm"  style="width: 5cm"><i class="fa fa-print"> พิมพ์ประวัติบุคคล</i></button>
+                        <button ng-if="datacase" type="button" ng-click="uploadfile()" class="btn btn-warning btn-app-sm"  style="width: 5cm"><i class="fa fa-print"> อัพโหลดไฟล์คดี</i></button>
 
                     </div>
                     <div class="form-group text-center">

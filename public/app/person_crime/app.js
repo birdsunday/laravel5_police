@@ -463,8 +463,12 @@ app.controller("AddController", function ($scope, $http,$state,$modal,$window,$t
 
         console.log($scope.person.age);
 
+        //if($scope.person.typeidcard && $scope.person.idcard1){
+        //    $scope.person.idcard = $scope.person.typeidcard +" : "+ $scope.person.idcard1;
+        //
+        //}
 
-
+        console.log($scope.person.idcard);
         saveCaseFile = "ต้องการบันทึกทะเบียร์ประวัตินี้ ใช่หรือ ไม่";
 
         if (confirm(saveCaseFile)) {
@@ -530,9 +534,18 @@ app.controller("CompleteController", function ($scope,$window, $http,$stateParam
     console.log("CompleteController.start");
 
     $scope.person = person.data;
-    console.log($scope.person);
+    $scope.datacase =  $scope.person.datacase[0];
+    console.log($scope.datacase);
+
+    $scope.uploadfile = function(){
+
+        console.log($scope.datacase.id);
+
+        //window.location= "/api/case/"+ $scope.caseFile.id +"/generated_pdf_case";
+        $window.open('/police/case#/upload_file/'+ $scope.datacase.id, '_blank');
 
 
+    }
 
     $scope.printPerson = function(){
 

@@ -85,11 +85,11 @@
 
                                 <div>
                                     <button  class="btn btn-primary" ng-hide="$flow.files.length"
-                                             flow-btn flow-attrs="{accept:'image/*'}">Select image</button>
+                                             flow-btn flow-attrs="{accept:'image/*'}">เลือกรูปภาพ</button>
                                     <button  class="btn btn-warning" ng-show="$flow.files.length"
-                                             flow-btn flow-attrs="{accept:'image/*'}">Change</button>
+                                             flow-btn flow-attrs="{accept:'image/*'}">เปลี่ยนรูปภาพ</button>
                                     <button  class="btn btn-danger"  ng-if="!file.isComplete()" ng-click="cancelFile(file)">
-                                        Remove
+                                        ลบรูปภาพ
                                     </button>
 
                                 </div>

@@ -35,15 +35,15 @@
                                 <hr class="soften"/>
 
                                 <button  class="btn btn-primary" ng-hide="$flow.files.length"
-                                         flow-btn flow-attrs="{accept:'image/*'}">Select image</button>
+                                         flow-btn flow-attrs="{accept:'image/*'}">เลือกรูปภาพ</button>
                                 <div ng-repeat="file in myFlow.files">
 
                                     <button  ng-if="!file.isComplete()" class="btn btn-warning" ng-show="$flow.files.length"
-                                             flow-btn flow-attrs="{accept:'image/*'}">Change</button>
+                                             flow-btn flow-attrs="{accept:'image/*'}">เปลี่ยนรูปภาพ</button>
                                     <button  ng-if="!file.isComplete()" class="btn btn-success" ng-show="$flow.files.length"
-                                             ng-click="uploadFile()">Apply Image</button>
+                                             ng-click="uploadFile()">ยืนยัน</button>
                                     <button  class="btn btn-danger"  ng-if="!file.isComplete()" ng-click="cancelFile(file)">
-                                        Remove
+                                        ลบรูปภาพ
                                     </button>
 
                                 </div>

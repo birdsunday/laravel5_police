@@ -16,7 +16,7 @@
             <h3 class="">จัดการข้อมูลคดี</h3>
         </div>
         <div class="col-sm-4 text-right padding-top-20">
-            <a class="btn btn-success" ui-sref="add" title="Add new User"><i class="fa fa-plus-circle" ></i> AddDataCase</a>
+            <a class="btn btn-success" ui-sref="add" title="Add new User"><i class="fa fa-plus-circle" ></i> เพิ่มคดี</a>
         </div>
     </div>
 
@@ -90,19 +90,21 @@
 
 
                         <td class="text-center">
-                            <i ng-if="datacases.status == 'complete' && datacases.number_case" class="fa fa-check-circle fa-1x " style="color: #008000"
+                            <i ng-if="datacases.status == 'complete' && datacases.number_case && datacases.file_case" class="fa fa-check-circle fa-1x " style="color: #008000"
                                popover="ยืนยันการบันทึกข้อมูลคดีนี้ เรียบร้อยแล้ว!" popover-trigger="mouseenter"></i>
-                            <i ng-if="datacases.status != 'complete'" class="fa fa-spinner fa-spin fa-1x" style="color: red"
-                               popover="กรุณาตรวจสอบข้อมูลคดี และทำการยืนยัน" popover-trigger="mouseenter"></i>
+                            <i ng-if="datacases.status != 'complete'" class="fa fa-minus-circle fa-1x" style="color: red"
+                               popover="กรอกข้อมูลคดียังไม่เสร็จ กรุณาตรวจสอบข้อมูลให้เสร็จ หรือ ลบคดีนี้" popover-trigger="mouseenter"></i>
                             <i ng-if="!datacases.number_case" class="fa fa-warning fa-1x" style="color: red"
                                popover="คดีนี้ยังไม่ได้กรอกเลขคดี" popover-trigger="mouseenter"></i>
+                            <i ng-if="!datacases.file_case" class="fa fa-file-pdf-o fa-1x" style="color: #ff8000"
+                               popover="คดีนี้ยังไม่มีไฟล์คดี" popover-trigger="mouseenter"></i>
 
 
                         </td>
 
                         <td class="text-center">
                             <a  ui-sref="edit_case({id:datacases.id})" type="submit" type="button" ng-if="datacases.status != 'complete'">
-                                <i class="fa fa-pencil-square-o fa-1x" popover="ตรวจสอบข้อมูลคดี เพิ่อยืนยัน" popover-trigger="mouseenter"></i></a>
+                                <i class="fa fa-pencil-square-o fa-1x" popover="ตรวจสอบข้อมูลคดี" popover-trigger="mouseenter"></i></a>
 
                             <a  ui-sref="view({id:datacases.id})" type="submit" type="button">
                                 <i class="fa fa-street-view fa-1x" popover="ดูข้อมูลคดี" popover-trigger="mouseenter"></i></a>
@@ -110,8 +112,10 @@
                             <a ng-click="print_case(datacases)" class="edit"><i class="fa fa-print"
                                                                                popover="พิมพ์ข้อมูลคดี" popover-trigger="mouseenter"></i></a>
                             <a  ng-if="!datacases.number_case"  ui-sref="input_number_case({id:datacases.id})" type="submit" type="button">
-                                <i class="fa fa-wrench fa-1x" popover="เพิ่มเลขคดี" popover-trigger="mouseenter"></i></a>
+                                <i class="fa fa-book fa-1x" popover="เพิ่มเลขคดี" popover-trigger="mouseenter"></i></a>
 
+                            <a  ng-if="!datacases.file_case"  ui-sref="upload_file({id:datacases.id})" type="submit" type="button">
+                                <i class="fa fa-cloud-upload fa-1x" popover="อัพโหลดไฟล์คดี" popover-trigger="mouseenter"></i></a>
 
                             <a ng-if="current_role == 'admin' || current_role == 'Member_Commissioned_Officers'" ui-sref="edit({id:datacases.id})" type="submit" type="button">
                                 <i class="fa fa-wrench fa-1x" popover="แก้ไขคดี" popover-trigger="mouseenter"></i></a>
