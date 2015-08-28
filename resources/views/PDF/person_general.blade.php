@@ -58,9 +58,9 @@
         <tr>
             @if($dataperson->idcard)
 
-                <td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;หมายเลขบัตร : <label><?php echo $dataperson->idcard ?> </label></td>
+                <td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;หมายเลขบัตรประชาชน/หนังสือเดินทาง : <label><?php echo $dataperson->idcard ?> </label></td>
             @else
-                <td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;หมายเลขบัตร : <label> - </label></td>
+                <td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;หมายเลขบัตรประชาชน/หนังสือเดินทาง : <label> - </label></td>
             @endif
         </tr>
 
@@ -445,15 +445,62 @@
         </tr>
 
 
+        {{--<tr>--}}
+            {{--@if($dataperson->created_at)--}}
+                {{--<td colspan="4">วันเวลาที่บันทึก (YYYY-MM-DD) : <label><?php echo $dataperson->created_at ?></label></td>--}}
+            {{--@else--}}
+                {{--<td colspan="4">วันเวลาที่บันทึก (YYYY-MM-DD) : <label> - </label></td>--}}
+            {{--@endif--}}
+        {{--</tr>--}}
+
         <tr>
-            @if($dataperson->created_at)
-                <td colspan="4">วันเวลาที่บันทึก (YYYY-MM-DD) : <label><?php echo $dataperson->created_at ?></label></td>
-            @else
-                <td colspan="4">วันเวลาที่บันทึก (YYYY-MM-DD) : <label> - </label></td>
-            @endif
+            <td colspan="2"></td>
+
         </tr>
+        <tr>
+            <td colspan="2"></td>
 
+        </tr>
+        <tr>
+            <td colspan="2"></td>
 
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+
+        </tr>
 
 
         <tr>

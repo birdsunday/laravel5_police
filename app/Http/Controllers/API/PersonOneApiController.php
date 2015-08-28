@@ -647,7 +647,7 @@ class PersonOneApiController extends Controller
 
 
         $html = view('PDF.personOne')->with('dataperson', $criminalhistory)->with('datacases', $datacasesPerson)->render();
-
+        //return $html;
         $pdf->WriteHTML($html);
 
         $pdf->stream();

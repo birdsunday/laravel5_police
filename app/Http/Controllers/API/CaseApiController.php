@@ -169,7 +169,7 @@ class CaseApiController extends Controller
         <table width="100%" style="vertical-align: bottom; font-family: TH SarabunPSK; font-size: 14pt; color: #000000; font-weight: bold; font-style: italic;"><tr>
         <td width="20%"></td>
         <td width="30%" style="text-align: right; ">{PAGENO}</td>
-        <td width="55%" style="text-align: right; "> ตำรวจตรวจคนเข้าเมือง จังหวัด เชียงราย</td>
+        <td width="55%" style="text-align: right; "> ตรวจคนเข้าเมือง จังหวัด เชียงราย</td>
         </tr></table>
         ');
         $pdf->SetFooter('

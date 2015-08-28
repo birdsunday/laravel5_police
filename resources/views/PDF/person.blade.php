@@ -76,10 +76,10 @@
 
         <tr>
             @if($dataperson->idcard)
-                <td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;หมายเลขบัตร :
+                <td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;หมายเลขบัตรประชาชน/หนังสือเดินทาง :
                     <label><?php echo $dataperson->idcard ?> </label></td>
             @else
-                <td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;หมายเลขบัตร : <label> - </label></td>
+                <td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;หมายเลขบัตรประชาชน/หนังสือเดินทาง : <label> - </label></td>
             @endif
 
         </tr>
@@ -477,7 +477,7 @@
         <tr>
 
             <td colspan="4">
-                <li>ประวัติการกระทำความผิด
+                <li>การกระทำความผิด
             </td>
 
 
@@ -629,7 +629,54 @@
         </tr>
 
 
+        <tr>
+            <td colspan="2"></td>
 
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+
+        </tr>
 
         <tr>
             <td colspan="2">ผู้จัดทำ</td>

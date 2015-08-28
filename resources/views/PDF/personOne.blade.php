@@ -76,10 +76,10 @@
 
         <tr>
             @if($dataperson->idcard)
-                <td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;หมายเลขบัตร :
+                <td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;หมายเลขบัตรประชาชน/หนังสือเดินทาง :
                     <label><?php echo $dataperson->idcard ?> </label></td>
             @else
-                <td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;หมายเลขบัตร : <label> - </label></td>
+                <td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;หมายเลขบัตรประชาชน/หนังสือเดินทาง : <label> - </label></td>
             @endif
 
         </tr>
@@ -477,7 +477,7 @@
         <tr>
 
             <td colspan="4">
-                <li>ประวัติการกระทำความผิด
+                <li>การกระทำความผิด
             </td>
 
 
@@ -502,12 +502,12 @@
 
                     @if($person_datacase->number_case || $person_datacase->year_number_case || $person_datacase->station_number_case)
 
-                        <td colspan="4">เลขคดี : <label> <?php echo $person_datacase->number_case ?>
+                        <td colspan="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;เลขคดี : <label> <?php echo $person_datacase->number_case ?>
                                 <?php echo $person_datacase->year_number_case ?>
                                 <?php echo $person_datacase->station_number_case ?>
                             </label></td>
                     @else
-                        <td colspan="4">เลขคดี : <label> -
+                        <td colspan="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;เลขคดี : <label> -
                             </label></td>
 
                     @endif
@@ -615,6 +615,65 @@
 
 
     </ol>
+
+    <tr>
+        <td colspan="2"></td>
+
+    </tr>
+    <tr>
+        <td colspan="2"></td>
+
+    </tr>
+    <tr>
+        <td colspan="2"></td>
+
+    </tr>
+    <tr>
+        <td colspan="2"></td>
+
+    </tr>
+    <tr>
+        <td colspan="2"></td>
+
+    </tr>
+    <tr>
+        <td colspan="2"></td>
+
+    </tr>
+    <tr>
+        <td colspan="2"></td>
+
+    </tr>
+    <tr>
+        <td colspan="2"></td>
+
+    </tr>
+    <tr>
+        <td colspan="2"></td>
+
+    </tr>
+    <tr>
+        <td colspan="2"></td>
+
+    </tr>
+    <tr>
+        <td colspan="2"></td>
+
+    </tr>
+    <tr>
+        <td colspan="2"></td>
+
+    </tr>
+    <tr>
+        <td colspan="2">ผู้จัดทำ</td>
+        <td colspan="2">วัน/เดือน/ปีที่จัดทำ:</td>
+
+    </tr>
+    <tr>
+        <td colspan="4">ตำแหน่ง</td>
+
+
+    </tr>
 </table>
 
 
