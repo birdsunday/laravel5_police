@@ -2,7 +2,7 @@
 <head>
 <style>
     body {
-        font-size: 25pt;
+        font-size: 21pt;
     }
     h5{
         font-family: garuda;

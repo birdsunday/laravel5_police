@@ -47,11 +47,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="photo_person_general.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="photo_person_general.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/PDF/photo_person_general.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.746789" vertical-offset="475" max-vertical-offset="1224">
-              <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+            <state vertical-scroll-proportion="-9.846154" vertical-offset="475" max-vertical-offset="1224">
+              <caret line="43" column="8" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -107,11 +107,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="photo_person.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="photo_person.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/PDF/photo_person.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.038462" vertical-offset="0" max-vertical-offset="1615">
-              <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
+            <state vertical-scroll-proportion="-1.0605505" vertical-offset="918" max-vertical-offset="1615">
+              <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -203,8 +203,8 @@
         <option value="$PROJECT_DIR$/public/app/person_general/_photo_person_geneal.html" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/PersonOneApiController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/GuestHistoryApiController.php" />
-        <option value="$PROJECT_DIR$/resources/views/PDF/photo_person.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/PDF/photo_person_general.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/PDF/photo_person.blade.php" />
       </list>
     </option>
   </component>
@@ -895,7 +895,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1401,18 +1401,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/PDF/photo_person.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/PDF/photo_person_general.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.038462" vertical-offset="0" max-vertical-offset="1615">
-          <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
+        <state vertical-scroll-proportion="-9.846154" vertical-offset="475" max-vertical-offset="1224">
+          <caret line="43" column="8" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/PDF/photo_person_general.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/PDF/photo_person.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.746789" vertical-offset="475" max-vertical-offset="1224">
-          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+        <state vertical-scroll-proportion="-1.0605505" vertical-offset="918" max-vertical-offset="1615">
+          <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
           <folding />
         </state>
       </provider>
