@@ -397,9 +397,21 @@ class DatabaseSeeder extends Seeder {
         $guesthistory->typepeople = ('บุคคลทั่วไป');
         $guesthistory->name = ('สมรัก');
         $guesthistory->surname = ('นาดี');
+<<<<<<< HEAD
         $guesthistory->birth =('26-9-2537');
         $guesthistory->date = ('วันที่ 22 เดือน สิงหาคม พ.ศ. 2558');
         $guesthistory->age = ('21 ปี');
+=======
+<<<<<<< HEAD
+        $guesthistory->birth =('26-9-2537');
+        $guesthistory->date = ('วันที่ 22 เดือน สิงหาคม พ.ศ. 2558');
+        $guesthistory->age = ('21 ปี');
+=======
+        $guesthistory->birth =('25');
+        $guesthistory->date = ('วันที่ 22 เดือน สิงหาคม พ.ศ. 2558');
+        $guesthistory->age = ('28');
+>>>>>>> origin/police
+>>>>>>> origin/police
         $guesthistory->career=('โปรแกรมเมอร์');
         $guesthistory->other = ('ต้องสงสัย....!@@##$^');
         $guesthistory->status = ('complete');
