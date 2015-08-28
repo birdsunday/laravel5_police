@@ -2,7 +2,7 @@
 <head>
 <style>
     body {
-        font-size: 20pt;
+        font-size: 25pt;
     }
     h5{
         font-family: garuda;
@@ -56,7 +56,7 @@
 
         <?php foreach($criminalhistory->datacase as $datacase) : ?>
 
-            <td colspan="2"> <label>คดี/ข้อหา : <?php echo $datacase->name_case ?> </label></td>
+            <td colspan="4"> <label>คดี/ข้อหา : <?php echo $datacase->name_case ?> </label></td>
 
 
         <?php endforeach; ?>
@@ -69,9 +69,9 @@
 
 
         @if($datacase->data_case)
-            <td colspan="2"> <label>วันที่เกิดเหตุ : <?php echo $datacase->data_case ?> </label></td>
+            <td colspan="4"> <label>วันที่เกิดเหตุ : <?php echo $datacase->data_case ?> </label></td>
         @else
-            <td colspan="2"> <label>วันที่เกิดเหตุ : - </label></td>
+            <td colspan="4"> <label>วันที่เกิดเหตุ : - </label></td>
         @endif
         <?php endforeach; ?>
 

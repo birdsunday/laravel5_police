@@ -547,7 +547,7 @@ class GuestHistoryApiController extends Controller {
 //$pdf = \App::make('mpdf.wrapper',['ภาษา','ขนาดการดาษ-L=แนวนอน ไม่- แนวตั้ง','','',ขอบซ้ายกระดาษ,ขอบขวากระดาษ,ขอบขนกระดาษ,ขอบล่างกระดาษ,ระยะ title,ระยะ footter]);
         $pdf = \App::make('mpdf.wrapper',['th','A4','','',20,15,20,25,10,10,]);
 
-        $pdf->SetWatermarkText("TEST");
+        $pdf->SetWatermarkText("");
 
         $pdf->SetDisplayMode('fullpage');
 
