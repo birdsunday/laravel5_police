@@ -63,6 +63,16 @@ class DatabaseSeeder extends Seeder {
         $nametitle4->name_title = ('เด็กหญิง');
         $nametitle4->save();
 
+        $nametitle5 = new \App\Models\NameTitle();
+        $nametitle5->name_title = ('Mr.');
+        $nametitle5->save();
+
+        $nametitle6 = new \App\Models\NameTitle();
+        $nametitle6->name_title = ('Miss');
+        $nametitle6->save();
+
+        
+
 
         $position = new \App\Models\Position();
         $position->name_position = ('ลูกแถว');
@@ -253,7 +263,7 @@ class DatabaseSeeder extends Seeder {
         $policeimmigration->tel_police = ('08x-xxxxxxx');
         $policeimmigration->username = ('admin');
         $policeimmigration->password = Hash::make('admin');
-        $policeimmigration->rank()->associate($rank1);
+        $policeimmigration->rank()->associate($rank9);
         $policeimmigration->role()->associate($role);
         $policeimmigration->position()->associate($position);
         $policeimmigration->save();
@@ -383,7 +393,7 @@ class DatabaseSeeder extends Seeder {
         $datafather1->save();
 
         $guesthistory = new \App\Models\GuestHistory();
-        $guesthistory->idcard = ('1560300222233');
+        $guesthistory->idcard = ('1560300222222');
         $guesthistory->typepeople = ('บุคคลทั่วไป');
         $guesthistory->name = ('สมรัก');
         $guesthistory->surname = ('นาดี');
@@ -409,7 +419,7 @@ class DatabaseSeeder extends Seeder {
         $criminalhistory->idcard = ('1560300222222');
         $criminalhistory->birth =('25-5-2555');
         $criminalhistory->age = ('21 ปี 0 เดือน');
-        $criminalhistory->date = ('วัน อังคาร ที่ 22 เดือน สิงหาคม พ.ศ. 2558 เวลาประมาณ 23:43 นาฟิกา');
+        $criminalhistory->date = ('วันที่ 22 เดือน สิงหาคม พ.ศ. 2558 เวลาประมาณ 23:43 นาฟิกา');
         $criminalhistory->education = ('ประถมศึษา');
         $criminalhistory->career=('โปรแกรมเมอร์');
         $criminalhistory->height = ('177');
@@ -505,7 +515,7 @@ class DatabaseSeeder extends Seeder {
         $datacase->number_case = ('1234');
         $datacase->year_number_case = ('2556');
         $datacase->station_number_case = ('สภ.แม่สาย');
-        $datacase->date_case=('วัน อังคาร ที่ 22 เดือน สิงหาคม พ.ศ. 2558 เวลาประมาณ 23:43 นาฟิกา');
+        $datacase->date_case=('วันที่ 22 เดือน สิงหาคม พ.ศ. 2558 เวลาประมาณ 23:43 นาฟิกา');
         $datacase->houseno_case=('4');
         $datacase->villageno_case=('5');
         $datacase->road_case=('อาราย');
