@@ -501,12 +501,12 @@
 
                 @if($person_datacase->number_case || $person_datacase->year_number_case || $person_datacase->station_number_case)
 
-                    <td colspan="4">เลขคดี : <label> <?php echo $person_datacase->number_case ?>
+                    <td colspan="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;เลขคดี : <label> <?php echo $person_datacase->number_case ?>
                             <?php echo $person_datacase->year_number_case ?>
                             <?php echo $person_datacase->station_number_case ?>
                         </label></td>
                 @else
-                    <td colspan="4">เลขคดี : <label> -
+                    <td colspan="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;เลขคดี : <label> -
                         </label></td>
 
                 @endif

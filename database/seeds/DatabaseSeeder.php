@@ -397,8 +397,9 @@ class DatabaseSeeder extends Seeder {
         $guesthistory->typepeople = ('บุคคลทั่วไป');
         $guesthistory->name = ('สมรัก');
         $guesthistory->surname = ('นาดี');
-        $guesthistory->birth =('25');
-        $guesthistory->age = ('28');
+        $guesthistory->birth =('26-9-2537');
+        $guesthistory->date = ('วันที่ 22 เดือน สิงหาคม พ.ศ. 2558');
+        $guesthistory->age = ('21 ปี');
         $guesthistory->career=('โปรแกรมเมอร์');
         $guesthistory->other = ('ต้องสงสัย....!@@##$^');
         $guesthistory->status = ('complete');
@@ -417,8 +418,8 @@ class DatabaseSeeder extends Seeder {
         $criminalhistory->surname = ('มีสุข');
         $criminalhistory->alias = ('เสือใหญ่');
         $criminalhistory->idcard = ('1560300222222');
-        $criminalhistory->birth =('25-5-2555');
-        $criminalhistory->age = ('21 ปี 0 เดือน');
+        $criminalhistory->birth =('26-9-2537');
+        $criminalhistory->age = ('21 ปี');
         $criminalhistory->date = ('วันที่ 22 เดือน สิงหาคม พ.ศ. 2558 เวลาประมาณ 23:43 นาฟิกา');
         $criminalhistory->education = ('ประถมศึษา');
         $criminalhistory->career=('โปรแกรมเมอร์');

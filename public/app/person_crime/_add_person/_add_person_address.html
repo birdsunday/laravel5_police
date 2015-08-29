@@ -18,7 +18,7 @@
                         <label class="col-sm-1 control-label" style="width: auto">โทร:</label>
 
                         <div class="col-sm-3">
-                            <input ng-model="person.addresspresent.present_tel" type="text" class="form-control">
+                            <input  onKeyUp="IsNumeric(this.value,this)" ng-model="person.addresspresent.present_tel" type="text" class="form-control">
                         </div>
                     </div>
                     <div class="form-group">
@@ -31,7 +31,7 @@
                         <label class="col-sm-1 control-label" style="width: auto">โทร:</label>
 
                         <div class="col-sm-3">
-                            <input ng-model="person.addressoriginal.original_tel" type="text" class="form-control">
+                            <input onKeyUp="IsNumeric(this.value,this)" ng-model="person.addressoriginal.original_tel" type="text" class="form-control">
                         </div>
                     </div>
 
@@ -65,7 +65,7 @@
                             <label class="col-sm-3 control-label">โทร:</label>
 
                             <div class="col-sm-7">
-                                <input ng-model="addoffice.office_tel" type="text" class="form-control">
+                                <input onKeyUp="IsNumeric(this.value,this)" ng-model="addoffice.office_tel" type="text" class="form-control">
                             </div>
                         </div>
                         <div class="form-group text-center">

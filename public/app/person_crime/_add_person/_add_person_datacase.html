@@ -209,7 +209,7 @@
                         <label class="col-sm-3 control-label" style="font-size: 14px">โทร:</label>
 
                         <div class="col-sm-3">
-                            <input type="text"  ng-model="caseFile.tel_police" class="form-control" id="" name="amount">
+                            <input type="text" onKeyUp="IsNumeric(this.value,this)"  ng-model="caseFile.tel_police" class="form-control" id="" name="amount">
                         </div>
                     </div>
 

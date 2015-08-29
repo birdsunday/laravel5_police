@@ -183,13 +183,13 @@
                     <div class="form-group" ng-if="!error.tel_police">
                         <label class="col-md-4 control-label">เบอร์โทร</label>
                         <div class="col-md-6">
-                            <input ng-model="police.tel_police" type="text" class="form-control" name="tel">
+                            <input onKeyUp="IsNumeric(this.value,this)"  ng-model="police.tel_police" type="text" class="form-control" name="tel">
                         </div>
                     </div>
                     <div class="form-group has-error has-feedback" ng-if="error.tel_police" ng-repeat="error_tel_police in error.tel_police">
                         <label class="col-md-4 control-label">เบอร์โทร</label>
                         <div class="col-md-6">
-                            <input type="text" class="form-control" ng-model="police.tel_police">
+                            <input onKeyUp="IsNumeric(this.value,this)"  type="text" class="form-control" ng-model="police.tel_police">
                             <span class="fa fa-remove form-control-feedback" aria-hidden="true"></span>
                             <span class="control-label color-red" for="username" ng-bind="' '+ error_tel_police"></span>
                         </div>

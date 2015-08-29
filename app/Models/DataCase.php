@@ -13,7 +13,7 @@ class DataCase extends Model {
     protected $fillable = array('file_case','number_case','circumstances_case'
     ,'date_case','houseno_case','villageno_case','road_case','lane_alley_case','subdistrict_case','disreict_case'
     ,'province_case','contry_case','name_case','station_number_case','year_number_case','status'
-    ,'name_police','surname_polce','rank_police','tel_police');
+    ,'name_police','surname_police','rank_police','tel_police');
 
 
 

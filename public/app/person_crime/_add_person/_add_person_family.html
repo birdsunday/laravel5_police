@@ -63,7 +63,7 @@
                         <label class="col-sm-1 control-label">โทร</label>
 
                         <div class="col-sm-3">
-                            <input ng-model="person.datafather.father_tel" type="text" class="form-control">
+                            <input onKeyUp="IsNumeric(this.value,this)" ng-model="person.datafather.father_tel" type="text" class="form-control">
                         </div>
                     </div>
 
@@ -85,7 +85,7 @@
                         <label class="col-sm-1 control-label">โทร</label>
 
                         <div class="col-sm-3">
-                            <left><input ng-model="person.datafather.father_nameoffice_tel" type="text"
+                            <left><input onKeyUp="IsNumeric(this.value,this)" ng-model="person.datafather.father_nameoffice_tel" type="text"
                                          class="form-control">
                             </left>
                         </div>
@@ -161,7 +161,7 @@
                         <label class="col-sm-1 control-label">โทร</label>
 
                         <div class="col-sm-3">
-                            <input ng-model="person.datamother.mother_tel" type="text" class="form-control">
+                            <input onKeyUp="IsNumeric(this.value,this)" ng-model="person.datamother.mother_tel" type="text" class="form-control">
                         </div>
                     </div>
                     <div class="form-group">
@@ -259,7 +259,7 @@
                         <label class="col-sm-1 control-label">โทร</label>
 
                         <div class="col-sm-3">
-                            <input ng-model="person.dataspouse.spouse_tel" type="text" class="form-control">
+                            <input onKeyUp="IsNumeric(this.value,this)" ng-model="person.dataspouse.spouse_tel" type="text" class="form-control">
                         </div>
                     </div>
 
@@ -279,7 +279,7 @@
                         <label class="col-sm-1 control-label">โทร</label>
 
                         <div class="col-sm-3">
-                            <left><input ng-model="person.dataspouse.spouse_nameoffice_tel" type="text"
+                            <left><input onKeyUp="IsNumeric(this.value,this)" ng-model="person.dataspouse.spouse_nameoffice_tel" type="text"
                                          class="form-control">
                             </left>
                         </div>
@@ -425,7 +425,7 @@
                         <label class="col-sm-1 control-label" style="width: auto">โทร:</label>
 
                         <div class="col-sm-3">
-                            <left><input ng-model="child.child_nameoffice_tel" type="text" class="form-control">
+                            <left><input onKeyUp="IsNumeric(this.value,this)" ng-model="child.child_nameoffice_tel" type="text" class="form-control">
                             </left>
                         </div>
                     </div>

@@ -36,7 +36,7 @@
                 }
             }
             if(IsNumber==false){
-                alert("Only numberic value");
+                alert("กรอกได้เฉพาะตัวเลข");
                 obj.value=sText.substr(0,sText.length-1);
             }
         }
