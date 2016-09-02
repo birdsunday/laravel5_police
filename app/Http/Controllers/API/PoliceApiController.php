@@ -45,9 +45,6 @@ class PoliceApiController extends Controller {
 	public function store(InsertPoliceRequest $request)
 	{
         $model_police = new PoliceImmigration();
-
-
-
         $model_police->fill(Input::except(['_token']));
         $model_police->password = Hash::make(Input::get('password'));
         if(Input::has('position.id')){
@@ -105,8 +102,12 @@ class PoliceApiController extends Controller {
 	{
 
         $user = PoliceImmigration::find($id);;
-        $user->fill(Input::except(['_token']));
-        $user->password = Hash::make(Input::get('password'));
+        $user->fill(Input::except(['password']));
+        if(Input::get('password')){
+           // return Input::get('password');
+            $user->password = Hash::make(Input::get('password'));
+        }
+
         if(Input::has('position.id')){
             $position = Position::find(Input::get('position.id'));
             $user->position()->associate($position);

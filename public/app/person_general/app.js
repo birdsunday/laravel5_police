@@ -1,4 +1,4 @@
-var app = angular.module("PersonGeneral", ['ui.router','flow','ui.bootstrap'], function ($interpolateProvider) {
+var app = angular.module("PersonGeneral", ['ui.router', 'flow', 'ui.bootstrap'], function ($interpolateProvider) {
 
     $interpolateProvider.startSymbol('<%');
     $interpolateProvider.endSymbol('%>');
@@ -15,7 +15,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: "/app/person_general/_home.html",
             controller: "HomeController",
             resolve: {
-                person_generals: function ($http,$stateParams) {
+                person_generals: function ($http, $stateParams) {
                     return $http.get('/api/guesthistory/');
                 },
                 nametitle: function ($http) {
@@ -55,7 +55,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: '/app/person_general/_add_person_general/_complete_person_general/_complete_person.html',
             controller: 'CompleteController',
             resolve: {
-                person_general: function ($http,$stateParams) {
+                person_general: function ($http, $stateParams) {
                     return $http.get('/api/guesthistory/' + $stateParams.id);
                 }
             }
@@ -65,12 +65,11 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: "/app/person_general/_preview_person_general.html",
             controller: "PreviewPersonController",
             resolve: {
-                person_general: function ($http,$stateParams) {
+                person_general: function ($http, $stateParams) {
                     return $http.get('/api/guesthistory/' + $stateParams.id);
                 }
             }
         })
-
 
 
         .state('edit', {
@@ -78,7 +77,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: "/app/person_general/_edit_person_general/_edit.html",
             controller: "EditController",
             resolve: {
-                person_general: function ($http,$stateParams) {
+                person_general: function ($http, $stateParams) {
                     return $http.get('/api/guesthistory/' + $stateParams.id);
                 },
                 nametitle: function ($http) {
@@ -93,7 +92,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: "/app/person_general/_photo_person_geneal.html",
             controller: "AddPhotoPersonController",
             resolve: {
-                person_general: function ($http,$stateParams) {
+                person_general: function ($http, $stateParams) {
                     return $http.get('/api/guesthistory/' + $stateParams.id);
                 }
             }
@@ -101,26 +100,24 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         })
 
 
-
 });
 
-app.controller("AddPhotoPersonController", function ($scope, $http,$stateParams,$rootScope,$timeout
-    ,$state,person_general) {
+app.controller("AddPhotoPersonController", function ($scope, $http, $stateParams, $rootScope, $timeout
+    , $state, person_general) {
     console.log("AddPhotoPersonController.start");
 
     $scope.data_person_generals = person_general.data;
-    console.log($scope.data_person_generals );
-
+    console.log($scope.data_person_generals);
 
 
     $scope.myFlow = new Flow({
-        target: '/api/guesthistory/'+ $scope.data_person_generals.id +'/photo',
+        target: '/api/guesthistory/' + $scope.data_person_generals.id + '/photo',
         singleFile: true,
         method: 'post',
         testChunks: false
     })
 
-    $scope.uploadFile = function(){
+    $scope.uploadFile = function () {
 
         saveCaseFile = "ต้องการอัพโหลดรูปนี้ใช่ หรือไม่";
 
@@ -134,40 +131,40 @@ app.controller("AddPhotoPersonController", function ($scope, $http,$stateParams,
         }
         //console.log($scope.myFlow);
     }
-    $scope.cancelFile = function (file){
+    $scope.cancelFile = function (file) {
         var index = $scope.myFlow.files.indexOf(file)
-        $scope.myFlow.files.splice(index,1);
+        $scope.myFlow.files.splice(index, 1);
 
     }
 
 
 });
-app.controller("HomeController", function ($scope,$window, $http,$stateParams,person_generals,$rootScope,nametitle) {
+app.controller("HomeController", function ($scope, $window, $http, $stateParams, person_generals, $rootScope, nametitle) {
     console.log("HomeController.start");
     $scope.data_person_generals = person_generals.data
     $scope.nametitles = nametitle.data;
     $rootScope.current_role = current_role;
-    console.log( $rootScope.current_role );
+    console.log($rootScope.current_role);
 
-    $scope.printPerson = function(person_general){
+    $scope.printPerson = function (person_general) {
 
         //window.location= "/api/case/"+ $scope.caseFile.id +"/generated_pdf_case";
-        $window.open('/api/guesthistory/'+ person_general.id +'/generated_pdf_case', '_blank');
+        $window.open('/api/guesthistory/' + person_general.id + '/generated_pdf_case', '_blank');
 
 
     }
-    $scope.delete_person = function(person_general){
+    $scope.delete_person = function (person_general) {
         console.log(person_general);
         saveCaseFile = "ต้องการลบประวัตินี้ใช่ หรือ ไม่";
 
         if (confirm(saveCaseFile)) {
             var index = $scope.data_person_generals.indexOf(person_general);
-            $scope.data_person_generals.splice(index,1);
+            $scope.data_person_generals.splice(index, 1);
             $http({
-                url : "/api/guesthistory/"+ person_general.id,
-                method : "DELETE",
-                data : person_general
-            }).success(function(response){
+                url: "/api/guesthistory/" + person_general.id,
+                method: "DELETE",
+                data: person_general
+            }).success(function (response) {
                 //console.log(response);
                 massged = "ลบประวัติเสร็จสมบูรณ์";
                 alert(massged);
@@ -176,21 +173,20 @@ app.controller("HomeController", function ($scope,$window, $http,$stateParams,pe
         }
 
     }
-    $scope.print_Photoperson = function(person_general){
+    $scope.print_Photoperson = function (person_general) {
 
         console.log(person_general.id);
 
         // window.location= "/api/person/"+ $scope.person.id +"/print_photo_person, '_blank'";
-        $window.open('/api/guesthistory/'+ person_general.id +'/print_photo_person', '_blank');
+        $window.open('/api/guesthistory/' + person_general.id + '/print_photo_person', '_blank');
 
 
     }
 
 
-
 });
 
-app.controller("AddController", function ($scope, $http,$state,$timeout,nametitle) {
+app.controller("AddController", function ($scope, $http, $state, $timeout, nametitle) {
     console.log("AddController.start");
 
     $scope.guest = {};
@@ -211,6 +207,28 @@ app.controller("AddController", function ($scope, $http,$state,$timeout,nametitl
 
 
 
+    $scope.clear = function () {
+        $scope.dt = null;
+    };
+
+    $scope.open_start = function($event) {
+        $event.preventDefault();
+        $event.stopPropagation();
+
+        $scope.opened_start = true;
+    };
+
+    $scope.open_end = function($event) {
+        $event.preventDefault();
+        $event.stopPropagation();
+
+        $scope.opened_end = true;
+    };
+
+
+    $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
+    $scope.format = $scope.formats[1];
+
     $scope.keyword = {};
     $scope.tempFilterTextName = '';
     $scope.filterTextTimeout;
@@ -220,25 +238,25 @@ app.controller("AddController", function ($scope, $http,$state,$timeout,nametitl
         $scope.tempFilterTextName = $guest;
         $scope.filterTextTimeout = $timeout(function () {
             $scope.filterTextName = $scope.tempFilterTextName;
-            console.log( $scope.filterTextName);
+            console.log($scope.filterTextName);
 
             if ($scope.filterTextName.length == 0) {
 
             } else {
 
                 $http({
-                    url : "/api/person_crime/search/person_crime",
-                    method : "post",
-                    data : $guest
+                    url: "/api/person_crime/search/person_crime",
+                    method: "post",
+                    data: $guest
 
-                }).success(function(response){
+                }).success(function (response) {
                     $scope.dataperson_crime = response;
                     $http({
-                        url : "/api/person_crime/search/person_general",
-                        method : "post",
-                        data : $guest
+                        url: "/api/person_crime/search/person_general",
+                        method: "post",
+                        data: $guest
 
-                    }).success(function(response){
+                    }).success(function (response) {
                         $scope.dataperson_general = response;
                     })
                 })
@@ -254,12 +272,10 @@ app.controller("AddController", function ($scope, $http,$state,$timeout,nametitl
         $scope.personfamily = {};
     }
 
-    $scope.DeleteDataPersonFamily = function(personfamily){
-        var index =  $scope.guest.personfamily.indexOf(personfamily);
-        $scope.guest.personfamily.splice(index,1);
+    $scope.DeleteDataPersonFamily = function (personfamily) {
+        var index = $scope.guest.personfamily.indexOf(personfamily);
+        $scope.guest.personfamily.splice(index, 1);
     }
-
-
 
 
     $scope.saveDataOffice = function () {
@@ -268,12 +284,10 @@ app.controller("AddController", function ($scope, $http,$state,$timeout,nametitl
         $scope.addoffice = {};
     }
 
-    $scope.DeleteDataOffice = function(dataoffice){
-        var index =  $scope.guest.addressoffice.indexOf(dataoffice);
-        $scope.guest.addressoffice.splice(index,1);
+    $scope.DeleteDataOffice = function (dataoffice) {
+        var index = $scope.guest.addressoffice.indexOf(dataoffice);
+        $scope.guest.addressoffice.splice(index, 1);
     }
-
-
 
 
     $scope.saveDataChild = function () {
@@ -282,11 +296,10 @@ app.controller("AddController", function ($scope, $http,$state,$timeout,nametitl
         $scope.child = {};
     }
 
-    $scope.DeleteDataChild = function(datachild){
-        var index =  $scope.guest.datachild.indexOf(datachild);
-        $scope.guest.datachild.splice(index,1);
+    $scope.DeleteDataChild = function (datachild) {
+        var index = $scope.guest.datachild.indexOf(datachild);
+        $scope.guest.datachild.splice(index, 1);
     }
-
 
 
     $scope.saveDataEmployee = function () {
@@ -295,9 +308,9 @@ app.controller("AddController", function ($scope, $http,$state,$timeout,nametitl
         $scope.employee = {};
     }
 
-    $scope.DeleteDataEmployee= function(employee){
-        var index =  $scope.guest.employee.indexOf(employee);
-        $scope.guest.employee.splice(index,1);
+    $scope.DeleteDataEmployee = function (employee) {
+        var index = $scope.guest.employee.indexOf(employee);
+        $scope.guest.employee.splice(index, 1);
     }
 
 
@@ -307,69 +320,92 @@ app.controller("AddController", function ($scope, $http,$state,$timeout,nametitl
         $scope.vehicle = {};
     }
 
-    $scope.DeleteDataVehicle = function(datavehicle){
-        var index =  $scope.guest.vehicle.indexOf(datavehicle);
-        $scope.guest.vehicle.splice(index,1);
+    $scope.DeleteDataVehicle = function (datavehicle) {
+        var index = $scope.guest.vehicle.indexOf(datavehicle);
+        $scope.guest.vehicle.splice(index, 1);
     }
 
 
     $scope.myFlow = new Flow({
-      //  target: '/api/guesthistory/'+ $scope.guest.id +'/photo',
+        //  target: '/api/guesthistory/'+ $scope.guest.id +'/photo',
         singleFile: true,
         method: 'post',
         testChunks: false
     })
 
 
-    $scope.cancelFile = function (file){
+    $scope.cancelFile = function (file) {
         var index = $scope.myFlow.files.indexOf(file)
-        $scope.myFlow.files.splice(index,1);
+        $scope.myFlow.files.splice(index, 1);
 
     }
 
 
-
-
-
     $scope.saveDataGuest = function () {
+        if($scope.guest.birth){
+            var dayBirth=$scope.guest.birth;
+            var getdayBirth=dayBirth.split("-");
+            var YB=getdayBirth[2]-543;
+            var MB=getdayBirth[1];
+            var DB=getdayBirth[0];
+
+            var setdayBirth=moment(YB+"-"+MB+"-"+DB);
+            var setNowDate=moment();
+            var yearData=setNowDate.diff(setdayBirth, 'years', true); // ข้อมูลปีแบบทศนิยม
+            var yearFinal=Math.round(setNowDate.diff(setdayBirth, 'years', true),0); // ปีเต็ม
+            var yearReal=setNowDate.diff(setdayBirth, 'years'); // ปีจริง
+            var monthDiff=Math.floor((yearData-yearReal)*12); // เดือน
+            var str_year_month=yearReal+" ปี "+monthDiff+" เดือน"; // ต่อวันเดือนปี
+            $scope.guest.age = str_year_month;
+        }
+        console.log($scope.guest.age);
         saveCaseFile = "ต้องการบันทึกทะเบียร์ประวัตินี้ ใช่หรือ ไม่";
 
+
+
+
         if (confirm(saveCaseFile)) {
-            $scope.guest.status = "complete";
+            if($scope.guest.name ){
+                $scope.guest.status = "complete";
 
-            $http({
-                url: "/api/guesthistory",
-                method: "post",
-                data: $scope.guest
-            }).success(function (response) {
-                $scope.myFlow.opts.target = '/api/guesthistory/'+ response.id +'/photo';
-                $scope.myFlow.upload();
-                $state.go("form_add.complete",{id:response.id})
+                $http({
+                    url: "/api/guesthistory",
+                    method: "post",
+                    data: $scope.guest
+                }).success(function (response) {
+                    $scope.myFlow.opts.target = '/api/guesthistory/' + response.id + '/photo';
+                    $scope.myFlow.upload();
+                    $state.go("form_add.complete", {id: response.id})
+
+                })
+
+            }else{
+                massged = "กรุณา กรอก ชื่อ ของบุคคล";
+                alert(massged);
+            }
 
 
-            })
+
 
         }
 
 
-
     }
 
 });
 
 
-
-app.controller("PreviewPersonController", function ($scope,$window, $http,$stateParams,
-                                                    $rootScope,$timeout,$state,person_general ) {
+app.controller("PreviewPersonController", function ($scope, $window, $http, $stateParams,
+                                                    $rootScope, $timeout, $state, person_general) {
     console.log("PreviewPersonController.start");
     $scope.guest = person_general.data;
     console.log($scope.guest);
-    $scope.printPerson = function(){
+    $scope.printPerson = function () {
 
         console.log($scope.guest.id);
 
         //window.location= "/api/case/"+ $scope.caseFile.id +"/generated_pdf_case";
-        $window.open('/api/guesthistory/'+ $scope.guest.id +'/generated_pdf_person', '_blank');
+        $window.open('/api/guesthistory/' + $scope.guest.id + '/generated_pdf_case', '_blank');
 
 
     }
@@ -378,7 +414,7 @@ app.controller("PreviewPersonController", function ($scope,$window, $http,$state
 });
 
 
-app.controller("EditController", function ($scope, $http,$stateParams,$state,person_general,nametitle){
+app.controller("EditController", function ($scope, $http, $stateParams, $state, person_general, nametitle) {
     console.log("EditController.start");
 
     $scope.guest = {};
@@ -401,7 +437,7 @@ app.controller("EditController", function ($scope, $http,$stateParams,$state,per
 
     function init() {
 
-        if($scope.guest.nametitle){
+        if ($scope.guest.nametitle) {
             for (i = 0; i < $scope.nametitles.length; i++) {
 
                 if ($scope.nametitles[i].id == $scope.guest.nametitle.id) {
@@ -412,8 +448,8 @@ app.controller("EditController", function ($scope, $http,$stateParams,$state,per
             }
         }
 
-        if($scope.guest.dataspouse){
-            if($scope.guest.dataspouse.nametitle){
+        if ($scope.guest.dataspouse) {
+            if ($scope.guest.dataspouse.nametitle) {
                 for (a = 0; a < $scope.nametitles.length; a++) {
 
                     if ($scope.nametitles[a].id == $scope.guest.dataspouse.nametitle.id) {
@@ -427,33 +463,30 @@ app.controller("EditController", function ($scope, $http,$stateParams,$state,per
         }
 
 
-
     }
 
     init();
 
 
-
-
     $scope.saveDataOffice = function () {
 
         $http({
-            url : "/api/guesthistory/"+$scope.guest.id+"/address_office",
-            method : "post",
-            data : $scope.addoffice
+            url: "/api/guesthistory/" + $scope.guest.id + "/address_office",
+            method: "post",
+            data: $scope.addoffice
 
-        }).success(function(){
+        }).success(function () {
             $scope.guest.addressoffice.push($scope.addoffice);
             $scope.addoffice = {};
 
         })
     }
 
-    $scope.DeleteDataOffice = function(dataoffice){
-        var index =  $scope.guest.addressoffice.indexOf(dataoffice);
-        $scope.guest.addressoffice.splice(index,1);
+    $scope.DeleteDataOffice = function (dataoffice) {
+        var index = $scope.guest.addressoffice.indexOf(dataoffice);
+        $scope.guest.addressoffice.splice(index, 1);
         $http({
-            url: "/api/guesthistory/"+ $scope.guest.id +"/address_office/"+ dataoffice.id,
+            url: "/api/guesthistory/" + $scope.guest.id + "/address_office/" + dataoffice.id,
             method: "DELETE"
         }).success(function () {
 
@@ -461,25 +494,24 @@ app.controller("EditController", function ($scope, $http,$stateParams,$state,per
     }
 
 
-
     $scope.saveDataPersonFamily = function () {
         $http({
-            url : "/api/guesthistory/"+$scope.guest.id+"/person_family",
-            method : "post",
-            data : $scope.personfamily
+            url: "/api/guesthistory/" + $scope.guest.id + "/person_family",
+            method: "post",
+            data: $scope.personfamily
 
-        }).success(function(){
+        }).success(function () {
             $scope.guest.personfamily.push($scope.personfamily);
             $scope.personfamily = {};
 
         })
     }
 
-    $scope.DeleteDataPersonFamily = function(datacpersonfamily){
-        var index =  $scope.guest.personfamily.indexOf(datacpersonfamily);
-        $scope.guest.personfamily.splice(index,1);
+    $scope.DeleteDataPersonFamily = function (datacpersonfamily) {
+        var index = $scope.guest.personfamily.indexOf(datacpersonfamily);
+        $scope.guest.personfamily.splice(index, 1);
         $http({
-            url: "/api/guesthistory/"+ $scope.guest.id +"/person_family/"+ datacpersonfamily.id,
+            url: "/api/guesthistory/" + $scope.guest.id + "/person_family/" + datacpersonfamily.id,
             method: "DELETE"
         }).success(function () {
 
@@ -490,22 +522,22 @@ app.controller("EditController", function ($scope, $http,$stateParams,$state,per
     $scope.saveDataChild = function () {
 
         $http({
-            url : "/api/guesthistory/"+$scope.guest.id+"/child",
-            method : "post",
-            data : $scope.child
+            url: "/api/guesthistory/" + $scope.guest.id + "/child",
+            method: "post",
+            data: $scope.child
 
-        }).success(function(){
+        }).success(function () {
             $scope.guest.datachild.push($scope.child);
             $scope.child = {};
 
         })
     }
 
-    $scope.DeleteDataChild = function(datachild){
-        var index =  $scope.guest.datachild.indexOf(datachild);
-        $scope.guest.datachild.splice(index,1);
+    $scope.DeleteDataChild = function (datachild) {
+        var index = $scope.guest.datachild.indexOf(datachild);
+        $scope.guest.datachild.splice(index, 1);
         $http({
-            url: "/api/guesthistory/"+ $scope.guest.id +"/child/"+ datachild.id,
+            url: "/api/guesthistory/" + $scope.guest.id + "/child/" + datachild.id,
             method: "DELETE"
         }).success(function () {
 
@@ -513,26 +545,25 @@ app.controller("EditController", function ($scope, $http,$stateParams,$state,per
     }
 
 
-
     $scope.saveDataEmployee = function () {
 
         $http({
-            url : "/api/guesthistory/"+$scope.guest.id+"/employee",
-            method : "post",
-            data : $scope.employee
+            url: "/api/guesthistory/" + $scope.guest.id + "/employee",
+            method: "post",
+            data: $scope.employee
 
-        }).success(function(){
+        }).success(function () {
             $scope.guest.employee.push($scope.employee);
             $scope.employee = {};
 
         })
     }
 
-    $scope.DeleteDataEmployee= function(employee){
-        var index =  $scope.guest.employee.indexOf(employee);
-        $scope.guest.employee.splice(index,1);
+    $scope.DeleteDataEmployee = function (employee) {
+        var index = $scope.guest.employee.indexOf(employee);
+        $scope.guest.employee.splice(index, 1);
         $http({
-            url: "/api/guesthistory/"+ $scope.guest.id +"/employee/"+ employee.id,
+            url: "/api/guesthistory/" + $scope.guest.id + "/employee/" + employee.id,
             method: "DELETE"
         }).success(function () {
 
@@ -543,22 +574,22 @@ app.controller("EditController", function ($scope, $http,$stateParams,$state,per
     $scope.saveDataVehicle = function () {
 
         $http({
-            url : "/api/guesthistory/"+$scope.guest.id+"/vehicle",
-            method : "post",
-            data : $scope.vehicle
+            url: "/api/guesthistory/" + $scope.guest.id + "/vehicle",
+            method: "post",
+            data: $scope.vehicle
 
-        }).success(function(){
+        }).success(function () {
             $scope.guest.vehicle.push($scope.vehicle);
             $scope.vehicle = {};
 
         })
     }
 
-    $scope.DeleteDataVehicle = function(datavehicle){
-        var index =  $scope.guest.vehicle.indexOf(datavehicle);
-        $scope.guest.vehicle.splice(index,1);
+    $scope.DeleteDataVehicle = function (datavehicle) {
+        var index = $scope.guest.vehicle.indexOf(datavehicle);
+        $scope.guest.vehicle.splice(index, 1);
         $http({
-            url: "/api/guesthistory/"+ $scope.guest.id +"/vehicle/"+ datavehicle.id,
+            url: "/api/guesthistory/" + $scope.guest.id + "/vehicle/" + datavehicle.id,
             method: "DELETE"
         }).success(function () {
 
@@ -566,17 +597,16 @@ app.controller("EditController", function ($scope, $http,$stateParams,$state,per
     }
 
 
-    $scope.editpreson = function(){
-
+    $scope.editpreson = function () {
 
 
         saveCaseFile = "ต้องการแก้ไขทะเบียร์ประวัตินี้ ใช่หรือ ไม่";
         if (confirm(saveCaseFile)) {
             $http({
-                url : "/api/guesthistory/"+$scope.guest.id,
-                method : "PUT",
-                data : $scope.guest
-            }).success(function(response){
+                url: "/api/guesthistory/" + $scope.guest.id,
+                method: "PUT",
+                data: $scope.guest
+            }).success(function (response) {
                 $state.go("home")
             })
         }
@@ -585,26 +615,24 @@ app.controller("EditController", function ($scope, $http,$stateParams,$state,per
 });
 
 
-
-app.controller("CompleteController", function ($scope,$window, $http,$stateParams,$rootScope,
-                                               $timeout,$state,person_general ) {
+app.controller("CompleteController", function ($scope, $window, $http, $stateParams, $rootScope,
+                                               $timeout, $state, person_general) {
     console.log("CompleteController.start");
 
     $scope.guest = person_general.data;
     console.log($scope.guest);
 
-    $scope.printPerson = function(){
+    $scope.printPerson = function () {
 
         console.log($scope.guest.id);
 
         //window.location= "/api/case/"+ $scope.caseFile.id +"/generated_pdf_case";
-        $window.open('/api/guesthistory/'+ $scope.guest.id +'/generated_pdf_case', '_blank');
+        $window.open('/api/guesthistory/' + $scope.guest.id + '/generated_pdf_case', '_blank');
 
 
     }
 
 });
-
 
 
 app.controller("PhotoController", function ($scope, $http) {
@@ -613,19 +641,19 @@ app.controller("PhotoController", function ($scope, $http) {
     self.guest = $scope.guest;
 
     $scope.myFlow = new Flow({
-        target: '/api/guesthistory/'+ self.guest.id +'/photo',
+        target: '/api/guesthistory/' + self.guest.id + '/photo',
         singleFile: true,
         method: 'post',
         testChunks: false
     })
 
-    self.uploadFile = function(){
+    self.uploadFile = function () {
         $scope.myFlow.upload();
         //console.log($scope.myFlow);
     }
-    self.cancelFile = function (file){
+    self.cancelFile = function (file) {
         var index = $scope.myFlow.files.indexOf(file)
-        $scope.myFlow.files.splice(index,1);
+        $scope.myFlow.files.splice(index, 1);
 
     }
 

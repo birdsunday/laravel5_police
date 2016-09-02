@@ -44,13 +44,13 @@ class InsertPoliceRequest extends Request
             case 'PATCH':
             {
                 return [
-                    "username" => "max:255|unique:policeimmigration,username,NULL,id,deleted_at,NULL|required",
+                  //  "username" => "max:255|unique:policeimmigration,username,NULL,id,deleted_at,NULL|required",
                     "name_police" => "max:255|required",
                     "surname_police" => "max:255|required",
-                    "password" => "max:255|required",
-                    "rank" => "max:255|required",
-                    "position" => "max:255|required",
-                    "vpassword"=> "max:255|same:password|required",
+                    "password" => "max:255",
+                   // "rank" => "max:255|required",
+                   // "position" => "max:255|required",
+                    "vpassword"=> "max:255|same:password",
                     "role"=> "max:255|required"
                 ];
             }

@@ -25,7 +25,7 @@
         <div class="col-xs-3 bs-wizard-step "><!-- complete -->
             <div class="text-center bs-wizard-stepnum">ขั้นตอนที่ 4</div>
             <div class="progress"><div class="progress-bar"></div></div>
-            <a href="#" class="bs-wizard-dot"></a>
+            <a href="#" class="bs-wizard-dot1"></a>
             <div class="bs-wizard-info text-center">บันทึกข้อมูลเสร็จสมบูรณ์</div>
         </div>
 
@@ -44,9 +44,7 @@
 
 
 
-                <button ng-if="!person.name && !person.nametitle && !person.date " type="button" ng-click="savepresonError()" class="btn btn-success"><i class="fa fa-floppy-o"></i> บันทึกประวัติ</button>
-
-                <button  ng-if="person.name && person.nametitle && person.date" type="button" ng-click="savepreson()" class="btn btn-success"><i class="fa fa-floppy-o"></i> บันทึกประวัติ</button>
+                <button   type="button" ng-click="savepreson()" class="btn btn-success"><i class="fa fa-floppy-o"></i> บันทึกประวัติ</button>
                 <button type="button" ui-sref="home" class="btn btn-danger"><i class="fa fa-times"></i> ยกเลิก</button></div>
             <!-- /.col-lg-12 -->
         </div>
@@ -115,21 +113,21 @@
                             </tr>
                             <tr>
 
-                                <td colspan="3"><li>อายุ :
-
-
-                            </tr>
-                            <tr>
-
                                 <td colspan="3">&nbsp;&nbsp;&nbsp; นามเเฝง : <label ng-bind="person.alias"></label></td>
 
                             </tr>
 
 
+                            <tr>
+
+                                <td colspan="3">&nbsp;&nbsp;&nbsp;ประเภทบัตร : <label ng-if="person.typeidcard == 0">บัตรประชาชน</label>
+                                    <label ng-if="person.typeidcard == 1">หนังสือเดินทาง</label></td>
+
+                            </tr>
 
                             <tr>
 
-                                <td colspan="3">&nbsp;&nbsp;&nbsp;หมายเลขประจำตัวประชาชน : <label ng-bind="person.idcard"></label></td>
+                                <td colspan="3">&nbsp;&nbsp;&nbsp;หมายเลขบัตร : <label ng-bind="person.idcard"></label></td>
 
                             </tr>
 
@@ -294,18 +292,18 @@
 
                             </tr>
                             <tr >
-                                <td colspan="4"><li>ข้อมูลคดี : <label ng-bind="CaseFile.name_case"></label>  </td>
+                                <td colspan="4"><li>ข้อมูลคดี : </td>
 
                             </tr>
                             <tr >
                                 <td colspan="4" ><label >
 
-                                    <ul ng-repeat="datacase in person.datacase">
-                                        <li ng-if="datacase.name_case" ng-bind="'ชื่อคดี ' +datacase.name_case + ' '"></li>
-                                        <li ng-if="datacase.number_case" ng-bind=" 'เลขคดี '+datacase.number_case + ' ปี '+ datacase.year_number_case
-                                          +' สถานนีตำรวจ '+ datacase.station_number_case"></li>
-                                        <li ng-if="datacase.circumstances_case" ng-bind=" 'พฤติการคดี '+datacase.circumstances_case"></li>
-                                        <li ng-if="datacase.date_case" ng-bind=" 'วันที่เกิดเหตุ '+datacase.date_case"></li>
+                                    <ul>
+                                        <li ng-if="caseFile.name_case" ng-bind="'ชื่อคดี ' +caseFile.name_case + ' '"></li>
+                                        <li ng-if="caseFile.number_case" ng-bind=" 'เลขคดี '+caseFile.number_case + ' ปี '+ caseFile.year_number_case
+                                          +' สถานนีตำรวจ '+ caseFile.station_number_case"></li>
+                                        <li ng-if="caseFile.circumstances_case" ng-bind=" 'พฤติการคดี '+caseFile.circumstances_case"></li>
+                                        <li ng-if="caseFile.date_case" ng-bind=" 'วันที่เกิดเหตุ '+caseFile.date_case"></li>
                                     </ul>
 
                                 </label></td>

@@ -2,8 +2,8 @@
 <div class="row">
     <div id="breadcrumb" class="col-xs-12">
         <ol class="breadcrumb">
-            <li><a href="#">หน้าหลัก</a></li>
-            <li><a ui-sref="home">ข้อมูลคดี + บุคคลที่เกี่ยวข้องกับอาชญากรรม</a></li>
+            <li><a href="/police/index">หน้าหลัก</a></li>
+            <li><a ui-sref="home">จัดการคดี</a></li>
             <li><a href="#">ดูข้อมูลคดี</a></li>
         </ol>
     </div>
@@ -15,14 +15,15 @@
         <h3 class="">ดูข้อมูลคดี</h3>
     </div>
     <div class="col-sm-4 text-right padding-top-20">
-        <a type="button" ng-click="edit_case()" class="btn btn-default" data-dismiss="modal">บันทึก</a>
-        <a type="button" ui-sref="home" class="btn btn-primary" data-dismiss="modal"> กลับ</a>
+        <a type="button" ng-if="caseFile.file_case" href="<% caseFile.file_case %>" class="btn btn-warning" data-dismiss="modal"
+           target = "_blank"><i class="fa fa-file-pdf-o"></i> ดูไฟล์คดี</a>
+        <a type="button" ui-sref="home" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-home"></i> กลับ</a>
     </div>
 </div>
 <div class="row" >
     <div class="col-xs-12 col-sm-12">
         <div class="box">
-                <div class="box-content" id="scroll_edit">
+                <div class="box-content">
                   <div class="box-content">
 
                       <table align="center" border="0" width="100%" style="font-size: 16px">

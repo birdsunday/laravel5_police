@@ -151,6 +151,9 @@ class CaseApiController extends Controller
         //return $datacase;
         $dataperson =  DataCase::find($id)->criminalhistory()->with('datacase')->get();
 
+
+
+
        //return $dataperson;
 //$pdf = \App::make('mpdf.wrapper',['ภาษา','ขนาดการดาษ-L=แนวนอน ไม่- แนวตั้ง','','',ขอบซ้ายกระดาษ,ขอบขวากระดาษ,ขอบขนกระดาษ,ขอบล่างกระดาษ,ระยะ title,ระยะ footter]);
 
@@ -164,9 +167,9 @@ class CaseApiController extends Controller
 
         $pdf->SetHeader('
         <table width="100%" style="vertical-align: bottom; font-family: TH SarabunPSK; font-size: 14pt; color: #000000; font-weight: bold; font-style: italic;"><tr>
-        <td width="20%"><img src="img/police.jpg" width="20" height="20"></td>
+        <td width="20%"></td>
         <td width="30%" style="text-align: right; ">{PAGENO}</td>
-        <td width="55%" style="text-align: right; "> สำนักงานตำรวจตรวจคนเข้าเมือง จังหวัด เชียงราย</td>
+        <td width="55%" style="text-align: right; "> ตรวจคนเข้าเมือง จังหวัด เชียงราย</td>
         </tr></table>
         ');
         $pdf->SetFooter('
@@ -200,7 +203,7 @@ class CaseApiController extends Controller
 
             $pdf->AddPage('P');
             $html = view('PDF.person')->with('datacase',$datacase)->with('dataperson',$person)->render();
-           //return $html;
+
             $pdf->WriteHTML($html);
         }
         $pdf->stream();

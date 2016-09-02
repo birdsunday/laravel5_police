@@ -63,6 +63,16 @@ class DatabaseSeeder extends Seeder {
         $nametitle4->name_title = ('เด็กหญิง');
         $nametitle4->save();
 
+        $nametitle5 = new \App\Models\NameTitle();
+        $nametitle5->name_title = ('Mr.');
+        $nametitle5->save();
+
+        $nametitle6 = new \App\Models\NameTitle();
+        $nametitle6->name_title = ('Miss');
+        $nametitle6->save();
+
+
+
 
         $position = new \App\Models\Position();
         $position->name_position = ('ลูกแถว');
@@ -253,30 +263,34 @@ class DatabaseSeeder extends Seeder {
         $policeimmigration->tel_police = ('08x-xxxxxxx');
         $policeimmigration->username = ('admin');
         $policeimmigration->password = Hash::make('admin');
-        $policeimmigration->rank()->associate($rank1);
+        $policeimmigration->rank()->associate($rank9);
         $policeimmigration->role()->associate($role);
         $policeimmigration->position()->associate($position);
         $policeimmigration->save();
 
+
+        ///ประทวน
         $policeimmigration1 = new \App\Models\Policeimmigration();
-        $policeimmigration1->name_police = ('NemeMember');
-        $policeimmigration1->surname_police = ('SurnameMember');
+        $policeimmigration1->name_police = ('ประทวน');
+        $policeimmigration1->surname_police = ('ประทวน');
         $policeimmigration1->tel_police = ('08x-xxxxxxx');
         $policeimmigration1->username = ('member1');
         $policeimmigration1->password = Hash::make('member1');
-        $policeimmigration1->rank()->associate($rank1);
-        $policeimmigration1->role()->associate($role1);
+        $policeimmigration1->rank()->associate($rank2);
+        $policeimmigration1->role()->associate($role2);
         $policeimmigration1->position()->associate($position);
         $policeimmigration1->save();
 
+
+        //สัญบัตร
         $policeimmigration1 = new \App\Models\Policeimmigration();
-        $policeimmigration1->name_police = ('NemeMember');
-        $policeimmigration1->surname_police = ('SurnameMember');
+        $policeimmigration1->name_police = ('สัญญาบัตร');
+        $policeimmigration1->surname_police = ('สัญญาบัตร');
         $policeimmigration1->tel_police = ('08x-xxxxxxx');
         $policeimmigration1->username = ('member2');
         $policeimmigration1->password = Hash::make('member2');
-        $policeimmigration1->rank()->associate($rank1);
-        $policeimmigration1->role()->associate($role2);
+        $policeimmigration1->rank()->associate($rank9);
+        $policeimmigration1->role()->associate($role1);
         $policeimmigration1->position()->associate($position);
         $policeimmigration1->save();
 
@@ -379,12 +393,13 @@ class DatabaseSeeder extends Seeder {
         $datafather1->save();
 
         $guesthistory = new \App\Models\GuestHistory();
-        $guesthistory->idcard = ('1xxxxxxxxxxxx');
+        $guesthistory->idcard = ('1560300222222');
         $guesthistory->typepeople = ('บุคคลทั่วไป');
         $guesthistory->name = ('สมรัก');
         $guesthistory->surname = ('นาดี');
-        $guesthistory->birth =('25');
-        $guesthistory->age = ('28');
+        $guesthistory->birth =('26-9-2537');
+        $guesthistory->date = ('วันที่ 22 เดือน สิงหาคม พ.ศ. 2558');
+        $guesthistory->age = ('21 ปี');
         $guesthistory->career=('โปรแกรมเมอร์');
         $guesthistory->other = ('ต้องสงสัย....!@@##$^');
         $guesthistory->status = ('complete');
@@ -398,13 +413,14 @@ class DatabaseSeeder extends Seeder {
 
 
         $criminalhistory = new \App\Models\CriminalHistory();
-        $criminalhistory->typepeople = ('บุคคลเกี่ยวข้องกับอาชญากรรม');
+        $criminalhistory->typepeople = ('ผู้ต้องหา');
         $criminalhistory->name = ('อยู่ดี');
         $criminalhistory->surname = ('มีสุข');
         $criminalhistory->alias = ('เสือใหญ่');
-        $criminalhistory->idcard = ('1560000000001');
-        $criminalhistory->birth =('25/5/2555');
-        $criminalhistory->age = ('21');
+        $criminalhistory->idcard = ('1560300222222');
+        $criminalhistory->birth =('26-9-2537');
+        $criminalhistory->age = ('21 ปี');
+        $criminalhistory->date = ('วันที่ 22 เดือน สิงหาคม พ.ศ. 2558 เวลาประมาณ 23:43 นาฟิกา');
         $criminalhistory->education = ('ประถมศึษา');
         $criminalhistory->career=('โปรแกรมเมอร์');
         $criminalhistory->height = ('177');
@@ -427,7 +443,7 @@ class DatabaseSeeder extends Seeder {
         $criminalhistory->nature = ('ขาเป้');
         $criminalhistory->personality = ('ใจร้อน');
         $criminalhistory->location_gallivent = ('ผับ/ร้านเหล้า');
-        $criminalhistory->other = ('!@#!@$$#^');
+        $criminalhistory->other = ('ไม่มีหนังสือเดินทาง ใช้บัตรผ่านแดน(บอร์เดอร์พาส) เดินทางเข้ามาและหลบหนีอยู่ในราชอาณาจักร');
         $criminalhistory->status = ('complete');
         $criminalhistory->dataspouse()->associate($dataspouse);
         $criminalhistory->datamother()->associate($datamother);
@@ -495,12 +511,12 @@ class DatabaseSeeder extends Seeder {
         $datacase = new \App\Models\DataCase();
         $datacase->file_case=('222');
         $datacase->number_case=('120');
-        $datacase->name_case =('หลบหนีเข้าเมือง');
-        $datacase->circumstances_case=('ลักลอบเข้าเมืองมาทางเเม่น้ำปิง');
+        $datacase->name_case =('เป็นคนต่างด้าวเข้ามาและอยู่ในราชอาณาจักรโดยไม่ได้รับอนุญาต');
+        $datacase->circumstances_case=('ตามวันเวลาเกิดเหตุ เจ้าหน้าที่ชุดจับกุมได้ออกตรวจพื้นที่ พบบุคคลต้องสงสัย ทราบชื่อภายหลังคือ นายโล๊ะ ฮอคเส็ง (ทราบภายหลัง) มีลักษณะคล้ายคนต่างด้าว จึงได้ขอตรวจหนังสือเดินทาง ซึ่งผู้ถูกจับนี้รับว่าไม่มีหนังสือเดินทาง ได้หลบหนีเข้าเมืองมาทางด่านปาดังเบซาร์ และหลบหนีอยู่ในราชอาณาจักร จนถูกจับกุมได้ดังกล่าว');
         $datacase->number_case = ('1234');
         $datacase->year_number_case = ('2556');
         $datacase->station_number_case = ('สภ.แม่สาย');
-        $datacase->date_case=('00/00/0000');
+        $datacase->date_case=('วันที่ 22 เดือน สิงหาคม พ.ศ. 2558 เวลาประมาณ 23:43 นาฟิกา');
         $datacase->houseno_case=('4');
         $datacase->villageno_case=('5');
         $datacase->road_case=('อาราย');

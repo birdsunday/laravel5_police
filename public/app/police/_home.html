@@ -2,8 +2,8 @@
 <div class="row">
     <div id="breadcrumb" class="col-xs-12">
         <ol class="breadcrumb">
-            <li><a href="/">หน้าหลัก</a></li>
-            <li><a href="#">จัดการข้อมูลสมาชิก</a></li>
+            <li><a href="/police/index">หน้าหลัก</a></li>
+            <li><a href="#">จัดการข้อมูลเจ้าหน้าที่</a></li>
         </ol>
     </div>
 </div>
@@ -13,10 +13,10 @@
     <div class="col-xs-12 col-sm-12">
         <div class="row page-header">
             <div class="col-sm-6">
-                <h1 class="">Police Managements</h1>
+                <h1 class="">จัดการข้อมูลเจ้าหน้าที่</h1>
             </div>
             <div class="col-sm-6 text-right padding-top-20">
-                <a class="btn btn-success" ui-sref="add" title="Add new User"><i class="fa fa-plus-square" ></i> New Police</a>
+                <a class="btn btn-success" ui-sref="add" title="Add new User"><i class="fa fa-plus-square" ></i> เพิ่มเจ้าหน้าที่ตำรวจ</a>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -28,7 +28,7 @@
                         <h1 class=""></h1>
                     </div>
                     <div class="col-sm-6 text-right padding-top-20">
-                        <h5>พบสมาชิกจำนวน <% results.length %> คน</h5>
+                        <h5>พบเจ้าหน้าที่จำนวน <% results.length %> คน</h5>
                         </div>
                     <!-- /.col-lg-12 -->
                 </div>
@@ -92,8 +92,8 @@
                             <td class="text-center" ng-bind="police.tel_police"></td>
                             <td class="text-center" ng-bind="police.role.name"></td>
                             <td class="text-center">
-                                <a ui-sref="edit({id:police.id})" class="edit"><i class="fa fa-edit"></i></a>
-                                <a ng-click="deletePolice(police)" class="del"><i class="fa fa-times"></i></a>
+                                <a ui-sref="edit({id:police.id})" class="edit"><i  popover="แก้ไขข้อมูล" popover-trigger="mouseenter" class="fa fa-edit"></i></a>
+                                <a ng-if="police.id != current_role" ng-click="deletePolice(police)" class="del"><i  popover="ลบข้อมูล" popover-trigger="mouseenter" class="fa fa-times"></i></a>
                             </td>
                         </tr>
                         <tr class="animate-repeat" ng-if="results.length == 0">

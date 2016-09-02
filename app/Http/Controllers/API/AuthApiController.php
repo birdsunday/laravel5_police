@@ -35,7 +35,7 @@ class AuthApiController extends Controller {
             return redirect('/police/index');
 
         }else{
-            return redirect()->back()->with('message',"Error!! Username or Password Incorrect. \nPlease try again.");;
+            return redirect()->back()->with('message',"ชื่อผู้ใช้ หรือ รหัสผ่านผิด. \nกรุณาลองอีกครั้ง.");;
         }
     }
 

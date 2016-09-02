@@ -3,8 +3,8 @@
     <div id="breadcrumb" class="col-xs-12">
         <ol class="breadcrumb">
             <li><a href="#">หน้าหลัก</a></li>
-            <li><a ui-sref="home">ข้อมูลคดี + บุคคลที่เกี่ยวข้องกับอาชญากรรม</a></li>
-            <li><a href="#">เพิ่มข้อมูลคดี</a></li>
+            <li><a ui-sref="home">จัดการคดี</a></li>
+            <li><a ui-sref="add">เพิ่มคดี</a></li>
         </ol>
     </div>
 </div>
@@ -22,24 +22,30 @@
                 <div class="bs-wizard-info text-center">เพิ่มข้อมูลคดี</div>
             </div>
 
-            <div class="col-xs-3 bs-wizard-step active"><!-- complete -->
+            <div class="col-xs-2 bs-wizard-step active"><!-- complete -->
                 <div class="text-center bs-wizard-stepnum">ขั้นตอนที่ 2</div>
                 <div class="progress"><div class="progress-bar"></div></div>
                 <a href="#" class="bs-wizard-dot"></a>
                 <div class="bs-wizard-info text-center">เพิ่มบุคคล</div>
             </div>
-
-            <div class="col-xs-3 bs-wizard-step "><!-- complete -->
+            <div class="col-xs-2 bs-wizard-step"><!-- complete -->
                 <div class="text-center bs-wizard-stepnum">ขั้นตอนที่ 3</div>
                 <div class="progress"><div class="progress-bar"></div></div>
-                <a href="#" class="bs-wizard-dot"></a>
+                <a href="#" class="bs-wizard-dot1"></a>
+                <div class="bs-wizard-info text-center">เพิ่มไฟล์คดี</div>
+            </div>
+
+            <div class="col-xs-2 bs-wizard-step "><!-- complete -->
+                <div class="text-center bs-wizard-stepnum">ขั้นตอนที่ 4</div>
+                <div class="progress"><div class="progress-bar"></div></div>
+                <a href="#" class="bs-wizard-dot1"></a>
                 <div class="bs-wizard-info text-center">ตรวจสอบ/ยืนยัน</div>
             </div>
 
             <div class="col-xs-3 bs-wizard-step"><!-- active -->
-                <div class="text-center bs-wizard-stepnum">ขั้นตอนที่ 4</div>
+                <div class="text-center bs-wizard-stepnum">ขั้นตอนที่ 5</div>
                 <div class="progress"><div class="progress-bar"></div></div>
-                <a href="#" class="bs-wizard-dot"></a>
+                <a href="#" class="bs-wizard-dot1"></a>
                 <div class="bs-wizard-info text-center">บันทึกข้อมูลเสร็จสมบูรณ์</div>
             </div>
         </div>
@@ -49,10 +55,10 @@
 
             </div>
             <div class="col-sm-8 text-right padding-top-20">
-                <button type="button" ui-sref="edit_case({id:caseFile.id})"  class="btn btn-default"><i class="fa fa-arrow-left"></i> แก้ไขข้อมูลก่อนหน้า</button>
-                <button type="button" ui-sref="preview({id:caseFile.id})" class="btn btn-primary"><i class="fa fa-floppy-o"></i> ขั้นตอนต่อไป</button>
+                <button type="button" ui-sref="edit_case({id:caseFile.id})"  class="btn btn-warning"><i class="fa fa-arrow-left"></i> แก้ไขข้อมูลก่อนหน้า</button>
+                <button type="button" ui-sref="add_file({id:caseFile.id})" class="btn btn-primary"><i class="fa fa-arrow-right"></i> ขั้นตอนต่อไป</button>
                 <button type="button" ng-click="cancel_case()" class="btn btn-danger"><i class="fa fa-trash"></i> ลบ</button>
-                <button type="button" ui-sref="home" class="btn btn-warning"><i class="fa fa-home"></i> หน้าหลัก</button>
+
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -110,7 +116,7 @@
                                                     <th>
                                                         <input ng-change="searchPerson(keyword)" class="form-control" ng-model="keyword.surname" type="text" placeholder="ค้นหา นามสกุล...">
                                                     </th>
-                                                    <th>
+                                                    <th>วันที่จับกุม
                                                      </th>
                                                 </tr>
                                                 </thead>
@@ -127,9 +133,22 @@
 
                                                     <td>
                                                         <a ng-click="add_person(person)" type="submit" type="button" name="deletepolice"><i
-                                                                class="fa fa-plus-circle"></i></a>
+                                                                class="fa fa-plus-circle fa-2x"></i></a>
 
                                                     </td>
+
+                                                </tr>
+
+
+                                                </tbody>
+                                                <tbody>
+
+
+                                                <tr ng-if="!dataPerson.length">
+
+
+                                                    <td class="text-center" colspan="4"> ไม่พบข้อมูล!!! </td>
+
 
                                                 </tr>
 

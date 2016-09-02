@@ -21,29 +21,14 @@
     <div class="col-sm-12">
 
             <div class="col-md-3">
-                <p class="input-group">
-                    <input type="text" class="form-control" datepicker-popup="<% format %>"
-                                   ng-model="statistics.start_date" is-open="opened_start"
-                                   ng-required="true"/>
-                    <span class="input-group-btn">
-                        <button type="button" class="btn btn-default"
-                        ng-click="open_start($event)"><i class="fa fa-calendar"></i></button>
-                     </span>
-                </p>
+                <input  ng-model="statistics.start_date" type="text" class="form-control" id="id_datetime_picker1"/>
             </div>
 
             <label class="col-sm-3 control-label" style="width: auto"> ถึง </label>
 
             <div class="col-md-3">
-                <p class="input-group">
-                    <input type="text" class="form-control" datepicker-popup="<% format %>"
-                                   ng-model="statistics.end_date" is-open="opened_end"
-                                   ng-required="true"/>
-                    <span class="input-group-btn">
-                        <button type="button" class="btn btn-default"
-                            ng-click="open_end($event)"><i class="fa fa-calendar"></i></button>
-                    </span>
-                </p>
+                <input  ng-model="statistics.end_date" type="text" class="form-control" id="id_datetime_picker2"/>
+
             </div>
             <div class="col-md-2">
                 <button ng-click="search_statistics()" type="button" class="form-control btn-danger">ดูสถิติ</button>
@@ -55,7 +40,7 @@
     </div>
 </div>
 
-
+<br>
 
 <div class="row" ng-if="datacase.length">
     <div class="col-xs-12 col-sm-12">
@@ -69,7 +54,6 @@
                             <th class="text-center" style="width: 5px">ลำดับ</th>
                             <th class="text-center">ชื่อคดี</th>
                             <th class="text-center">เลขคดี/ปี/สถานนีตำรวจ</th>
-                            <th class="text-center">พฤติการณ์คดี</th>
                             <th class="text-center">วันที่เกิดเหตุ</th>
                             <th class="text-center">บุคคลกระทำความผิด</th>
 
@@ -80,15 +64,15 @@
 
                         <tr ng-repeat="data_case in datacase">
                             <td class="text-center"><% $index+1 %></td>
-                            <td class="text-center" ng-bind="data_case.name_case"></td>
+                            <td class="text-center" ><a ng-click="viewCase(data_case)" ng-bind="data_case.name_case"></a></td>
                             <td class="text-center" ng-bind="data_case.number_case+'/'+data_case.year_number_case+'/'+data_case.station_number_case"></td>
-                            <td class="text-center" ng-bind="data_case.circumstances_case"></td>
+
                             <td class="text-center" ng-bind="data_case.date_case"></td>
                             <td  >
                                 <table>
                                     <tbody>
                                     <tr ng-repeat="person in data_case.criminalhistory" bgcolor="">
-                                        <td ><a ng-bind="' <% $index+1 %>. '+person.nametitle.name_title+' ' +person.name + ' ' +person.surname"></a></td>
+                                        <td ><a ng-click="viewPerson(person)" ng-bind="' <% $index+1 %>. '+person.nametitle.name_title+' ' +person.name + ' ' +person.surname"></a></td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -116,12 +100,12 @@
                         <thead>
                         <tr>
                             <th class="text-center" style="width: 5px">ลำดับ</th>
-                            <th class="text-center">เลขบัตร</th>
+                            <th class="text-center">เลขบัตรประชาชน/หนังสือเดืนทาง</th>
                             <th class="text-center">ประเภทบุคคล</th>
                             <th class="text-center">ชื่อ</th>
                             <th class="text-center">นามสกุล</th>
-                            <th class="text-center" style="width: 10%">วันที่จับกุม</th>
-                            <th class="text-center" style="width: 30%">คดี/ข้อหา</th>
+                            <th class="text-center" style="width: 20%">วันที่จับกุม</th>
+                            <th class="text-center" style="width: 20%">คดี/ข้อหา</th>
                         </tr>
                         </thead>
 
@@ -138,7 +122,7 @@
                                 <table>
                                     <tbody>
                                     <tr ng-repeat="data_cases in person.datacase" bgcolor="">
-                                        <td ><a ng-bind="' <% $index+1 %>. '+data_cases.name_case+' เลขคดี ' +data_cases.number_case + '/' +data_cases.year_number_case+'/'+data_cases.station_number_case"></a></td>
+                                        <td ><a  ng-click="viewCase(data_cases)" ng-bind="' <% $index+1 %>. '+data_cases.name_case+' เลขคดี ' +data_cases.number_case + '/' +data_cases.year_number_case+'/'+data_cases.station_number_case"></a></td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -154,7 +138,7 @@
 </div>
 
 
-<div class="row" ng-if="datacase.length">
+<div class="row" ng-if="person_general.length">
     <div class="col-xs-12 col-sm-12">
         <div class="panel panel-default">
             <div class="panel-body">
@@ -170,7 +154,7 @@
                             <th class="text-center">นามสกุล</th>
                             <th class="text-center">วันที่บันทึก</th>
                             <th class="text-center">พฤติการอื่นๆ</th>
-                            <th class="text-center"></th>
+
                         </tr>
                         </thead>
 
@@ -182,7 +166,7 @@
                             <td class="text-center" ng-bind="person_g.typepeople"></td>
                             <td class="text-center" ng-bind="person_g.name"></td>
                             <td class="text-center" ng-bind="person_g.surname"></td>
-                            <td class="text-center" ng-bind="person_g.created_at"></td>
+                            <td class="text-center" ng-bind="person_g.date"></td>
                             <td class="text-center" ng-bind="person_g.other"></td>
                         </tr>
 
@@ -194,5 +178,38 @@
     </div>
 </div>
 
+<script type="text/javascript">
+    $(function () {
 
+
+        $("#id_datetime_picker1").datetimepicker({
+            timepicker:false,
+            format:'วันที่ d เดือน F พ.ศ. Y ',
+            lang:'th',  // แสดงภาษาไทย
+            yearOffset:543,  // ใช้ปี พ.ศ. บวก 543 เพิ่มเข้าไปในปี ค.ศ
+            closeOnDateSelect:true
+        });
+
+
+
+
+    });
+</script>
+<script type="text/javascript">
+    $(function () {
+
+
+        $("#id_datetime_picker2").datetimepicker({
+            timepicker:false,
+            format:'วันที่ d เดือน F พ.ศ. Y ',
+            lang:'th',  // แสดงภาษาไทย
+            yearOffset:543,  // ใช้ปี พ.ศ. บวก 543 เพิ่มเข้าไปในปี ค.ศ
+            closeOnDateSelect:true
+        });
+
+
+
+
+    });
+</script>
 

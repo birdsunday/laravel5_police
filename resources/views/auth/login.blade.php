@@ -21,12 +21,12 @@
 
 
 </head>
-<body background="/img/login2.jpg">
+<body style="background-color: #0077b3">
 
 <div class="col-md-4 col-md-offset-4">
     <div class="login-panel panel panel-default">
         <div class="panel-heading">
-            <h3 class="panel-title">ROYAL THAI POLICE IMMIGRATION Login</h3>
+            <h3 class="panel-title">เข้าสู่ระบบ ตรวจคนเข้าเมืองจังหวัดเชียงราย</h3>
         </div>
         @if(Session::has('message'))
             <div class="panel-body bg-danger color-red">
@@ -46,13 +46,9 @@
                         {!!$errors->first('password', '<span
                                 class="control-label error" for="password">*:message</span>')!!}
                     </div>
-                    <div class="checkbox">
-                        <label>
-                            <input name="remember" type="checkbox" value="Remember Me">Remember Me
-                        </label>
-                    </div>
+
                     <!-- Change this to a button or input when using this as a form -->
-                    <button class="btn btn-lg btn-success btn-block">Login</button>
+                    <button class="btn btn-lg btn-success btn-block">เข้าสู่ระบบ</button>
                 </fieldset>
             </form>
         </div>

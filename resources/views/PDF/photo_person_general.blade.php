@@ -2,8 +2,7 @@
 <head>
 <style>
     body {
-        font-size: 16pt;
-
+        font-size: 25pt;
     }
     h5{
         font-family: garuda;
@@ -17,7 +16,7 @@
 <table align="center" border="0" width="100%">
 
     <tr>
-        <td colspan="4" align="center"><h3>รูปภาพ</h3></td>
+        <td colspan="4" align="center"><h3>ภาพถ่ายบุคคลทั่วไป</h3></td>
 
     </tr>
 
@@ -25,7 +24,7 @@
         <td colspan="4" align="center" style="font-family : sans-serif, Arial;">
 
             <?php if($guesthistory->photo != null) :  ?>
-                <img src="<?php echo $guesthistory->photo;?>" width="605" height="794">
+                <img src="<?php echo $guesthistory->photo;?>" width="514" height="514">
             <?php else : ?>
                 <img src="/img/square-image.png" width="514" height="514">
             <?php endif ?>
@@ -33,12 +32,58 @@
             </td>
 
     </tr>
+
+    @if($guesthistory->typeidcard == 0)
+        <tr>
+            @if($guesthistory->idcard)
+                <td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;หมายเลขบัตรประชาชน :
+                    <label><?php echo $guesthistory->idcard ?> </label></td>
+            @else
+                <td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;หมายเลขบัตรประชาชน : <label> - </label></td>
+            @endif
+
+        </tr>
+    @elseif($guesthistory->typeidcard == 1)
+        <tr>
+            @if($guesthistory->idcard)
+                <td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;หมายเลขหนังสือเดินทาง :
+                    <label><?php echo $guesthistory->idcard ?> </label></td>
+            @else
+                <td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;หมายเลขหนังสือเดินทาง : <label> - </label></td>
+            @endif
+
+        </tr>
+    @else
+        <tr>
+            @if($guesthistory->idcard)
+                <td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;ไม่ระบุประเภทบัตร :
+                    <label><?php echo $guesthistory->idcard ?> </label></td>
+            @else
+                <td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;ไม่ระบุประเภทบัตร : <label> - </label></td>
+            @endif
+
+        </tr>
+    @endif
     <tr>
-        <td colspan="2"> <label>เลขบัตรประชาชน : <?php echo $guesthistory->idcard ?> </label></td>
-        <td colspan="2"> <label>ชื่อ-ชื่อสกุล : <?php echo $guesthistory->nametitle->name_title ?> <?php echo $guesthistory->name ?> <?php echo $guesthistory->surname ?></label></td>
+        <td colspan="4"> <label>ชื่อ-ชื่อสกุล : <?php echo $guesthistory->nametitle->name_title ?> <?php echo $guesthistory->name ?> <?php echo $guesthistory->surname ?></label></td>
 
     </tr>
+    <tr>
+        <td colspan="4"> <label>วันเดือนปีเกิด : <?php echo $guesthistory->birth ?> </label></td>
 
+    </tr>
+    <tr>
+        <td colspan="4"> <label>อายุ : <?php echo $guesthistory->age ?> </label></td>
+
+    </tr>
+    <tr>
+        <td colspan="4"> <label>ที่อยู่ : <?php echo $guesthistory->addresspresent->present_address ?> </label></td>
+
+    </tr>
+    <tr>
+        <td colspan="4"> <label>วันที่บันทึก : <?php echo $guesthistory->date ?> </label></td>
+
+    </tr>
 
 </table>
 

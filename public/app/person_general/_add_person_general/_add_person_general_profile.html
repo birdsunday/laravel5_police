@@ -48,13 +48,18 @@
                 <form class="form-horizontal" role="form">
                     <div class="form-group">
 
-                        <label class="col-sm-4 control-label" style=" width: auto">หมายเลขบัตร</label>
+                        <div class="col-sm-3">
+                            <select ng-model="guest.typeidcard" class="form-control" >
+                                <option value="" disabled selected>เลือกประเภทบัตร...</option>
+                                <option value="0">เลขบัตรประจำตัวประชาชน</option>
+                                <option value="1">เลขหนังสือเดินทาง</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-4">
+                            <input placeholder="เลขบัตร" ng-change="searchDataPerson(guest)" ng-model="guest.idcard" type="text" class="form-control">
 
-                        <div class="col-sm-6">
-                            <input ng-change="searchDataPerson(guest)" ng-model="guest.idcard" type="text" class="form-control">
 
-
-                            <label  ng-if="dataperson_crime.length" class="control-label" style="width: auto;color: red"> บุลคลนี้เคยมีประวัติเกี่ยวข้องกับอาชญากรรมแล้ว</label>
+                            <label  ng-if="dataperson_crime.length" class="control-label" style="width: auto;color: red"> พบประวัติเกี่ยวข้องกับอาชญากรรม</label>
 
                             <button ng-if="dataperson_crime.length" type="button" class="btn btn-primary" data-toggle="modal"
                                     data-target="#exampleModa2" data-whatever="@mdo">ดูข้อมูล</button>
@@ -67,7 +72,7 @@
                         <label class="col-sm-1 control-label" style="width: auto">ประเภทบุคคล</label>
 
                         <div class="col-sm-3">
-                            <input ng-model="guest.typepeople" type="text" class="form-control">
+                            <input placeholder="ประเภทบุคคล" ng-model="guest.typepeople" type="text" class="form-control">
                         </div>
 
                     </div>
@@ -77,17 +82,18 @@
 
                         <div class="col-sm-3">
                             <select ng-model="guest.nametitle" class="form-control css-require" ng-options="opt as opt.name_title for opt in nametitles">
+                                <option value="" disabled selected>คำนำหน้าชื่อ...</option>
                             </select>
                         </div>
                         <label class="col-sm-1 control-label"  style=" width: auto">ชื่อ</label>
 
                         <div class="col-sm-3">
-                            <input ng-model="guest.name" type="text" class="form-control">
+                            <input placeholder="ชื่อ" ng-model="guest.name" type="text" class="form-control">
                         </div>
                         <label class="col-sm-1 control-label"  style=" width: auto">ชื่อสกุล</label>
 
                         <div class="col-sm-3">
-                            <input ng-model="guest.surname" type="text" class="form-control">
+                            <input placeholder="ชื่อสกุล" ng-model="guest.surname" type="text" class="form-control">
                         </div>
                     </div>
 
@@ -97,19 +103,29 @@
                         <label class="col-sm-1 control-label"  style=" width: auto">ว/ด/ป เกิด</label>
 
                         <div class="col-sm-3">
-                            <input ng-model="guest.birth" type="date" class="form-control">
+                            <input placeholder="dd-mm-yyy" ng-model="guest.birth" type="text" class="form-control" name="mydateth" id="mydateth">
 
                         </div>
 
                         <label class="col-sm-1 control-label"  style=" width: auto">อาชีพ</label>
 
                         <div class="col-sm-3">
-                            <input ng-model="guest.career" type="text" class="form-control">
+                            <input placeholder="อาชีพ" ng-model="guest.career" type="text" class="form-control">
                         </div>
                         <label class="col-sm-1 control-label"  style=" width: auto">การศึกษา</label>
 
                         <div class="col-sm-3">
-                            <input ng-model="guest.education" type="text" class="form-control">
+                            <input placeholder="การศึกษา" ng-model="guest.education" type="text" class="form-control">
+                        </div>
+
+
+                    </div>
+                    <div class="form-group">
+
+                        <label class="col-sm-1 control-label" style="width: auto">วันที่บันทึก</label>
+
+                        <div class="col-sm-5">
+                            <input placeholder="วันที่ dd เดือน mmmm พ.ศ. yyyy" ng-model="guest.date" type="text" class="form-control" value="" id="id_datetime_picker0" >
                         </div>
 
 
@@ -121,7 +137,39 @@
     </div>
 </div>
 
+<script type="text/javascript">
+    $(function () {
+
+
+        $("#id_datetime_picker0").datetimepicker({
+            timepicker:false,
+            format:'วันที่ d เดือน F พ.ศ. Y',
+            lang:'th',  // แสดงภาษาไทย
+            yearStart:1914,  // ช่วงเลือกปีเริ่มต้น ใช้ ค.ศ.
+            yearOffset:543,  // ใช้ปี พ.ศ. บวก 543 เพิ่มเข้าไปในปี ค.ศ
+            closeOnDateSelect:true
+        });
 
 
 
 
+    });
+</script>
+<script type="text/javascript">
+    $(function(){
+
+
+        $("#mydateth").datetimepicker({
+            timepicker:false,  // กำหนด ไม่แสดงตัวเลือกเวลา
+            format:'d-m-Y',  // กำหนดรูปแบบวันที่ ที่ใช้ เป็น 00-00-0000
+            lang:'th',  // แสดงภาษาไทย
+            yearStart:1914,  // ช่วงเลือกปีเริ่มต้น ใช้ ค.ศ.
+            yearOffset:543,  // ใช้ปี พ.ศ. บวก 543 เพิ่มเข้าไปในปี ค.ศ
+
+            closeOnDateSelect:true // ปิด ถ้าเลือกวันที่แล้ว
+        });
+
+
+
+    });
+</script>

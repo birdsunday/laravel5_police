@@ -22,7 +22,7 @@ class MyLogController extends Controller {
 
         $users = DB::table('mylog')
             ->orderBy('id', 'desc')
-            ->get();
+            ->paginate(15);
 
         return $users;
 

@@ -10,7 +10,7 @@ class GuestHistory extends Model {
     public $timestamps = true;
     protected $table = 'guesthistory';
     protected $fillable = array('date','name','surname','age','birth','idcard','typepeople'
-    ,'career' ,'created_at','updated_at','other','status');
+    ,'career' ,'created_at','updated_at','other','status','typeidcard');
 
     public function nametitle()
     {

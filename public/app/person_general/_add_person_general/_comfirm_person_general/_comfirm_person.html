@@ -25,7 +25,7 @@
     <div class="col-xs-3 bs-wizard-step "><!-- complete -->
         <div class="text-center bs-wizard-stepnum">ขั้นตอนที่ 4</div>
         <div class="progress"><div class="progress-bar"></div></div>
-        <a href="#" class="bs-wizard-dot"></a>
+        <a href="#" class="bs-wizard-dot1"></a>
         <div class="bs-wizard-info text-center">บันทึกข้อมูลเสร็จสมบูรณ์</div>
     </div>
 
@@ -109,15 +109,11 @@
                                 +guest.surname"></label></td>
 
                             </tr>
+
                             <tr>
 
-                                <td colspan="3"><li>อายุ :
-
-
-                            </tr>
-                            <tr>
-
-                                <td colspan="3">&nbsp;&nbsp;&nbsp; นามเเฝง : <label style="color: #0000C2" ng-bind="guest.alias"></label></td>
+                                <td colspan="3">&nbsp;&nbsp;&nbsp;ประเภทบัตร : <label ng-if="guest.typeidcard == 0" style="color: #0000C2">บัตรประชาชน</label>
+                                    <label style="color: #0000C2" ng-if="guest.typeidcard == 1">หนังสือเดินทาง</label></td>
 
                             </tr>
 
@@ -125,7 +121,7 @@
 
                             <tr>
 
-                                <td colspan="3">&nbsp;&nbsp;&nbsp;หมายเลขประจำตัวประชาชน : <label style="color: #0000C2" ng-bind="guest.idcard"></label></td>
+                                <td colspan="3">&nbsp;&nbsp;&nbsp;หมายเลขบัตร : <label style="color: #0000C2" ng-bind="guest.idcard"></label></td>
 
                             </tr>
 

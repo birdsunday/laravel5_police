@@ -2,21 +2,23 @@
 <div class="row">
     <div id="breadcrumb" class="col-xs-12">
         <ol class="breadcrumb">
-            <li><a href="#">หน้าหลัก</a></li>
-            <li><a ui-sref="home">ข้อมูลคดี + บุคคลที่เกี่ยวข้องกับอาชญากรรม</a></li>
+            <li><a href="/police/index">หน้าหลัก</a></li>
+            <li><a ui-sref="home">ข้อมูลคดี</a></li>
             <li><a href="#">จัดการข้อมูลคดี</a></li>
         </ol>
     </div>
 </div>
 <!--End Breadcrumb-->
 
+
+
 <div class="row page-header">
     <div class="col-sm-8">
         <h3 class="">จัดการข้อมูลคดี</h3>
     </div>
     <div class="col-sm-4 text-right padding-top-20">
-        <a type="button" ng-click="edit_case()" class="btn btn-default" data-dismiss="modal">บันทึก</a>
-        <a type="button" ui-sref="home" class="btn btn-primary" data-dismiss="modal"> กลับ</a>
+        <a type="button" ng-click="edit_case()" class="btn btn-success" data-dismiss="modal"><i class="fa fa-floppy-o"></i> บันทึก</a>
+        <a type="button" ui-sref="home" class="btn btn-warning" data-dismiss="modal"><i class="fa fa-home"></i> กลับ</a>
     </div>
 </div>
 

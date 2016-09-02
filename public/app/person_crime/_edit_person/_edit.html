@@ -2,7 +2,7 @@
 <div class="row">
     <div id="breadcrumb" class="col-xs-12">
         <ol class="breadcrumb">
-            <li><a href="#">หน้าหลัก</a></li>
+            <li><a href="/police/index">หน้าหลัก</a></li>
             <li><a ui-sref="home">จัดการประวัติบุคคลที่เกี่ยวข้องกับอาชญากรรม</a></li>
             <li><a href="#">แก้ไขประวัติบุคคลที่เกี่ยวข้องกับอาชญกรรม</a></li>
         </ol>
@@ -10,7 +10,7 @@
 </div>
 <!--End Breadcrumb-->
 
-    <div class="row page-header" ng-if="current_role == 'admin'">
+    <div class="row page-header" ng-if="current_role == 'Member_Commissioned_Officers'">
             <div class="col-sm-8">
                 <h1 class="">แก้ไขประวัติบุคคลที่เกี่ยวข้องกับอาชญกรรม</h1>
             </div>
@@ -23,7 +23,7 @@
     </div>
 
 
-<div class="row" ng-if="current_role == 'admin'">
+<div class="row" ng-if="current_role == 'Member_Commissioned_Officers'">
     <div class="col-xs-12 col-sm-12">
         <div class="box">
             <div class="box-header">
@@ -83,7 +83,7 @@
     </div>
 </div>
 
-<div class="row" ng-if="current_role == 'Member_Commissioned_Officers' || current_role == 'Member_Non-Commissioned_Officer'">
+<div class="row" ng-if="current_role == 'admin' || current_role == 'Member_Non-Commissioned_Officer'">
     <div class="col-xs-12 text-center page-404">
         <h2>ท่านไม่มีสิทธิการเข้าใช้งานในส่วนนี้</h2>
         <form class="form-group" role="form">

@@ -13,7 +13,7 @@ class CriminalHistory extends Model {
     protected $table = 'criminalhistory';
     protected $fillable = array('date','name','surname','age','birth','alias','idcard','education','height','weight','shape'
     ,'teeth','skin','hairstyles','head','face','eyebrow','eye','ear','nose','mouth','chin','mirror','scar','accent','nature'
-    ,'personality','location_gallivent','other','typepeople','career','status');
+    ,'personality','location_gallivent','other','typepeople','career','status','typeidcard');
 
 
     public function dataspouse()

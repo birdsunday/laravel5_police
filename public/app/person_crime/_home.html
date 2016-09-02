@@ -14,7 +14,7 @@
             <h3 class="">จัดการประวัติบุคคลที่เกี่ยวข้องกับอาชญากรรม</h3>
         </div>
         <div class="col-sm-4 text-right padding-top-20">
-            <a class="btn btn-success" ui-sref="form_add.add" title="บันทึกประวัติบุคคลที่เกี่ยวข้องกับอาชญากรรม"><i class="fa fa-user-plus" ></i> บันทึกประวัติบุคคลที่เกี่ยวข้องกับอาชญากรรม</a>
+            <a class="btn btn-success" ui-sref="form_add.add" title="บันทึกประวัติบุคคลที่เกี่ยวข้องกับอาชญากรรม"><i class="fa fa-user-plus" ></i> เพิ่มประวัติบุคคลที่เกี่ยวข้องกับอาชญากรรม</a>
         </div>
     </div>
 
@@ -31,24 +31,36 @@
                         <thead>
                         <tr>
                             <th class="text-center">
-                                <input ng-model="search.idcard" type="text" class="form-control"  />
+                                <select ng-model="search.typeidcard" class="form-control" >
+                                    <option value="" disabled selected>ค้นหา...</option>
+                                    <option></option>
+                                    <option value="0">บัตรประชาชน</option>
+                                    <option value="1">หนังสือเดินทาง</option>
+                                </select>
                             </th>
                             <th class="text-center">
-                                <input ng-model="search.typepeople" type="text" class="form-control"  />
+                                <input placeholder="ค้นหาเลขบัตร..." ng-model="search.idcard" type="text" class="form-control"  />
+                            </th>
+                            <th class="text-center">
+                                <input placeholder="ค้นหาประเภทบุคคล..." ng-model="search.typepeople" type="text" class="form-control"  />
                             </th>
                             <th class="text-center">
                                 <select ng-model="search.nametitle.name_title" class="form-control" >
-                                    <option></option>
 
+                                    <option value="" disabled selected>ค้นหา...</option>
+                                    <option></option>
                                     <option ng-repeat="nametitle in nametitles" value="<% nametitle.name_title %>"><% nametitle.name_title %></option>
 
                                 </select>
                             </th>
                             <th class="text-center">
-                                <input ng-model="search.name" type="text" class="form-control" />
+                                <input placeholder="ค้นหาปชื่อ..." ng-model="search.name" type="text" class="form-control" />
                             </th>
                             <th class="text-center">
-                                <input ng-model="search.created_at" type="text" class="form-control"/>
+                                <input placeholder="ค้นหานามสกุล..." ng-model="search.surname" type="text" class="form-control" />
+                            </th>
+                            <th class="text-center">
+                                <input placeholder="วันที่บันทึก" ng-model="search.date" id="mydateth" type="text" class="form-control"/>
                             </th>
                             <th class="text-center">
                             </th>
@@ -58,12 +70,13 @@
                         </tr>
                         <tr>
 
-
-                            <th class="text-center">เลขบัตร</th>
+                            <th class="text-center" style="width: 10%">ประเภทบัตร</th>
+                            <th class="text-center" style="width: 10%">เลขบัตร</th>
                             <th class="text-center" style="width: 15%">ประเภทบุคคล</th>
-                            <th class="text-center" style="width: 15%">คำนำหน้า</th>
-                            <th class="text-center">ชื่อ - นามสกุล</th>
-                            <th class="text-center">วันเวลาที่บันทึก</th>
+                            <th class="text-center" style="width: 10%">คำนำหน้า</th>
+                            <th class="text-center">ชื่อ</th>
+                            <th class="text-center">นามสกุล</th>
+                            <th class="text-center" style="width: 15%">วันที่จับกุม</th>
                             <th class="text-center">สถานะ</th>
                             <th class="text-center" style="width: 11%"></th>
                         </tr>
@@ -71,13 +84,15 @@
 
                         <tbody >
 
-                        <tr ng-repeat="person in dataperson | filter:search">
-
+                        <tr ng-repeat="person in dataperson | filter:search as results">
+                            <td class="text-center" ng-if="person.typeidcard == 0">บัตรประชาชน</td>
+                            <td class="text-center" ng-if="person.typeidcard == 1">หนังสือเดินทาง</td>
                             <td class="text-center" ng-bind="person.idcard"></td>
                             <td class="text-center" ng-bind="person.typepeople"></td>
                             <td class="text-center" ng-bind="person.nametitle.name_title"></td>
                             <td class="text-center" ng-bind="person.name"></td>
                             <td class="text-center" ng-bind="person.surname"></td>
+                            <td class="text-center" ng-bind="person.date"></td>
                             <td class="text-center">
                                 <i ng-if="person.status == 'complete' && person.photo" class="fa fa-check-circle fa-1x " style="color: #008000"
                                    popover="ประวัติบุคคลนี้สมบูรณ์แล้ว" popover-trigger="mouseenter"></i>
@@ -94,23 +109,46 @@
                                                                                             popover="พิมพ์ประวัติบุคคล" popover-trigger="mouseenter"></i></a>
                                 <a ng-if="person.photo" ng-click="print_Photoperson(person)" class="edit"><i class="fa fa-picture-o"
                                                                                    popover="พิมพ์รูปบุคคล" popover-trigger="mouseenter"></i></a>
-                                <a ng-if="current_role == 'admin' || current_role == 'Member_Commissioned_Officers' " ui-sref="edit({id:person.id})" class="edit"><i class="fa fa-edit"
+                                <a ng-if=" current_role == 'Member_Commissioned_Officers' " ui-sref="edit({id:person.id})" class="edit"><i class="fa fa-edit"
                                                                                                                   popover="แก้ไขประวัติ" popover-trigger="mouseenter"></i></a>
-                                <a ng-if="current_role == 'admin'" ng-click="delete_person(person)" class="del"><i class="fa fa-times"
+                                <a ng-if="current_role == 'Member_Commissioned_Officers'" ng-click="delete_person(person)" class="del"><i class="fa fa-times"
                                                                                                                    popover="ลบประวัติบุคคล" popover-trigger="mouseenter"></i></a>
 
                             </td>
 
                         </tr>
+                        <tr class="animate-repeat" ng-if="results.length == 0">
+                            <td class="text-center" colspan="9"> ไม่พบข้อมูล!!! </td>
+
+                        </tr>
 
                         </tbody>
                     </table>
+
+
+                    <script type="text/javascript">
+                        $(function(){
+
+
+                            $("#mydateth").datetimepicker({
+                                timepicker:false,  // กำหนด ไม่แสดงตัวเลือกเวลา
+                                format:'วันที่ d เดือน F พ.ศ. Y',  // กำหนดรูปแบบวันที่ ที่ใช้ เป็น 00-00-0000
+                                lang:'th',  // แสดงภาษาไทย
+                                yearStart:1914,  // ช่วงเลือกปีเริ่มต้น ใช้ ค.ศ.
+                                yearOffset:543,  // ใช้ปี พ.ศ. บวก 543 เพิ่มเข้าไปในปี ค.ศ
+
+                                closeOnDateSelect:true // ปิด ถ้าเลือกวันที่แล้ว
+                            });
+
+
+
+                        });
+                    </script>
+
+
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-
-
 

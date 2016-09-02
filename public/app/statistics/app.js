@@ -54,14 +54,18 @@ app.controller("HomeController", function ($scope,$window, $http,$stateParams ) 
 
     $scope.statistics = {};
 
+
+    $scope.viewPerson = function(person) {
+        $window.open('/police/person_crime#/preview_person/'+ person.id , '_blank');
+    };
+
+    $scope.viewCase = function(data_case) {
+        console.log(data_case);
+        $window.open('/police/case#/view/'+ data_case.id , '_blank');
+    };
     $scope.search_statistics = function(){
 
-        search = "ต้องการบันทึกทะเบียร์ประวัตินี้ ใช่หรือ ไม่";
-        console.log($scope.statistics);
-        if (confirm(search)) {
-
-            console.log($scope.person);
-
+        if($scope.statistics.end_date && $scope.statistics.start_date){
             $http({
                 url : "/api/statistics/search",
                 method : "post",
@@ -78,7 +82,12 @@ app.controller("HomeController", function ($scope,$window, $http,$stateParams ) 
                 console.log($scope.datacase);
 
             })
+        }else{
+            massged = "กรุณาเลือกช่วงเวลาที่ต้องการดูสถิติ";
+            alert(massged);
         }
+
+
     }
 
     $scope.print_statistics = function(){

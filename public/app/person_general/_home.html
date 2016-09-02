@@ -2,7 +2,7 @@
 <div class="row">
     <div id="breadcrumb" class="col-xs-12">
         <ol class="breadcrumb">
-            <li><a href="#">หน้าหลัก</a></li>
+            <li><a href="/police/index">หน้าหลัก</a></li>
             <li><a href="#">จัดการประวัติบุคคลทั่วไป</a></li>
         </ol>
     </div>
@@ -17,7 +17,7 @@
         <h1 class="">จัดการประวัติบุคคลทั่วไป</h1>
     </div>
     <div class="col-sm-4 text-right padding-top-20">
-        <a class="btn btn-success" ui-sref="form_add.add" title="บันทึกประวัติบุคคลทั่วไป"><i class="fa fa-plus" ></i> บันทึกประวัติบุคคลทั่วไป</a>
+        <a class="btn btn-success" ui-sref="form_add.add" title="บันทึกประวัติบุคคลทั่วไป"><i class="fa fa-user-plus" ></i> เพิ่มประวัติบุคคลทั่วไป</a>
     </div>
 </div>
 
@@ -29,22 +29,38 @@
                 <thead>
                 <tr>
                     <th class="text-center">
-                        <input ng-model="search.idcard" type="text" class="form-control" ng-model="keyword.idcard" />
+                        <select ng-model="search.typeidcard" class="form-control" >
+                            <option value="" disabled selected>ค้นหา...</option>
+                            <option></option>
+                            <option value="0">บัตรประชาชน</option>
+                            <option value="1">หนังสือเดินทาง</option>
+                        </select>
                     </th>
                     <th class="text-center">
-                        <input ng-model="search.typepeople" type="text" class="form-control" ng-model="keyword.typepeople" />
+                        <input placeholder="เลขบัตร" ng-model="search.idcard" type="text" class="form-control" ng-model="keyword.idcard" />
+                    </th>
+                    <th class="text-center">
+                        <input placeholder="ประเภทบุคคล" ng-model="search.typepeople" type="text" class="form-control" ng-model="keyword.typepeople" />
                     </th>
                     <th class="text-center">
                         <select ng-model="search.nametitle.name_title" class="form-control" >
+
+                            <option value="" disabled selected>ค้นหา...</option>
+                            <option></option>
                             <option ng-repeat="nametitle in nametitles" value="<% nametitle.name_title %>"><% nametitle.name_title %></option>
 
                         </select>
                     </th>
                     <th class="text-center">
-                        <input ng-model="search.name" type="text" class="form-control" ng-model="keyword.name" />
+                        <input placeholder="ชื่อ" ng-model="search.name" type="text" class="form-control" ng-model="keyword.name" />
+
                     </th>
                     <th class="text-center">
-                        <input ng-model="search.created_at" type="text" class="form-control" ng-model="keyword.surname" />
+                        <input placeholder="สกุล" ng-model="search.surname" type="text" class="form-control" ng-model="keyword.name" />
+
+                    </th>
+                    <th class="text-center">
+                        <input placeholder="วันที่บันทึก" id="mydateth" ng-model="search.date" type="text" class="form-control" ng-model="keyword.surname" />
                     </th>
                     <th class="text-center">
                     </th>
@@ -52,11 +68,12 @@
                     </th>
                 </tr>
                 <tr>
-
+                    <th class="text-center" style="width: 10%">ประเภทบัตร</th>
                     <th class="text-center">เลขบัตร</th>
                     <th class="text-center" style="width: 15%">ประเภทบุคคล</th>
                     <th class="text-center" style="width: 15%">คำนำหน้า</th>
-                    <th class="text-center">ชื่อ - นามสกุล</th>
+                    <th class="text-center">ชื่อ</th>
+                    <th class="text-center">นามสกุล</th>
                     <th class="text-center">วันเวลาที่บันทึก</th>
                     <th class="text-center">สถานะ</th>
                     <th class="text-center" style="width: 11%"></th>
@@ -67,13 +84,15 @@
 
                 <tbody>
 
-                <tr ng-repeat="person_general in data_person_generals | filter:search">
-
+                <tr ng-repeat="person_general in data_person_generals | filter:search as results">
+                    <td class="text-center" ng-if="person_general.typeidcard == 0">บัตรประชาชน</td>
+                    <td class="text-center" ng-if="person_general.typeidcard == 1">หนังสือเดินทาง</td>
                     <td class="text-center" ng-bind="person_general.idcard"></td>
                     <td class="text-center" ng-bind="person_general.typepeople"></td>
                     <td class="text-center" ng-bind="person_general.nametitle.name_title"></td>
-                    <td class="text-center" ng-bind="person_general.name+' '+ person_general.surname"></td>
-                    <td class="text-center" ng-bind="person_general.created_at | date : 'dd/MM/yyyy'"></td>
+                    <td class="text-center" ng-bind="person_general.name"></td>
+                    <td class="text-center" ng-bind="person_general.surname"></td>
+                    <td class="text-center" ng-bind="person_general.date"></td>
                     <td class="text-center">
                         <i ng-if="person_general.status == 'complete' && person_general.photo" class="fa fa-check-circle fa-1x " style="color: #008000"
                            popover="ประวัติบุคคลนี้สมบูรณ์แล้ว" popover-trigger="mouseenter"></i>
@@ -91,11 +110,34 @@
                         <a ng-if="person_general.photo" ng-click="print_Photoperson(person_general)" class="edit"><i class="fa fa-photo"
                                                                                   popover="พิมพ์รูปภาพบุคคล" popover-trigger="mouseenter"></i></a>
                         <a ng-if="current_role == 'admin' || current_role == 'Member_Commissioned_Officers'" ui-sref="edit({id:person_general.id})" class="edit"><i class="fa fa-edit"></i></a>
-                        <a ng-if="current_role == 'admin'" ng-click="delete_person(person_general)" class="del"><i class="fa fa-remove"></i></a>
+                        <a ng-if="current_role == 'Member_Commissioned_Officers'" ng-click="delete_person(person_general)" class="del"><i class="fa fa-remove"></i></a>
                     </td>
+                </tr>
+                <tr class="animate-repeat" ng-if="results.length == 0">
+                    <td class="text-center" colspan="9"> ไม่พบข้อมูล!!! </td>
+
                 </tr>
 
                 </tbody>
+
+                <script type="text/javascript">
+                    $(function(){
+
+
+                        $("#mydateth").datetimepicker({
+                            timepicker:false,  // กำหนด ไม่แสดงตัวเลือกเวลา
+                            format:'วันที่ d เดือน F พ.ศ. Y',
+                            lang:'th',  // แสดงภาษาไทย
+                            yearStart:1914,  // ช่วงเลือกปีเริ่มต้น ใช้ ค.ศ.
+                            yearOffset:543,  // ใช้ปี พ.ศ. บวก 543 เพิ่มเข้าไปในปี ค.ศ
+
+                            closeOnDateSelect:true // ปิด ถ้าเลือกวันที่แล้ว
+                        });
+
+
+
+                    });
+                </script>
             </table>
         </div>
     </div>

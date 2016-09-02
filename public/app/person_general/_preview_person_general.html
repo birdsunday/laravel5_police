@@ -2,8 +2,8 @@
 <div class="row">
     <div id="breadcrumb" class="col-xs-12">
         <ol class="breadcrumb">
-            <li><a href="#">หน้าหลัก</a></li>
-            <li><a href="#">จัดการประวัติบุคคลทั่วไป</a></li>
+            <li><a href="/police/index">หน้าหลัก</a></li>
+            <li><a ui-sref="home">จัดการประวัติบุคคลทั่วไป</a></li>
             <li><a href="#">ดูประวัติบุคคลทั่วไป</a></li>
         </ol>
     </div>
@@ -73,21 +73,20 @@
                             </tr>
                             <tr>
 
-                                <td colspan="3"><li>อายุ :
-
-
+                                <td colspan="3"><li>อายุ : <label style="color: #0000C2" ng-bind="guest.age"></label></td>
                             </tr>
-                            <tr>
-
-                                <td colspan="3">&nbsp;&nbsp;&nbsp; นามเเฝง : <label style="color: #0000C2" ng-bind="guest.alias"></label></td>
-
-                            </tr>
-
-
 
                             <tr>
 
-                                <td colspan="3">&nbsp;&nbsp;&nbsp;หมายเลขประจำตัวประชาชน : <label style="color: #0000C2" ng-bind="guest.idcard"></label></td>
+                                <td colspan="3">&nbsp;&nbsp;&nbsp;ประเภทบัตร : <label ng-if="guest.typeidcard == 0" style="color: #0000C2">บัตรประชาชน</label>
+                                    <label ng-if="guest.typeidcard == 1" style="color: #0000C2">หนังสือเดินทาง</label></td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td colspan="3">&nbsp;&nbsp;&nbsp;หมายเลขบัตร : <label style="color: #0000C2" ng-bind="guest.idcard"></label></td>
 
                             </tr>
 

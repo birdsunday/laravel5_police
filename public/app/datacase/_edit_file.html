@@ -10,40 +10,56 @@
 
                     <form class="form-horizontal" role="form">
 
-                        <div flow-init flow-object="pc.myFlow"
-                             flow-file-success="pc.addFileToList($file, $message, $flow)"
+                        <div class="field" flow-init flow-object="pc.myFlow"
+                             flow-file-success="$file.msg = $message"
                              flow-file-added="!!{doc:1,docx:1,pdf:1}[$file.getExtension()]"
-                             flow-complete="$root.$broadcast('httpResponse', {})"
-                             flow-upload-started="$root.$broadcast('httpRequest', {})"
-                                >
+                             flow-file-success="flowSuccess($file,$message)" align="center">
 
 
 
-                            <div class="text-center">
+                        <div class="container">
                                 <hr class="soften"/>
-                                <div >
-                                    <button flow-btn class="btn btn-warning" ng-if="!caseFile.file_case">Selete File</button>
-                                    <button ng-if="$flow.files.length>0" ng-click="pc.uploadFile()" class="btn btn-success">Upload File
+
+                                <button  class="btn btn-primary" ng-hide="$flow.files.length"
+                                         flow-btn flow-attrs="{accept:'file/*'}">เลือกไฟล์</button>
+                                <div ng-repeat="file in pc.myFlow.files">
+
+                                    <button  ng-if="!file.isComplete()" class="btn btn-warning" ng-show="$flow.files.length"
+                                             flow-btn flow-attrs="{accept:'file/*'}">เปลี่ยนไฟล์</button>
+                                    <button  ng-if="!file.isComplete()" class="btn btn-success" ng-show="$flow.files.length"
+                                             ng-click="pc.uploadFile()">ยืนยัน</button>
+                                    <button  class="btn btn-danger"  ng-if="!file.isComplete()" ng-click="pc.cancelFile(file)">
+                                        ลบไฟล์
                                     </button>
-                                    <p>
-                                        Only doc,docx,pdf
-                                    </p>
+
                                 </div>
 
-                                <div class="content" >
-                                    <% file.name %>
-                                </div>
-
-                                <div ng-if="$flow.files.length==0 && caseFile.file_case" class="">
-                                    <a href="<% caseFile.file_case %>" class="btn btn-primary" _blank>ดูไฟล์คดี</a>
-                                </div>
+                            <br>
+                            <p ng-hide="$flow.files.length">
+                                เลือกเฉพาะไฟล์ PDF,doc,docx เท่านั้น.
+                            </p>
 
 
                                 <div>
 
 
 
-                        </div>
+                                    <div ng-repeat="file in pc.myFlow.files">
+
+                                        <tr ng-repeat="file in $flow.files">
+                                            <td>ชื่อไฟล์ <% file.name %></td>
+                                        </tr>
+
+
+                                    </div>
+                                    <div ng-if="$flow.files.length==0 && caseFile.file_case" class="">
+                                        <a href="<% caseFile.file_case %>" class="btn btn-success" _blank>ดูไฟล์คดี</a>
+                                    </div>
+                                    <br>
+
+
+
+                                </div>
                             </div>
                         </div>
 

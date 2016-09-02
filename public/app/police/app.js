@@ -70,12 +70,16 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
 });
 
-app.controller("HomeController", function ($scope,$state, $http,$stateParams,police,positions,ranks,role ) {
+app.controller("HomeController", function ($scope,$state, $rootScope,$http,$stateParams,police,positions,ranks,role ) {
     console.log("HomeController.start");
     $scope.datapolices = police.data
     $scope.ranks = ranks.data;
     $scope.positions = positions.data;
     $scope.roles = role.data;
+
+    $rootScope.current_role = current_role;
+    console.log( $rootScope.current_role );
+
 
     $scope.deletePolice = function (police) {
         savePolice = "ต้องการลบสมาชิกคนนี้ ใช่หรือ ไม่";

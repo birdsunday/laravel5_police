@@ -31,13 +31,12 @@ class AdminMiddleware {
     public function handle($request, Closure $next){
         if ($this->auth->check()){
            // return Auth::user()->role->key;
-            if(Auth::user()->role->key == 'admin' || Auth::user()->role->key == 'Member_Commissioned_Officers'
-            || Auth::user()->role->key == 'Member_Non-Commissioned_Officer'){
+            if(Auth::user()->role->key == 'admin'){
                 return $next($request);
             }
-            return redirect()->guest('auth/login');
+            return redirect()->guest('auth/login')->with('message',"ไม่มีสิทธในการใช้งานส่วนนี้ กรุณาเข้าสู่ระบบใหม่!!!");
         }
-        return redirect()->guest('auth/login')->with('message',"Please Login");
+        return redirect()->guest('auth/login')->with('message',"กรุณาเข้าสู่ระบบ!!!");
 
     }
 }

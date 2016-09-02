@@ -1,3 +1,6 @@
+
+
+
 var app = angular.module("Person", ['ui.router','flow','ui.bootstrap'], function ($interpolateProvider) {
 
     $interpolateProvider.startSymbol('<%');
@@ -149,6 +152,7 @@ app.controller("PreviewPersonController", function ($scope,$window, $http,$state
     console.log("PreviewPersonController.start");
     $scope.person = person.data;
     console.log($scope.person);
+
     $scope.printPerson = function(){
 
         console.log($scope.person.id);
@@ -271,6 +275,21 @@ app.controller("AddController", function ($scope, $http,$state,$modal,$window,$t
     };
 
 
+
+    var numbers = [];
+    for(var i=1;i<=300;i++) {
+        numbers.push(i);
+    }
+
+    var ages = [];
+    for(var i=1;i<=120;i++) {
+        ages.push(i);
+    }
+    $scope.age = ages;
+    //console.log($scope.age);
+
+
+
     $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
     $scope.format = $scope.formats[0];
 
@@ -292,6 +311,7 @@ app.controller("AddController", function ($scope, $http,$state,$modal,$window,$t
 
 
     $scope.nametitles = nametitle.data;
+
 
     $scope.addvehicle = function(){
         console.log($scope.Vehicle);
@@ -401,6 +421,16 @@ app.controller("AddController", function ($scope, $http,$state,$modal,$window,$t
 
     }
 
+    $scope.viewCase = function(datacase){
+
+        console.log(datacase.id);
+
+        //window.location= "/api/case/"+ $scope.caseFile.id +"/generated_pdf_case";
+        $window.open('/police/case#/view/'+datacase.id, '_blank');
+
+
+    }
+
 
     $scope.cancelPersonCrime = function(person){
 
@@ -408,52 +438,76 @@ app.controller("AddController", function ($scope, $http,$state,$modal,$window,$t
         $state.go("home");
 
     }
+
+
     $scope.savepreson = function(){
+        //console.log($scope.person.date);
+        //console.log($scope.person.birth);
+
+        if($scope.person.birth){
+            var dayBirth=$scope.person.birth;
+            var getdayBirth=dayBirth.split("-");
+            var YB=getdayBirth[2]-543;
+            var MB=getdayBirth[1];
+            var DB=getdayBirth[0];
+
+            var setdayBirth=moment(YB+"-"+MB+"-"+DB);
+            var setNowDate=moment();
+            var yearData=setNowDate.diff(setdayBirth, 'years', true); // ข้อมูลปีแบบทศนิยม
+            var yearFinal=Math.round(setNowDate.diff(setdayBirth, 'years', true),0); // ปีเต็ม
+            var yearReal=setNowDate.diff(setdayBirth, 'years'); // ปีจริง
+            var monthDiff=Math.floor((yearData-yearReal)*12); // เดือน
+            var str_year_month=yearReal+" ปี "+monthDiff+" เดือน"; // ต่อวันเดือนปี
+            $scope.person.age = str_year_month;
+        }
+
+
+
+        //if($scope.person.typeidcard && $scope.person.idcard1){
+        //    $scope.person.idcard = $scope.person.typeidcard +" : "+ $scope.person.idcard1;
+        //
+        //}
+        //console.log($scope.person.age);
+        //console.log($scope.person.idcard);
+        console.log("Type IDCARD = " + $scope.person.typeidcard);
 
         saveCaseFile = "ต้องการบันทึกทะเบียร์ประวัตินี้ ใช่หรือ ไม่";
 
         if (confirm(saveCaseFile)) {
-            $scope.person.status = "complete";
-            $scope.caseFile.status = "complete";
+            if($scope.person.name && $scope.person.date){
+                $scope.person.status = "complete";
+                $scope.caseFile.status = "complete";
 
-            sendObj ={
-                person : $scope.person,
-                caseFile : $scope.caseFile
+                sendObj ={
+                    person : $scope.person,
+                    caseFile : $scope.caseFile
+                }
+
+                $http({
+                    url : "/api/person_crime",
+                    method : "post",
+                    data : sendObj
+
+                }).success(function(response){
+                    $scope.myFlow.opts.target = '/api/person_crime/'+ response.id +'/photo';
+
+                    $scope.myFlow.upload();
+                    $state.go("form_add.complete",{id:response.id})
+
+                })
+
+            }else{
+                massged = "กรุณา กรอก อย่างน้อย 2 ช่องนี้ ชื่อ , วันที่จับกุม";
+                alert(massged);
             }
 
-            $http({
-                url : "/api/person_crime",
-                method : "post",
-                data : sendObj
-
-            }).success(function(response){
-                $scope.myFlow.opts.target = '/api/person_crime/'+ response.id +'/photo';
-
-                $scope.myFlow.upload();
-                 $state.go("form_add.complete",{id:response.id})
-
-            })
-
-
 
 
         }
 
     }
 
-    $scope.savepresonError = function(){
 
-        saveCaseFile = "ต้องการบันทึกทะเบียร์ประวัตินี้ ใช่หรือ ไม่";
-
-        if (confirm(saveCaseFile)) {
-
-            massged = "กรุณา กรอก อย่างน้อย 3 ช่องนี้ คำนำหน้าชื่อ , ชื่อ , วันที่จับกุม";
-            alert(massged);
-
-
-        }
-
-    }
 
     $scope.myFlow = new Flow({
        // target: '/api/person_crime/'+ response.id +'/photo',
@@ -482,9 +536,18 @@ app.controller("CompleteController", function ($scope,$window, $http,$stateParam
     console.log("CompleteController.start");
 
     $scope.person = person.data;
-    console.log($scope.person);
+    $scope.datacase =  $scope.person.datacase[0];
+    console.log($scope.datacase);
+
+    $scope.uploadfile = function(){
+
+        console.log($scope.datacase.id);
+
+        //window.location= "/api/case/"+ $scope.caseFile.id +"/generated_pdf_case";
+        $window.open('/police/case#/upload_file/'+ $scope.datacase.id, '_blank');
 
 
+    }
 
     $scope.printPerson = function(){
 
@@ -518,7 +581,19 @@ app.controller("EditController", function ($scope, $http,$stateParams,$state,$ro
     console.log($scope.person );
     $scope.nametitles = nametitle.data;
 
+    var numbers = [];
+    for(var i=1;i<=300;i++) {
+        numbers.push(i);
+    }
+    $scope.number = numbers;
+    //console.log($scope.number);
 
+
+    var ages = [];
+    for(var i=1;i<=120;i++) {
+        ages.push(i);
+    }
+    $scope.age = ages;
     function init() {
 
         if($scope.person.nametitle){
@@ -636,7 +711,7 @@ app.controller("EditController", function ($scope, $http,$stateParams,$state,$ro
 
 });
 
-app.controller("PhotoController", function ($scope, $http,$window) {
+app.controller("PhotoController", function ($scope, $http,$window,$state) {
     console.log("PhotoController.start");
     var self = this;
     self.person = $scope.person;
@@ -650,6 +725,9 @@ app.controller("PhotoController", function ($scope, $http,$window) {
 
     self.uploadFile = function(){
         $scope.myFlow.upload();
+        massged = "อัพโหลดรูปภาพเสร็จสมบูรณ์";
+        alert(massged);
+        $state.go("home")
         //console.log($scope.myFlow);
     }
     self.cancelFile = function (file){

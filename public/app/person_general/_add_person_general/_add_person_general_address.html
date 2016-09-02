@@ -12,26 +12,26 @@
                         <label class="col-sm-1 control-label" style="width: auto">ที่อยู่ปัจจุบัน</label>
 
                         <div class="col-sm-7">
-                            <textarea ng-model="guest.addresspresent.present_address" type="text" class="form-control"></textarea>
+                            <textarea placeholder="ที่อยู่ปัจจุบัน" ng-model="guest.addresspresent.present_address" type="text" class="form-control"></textarea>
 
                         </div>
                         <label class="col-sm-1 control-label" style=" width: auto">โทร</label>
 
                         <div class="col-sm-3">
-                            <input ng-model="guest.addresspresent.present_tel" type="text" class="form-control">
+                            <input placeholder="โทร" onKeyUp="IsNumeric(this.value,this)" ng-model="guest.addresspresent.present_tel" type="text" class="form-control">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-1 control-label" style="width: auto">ภูมิลำเนาเดิม</label>
 
                         <div class="col-sm-7">
-                            <textarea ng-model="guest.addressoriginal.original_address" type="text" class="form-control"></textarea>
+                            <textarea placeholder="ภูมิลำเนาเดิม" ng-model="guest.addressoriginal.original_address" type="text" class="form-control"></textarea>
 
                         </div>
                         <label class="col-sm-1 control-label" style="width: auto">โทร</label>
 
                         <div class="col-sm-3">
-                            <input ng-model="guest.addressoriginal.original_tel" type="text" class="form-control">
+                            <input placeholder="โทร" onKeyUp="IsNumeric(this.value,this)" ng-model="guest.addressoriginal.original_tel" type="text" class="form-control">
                         </div>
                     </div>
                 </form>
@@ -51,14 +51,14 @@
                         <label class="col-sm-3 control-label" >ชื่อที่ทำงาน</label>
 
                         <div class="col-sm-7">
-                            <input ng-model="addoffice.office" type="text" class="form-control">
+                            <input placeholder="ชื่อที่ทำงาน" ng-model="addoffice.office" type="text" class="form-control">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-3 control-label">สถานที่ตั้ง</label>
 
                         <div class="col-sm-7">
-                            <textarea ng-model="addoffice.office_address" type="text" class="form-control"></textarea>
+                            <textarea placeholder="สถานที่ตั้ง" ng-model="addoffice.office_address" type="text" class="form-control"></textarea>
 
                         </div>
                     </div>
@@ -67,17 +67,15 @@
                         <label class="col-sm-3 control-label">โทร</label>
 
                         <div class="col-sm-7">
-                            <input ng-model="addoffice.office_tel" type="text" class="form-control">
+                            <input placeholder="โทรที่ทำงาน" onKeyUp="IsNumeric(this.value,this)" ng-model="addoffice.office_tel" type="text" class="form-control">
                         </div>
                     </div>
-                    <div class="form-group text-right">
+                    <div class="form-group text-center">
                         <div class="col-sm-12">
-                            <button type="button" ng-click="saveDataOffice()" class="btn btn-default" data-dismiss="modal">
+                            <button type="button" ng-click="saveDataOffice()" class="btn btn-success" data-dismiss="modal">
                                 เพิ่ม
                             </button>
-                            <button type="button" ng-click="cancelDataOffice()" class="btn btn-primary" data-dismiss="modal">
-                                ล้าง
-                            </button>
+
                         </div>
 
                     </div>

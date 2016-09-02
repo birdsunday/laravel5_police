@@ -6,7 +6,7 @@
         <div class="container-fluid expanded-panel">
             <div class="row">
                 <div id="logo" class="col-xs-12 col-sm-2">
-                    <a href="police/index">PoliceImmigration</a>
+                    <a href="/police/index" style="font-size: 16px">Chiang Rai Immigration</a>
                 </div>
                 <div id="top-panel" class="col-xs-12 col-sm-10">
                     <div class="row">
@@ -14,6 +14,7 @@
                             <a href="#" class="show-sidebar" style="color: #ffffff">
                                 <i class="fa fa-bars"></i>
                             </a>
+
 
                         </div>
                         <div class="col-xs-4 col-sm-8 top-panel-right">
@@ -36,45 +37,10 @@
                                         <li>
                                             <a href="/police/profile">
                                                 <i class="fa fa-user"></i>
-                                                <span>จัดข้อมูลส่วนตัว</span>
+                                                <span>ข้อมูลส่วนตัว</span>
                                             </a>
                                         </li>
-                                        <li>
-                                            <a href="/police/user">
-                                                <i class="fa fa-users"></i>
-                                                <span>จัดการข้อมูลสมาชิก</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="/police/person_crime">
-                                                <i class="fa fa-user-secret"></i>
-                                                <span>บุคคลที่เกี่ยวข้องกับอาชญากรรม</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="/police/person_general" >
-                                                <i class="fa fa-user"></i>
-                                                <span>บุคคลทั่วไป</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="/police/case">
-                                                <i class="fa fa-tasks"></i>
-                                                <span>จัดการคดี</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="/police/statistics">
-                                                <i class="fa fa-area-chart"></i>
-                                                <span>ดูสถิติการจับกุม</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" >
-                                                <i class="fa fa-search"></i>
-                                                <span>ตรวจสอบ/จัดการระบบ</span>
-                                            </a>
-                                        </li>
+
 
                                         <li>
                                             <a href="<% url('/api/auth/logout/') %>">
@@ -108,30 +74,7 @@
                                                 <span>ข้อมูลส่วนตัว</span>
                                             </a>
                                         </li>
-                                        <li>
-                                            <a href="/police/person_crime">
-                                                <i class="fa fa-user-secret"></i>
-                                                <span>บุคคลที่เกี่ยวข้องกับอาชญากรรม</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="/police/person_general" >
-                                                <i class="fa fa-user"></i>
-                                                <span>บุคคลทั่วไป</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="/police/case">
-                                                <i class="fa fa-tasks"></i>
-                                                <span>จัดการคดี</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="/police/statistics">
-                                                <i class="fa fa-area-chart"></i>
-                                                <span>ดูสถิติการจับกุม</span>
-                                            </a>
-                                        </li>
+
                                         <li>
                                             <a href="<% url('/api/auth/logout/') %>">
                                                 <i class="fa fa-power-off"></i>

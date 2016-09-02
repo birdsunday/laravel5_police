@@ -11,12 +11,12 @@
                         <label class="col-sm-1 control-label" style="">ชื่อ</label>
 
                         <div class="col-sm-3">
-                            <input ng-model="guest.datafather.father_name" type="text" class="form-control">
+                            <input placeholder="ชื่อ" ng-model="guest.datafather.father_name" type="text" class="form-control">
                         </div>
                         <label class="col-sm-1 control-label">สกุล</label>
 
                         <div class="col-sm-3">
-                            <input ng-model="guest.datafather.father_surname" type="text" class="form-control">
+                            <input placeholder="สกุล" ng-model="guest.datafather.father_surname" type="text" class="form-control">
                         </div>
 
                         <label class="col-sm-1 control-label" ></label>
@@ -42,7 +42,7 @@
                         <label class="col-sm-1 control-label" >อายุ</label>
 
                         <div class="col-sm-3">
-                            <input ng-model="guest.datafather.father_age" type="text" class="form-control">
+                            <input placeholder="อายุ" ng-model="guest.datafather.father_age" type="text" class="form-control">
                         </div>
                     </div>
 
@@ -52,12 +52,12 @@
                         <label class="col-sm-1 control-label" >ที่อยู่</label>
 
                         <div class="col-sm-7">
-                            <textarea ng-model="guest.datafather.father_address" type="text" class="form-control"></textarea>
+                            <textarea placeholder="ที่อยู่" ng-model="guest.datafather.father_address" type="text" class="form-control"></textarea>
                         </div>
                         <label class="col-sm-1 control-label" >โทร</label>
 
                         <div class="col-sm-3">
-                            <input ng-model="guest.datafather.father_tel" type="text" class="form-control">
+                            <input placeholder="โทร" ng-model="guest.datafather.father_tel" type="text" class="form-control">
                         </div>
                     </div>
 
@@ -67,19 +67,19 @@
                         <label class="col-sm-1 control-label" >อาชีพ</label>
 
                         <div class="col-sm-3">
-                            <left><input ng-model="guest.datafather.father_career" type="text" class="form-control">
+                            <left><input placeholder="อาชีพ" ng-model="guest.datafather.father_career" type="text" class="form-control">
                             </left>
                         </div>
                         <label class="col-sm-1 control-label" >ที่ทำงาน</label>
 
                         <div class="col-sm-3">
-                            <input ng-model="guest.datafather.father_nameoffice" type="text" class="form-control">
+                            <input placeholder="ที่ทำงาน" ng-model="guest.datafather.father_nameoffice" type="text" class="form-control">
                         </div>
 
                         <label class="col-sm-1 control-label" >โทร</label>
 
                         <div class="col-sm-3">
-                            <left><input ng-model="guest.datafather.father_nameoffice_tel" type="text" class="form-control">
+                            <left><input placeholder="โทร" onKeyUp="IsNumeric(this.value,this)" ng-model="guest.datafather.father_nameoffice_tel" type="text" class="form-control">
                             </left>
                         </div>
                     </div>
@@ -100,12 +100,12 @@
                         <label class="col-sm-1 control-label">ชื่อ</label>
 
                         <div class="col-sm-3">
-                            <input ng-model="guest.datamother.mother_name" type="text" class="form-control">
+                            <input placeholder="ชื่อ" ng-model="guest.datamother.mother_name" type="text" class="form-control">
                         </div>
                         <label class="col-sm-1 control-label">ชื่อสกุล</label>
 
                         <div class="col-sm-3">
-                            <input ng-model="guest.datamother.mother_surname" type="text" class="form-control">
+                            <input placeholder="ชื่อสกุล" ng-model="guest.datamother.mother_surname" type="text" class="form-control">
                         </div>
 
 
@@ -133,7 +133,7 @@
                         <label class="col-sm-1 control-label" >อายุ</label>
 
                         <div class="col-sm-3">
-                            <input ng-model="guest.datamother.mother_age" type="text" class="form-control">
+                            <input placeholder="อายุ" ng-model="guest.datamother.mother_age" type="text" class="form-control">
                         </div>
                     </div>
 
@@ -143,31 +143,31 @@
                         <label class="col-sm-1 control-label" >ที่อยู่</label>
 
                         <div class="col-sm-7">
-                            <textarea ng-model="guest.datamother.mother_address" type="text" class="form-control"></textarea>
+                            <textarea placeholder="ที่อยู่" ng-model="guest.datamother.mother_address" type="text" class="form-control"></textarea>
                         </div>
                         <label class="col-sm-1 control-label" >โทร</label>
 
                         <div class="col-sm-3">
-                            <input ng-model="guest.datamother.mother_tel" type="text" class="form-control">
+                            <input placeholder="โทร" onKeyUp="IsNumeric(this.value,this)" ng-model="guest.datamother.mother_tel" type="text" class="form-control">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-1 control-label" >อาชีพ</label>
 
                         <div class="col-sm-3">
-                            <input ng-model="guest.datamother.mother_career" type="text" class="form-control">
+                            <input placeholder="อาชีพ" ng-model="guest.datamother.mother_career" type="text" class="form-control">
                         </div>
 
                         <label class="col-sm-1 control-label" >ที่ทำงาน</label>
 
                         <div class="col-sm-3">
-                            <input ng-model="guest.datamother.mother_nameoffice" type="text" class="form-control">
+                            <input placeholder="ทีทำงาน" ng-model="guest.datamother.mother_nameoffice" type="text" class="form-control">
                         </div>
 
                         <label class="col-sm-1 control-label" >โทร</label>
 
                         <div class="col-sm-3">
-                            <input ng-model="guest.datamother.mother_nameoffice_tel" type="text" class="form-control">
+                            <input placeholder="โทรที่ทำงาน" onKeyUp="IsNumeric(this.value,this)" ng-model="guest.datamother.mother_nameoffice_tel" type="text" class="form-control">
 
                         </div>
                     </div>
@@ -191,17 +191,18 @@
 
                         <div class="col-sm-3">
                             <select ng-model="guest.dataspouse.nametitle" class="form-control css-require" ng-options="opt as opt.name_title for opt in nametitles">
+                                <option value="" disabled selected>คำนำหน้าชื่อ...</option>
                             </select>
                         </div>
                         <label class="col-sm-1 control-label" >ชื่อ</label>
 
                         <div class="col-sm-3">
-                            <input ng-model="guest.dataspouse.spouse_name" type="text" class="form-control">
+                            <input placeholder="ชื่อ" ng-model="guest.dataspouse.spouse_name" type="text" class="form-control">
                         </div>
-                        <label class="col-sm-1 control-label" >สกุล</label>
+                        <label class="col-sm-1 control-label" >ชื่อสกุล</label>
 
                         <div class="col-sm-3">
-                            <input ng-model="guest.dataspouse.spouse_surname" type="text" class="form-control">
+                            <input placeholder="ชื่อสกุล" ng-model="guest.dataspouse.spouse_surname" type="text" class="form-control">
                         </div>
                     </div>
 
@@ -209,7 +210,7 @@
                         <label class="col-sm-1 control-label" >อายุ</label>
 
                         <div class="col-sm-3">
-                            <input ng-model="guest.dataspouse.spouse_age" type="text" class="form-control">
+                            <input placeholder="อายุ" ng-model="guest.dataspouse.spouse_age" type="text" class="form-control">
                         </div>
 
 
@@ -238,12 +239,12 @@
                         <label class="col-sm-1 control-label">ที่อยู่</label>
 
                         <div class="col-sm-7">
-                            <textarea ng-model="guest.dataspouse.spouse_address" type="text" class="form-control"></textarea>
+                            <textarea placeholder="ที่อยู่" ng-model="guest.dataspouse.spouse_address" type="text" class="form-control"></textarea>
                         </div>
                         <label class="col-sm-1 control-label" >โทร</label>
 
                         <div class="col-sm-3">
-                            <input ng-model="guest.dataspouse.spouse_tel" type="text" class="form-control">
+                            <input placeholder="โทร" onKeyUp="IsNumeric(this.value,this)" ng-model="guest.dataspouse.spouse_tel" type="text" class="form-control">
                         </div>
                     </div>
 
@@ -251,19 +252,19 @@
                         <label class="col-sm-1  control-label" >อาชีพ</label>
 
                         <div class="col-sm-3">
-                            <left><input ng-model="guest.dataspouse.spouse_career" type="text" class="form-control">
+                            <left><input placeholder="อาชีพ" ng-model="guest.dataspouse.spouse_career" type="text" class="form-control">
                             </left>
                         </div>
 
                         <label class="col-sm-1 control-label" >ที่ทำงาน</label>
 
                         <div class="col-sm-3">
-                            <input ng-model="guest.dataspouse.spouse_nameoffice" type="text" class="form-control">
+                            <input placeholder="ที่ทำงาน" ng-model="guest.dataspouse.spouse_nameoffice" type="text" class="form-control">
                         </div>
                         <label class="col-sm-1 control-label" >โทร</label>
 
                         <div class="col-sm-3">
-                            <input ng-model="guest.dataspouse.spouse_nameoffice_tel" type="text" class="form-control">
+                            <input placeholder="โทรที่ทำงาน" onKeyUp="IsNumeric(this.value,this)" ng-model="guest.dataspouse.spouse_nameoffice_tel" type="text" class="form-control">
 
                         </div>
 
@@ -340,24 +341,25 @@
 
                         <div class="col-sm-3">
                             <select ng-model="child.nametitle" class="form-control css-require" ng-options="opt as opt.name_title for opt in nametitles">
+                                <option value="" disabled selected>คำนำหน้าชื่อ...</option>
                             </select>
                         </div>
                         <label class="col-sm-1 control-label" style="width: auto">ชื่อ:</label>
 
                         <div class="col-sm-3">
-                            <input ng-model="child.child_name" type="text" class="form-control">
+                            <input placeholder="ชื่อ" ng-model="child.child_name" type="text" class="form-control">
                         </div>
                         <label class="col-sm-1 control-label" style="width: auto">ชื่อสกุล:</label>
 
                         <div class="col-sm-3">
-                            <input ng-model="child.child_surname" type="text" class="form-control">
+                            <input placeholder="ชื่อสกุล" ng-model="child.child_surname" type="text" class="form-control">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-1 control-label" style="width: auto">อายุ:</label>
 
                         <div class="col-sm-3">
-                            <input ng-model="child.child_age" type="text" class="form-control">
+                            <input placeholder="อายุ" ng-model="child.child_age" type="text" class="form-control">
                         </div>
 
 
@@ -386,12 +388,12 @@
                         <label class="col-sm-1 control-label"style="width: auto">ที่อยู่:</label>
 
                         <div class="col-sm-7">
-                            <textarea ng-model="child.child_address" type="text" class="form-control"></textarea>
+                            <textarea placeholder="ที่อยู่" ng-model="child.child_address" type="text" class="form-control"></textarea>
                         </div>
                         <label class="col-sm-1 control-label" style="width: auto">โทร:</label>
 
                         <div class="col-sm-3">
-                            <input ng-model="child.child_tel" type="text" class="form-control">
+                            <input placeholder="โทร" ng-model="child.child_tel" type="text" class="form-control">
                         </div>
                     </div>
 
@@ -399,29 +401,27 @@
                         <label class="col-sm-1 control-label" style="width: auto">อาชีพ:</label>
 
                         <div class="col-sm-3">
-                            <input ng-model="child.child_career" type="text" class="form-control">
+                            <input placeholder="อาชีพ" ng-model="child.child_career" type="text" class="form-control">
 
                         </div>
 
                         <label class="col-sm-1 control-label" style="width: auto">ที่ทำงาน:</label>
 
                         <div class="col-sm-3">
-                            <input ng-model="child.child_nameoffice" type="text" class="form-control">
+                            <input placeholder="ที่ทำงาน" ng-model="child.child_nameoffice" type="text" class="form-control">
                         </div>
                         <label class="col-sm-1 control-label" style="width: auto">โทร:</label>
 
                         <div class="col-sm-3">
-                            <left><input ng-model="child.child_nameoffice_tel" type="text" class="form-control">
+                            <left><input placeholder="โทรที่ทำงาน" ng-model="child.child_nameoffice_tel" type="text" class="form-control">
                             </left>
                         </div>
                     </div>
-                    <div class="form-group text-right">
-                        <button type="button" ng-click="saveDataChild()" class="btn btn-default" data-dismiss="modal">
+                    <div class="form-group text-center">
+                        <button type="button" ng-click="saveDataChild()" class="btn btn-success" data-dismiss="modal">
                             เพิ่ม
                         </button>
-                        <button type="button" ng-click="cancelDataChill()" class="btn btn-primary" data-dismiss="modal">
-                            รีเซต
-                        </button>
+
                     </div>
 
 
@@ -486,10 +486,10 @@
                 <h4 class="page-header">เพิ่มข้อมูลบุคคลอื่นๆที่อยู่ร่วมในครอบครัว</h4>
                 <form class="form-horizontal" role="form">
                     <div class="form-group">
-                        <label class="col-sm-1 control-label" style="font-size: 11px;width: auto">เลขบัตรประจำตัว:</label>
+                        <label class="col-sm-1 control-label" style="font-size: 11px;width: auto">เลขบัตร:</label>
 
                         <div class="col-sm-6">
-                            <input ng-model="personfamily.personfamily_idnumber" type="text" class="form-control">
+                            <input placeholder="เลขบัตร" ng-model="personfamily.personfamily_idnumber" type="text" class="form-control">
                         </div>
                     </div>
 
@@ -499,34 +499,35 @@
 
                         <div class="col-sm-3">
                             <select ng-model="personfamily.nametitle" class="form-control css-require" ng-options="opt as opt.name_title for opt in nametitles">
+                                <option value="" disabled selected>คำนำหน้าชื่อ...</option>
                             </select>
                         </div>
                         <label class="col-sm-1 control-label" style="font-size: 11px">ชื่อ:</label>
 
                         <div class="col-sm-3">
-                            <input ng-model="personfamily.personfamily_name" type="text" class="form-control">
+                            <input placeholder="ชื่อ" ng-model="personfamily.personfamily_name" type="text" class="form-control">
                         </div>
-                        <label class="col-sm-1 control-label" style="font-size: 11px">สกุล:</label>
+                        <label class="col-sm-1 control-label" style="font-size: 11px">ชื่อสกุล:</label>
 
                         <div class="col-sm-3">
-                            <input ng-model="personfamily.personfamily_surname" type="text" class="form-control">
+                            <input placeholder="ชื่อสกุล" ng-model="personfamily.personfamily_surname" type="text" class="form-control">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-1 control-label" style="font-size: 11px">อายุ:</label>
 
                         <div class="col-sm-3">
-                            <input ng-model="personfamily.personfamily_age" type="text" class="form-control">
+                            <input placeholder="อายุ" ng-model="personfamily.personfamily_age" type="text" class="form-control">
                         </div>
                         <label class="col-sm-1 control-label" style="font-size: 11px">อาชีพ:</label>
 
                         <div class="col-sm-3">
-                            <input ng-model="personfamily.personfamily_career" type="text" class="form-control">
+                            <input placeholder="อาชีพ" ng-model="personfamily.personfamily_career" type="text" class="form-control">
                         </div>
                         <label class="col-sm-1 control-label" style="font-size: 11px">โทร:</label>
 
                         <div class="col-sm-3">
-                            <input ng-model="personfamily.personfamily_tel" type="text" class="form-control">
+                            <input placeholder="โทร" ng-model="personfamily.personfamily_tel" type="text" class="form-control">
                         </div>
 
                     </div>
@@ -534,30 +535,28 @@
                         <label class="col-sm-1 control-label" style="font-size: 11px">ที่อยู่:</label>
 
                         <div class="col-sm-7">
-                            <textarea ng-model="personfamily.personfamily_address" type="text" class="form-control"></textarea>
+                            <textarea placeholder="ที่อยู่" ng-model="personfamily.personfamily_address" type="text" class="form-control"></textarea>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-1 control-label" style="font-size: 11px;width: auto">สถานที่ทำงาน:</label>
 
                         <div class="col-sm-6">
-                            <input ng-model="personfamily.personfamily_nameoffice" type="text" class="form-control">
+                            <input placeholder="สถานที่ทำงาน" ng-model="personfamily.personfamily_nameoffice" type="text" class="form-control">
                         </div>
                         <label class="col-sm-1 control-label" style="font-size: 11px;width: auto">โทรที่ทำงาน:</label>
 
                         <div class="col-sm-3">
-                            <input ng-model="personfamily.personfamily_nameoffice_tel" type="text" class="form-control">
+                            <input placeholder="โทรที่ทำงาน" onKeyUp="IsNumeric(this.value,this)" ng-model="personfamily.personfamily_nameoffice_tel" type="text" class="form-control">
                         </div>
 
                     </div>
 
-                    <div class="form-group text-right">
-                        <button type="button" ng-click="saveDataPersonFamily()" class="btn btn-default"
+                    <div class="form-group text-center">
+                        <button type="button" ng-click="saveDataPersonFamily()" class="btn btn-success"
                                 data-dismiss="modal">บันทึก
                         </button>
-                        <button type="button" ng-click="cancelDataPersonFamily()" class="btn btn-primary"
-                                data-dismiss="modal">ยกเลิก
-                        </button>
+
                     </div>
 
 

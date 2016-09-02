@@ -18,14 +18,14 @@
         <div class="col-xs-3 bs-wizard-step "><!-- complete -->
             <div class="text-center bs-wizard-stepnum">ขั้นตอนที่ 3</div>
             <div class="progress"><div class="progress-bar"></div></div>
-            <a href="#" class="bs-wizard-dot"></a>
+            <a href="#" class="bs-wizard-dot1"></a>
             <div class="bs-wizard-info text-center">ตรวจสอบ/ยืนยัน</div>
         </div>
 
         <div class="col-xs-3 bs-wizard-step "><!-- complete -->
             <div class="text-center bs-wizard-stepnum">ขั้นตอนที่ 4</div>
             <div class="progress"><div class="progress-bar"></div></div>
-            <a href="#" class="bs-wizard-dot"></a>
+            <a href="#" class="bs-wizard-dot1"></a>
             <div class="bs-wizard-info text-center">บันทึกข้อมูลเสร็จสมบูรณ์</div>
         </div>
 
@@ -85,11 +85,11 @@
 
                                 <div>
                                     <button  class="btn btn-primary" ng-hide="$flow.files.length"
-                                             flow-btn flow-attrs="{accept:'image/*'}">Select image</button>
+                                             flow-btn flow-attrs="{accept:'image/*'}">เลือกรูปภาพ</button>
                                     <button  class="btn btn-warning" ng-show="$flow.files.length"
-                                             flow-btn flow-attrs="{accept:'image/*'}">Change</button>
+                                             flow-btn flow-attrs="{accept:'image/*'}">เปลี่ยนรูปภาพ</button>
                                     <button  class="btn btn-danger"  ng-if="!file.isComplete()" ng-click="cancelFile(file)">
-                                        Remove
+                                        ลบรูปภาพ
                                     </button>
 
                                 </div>

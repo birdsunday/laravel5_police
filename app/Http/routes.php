@@ -66,13 +66,22 @@ Route::get('/', function () {
 Route::group(['middleware'=>'admin'],function(){
 
     Route::get('/police/user', 'Admin\PoliceController@index');
+    Route::get('/police/mylog', 'Admin\MyLogController@index');
+    Route::get('/police/getmylog', 'Admin\MyLogController@getMyLog');
+
+
+});
+
+
+Route::group(['middleware'=>'member'],function(){
+
+
     Route::get('/police/case', 'Admin\CaseController@index');
     Route::get('/police/person', 'Admin\PresonController@index');
     Route::get('/police/person_crime', 'Admin\PersonOneController@index');
     Route::get('/police/person_general', 'Admin\GuestHistoryController@index');
     Route::get('/police/statistics', 'Admin\StatisticsController@index');
-    Route::get('/police/mylog', 'Admin\MyLogController@index');
-    Route::get('/police/getmylog', 'Admin\MyLogController@getMyLog');
+
 
 
 });
@@ -92,8 +101,6 @@ Route::group(['prefix'=>'api'],function(){
     Route::post('police/{id}/photo','API\PoliceApiController@savePhotoPolice');
     Route::resource('police','API\PoliceApiController');
 
-
-
     Route::resource('person_crime','API\PersonOneApiController');
     Route::post('person_crime/{id}/photo','API\PersonOneApiController@savePhotoPerson');
     Route::post('person_crime/case/search','API\PersonOneApiController@searchCasePerson');
@@ -108,8 +115,6 @@ Route::group(['prefix'=>'api'],function(){
     Route::resource('person_crime.address_office','API\PersonAddressOfficeApiController');
     Route::get('person_crime/{id}/generated_pdf_person','API\PersonOneApiController@generatedPdfPerson');
 
-
-
     Route::resource('case','API\CaseApiController');
     Route::post('case/delete/{id}/person','API\CaseApiController@deleteCasePerson');
     Route::resource('case.person','API\CasePersonApiController');
@@ -123,7 +128,6 @@ Route::group(['prefix'=>'api'],function(){
     Route::resource('statistics','API\StatisticsApiController');
     Route::post('statistics/search','API\StatisticsApiController@searchDataCase');
     Route::post('statistics/printpdf','API\StatisticsApiController@printDataCase');
-
 
     Route::resource('guesthistory','API\GuestHistoryApiController');
     Route::resource('guesthistory.child','API\GuestChildApiController');
@@ -140,7 +144,13 @@ Route::group(['prefix'=>'api'],function(){
 
 });
 
+Route::get("/TEST111", function () {
 
+
+
+    DB::update("ALTER TABLE RANK AUTO_INCREMENT = 1000;");
+
+});
 
 Route::get("/rank", function () {
     return  App\Models\Rank::all();

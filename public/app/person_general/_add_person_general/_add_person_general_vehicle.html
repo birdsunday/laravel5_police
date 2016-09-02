@@ -10,19 +10,19 @@
                         <label class="col-sm-3 control-label">ยี่ห้อ:</label>
 
                         <div class="col-sm-2">
-                            <input ng-model="vehicle.vehicle_brand" type="text" class="form-control">
+                            <input placeholder="ยี่ห้อ" ng-model="vehicle.vehicle_brand" type="text" class="form-control">
 
                         </div>
                         <label class="col-sm-1 control-label" style="width: auto">รุ่น:</label>
 
                         <div class="col-sm-2">
-                            <input ng-model="vehicle.vehicle_generation" type="text" class="form-control">
+                            <input placeholder="รุ่น" ng-model="vehicle.vehicle_generation" type="text" class="form-control">
 
                         </div>
                         <label class="col-sm-1 control-label" style="width: auto">สี:</label>
 
                         <div class="col-sm-2">
-                            <input ng-model="vehicle.vehicle_color" type="text" class="form-control">
+                            <input placeholder="สี" ng-model="vehicle.vehicle_color" type="text" class="form-control">
 
                         </div>
 
@@ -33,28 +33,26 @@
                         <label class="col-sm-3 control-label">ทะเบียน หมวด:</label>
 
                         <div class="col-sm-2">
-                            <input ng-model="vehicle.vehicle_group" type="text" class="form-control" placeholder="หมวด">
+                            <input placeholder="หมวด" ng-model="vehicle.vehicle_group" type="text" class="form-control" placeholder="หมวด">
 
                         </div>
                         <label class="col-sm-1 control-label" style="width: auto">เลข:</label>
                         <div class="col-sm-2">
-                            <input ng-model="vehicle.vehicle_number" type="text" class="form-control" placeholder="หมายเลข">
+                            <input placeholder="เลข" ng-model="vehicle.vehicle_number" type="text" class="form-control" placeholder="หมายเลข">
 
                         </div>
                         <label class="col-sm-1 control-label" style="width: auto">จังหวัด:</label>
                         <div class="col-sm-2">
-                            <input ng-model="vehicle.vehicle_province" type="text" class="form-control" placeholder="จังหวัด">
+                            <input placeholder="จังหวัด" ng-model="vehicle.vehicle_province" type="text" class="form-control" placeholder="จังหวัด">
 
                         </div>
                     </div>
 
-                    <div class="form-group text-right">
-                        <button type="button" ng-click="saveDataVehicle()" class="btn btn-default"
-                                data-dismiss="modal">บันทึก
+                    <div class="form-group text-center">
+                        <button type="button" ng-click="saveDataVehicle()" class="btn btn-success"
+                                data-dismiss="modal">เพิ่ม
                         </button>
-                        <button type="button" ng-click="cancelDataVehicle()" class="btn btn-primary"
-                                data-dismiss="modal">ยกเลิก
-                        </button>
+
                     </div>
 
 

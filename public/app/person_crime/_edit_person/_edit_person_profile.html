@@ -14,9 +14,15 @@
                         <div class="col-sm-3">
                             <input ng-model="person.typepeople" type="text" class="form-control">
                         </div>
-                        <label class="col-sm-4 control-label" style="width: auto">หมายเลขบัตรประชาชน</label>
+                        <div class="col-sm-3">
+                            <select ng-model="person.typeidcard" class="form-control" >
+                                <option value="" disabled selected>เลือกประเภทบัตร...</option>
+                                <option value="0">เลขบัตรประจำตัวประชาชน</option>
+                                <option value="1">เลขหนังสือเดินทาง</option>
+                            </select>
+                        </div>
 
-                        <div class="col-sm-5">
+                        <div class="col-sm-4">
                             <input ng-model="person.idcard" type="text" class="form-control">
                         </div>
                     </div>
@@ -56,24 +62,37 @@
 
                         </div>
 
+                        <label class="col-sm-1 control-label" style="width: auto">อายุ</label>
+
+                        <div class="col-sm-3">
+                            <input type="text"  ng-model="person.age" class="form-control" disabled>
+                        </div>
+
+
+                    </div>
+
+                    <div class="form-group">
                         <label class="col-sm-1 control-label" style="width: auto">อาชีพ</label>
 
                         <div class="col-sm-3">
                             <input type="text" ng-model="person.career" class="form-control" >
                         </div>
-                    </div>
 
-                    <div class="form-group">
-                        <label class="col-sm-1 control-label" style="width: auto">วันที่จับกุม</label>
-
-                        <div class="col-sm-3">
-                            <input type="text" ng-model="person.date" class="form-control" disabled>
-                        </div>
                         <label class="col-sm-1 control-label" style="width: auto">การศึกษา</label>
 
                         <div class="col-sm-3">
                             <input type="text" ng-model="person.education" class="form-control" >
                         </div>
+
+                    </div>
+                    <div class="form-group">
+
+                        <label class="col-sm-1 control-label" style="width: auto">วันที่จับกุม</label>
+
+                        <div class="col-sm-6">
+                            <label ng-bind="person.date"  class="control-label" disabled></label>
+                        </div>
+
 
                     </div>
 
@@ -82,8 +101,3 @@
         </div>
     </div>
 </div>
-
-
-
-
-
