@@ -118,7 +118,7 @@
 
 
                                     <div class="form-group">
-                                        <label class="col-sm-3 control-label">พฤติการคดี:</label>
+                                        <label class="col-sm-3 control-label">พฤติการณ์คดี:</label>
 
                                         <div class="col-sm-7">
                                             <textarea ng-model="caseFile.circumstances_of_case" class="form-control" rows="7"></textarea>
@@ -617,7 +617,7 @@
                     <thead>
                     <tr>
                         <th>คดี</th>
-                        <th>พฤติการคดี</th>
+                        <th>พฤติการณ์คดี</th>
                         <th>สถานที่เกิดเหตุ</th>
                         <th>#</th>
                     </tr>

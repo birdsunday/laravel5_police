@@ -68,29 +68,29 @@
 
             </div>
             <div class="box-content">
-                <tabset justified="true"  type="pills">
-                    <tab heading="ข้อมูลส่วนตัว">
+                <tabset id="menutab" justified="true"  type="pills">
+                    <tab id="tab1" heading="ข้อมูลส่วนตัว">
                         <br>
                         <div ng-include="'/app/person_general/_add_person_general/_add_person_general_profile.html'" ></div>
                     </tab>
-                    <tab heading="ที่อยู่/ที่ทำงาน">
+                    <tab id="tab2" heading="ที่อยู่/ที่ทำงาน">
                         <br>
                         <div ng-include="'/app/person_general/_add_person_general/_add_person_general_address.html'" ></div>
                     </tab>
 
-                    <tab heading="พฤติการอื่นๆ">
+                    <tab id="tab3" heading="พฤติการณ์อื่นๆ">
                         <br>
                         <div ng-include="'/app/person_general/_add_person_general/_add_person_general_other.html'" ></div>
                     </tab>
-                    <tab heading="ข้อมูลครอบครัว">
+                    <tab id="tab4" heading="ข้อมูลครอบครัว">
                         <br>
                         <div ng-include="'/app/person_general/_add_person_general/_add_person_general_family.html'" ></div>
                     </tab>
-                    <tab heading="ยานพาหนะ">
+                    <tab id="tab5" heading="ยานพาหนะ">
                         <br>
                         <div ng-include="'/app/person_general/_add_person_general/_add_person_general_vehicle.html'" ></div>
                     </tab>
-                    <tab heading="ลูกจ้าง">
+                    <tab id="tab6" heading="ลูกจ้าง">
                         <br>
                         <div ng-include="'/app/person_general/_add_person_general/_add_person_general_employee.html'" ></div>
                     </tab>
@@ -98,6 +98,7 @@
 
 
                 </tabset>
+
             </div>
         </div>
     </div>

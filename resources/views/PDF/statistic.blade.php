@@ -31,7 +31,7 @@
     </tr>
     <tr>
         <td>ประเภท : <label><?php echo $datacase->name_case ?> </label></td>
-        <td colspan="2"> สถานนีตำรวจ : <?php echo $datacase->station_number_case ?></td>
+        <td colspan="2"> สถานีตำรวจ : <?php echo $datacase->station_number_case ?></td>
 
     </tr>
 
@@ -52,7 +52,7 @@
             <th style="width: 20%">ที่อยู่ปัจจุบัน</th>
             <th style="width: 12%">อาชีพ</th>
             <th style="width: 13%">สถานที่ทำงาน</th>
-            <th style="width: 25%">พฤติการอื่นๆที่หน้าสนใจ</th>
+            <th style="width: 25%">พฤติการณ์อื่นๆ</th>
 
 
 

@@ -35,30 +35,29 @@
     @if($criminalhistory->typeidcard == 0)
         <tr>
             @if($criminalhistory->idcard)
-                <td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;หมายเลขบัตรประชาชน :
-                    <label><?php echo $criminalhistory->idcard ?> </label></td>
+                <td colspan="4">หมายเลขบัตรประชาชน :<span><?php echo $criminalhistory->idcard ?> </span></td>
             @else
-                <td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;หมายเลขบัตรประชาชน : <label> - </label></td>
+                <td colspan="4">หมายเลขบัตรประชาชน : <label> - </label></td>
             @endif
 
         </tr>
     @elseif($criminalhistory->typeidcard == 1)
         <tr>
             @if($criminalhistory->idcard)
-                <td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;หมายเลขหนังสือเดินทาง :
+                <td colspan="4">หมายเลขหนังสือเดินทาง :
                     <label><?php echo $criminalhistory->idcard ?> </label></td>
             @else
-                <td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;หมายเลขหนังสือเดินทาง : <label> - </label></td>
+                <td colspan="4">หมายเลขหนังสือเดินทาง : <label> - </label></td>
             @endif
 
         </tr>
     @else
         <tr>
             @if($criminalhistory->idcard)
-                <td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;ไม่ระบุประเภทบัตร :
+                <td colspan="4">ไม่ระบุประเภทบัตร :
                     <label><?php echo $criminalhistory->idcard ?> </label></td>
             @else
-                <td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;ไม่ระบุประเภทบัตร : <label> - </label></td>
+                <td colspan="4">ไม่ระบุประเภทบัตร : <label> - </label></td>
             @endif
 
         </tr>

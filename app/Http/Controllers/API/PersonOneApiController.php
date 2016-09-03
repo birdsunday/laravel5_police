@@ -575,7 +575,7 @@ class PersonOneApiController extends Controller
 
 //$pdf = \App::make('mpdf.wrapper',['ภาษา','ขนาดการดาษ-L=แนวนอน ไม่- แนวตั้ง','','',ขอบซ้ายกระดาษ,ขอบขวากระดาษ,ขอบขนกระดาษ,ขอบล่างกระดาษ,ระยะ title,ระยะ footter]);
         $pdf = \App::make('mpdf.wrapper', ['th', 'A4', '', '', 20, 15, 20, 25, 10, 10,]);
-
+        $pdf->setTitle("export");
        $pdf->SetWatermarkText("");
 
         $pdf->SetDisplayMode('fullpage');
@@ -616,7 +616,7 @@ class PersonOneApiController extends Controller
 
         //return $datacase;
         $pdf = \App::make('mpdf.wrapper', ['th', 'A4', '', '', 20, 15, 20, 25, 10, 10,]);
-
+        $pdf->setTitle("export");
         //$pdf->SetHeader('|{PAGENO}/{nbpg}|สำนักงานตำรวจตรวจคนเข้าเมือง จังหวัด เชียงราย');
 
         // $pdf->SetFooter('พิมพ์เมื่อ วัน {DATE D} ที่ {DATE j-m-Y} เวลา {DATE H:i:s}  ');

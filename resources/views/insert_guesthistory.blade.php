@@ -4,7 +4,7 @@
     <div ng-app="CaseApp" ng-controller="CaseController">
         <br>
 
-        <h3>บันทึกทะเบียนประวัตบุคคลทั่วไป :</h3></br>
+        <h3>บันทึกทะเบียนประวัติบุคคลทั่วไป :</h3></br>
 
 
         <div class="modal fade bs-example-modal-lg" id="exampleModal6" tabindex="-1" role="dialog"

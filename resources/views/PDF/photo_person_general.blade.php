@@ -36,30 +36,30 @@
     @if($guesthistory->typeidcard == 0)
         <tr>
             @if($guesthistory->idcard)
-                <td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;หมายเลขบัตรประชาชน :
-                    <label><?php echo $guesthistory->idcard ?> </label></td>
+                <td colspan="4">หมายเลขบัตรประชาชน :
+                    <?php echo $guesthistory->idcard ?> </td>
             @else
-                <td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;หมายเลขบัตรประชาชน : <label> - </label></td>
+                <td colspan="4">หมายเลขบัตรประชาชน : <label> - </label></td>
             @endif
 
         </tr>
     @elseif($guesthistory->typeidcard == 1)
         <tr>
             @if($guesthistory->idcard)
-                <td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;หมายเลขหนังสือเดินทาง :
+                <td colspan="4">&nbsp;&nbsp;&nbsp;&nbsp;หมายเลขหนังสือเดินทาง :
                     <label><?php echo $guesthistory->idcard ?> </label></td>
             @else
-                <td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;หมายเลขหนังสือเดินทาง : <label> - </label></td>
+                <td colspan="4">&nbsp;&nbsp;&nbsp;&nbsp;หมายเลขหนังสือเดินทาง : <label> - </label></td>
             @endif
 
         </tr>
     @else
         <tr>
             @if($guesthistory->idcard)
-                <td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;ไม่ระบุประเภทบัตร :
+                <td colspan="4">&nbsp;&nbsp;&nbsp;&nbsp;ไม่ระบุประเภทบัตร :
                     <label><?php echo $guesthistory->idcard ?> </label></td>
             @else
-                <td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;ไม่ระบุประเภทบัตร : <label> - </label></td>
+                <td colspan="4">&nbsp;&nbsp;&nbsp;&nbsp;ไม่ระบุประเภทบัตร : <label> - </label></td>
             @endif
 
         </tr>

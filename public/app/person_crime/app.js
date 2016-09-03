@@ -312,6 +312,14 @@ app.controller("AddController", function ($scope, $http,$state,$modal,$window,$t
 
     $scope.nametitles = nametitle.data;
 
+    $scope.showTab = function (tab) {
+        var x = '#' + tab + ' a';
+        var myElement = $(x)[0];
+        $timeout(function() {
+            angular.element(myElement).triggerHandler('click');
+        }, 0);
+
+    }
 
     $scope.addvehicle = function(){
         console.log($scope.Vehicle);

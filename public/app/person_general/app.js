@@ -202,23 +202,32 @@ app.controller("AddController", function ($scope, $http, $state, $timeout, namet
     $scope.guest.datachild = [];
     $scope.guest.vehicle = [];
     $scope.guest.employee = [];
+    $scope.guest.date = Date();
 
     $scope.nametitles = nametitle.data;
 
 
+    $scope.showTab = function (tab) {
+        var x = '#' + tab + ' a';
+        var myElement = $(x)[0];
+        $timeout(function() {
+            angular.element(myElement).triggerHandler('click');
+        }, 0);
+
+    }
 
     $scope.clear = function () {
         $scope.dt = null;
     };
 
-    $scope.open_start = function($event) {
+    $scope.open_start = function ($event) {
         $event.preventDefault();
         $event.stopPropagation();
 
         $scope.opened_start = true;
     };
 
-    $scope.open_end = function($event) {
+    $scope.open_end = function ($event) {
         $event.preventDefault();
         $event.stopPropagation();
 
@@ -342,30 +351,28 @@ app.controller("AddController", function ($scope, $http, $state, $timeout, namet
 
 
     $scope.saveDataGuest = function () {
-        if($scope.guest.birth){
-            var dayBirth=$scope.guest.birth;
-            var getdayBirth=dayBirth.split("-");
-            var YB=getdayBirth[2]-543;
-            var MB=getdayBirth[1];
-            var DB=getdayBirth[0];
+        if ($scope.guest.birth) {
+            var dayBirth = $scope.guest.birth;
+            var getdayBirth = dayBirth.split("-");
+            var YB = getdayBirth[2] - 543;
+            var MB = getdayBirth[1];
+            var DB = getdayBirth[0];
 
-            var setdayBirth=moment(YB+"-"+MB+"-"+DB);
-            var setNowDate=moment();
-            var yearData=setNowDate.diff(setdayBirth, 'years', true); // ข้อมูลปีแบบทศนิยม
-            var yearFinal=Math.round(setNowDate.diff(setdayBirth, 'years', true),0); // ปีเต็ม
-            var yearReal=setNowDate.diff(setdayBirth, 'years'); // ปีจริง
-            var monthDiff=Math.floor((yearData-yearReal)*12); // เดือน
-            var str_year_month=yearReal+" ปี "+monthDiff+" เดือน"; // ต่อวันเดือนปี
+            var setdayBirth = moment(YB + "-" + MB + "-" + DB);
+            var setNowDate = moment();
+            var yearData = setNowDate.diff(setdayBirth, 'years', true); // ข้อมูลปีแบบทศนิยม
+            var yearFinal = Math.round(setNowDate.diff(setdayBirth, 'years', true), 0); // ปีเต็ม
+            var yearReal = setNowDate.diff(setdayBirth, 'years'); // ปีจริง
+            var monthDiff = Math.floor((yearData - yearReal) * 12); // เดือน
+            var str_year_month = yearReal + " ปี " + monthDiff + " เดือน"; // ต่อวันเดือนปี
             $scope.guest.age = str_year_month;
         }
         console.log($scope.guest.age);
         saveCaseFile = "ต้องการบันทึกทะเบียร์ประวัตินี้ ใช่หรือ ไม่";
 
 
-
-
         if (confirm(saveCaseFile)) {
-            if($scope.guest.name ){
+            if ($scope.guest.name) {
                 $scope.guest.status = "complete";
 
                 $http({
@@ -379,12 +386,10 @@ app.controller("AddController", function ($scope, $http, $state, $timeout, namet
 
                 })
 
-            }else{
+            } else {
                 massged = "กรุณา กรอก ชื่อ ของบุคคล";
                 alert(massged);
             }
-
-
 
 
         }

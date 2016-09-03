@@ -459,7 +459,7 @@
 
 
             <div class="form-group">
-                <label class="col-sm-3 control-label">พฤติการคดี:</label>
+                <label class="col-sm-3 control-label">พฤติการณ์คดี:</label>
 
                 <div class="col-sm-7">
                     <textarea ng-model="datacase.circumstances_of_case" class="form-control" rows="7" disabled="disabled">></textarea>

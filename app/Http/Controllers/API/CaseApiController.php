@@ -159,7 +159,7 @@ class CaseApiController extends Controller
 
         //return $datacase;
         $pdf = \App::make('mpdf.wrapper',['th','A4-L','','',20,15,20,25,10,10,]);
-
+        $pdf->setTitle("export");
 
        //$pdf->SetHeader('|{PAGENO}/{nbpg}|สำนักงานตำรวจตรวจคนเข้าเมือง จังหวัด เชียงราย');
 

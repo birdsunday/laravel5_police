@@ -50,7 +50,7 @@
     <div class="box-header">
         <div class="box-name">
             <i class="fa fa-search"></i>
-            <span>เพิ่มประวัติบุคคลที่เกี่ยวข้องกับอาชญกรรม</span>
+            <span>เพิ่มประวัติบุคคลที่เกี่ยวข้องกับอาชญากรรม</span>
 
         </div>
         <div class="box-icons">
@@ -69,24 +69,24 @@
     <div class="box-content" >
         <div class="dataTable_wrapper">
             <tabset justified="true"  type="pills">
-                <tab heading="ข้อมูลส่วนตัว">
+                <tab id="tab1" heading="ข้อมูลส่วนตัว">
                     <br>
                     <div ng-include="'/app/person_crime/_add_person/_add_person_profile.html'" ></div>
                 </tab>
-                <tab heading="ตำหนิรูปพรรณ">
+                <tab id="tab2" heading="ตำหนิรูปพรรณ">
                     <br>
                     <div ng-include="'/app/person_crime/_add_person/_add_person_description.html'" ></div>
                 </tab>
-                <tab heading="ข้อมูลคดี">
+                <tab id="tab3" heading="ข้อมูลคดี">
                     <br>
                     <div ng-include="'/app/person_crime/_add_person/_add_person_datacase.html'" ></div>
                 </tab>
 
-                <tab heading="ที่อยู่และสถานที่ทำงาน">
+                <tab id="tab4" heading="ที่อยู่และสถานที่ทำงาน">
                     <br>
                     <div ng-include="'/app/person_crime/_add_person/_add_person_address.html'" ></div>
                 </tab>
-                <tab heading="ข้อมูลครอบครัว">
+                <tab id="tab5" heading="ข้อมูลครอบครัว">
                     <br>
                     <div ng-include="'/app/person_crime/_add_person/_add_person_family.html'" ></div>
                 </tab>

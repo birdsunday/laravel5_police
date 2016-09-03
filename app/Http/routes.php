@@ -30,6 +30,8 @@ Route::get('/pdf', function(){
 
     $pdf->SetWatermarkText("TEST");
 
+    
+
     $pdf->SetDisplayMode('fullpage');
 
     $html = view('test')->with('profile',$profile)->render();
