@@ -9,7 +9,7 @@ class DataFather extends Model {
 
     public $timestamps = true;
     protected $table = 'datafather';
-    protected $fillable = array('father_name','father_name','father_surname','father_age'
+    protected $fillable = array('nametitle','father_name','father_surname','father_age'
     ,'father_live_died','father_address','created_at','updated_at','father_career'
     ,'father_nameoffice','father_tel','father_nameoffice_tel');
     public function criminalhistory()

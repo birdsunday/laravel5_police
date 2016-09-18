@@ -27,7 +27,7 @@
     <tr>
         <td></td>
 
-        <td > <input type="radio" name="normal_radio" value=2> เกี่ยวข้องกับอาชญกรรม</td>
+        <td > <input type="radio" name="normal_radio" value=2> เกี่ยวข้องกับอาชญากรรม</td>
     </tr>
     <tr>
         <td>ประเภท : <label><?php echo $datacase->name_case ?> </label></td>
@@ -67,8 +67,8 @@
             <tr>
 
                 <td><li></li></td>
-                <td><?php echo $person->name ?> <?php echo $person->surname ?></td>
-                <td></td>
+                <td><?php echo $person->nametitle ?><?php echo $person->name ?> <?php echo $person->surname ?></td>
+                <td><?php echo $person->age ?></td>
                 <td><?php echo $person->addresspresent->present_address ?></td>
                 <td><?php echo $person->career ?></td>
 

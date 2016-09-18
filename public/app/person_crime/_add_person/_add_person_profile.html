@@ -4,7 +4,7 @@
     <div class="modal-dialog" role="document" style="width: auto">
         <div class="modal-content" >
             <div class="modal-header">
-               <h3>ข้อมูลบุคคลทั่วไป ที่มีเลขบัตร <% person.idcard %></h3>
+               <h3>ข้อมูลบุคคลทั่วไป<% person.idcard %></h3>
             </div>
             <div class="modal-body">
                 <div ng-include="'/app/person_crime/_viewdata_person_general.html'"></div>
@@ -23,7 +23,7 @@
     <div class="modal-dialog" role="document" style="width: auto">
         <div class="modal-content" >
             <div class="modal-header">
-              <h3>ข้อมูลบุคคลที่เกี่ยวข้องกับอาชญากรรม ที่มีเลขบัตร <% person.idcard %></h3>
+              <h3>ข้อมูลบุคคลที่เกี่ยวข้องกับอาชญากรรม<% person.idcard %></h3>
             </div>
             <div class="modal-body">
                 <div ng-include="'/app/person_crime/_viewdata_person_crime.html'"></div>
@@ -63,7 +63,7 @@
                                   <button ng-if="dataperson_crime.length" type="button" class="btn btn-primary" data-toggle="modal"
                                           data-target="#exampleModa2" data-whatever="@mdo">ดูข้อมูล</button>
 
-                                  <label  ng-if="dataperson_general.length" class="control-label" style="width: auto;color: red"> บุลคลนี้เคยมีประวัติทั่วไปแล้ว</label>
+                                  <label  ng-if="dataperson_general.length" class="control-label" style="width: auto;color: red"> พบประวัติบุคคลทั่วไป</label>
                                   <button ng-if="dataperson_general.length" type="button" class="btn btn-primary" data-toggle="modal"
                                           data-target="#exampleModal" data-whatever="@mdo">ดูข้อมูล</button>
 
@@ -86,9 +86,7 @@
                               <label class="col-sm-1 control-label" style="width: auto">คำนำหน้า</label>
 
                               <div class="col-sm-2">
-                                  <select ng-model="person.nametitle" class="form-control css-require" ng-options="opt as opt.name_title for opt in nametitles">
-                                      <option value="" disabled selected>คำนำหน้าชื่อ...</option>
-                                  </select>
+                                  <input placeholder="คำนำหน้า" ng-model="person.nametitle" type="text" class="form-control">
                               </div>
                               <label class="col-sm-1 control-label" style="width: auto">ชื่อ</label>
 
@@ -111,16 +109,21 @@
                                   <input ng-model="person.alias" type="text" class="form-control" placeholder="นามแฝง">
 
                               </div>
-                              <label class="col-sm-1 control-label" style="width: auto">ว/ด/ป เกิด</label>
+                              <label class="col-sm-1 control-label" style="width: auto">อายุ</label>
 
                               <div class="col-sm-3">
-                                  <input ng-model="person.birth" type="text" class="form-control" name="mydateth" id="mydateth" placeholder="dd-mm-yyyy">
+                                  <input placeholder="อายุ" ng-model="person.age" type="number" class="form-control">
 
                               </div>
                               <label class="col-sm-1 control-label" style="width: auto">อาชีพ</label>
 
                               <div class="col-sm-3">
                                   <input type="text" ng-model="person.career" class="form-control" placeholder="อาชีพ">
+                              </div>
+                              <label class="col-sm-1 control-label" style="width: auto">การศึกษา</label>
+
+                              <div class="col-sm-3">
+                                  <input type="text" ng-model="person.education" class="form-control" placeholder="การศึกษา">
                               </div>
 
                           </div>
@@ -132,11 +135,7 @@
                               <div class="col-sm-5">
                                   <input ng-model="person.date" type="text" class="form-control" value="" id="id_datetime_picker0" placeholder="วันที่ dd เดือน mmmm พ.ศ. yyyy เวลาประมาณ hh:mm นาฬิกา">
                               </div>
-                              <label class="col-sm-1 control-label" style="width: auto">การศึกษา</label>
 
-                              <div class="col-sm-3">
-                                  <input type="text" ng-model="person.education" class="form-control" placeholder="การศึกษา">
-                              </div>
 
                           </div>
 

@@ -420,7 +420,7 @@ class DatabaseSeeder extends Seeder {
         $criminalhistory->idcard = ('1560300222222');
         $criminalhistory->birth =('26-9-2537');
         $criminalhistory->age = ('21 ปี');
-        $criminalhistory->date = ('วันที่ 22 เดือน สิงหาคม พ.ศ. 2558 เวลาประมาณ 23:43 นาฟิกา');
+        $criminalhistory->date = ('วันที่ 22 เดือน สิงหาคม พ.ศ. 2558 เวลาประมาณ 23:43 นาฬิกา');
         $criminalhistory->education = ('ประถมศึษา');
         $criminalhistory->career=('โปรแกรมเมอร์');
         $criminalhistory->height = ('177');
@@ -516,7 +516,7 @@ class DatabaseSeeder extends Seeder {
         $datacase->number_case = ('1234');
         $datacase->year_number_case = ('2556');
         $datacase->station_number_case = ('สภ.แม่สาย');
-        $datacase->date_case=('วันที่ 22 เดือน สิงหาคม พ.ศ. 2558 เวลาประมาณ 23:43 นาฟิกา');
+        $datacase->date_case=('วันที่ 22 เดือน สิงหาคม พ.ศ. 2558 เวลาประมาณ 23:43 นาฬิกา');
         $datacase->houseno_case=('4');
         $datacase->villageno_case=('5');
         $datacase->road_case=('อาราย');

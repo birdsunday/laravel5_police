@@ -1,7 +1,7 @@
 <div class="row">
     <div id="breadcrumb" class="col-xs-12">
         <ol class="breadcrumb">
-            <li><a href="/">หน้าหลัก</a></li>
+            <li><a href="/police/index">หน้าหลัก</a></li>
             <li><a ui-sref="home">จัดการข้อมูลส่วนตัว</a></li>
 
         </ol>
@@ -24,20 +24,23 @@
                         <div class=" col-md-9 col-lg-9 ">
                             <table class="table table-user-information">
                                 <tbody>
+
                                 <tr>
-                                    <td>ตำแหน่ง : <label ng-bind="police.position.name_position"></label></td>
                                     <td>ยศ : <label ng-bind="police.rank.rank"></label></td>
-                                </tr>
-                                <tr>
                                     <td>ชื่อ : <label ng-bind="police.name_police"></label></td>
                                     <td>นามสกุล : <label ng-bind="police.surname_police"></label></td>
                                 </tr>
-                                <tr>
-                                    <td>เบอร์โทร : <label ng-bind="police.tel_police"></label></td>
-                                    <td></td>
-                                </tr>
 
                                 <tr>
+                                    <td>ตำแหน่ง : <label ng-bind="police.position.name_position"></label></td>
+
+                                </tr>
+                                <tr>
+                                    <td>เบอร์โทร : <label ng-bind="police.tel_police"></label></td>
+
+                                </tr>
+
+
 
 
 

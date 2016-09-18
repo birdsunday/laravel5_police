@@ -16,7 +16,7 @@
 <table align="center" border="0" width="100%">
 
     <tr>
-        <td colspan="4" align="center"><h3>ภาพถ่ายบุคคลทั่วไป</h3></td>
+        <td colspan="4" align="center"><h3>บุคคลทั่วไป</h3></td>
 
     </tr>
 
@@ -65,25 +65,18 @@
         </tr>
     @endif
     <tr>
-        <td colspan="4"> <label>ชื่อ-ชื่อสกุล : <?php echo $guesthistory->nametitle->name_title ?> <?php echo $guesthistory->name ?> <?php echo $guesthistory->surname ?></label></td>
+        <td colspan="4"> <label>ชื่อ-ชื่อสกุล : <?php echo $guesthistory->nametitle;echo $guesthistory->name ?> <?php echo $guesthistory->surname ?></label></td>
 
     </tr>
     <tr>
-        <td colspan="4"> <label>วันเดือนปีเกิด : <?php echo $guesthistory->birth ?> </label></td>
-
-    </tr>
-    <tr>
-        <td colspan="4"> <label>อายุ : <?php echo $guesthistory->age ?> </label></td>
+        <td colspan="4"> <label>อายุ : <?php echo $guesthistory->age ?> </label> ปี</td>
 
     </tr>
     <tr>
         <td colspan="4"> <label>ที่อยู่ : <?php echo $guesthistory->addresspresent->present_address ?> </label></td>
 
     </tr>
-    <tr>
-        <td colspan="4"> <label>วันที่บันทึก : <?php echo $guesthistory->date ?> </label></td>
 
-    </tr>
 
 </table>
 

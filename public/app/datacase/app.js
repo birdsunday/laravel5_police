@@ -217,6 +217,8 @@ app.controller("AddPersonController",function($scope,$http,$stateParams,$timeout
     console.log("AddPersonController.start");
     $scope.caseFile = datacase.data;
     $scope.casePerson = caseperson.data;
+    $scope.today = new Date();
+
     console.log($scope.casePerson);
     console.log($scope.caseFile);
 
@@ -486,8 +488,12 @@ app.controller("EditCaseController",function($scope,$http,$stateParams,$state,da
     function init(){
         $scope.caseFile = datacase.data;
         $scope.casePerson = caseperson.data;
+        $scope.searchPerson({"name":""});
+
         console.log($scope.caseFile);
         console.log($scope.casePerson);
+
+
     }
 
     init();

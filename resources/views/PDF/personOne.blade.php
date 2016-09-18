@@ -43,7 +43,7 @@
             @if($dataperson->name)
                 <td colspan="4">
                     <li>ชื่อ-ชื่อสกุล :
-                        <label> <?php echo $dataperson->nametitle->name_title ?> <?php echo $dataperson->name ?> <?php echo $dataperson->surname ?></label>
+                        <label> <?php echo $dataperson->nametitle ?> <?php echo $dataperson->name ?> <?php echo $dataperson->surname ?></label>
                 </td>
             @else
                 <td colspan="4">
@@ -54,11 +54,11 @@
         <tr>
             @if($dataperson->alias)
                 <td colspan="4">
-                    <li>อายุ : <label><?php echo $dataperson->age ?></label>
+                    <li>&nbsp;อายุ : <label><?php echo $dataperson->age ?> ปี</label>
                 </td>
             @else
                 <td colspan="4">
-                    <li>อายุ : <label> - </label>
+                    <li>&nbsp;อายุ : <label> - </label> ปี
                 </td>
             @endif
 
@@ -193,22 +193,24 @@
         </tr>
         <tr>
             @if($dataperson->datafather)
-                <td colspan="2">
-                    <li>ชื่อบิดา-สกุล :
-                        <label><?php echo $dataperson->datafather->father_name ?> <?php echo $dataperson->datafather->father_surname?></label>
+                <td colspan="4">
+                    <li>ชื่อบิดา :
+                        <label><?php echo $dataperson->datafather->nametitle ?><?php echo $dataperson->datafather->father_name ?> <?php echo $dataperson->datafather->father_surname?></label>
                 </td>
             @else
-                <td colspan="2">
-                    <li>ชื่อบิดา-สกุล : <label> - </label>
+                <td colspan="4">
+                    <li>ชื่อบิดา : <label> - </label>
                 </td>
             @endif
-            @if($dataperson->father_age)
-                <td colspan="1">อายุ : <label><?php echo $dataperson->datafather->father_age ?></label></td>
+        </tr>
+        <tr>
+            @if($dataperson->datafather->father_age)
+                <td colspan="1">&nbsp;&nbsp;&nbsp;อายุ : <label><?php echo $dataperson->datafather->father_age ?></label> ปี</td>
             @else
-                <td colspan="1">อายุ : <label> - </label></td>
+                <td colspan="1">&nbsp;&nbsp;&nbsp;อายุ : <label> - </label> ปี</td>
             @endif
 
-            @if($dataperson->father_live_died)
+            @if($dataperson->datafather->father_live_died)
                 <td colspan="1"><label><?php echo $dataperson->datafather->father_live_died ?></label></td>
             @else
                 <td colspan="1"><label>  </label></td>
@@ -250,19 +252,21 @@
 
         <tr>
             @if($dataperson->datamother->mother_name)
-                <td colspan="2">
+                <td colspan="4">
                     <li>ชื่อมารดา :
-                        <label><?php echo $dataperson->datamother->mother_name ?> <?php echo $dataperson->datamother->mother_surname?></label>
+                        <label><?php echo $dataperson->datamother->nametitle; echo $dataperson->datamother->mother_name ?> <?php echo $dataperson->datamother->mother_surname?></label>
                 </td>
             @else
-                <td colspan="2">
+                <td colspan="4">
                     <li>ชื่อมารดา : <label> - </label>
                 </td>
             @endif
+        </tr>
+        <tr>
             @if($dataperson->datamother->mother_age)
-                <td colspan="1">อายุ : <label><?php echo $dataperson->datamother->mother_age ?></label></td>
+                <td colspan="2">&nbsp;&nbsp;&nbsp;อายุ : <label><?php echo $dataperson->datamother->mother_age ?></label> ปี</td>
             @else
-                <td colspan="1">อายุ : <label> - </label></td>
+                <td colspan="2">&nbsp;&nbsp;&nbsp;อายุ : <label> - </label> ปี</td>
             @endif
             @if($dataperson->datamother->mother_live_died)
                 <td colspan="1">
@@ -272,7 +276,7 @@
             @endif
 
 
-        </tr>
+            </tr>
         <tr>
             @if($dataperson->datamother->mother_address)
                 <td colspan="4">&nbsp;&nbsp;&nbsp;&nbsp;ที่อยู่ :
@@ -307,20 +311,22 @@
         </tr>
 
         <tr>
-            @if($dataperson->datamother->nametitle->name_title)
-                <td colspan="2">
+            @if($dataperson->dataspouse)
+                <td colspan="4">
                     <li>ชื่อสามี/ภรรยา :
-                        <label><?php echo $dataperson->nametitle->name_title ?> <?php echo $dataperson->dataspouse->spouse_name ?> <?php echo $dataperson->dataspouse->spouse_surname ?></label>
+                        <label><?php echo $dataperson->dataspouse->nametitle ?> <?php echo $dataperson->dataspouse->spouse_name ?> <?php echo $dataperson->dataspouse->spouse_surname ?></label>
                 </td>
             @else
-                <td colspan="2">
+                <td colspan="4">
                     <li>ชื่อสามี/ภรรยา : <label> - </label>
                 </td>
             @endif
+            </tr>
+        <tr>
             @if($dataperson->dataspouse->spouse_age)
-                <td colspan="1">อายุ : <label><?php echo $dataperson->dataspouse->spouse_age ?></label></td>
+                <td colspan="1">&nbsp;&nbsp;&nbsp;อายุ : <label><?php echo $dataperson->dataspouse->spouse_age ?></label> ปี</td>
             @else
-                <td colspan="1">อายุ : <label> - </label></td>
+                <td colspan="1">&nbsp;&nbsp;&nbsp;อายุ : <label> - </label> ปี</td>
             @endif
             @if($dataperson->dataspouse->spouse_live_died)
                 <td colspan="1">
@@ -376,20 +382,22 @@
         <ol>
             <?php foreach($dataperson->datachild as $datachild) : ?>
             <tr>
-                @if($datachild->nametitle->name_title)
-                    <td colspan="2">
-                        <li>ชื่อ-สกุล :
-                            <label><?php echo $datachild->nametitle->name_title ?> <?php echo $datachild->child_name ?> <?php echo $datachild->child_surname ?></label>
+                @if($datachild->child_name)
+                    <td colspan="4">
+                        <li>ชื่อบุตร :
+                            <label><?php echo $datachild->nametitle ?> <?php echo $datachild->child_name ?> <?php echo $datachild->child_surname ?></label>
                     </td>
                 @else
-                    <td colspan="2">
-                        <li>ชื่อ-สกุล : <label> - </label>
+                    <td colspan="4">
+                        <li>ชื่อบุตร : <label> - </label>
                     </td>
                 @endif
+                </tr>
+                <tr>
                 @if($datachild->child_age)
-                    <td colspan="1">อายุ : <label><?php echo $datachild->child_age ?></label></td>
+                    <td colspan="1">&nbsp;&nbsp;&nbsp;อายุ : <label><?php echo $datachild->child_age ?></label> ปี</td>
                 @else
-                    <td colspan="1">อายุ : <label> - </label></td>
+                    <td colspan="1">&nbsp;&nbsp;&nbsp;อายุ : <label> - </label> ปี</td>
                 @endif
                 @if($datachild->child_live_died)
                     <td colspan="1"><label><?php echo $datachild->child_live_died ?></label></td>
@@ -427,45 +435,52 @@
             <td colspan="2">
                 <li>ตำหนิรูปพรรณ
             </td>
-            <td colspan="2">- ส่วนสูงประมาณ : <label><?php echo $dataperson->height ?></label></td>
+            <td colspan="2">- ส่วนสูงประมาณ : <label><?php echo $dataperson->height ?></label> ซม.</td>
 
         </tr>
         <tr>
 
-            <td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;- น้ำหนัก : <label><?php echo $dataperson->weight ?></label></td>
+            <td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;- น้ำหนัก : <label><?php echo $dataperson->weight ?></label> กก.</td>
+            <td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;- รูปร่าง : <label><?php echo $dataperson->shape ?></label></td>
+
+        </tr>
+        <tr>
+            <td colspan="2">- ฟัน : <label><?php echo $dataperson->teeth ?></label></td>
             <td colspan="2">- ผิว : <label><?php echo $dataperson->skin ?></label></td>
 
 
         </tr>
-        <tr>
-            <td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;- รูปร่าง : <label><?php echo $dataperson->shape ?></label></td>
-            <td colspan="2">- ฟัน : <label><?php echo $dataperson->teeth ?></label></td>
-
-        </tr>
 
         <tr>
-            <td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;- คิ้ว : <label><?php echo $dataperson->eyebrow ?></label></td>
+
             <td colspan="2">- ทรงผม : <label><?php echo $dataperson->hairstyles ?></label></td>
+            <td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;- ศีรษะ : <label><?php echo $dataperson->head ?></label></td>
 
         </tr>
         <tr>
-            <td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;- ศีรษะ : <label><?php echo $dataperson->head ?></label></td>
             <td colspan="2">- ใบหน้า : <label><?php echo $dataperson->face ?></label></td>
+            <td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;- คิ้ว : <label><?php echo $dataperson->eyebrow ?></label></td>
+
+
 
         </tr>
         <tr>
             <td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;- ตา : <label><?php echo $dataperson->eye ?></label></td>
             <td colspan="2">- หู : <label><?php echo $dataperson->ear ?></label></td>
+
+
         </tr>
         <tr>
 
             <td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;- จมูก : <label><?php echo $dataperson->nose ?></label></td>
             <td colspan="2">- ปาก : <label><?php echo $dataperson->mouth ?></label></td>
+
         </tr>
         <tr>
 
             <td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;- คาง : <label><?php echo $dataperson->chin ?></label></td>
             <td colspan="2">- หนวด-เครา : <label><?php echo $dataperson->mirror ?></label></td>
+
         </tr>
         <tr>
 
@@ -496,7 +511,7 @@
         <tr>
 
             <td colspan="4">
-                <li>การกระทำความผิด
+                <li>ประวัติการกระทำความผิด
             </td>
 
 
@@ -512,7 +527,7 @@
                         </td>
                     @else
                         <td colspan="4">
-                            <li>ชื่อคดี :<label> - </label>
+                            ชื่อคดี :<label> - </label>
                         </td>
                     @endif
 
@@ -521,8 +536,7 @@
 
                     @if($person_datacase->number_case || $person_datacase->year_number_case || $person_datacase->station_number_case)
 
-                        <td colspan="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;เลขคดี : <label> <?php echo $person_datacase->number_case ?>
-                                <?php echo $person_datacase->year_number_case ?>
+                        <td colspan="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;เลขคดี : <label> <?php echo $person_datacase->number_case ?>/<?php echo $person_datacase->year_number_case ?>
                                 <?php echo $person_datacase->station_number_case ?>
                             </label></td>
                     @else
@@ -547,7 +561,7 @@
                     @foreach($person_datacase->vehicle as $vehicle)
                         <tr>
                             <td colspan="4">
-                                <li>ภาหนะที่ใช้ก่อเหตุ : <label>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;พาหนะที่ใช้ก่อเหตุ : <label>
 
 
                                         @if($vehicle)
@@ -582,7 +596,7 @@
                     @foreach($person_datacase->weapon as $weapon)
                         <tr>
                             <td colspan="4">
-                                <li>อาวุธที่ใช้ก่อเหตุ : <label>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;อาวุธที่ใช้ก่อเหตุ : <label>
 
 
                                         @if($vehicle)

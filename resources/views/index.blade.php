@@ -11,6 +11,95 @@
     <!--End Breadcrumb-->
 
 
+    <div class="col-lg-3 col-md-6">
+        <a href="/police/person_general" class="<% Request::is('police/person_general') ? 'active' : '' %>">
+            <div class="panel panel-green">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-user fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">บุคคลทั่วไป</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <span class="pull-left">บุคคลทั่วไป</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right" style="color: #5cb85c;"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+
+            </div>
+        </a>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <a href="/police/person_crime" class="<% Request::is('police/person_crime') ? 'active' : '' %>">
+            <div class="panel panel-blue">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-user-secret fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">บุคคลที่เกี่ยวข้องกับอาชญากรรม</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <span class="pull-left">บุคคลที่เกี่ยวข้องกับอาชญากรรม</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right" style="color: #5cb85c;"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+
+            </div>
+        </a>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <a href="/police/case" class="<% Request::is('police/case') ? 'active' : '' %>">
+            <div class="panel panel-green">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-laptop fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">บันทึกคดี</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <span class="pull-left">บันทึกคดี</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right" style="color: #5cb85c;"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+
+            </div>
+        </a>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <a href="/police/statistics" class="<% Request::is('police/statistics') ? 'active' : '' %>">
+            <div class="panel panel-green">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-bar-chart-o fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">สถิติ</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <span class="pull-left">สถิติ</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right" style="color: #5cb85c;"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+
+            </div>
+        </a>
+    </div>
+
 
 
 

@@ -8,7 +8,7 @@
         <th class="text-center">ชื่อ - นามสกุล</th>
         <th class="text-center">ที่อยู่ปัจจุบัน</th>
         <th class="text-center">อาชีพ</th>
-        <th class="text-center" style="width: 15%">พฤติการอื่นๆ</th>
+        <th class="text-center" style="width: 15%">พฤติการณ์อื่นๆ</th>
         <th class="text-center">วันเวลาที่บันทึกประวัติ</th>
 
     </tr>
@@ -22,7 +22,7 @@
         <td class="text-center"><% $index+1 %></td>
         <td class="text-center" ng-bind="person_general.idcard"></td>
 
-        <td class="text-center" ng-bind="person_general.nametitle.name_title"></td>
+        <td class="text-center" ng-bind="person_general.nametitle"></td>
         <td class="text-center" ng-bind="person_general.name+' '+ person_general.surname"></td>
         <td class="text-center" ng-bind="person_general.addresspresent.present_address"></td>
         <td class="text-center" ng-bind="person_general.career"></td>

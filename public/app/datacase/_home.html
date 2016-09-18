@@ -28,16 +28,16 @@
                     <thead>
                     <tr>
                         <th class="text-center">
-                            <input placeholder="ชื่อคดี" ng-model="search.name_case" type="text" class="form-control" ng-model="keyword.idcard" />
-                        </th>
-                        <th class="text-center">
                             <input placeholder="เลขคดี" ng-model="search.number_case" type="text" class="form-control" ng-model="keyword.typepeople" />
                         </th>
                         <th class="text-center">
                             <input placeholder="ปี" ng-model="search.year_number_case" type="text" class="form-control" ng-model="keyword.typepeople" />
                         </th>
                         <th class="text-center">
-                            <input placeholder="สถานนีตำรวจ" ng-model="search.station_number_case" type="text" class="form-control" ng-model="keyword.typepeople" />
+                            <input placeholder="สถานีตำรวจ" ng-model="search.station_number_case" type="text" class="form-control" ng-model="keyword.typepeople" />
+                        </th>
+                        <th class="text-center">
+                            <input placeholder="ชื่อคดี" ng-model="search.name_case" type="text" class="form-control" ng-model="keyword.idcard" />
                         </th>
                         <th class="text-center">
                             </th>
@@ -82,7 +82,7 @@
                             <table>
                                 <tbody>
                                 <tr ng-repeat="person in datacases.criminalhistory" bgcolor="">
-                                    <td ><a target="_blank" href="person_crime#/preview_person/<% person.id %>" ng-bind="' <% $index+1 %>. '+person.nametitle.name_title+' ' +person.name + ' ' +person.surname" ></a></td>
+                                    <td ><a target="_blank" href="person_crime#/preview_person/<% person.id %>" ng-bind="' <% $index+1 %>. '+person.nametitle+' ' +person.name + ' ' +person.surname" ></a></td>
                                 </tr>
                                 </tbody>
                             </table>

@@ -22,9 +22,6 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             resolve: {
                 person_crime: function ($http,$stateParams) {
                     return $http.get('/api/person_crime/');
-                },
-                nametitle: function ($http) {
-                    return $http.get('/nametitle');
                 }
             }
         })
@@ -33,12 +30,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url: '/form_add',
             templateUrl: '/app/person_crime/_add_person/_from_add.html',
             controller: 'AddController',
-            resolve: {
-                nametitle: function ($http) {
-                    return $http.get('/nametitle');
-                }
 
-            }
         })
         // route to show our basic form (/form)
         .state('form_add.add', {
@@ -76,9 +68,6 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             resolve: {
                 person: function ($http,$stateParams) {
                     return $http.get('/api/person_crime/' + $stateParams.id);
-                },
-                nametitle: function ($http) {
-                    return $http.get('/nametitle');
                 }
 
             }
@@ -166,11 +155,11 @@ app.controller("PreviewPersonController", function ($scope,$window, $http,$state
 
 });
 
-app.controller("HomeController", function ($scope, $http,$stateParams,$rootScope,$timeout,$window,nametitle,person_crime ) {
+app.controller("HomeController", function ($scope, $http,$stateParams,$rootScope,$timeout,$window,person_crime ) {
     console.log("HomeController.start");
 
     $scope.dataperson = person_crime.data;
-    $scope.nametitles = nametitle.data;
+
 
     $rootScope.current_role = current_role;
     console.log( $rootScope.current_role );
@@ -253,7 +242,7 @@ app.controller("HomeController", function ($scope, $http,$stateParams,$rootScope
 
 
 
-app.controller("AddController", function ($scope, $http,$state,$modal,$window,$timeout,nametitle) {
+app.controller("AddController", function ($scope, $http,$state,$modal,$window,$timeout) {
     console.log("AddController.start");
 
     $scope.clear = function () {
@@ -310,7 +299,7 @@ app.controller("AddController", function ($scope, $http,$state,$modal,$window,$t
     $scope.caseFile.vehicle = [];
 
 
-    $scope.nametitles = nametitle.data;
+
 
     $scope.showTab = function (tab) {
         var x = '#' + tab + ' a';
@@ -479,7 +468,7 @@ app.controller("AddController", function ($scope, $http,$state,$modal,$window,$t
         //console.log($scope.person.idcard);
         console.log("Type IDCARD = " + $scope.person.typeidcard);
 
-        saveCaseFile = "ต้องการบันทึกทะเบียร์ประวัตินี้ ใช่หรือ ไม่";
+        saveCaseFile = "ต้องการบันทึกทะเบียนประวัตินี้ ใช่หรือ ไม่";
 
         if (confirm(saveCaseFile)) {
             if($scope.person.name && $scope.person.date){
@@ -570,7 +559,7 @@ app.controller("CompleteController", function ($scope,$window, $http,$stateParam
 });
 
 app.controller("EditController", function ($scope, $http,$stateParams,$state,$rootScope,
-                                           person,nametitle) {
+                                           person,$timeout) {
     console.log("EditController.start");
 
     $rootScope.current_role = current_role;
@@ -587,7 +576,7 @@ app.controller("EditController", function ($scope, $http,$stateParams,$state,$ro
 
     $scope.person = person.data;
     console.log($scope.person );
-    $scope.nametitles = nametitle.data;
+
 
     var numbers = [];
     for(var i=1;i<=300;i++) {
@@ -604,35 +593,19 @@ app.controller("EditController", function ($scope, $http,$stateParams,$state,$ro
     $scope.age = ages;
     function init() {
 
-        if($scope.person.nametitle){
-            for (i = 0; i < $scope.nametitles.length; i++) {
-
-                if ($scope.nametitles[i].id == $scope.person.nametitle.id) {
-                    $scope.person.nametitle = $scope.nametitles[i];
-
-                    break;
-                }
-            }
-        }
-        if($scope.person.dataspouse){
-            if($scope.person.dataspouse.nametitle){
-                for (a = 0; a < $scope.nametitles.length; a++) {
-
-                    if ($scope.nametitles[a].id == $scope.person.dataspouse.nametitle.id) {
-                        $scope.person.dataspouse.nametitle = $scope.nametitles[a];
-
-                        break;
-                    }
-                }
-            }
-
-        }
 
 
     }
 
     init();
+    $scope.showTab = function (tab) {
+        var x = '#' + tab + ' a';
+        var myElement = $(x)[0];
+        $timeout(function() {
+            angular.element(myElement).triggerHandler('click');
+        }, 0);
 
+    }
     $scope.saveDatachill = function(){
         console.log( $scope.child);
         $http({
@@ -693,10 +666,10 @@ app.controller("EditController", function ($scope, $http,$stateParams,$state,$ro
 
 
     $scope.editpreson = function(){
-        console.log( $scope.person);
-        saveCaseFile = "ต้องการแก้ไขประวัตินี้ใช่ หรือ ไม่";
+        //console.log( $scope.person);
+        saveCaseFile = "ต้องการแก้ไขประวัตินี้ ใช่หรือไม่";
 
-        if(saveCaseFile){
+        if(confirm(saveCaseFile)){
             $http({
                 url : "/api/person_crime/"+$scope.person.id,
                 method : "PUT",

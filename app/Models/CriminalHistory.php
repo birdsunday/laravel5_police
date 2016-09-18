@@ -13,17 +13,14 @@ class CriminalHistory extends Model {
     protected $table = 'criminalhistory';
     protected $fillable = array('date','name','surname','age','birth','alias','idcard','education','height','weight','shape'
     ,'teeth','skin','hairstyles','head','face','eyebrow','eye','ear','nose','mouth','chin','mirror','scar','accent','nature'
-    ,'personality','location_gallivent','other','typepeople','career','status','typeidcard');
+    ,'personality','location_gallivent','other','typepeople','career','status','typeidcard','nametitle');
 
 
     public function dataspouse()
     {
         return $this->belongsTo('App\Models\DataSpouse');
     }
-    public function nametitle()
-    {
-        return $this->belongsTo('App\Models\NameTitle');
-    }
+
     public function datamother()
     {
         return $this->belongsTo('App\Models\DataMother');

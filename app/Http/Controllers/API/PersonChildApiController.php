@@ -12,7 +12,6 @@ use App\Models\DataChild;
 use App\Models\DataFather;
 use App\Models\DataMother;
 use App\Models\DataSpouse;
-use App\Models\NameTitle;
 use \Hash;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Route;
@@ -58,10 +57,7 @@ class PersonChildApiController extends Controller
 
             $datachild = new DataChild();
             $datachild->fill(Input::all());
-            if(Input::has('nametitle.id')){
-                $nametitle = NameTitle::find(Input::get('nametitle.id'));
-                $datachild->nametitle()->associate($nametitle);
-            }
+
             $datachild->criminalhistory()->associate($person);
             $datachild->save();
 

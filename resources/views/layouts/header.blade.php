@@ -24,9 +24,7 @@
                                 <?php if(Auth::user()->role->key == 'admin'){ ?>
                                 <li class="dropdown">
                                     <a class="dropdown-toggle account" data-toggle="dropdown">
-                                        <div class="avatar">
-                                            <img src="<% Auth::user()->photo ? Auth::user()->photo : '/img/square-image.png' %>" class="img-rounded" alt="avatar" />
-                                        </div>
+
                                         <i class="fa fa-angle-down pull-right"></i>
                                         <div class="user-mini pull-right">
                                             <span class="welcome" style="color: #ffffff">Welcome Administrator</span>
@@ -56,11 +54,7 @@
 
                                     <li class="dropdown">
                                     <a  class="dropdown-toggle account" data-toggle="dropdown">
-                                        <div class="avatar">
 
-                                            <img src="<% Auth::user()->photo ? Auth::user()->photo : '/img/square-image.png' %>" class="img-rounded" alt="avatar" />
-
-                                        </div>
                                         <i class="fa fa-angle-down pull-right"></i>
                                         <div class="user-mini pull-right">
                                             <span class="welcome" style="color: #ffffff">Welcome Member</span>

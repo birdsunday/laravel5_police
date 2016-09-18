@@ -67,7 +67,7 @@
             <tr>
 
                 <td><li></li></td>
-                <td><?php echo $person->name ?> <?php echo $person->surname ?></td>
+                <td><?php echo $person->nametitle ?><?php echo $person->name ?> <?php echo $person->surname ?></td>
                 <td></td>
                 <td><?php echo $person->addresspresent->present_address ?></td>
                 <td><?php echo $person->career ?></td>

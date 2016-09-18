@@ -30,8 +30,7 @@
                 <tr>
                     <th class="text-center">
                         <select ng-model="search.typeidcard" class="form-control" >
-                            <option value="" disabled selected>ค้นหา...</option>
-                            <option></option>
+                            <option value="" selected>ประเภทบัตร</option>
                             <option value="0">บัตรประชาชน</option>
                             <option value="1">หนังสือเดินทาง</option>
                         </select>
@@ -39,28 +38,17 @@
                     <th class="text-center">
                         <input placeholder="เลขบัตร" ng-model="search.idcard" type="text" class="form-control" ng-model="keyword.idcard" />
                     </th>
-                    <th class="text-center">
-                        <input placeholder="ประเภทบุคคล" ng-model="search.typepeople" type="text" class="form-control" ng-model="keyword.typepeople" />
-                    </th>
-                    <th class="text-center">
-                        <select ng-model="search.nametitle.name_title" class="form-control" >
 
-                            <option value="" disabled selected>ค้นหา...</option>
-                            <option></option>
-                            <option ng-repeat="nametitle in nametitles" value="<% nametitle.name_title %>"><% nametitle.name_title %></option>
-
-                        </select>
-                    </th>
                     <th class="text-center">
                         <input placeholder="ชื่อ" ng-model="search.name" type="text" class="form-control" ng-model="keyword.name" />
 
                     </th>
                     <th class="text-center">
-                        <input placeholder="สกุล" ng-model="search.surname" type="text" class="form-control" ng-model="keyword.name" />
+                        <input placeholder="ชื่อสกุล" ng-model="search.surname" type="text" class="form-control" ng-model="keyword.name" />
 
                     </th>
                     <th class="text-center">
-                        <input placeholder="วันที่บันทึก" id="mydateth" ng-model="search.date" type="text" class="form-control" ng-model="keyword.surname" />
+
                     </th>
                     <th class="text-center">
                     </th>
@@ -70,11 +58,9 @@
                 <tr>
                     <th class="text-center" style="width: 10%">ประเภทบัตร</th>
                     <th class="text-center">เลขบัตร</th>
-                    <th class="text-center" style="width: 15%">ประเภทบุคคล</th>
-                    <th class="text-center" style="width: 15%">คำนำหน้า</th>
                     <th class="text-center">ชื่อ</th>
-                    <th class="text-center">นามสกุล</th>
-                    <th class="text-center">วันเวลาที่บันทึก</th>
+                    <th class="text-center">ชื่อสกุล</th>
+                    <th class="text-center">แก้ไขล่าสุด</th>
                     <th class="text-center">สถานะ</th>
                     <th class="text-center" style="width: 11%"></th>
                 </tr>
@@ -88,11 +74,9 @@
                     <td class="text-center" ng-if="person_general.typeidcard == 0">บัตรประชาชน</td>
                     <td class="text-center" ng-if="person_general.typeidcard == 1">หนังสือเดินทาง</td>
                     <td class="text-center" ng-bind="person_general.idcard"></td>
-                    <td class="text-center" ng-bind="person_general.typepeople"></td>
-                    <td class="text-center" ng-bind="person_general.nametitle.name_title"></td>
                     <td class="text-center" ng-bind="person_general.name"></td>
                     <td class="text-center" ng-bind="person_general.surname"></td>
-                    <td class="text-center" ng-bind="person_general.date"></td>
+                    <td class="text-center" ng-bind="person_general.updated_at"></td>
                     <td class="text-center">
                         <i ng-if="person_general.status == 'complete' && person_general.photo" class="fa fa-check-circle fa-1x " style="color: #008000"
                            popover="ประวัติบุคคลนี้สมบูรณ์แล้ว" popover-trigger="mouseenter"></i>

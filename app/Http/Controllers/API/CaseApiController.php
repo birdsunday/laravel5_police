@@ -24,7 +24,7 @@ class CaseApiController extends Controller
      */
     public function index()
     {
-        return DataCase::with('vehicle','weapon','criminalhistory','criminalhistory.nametitle')->get();
+        return DataCase::with('vehicle','weapon','criminalhistory')->get();
     }
 
     /**
@@ -80,7 +80,7 @@ class CaseApiController extends Controller
     public function show($id)
     {
         return DataCase::with('vehicle','weapon','criminalhistory','criminalhistory.dataspouse','criminalhistory.dataspouse'
-            ,'criminalhistory.nametitle','criminalhistory.addresspresent','criminalhistory.addressoriginal'
+            ,'criminalhistory.addresspresent','criminalhistory.addressoriginal'
             ,'criminalhistory.datamother' ,'criminalhistory.addressoffice','criminalhistory.datafather'
             ,'criminalhistory.datachild','criminalhistory.datacase')->find($id);
 
@@ -145,7 +145,7 @@ class CaseApiController extends Controller
     public function generatedPdfCase($id)
     {
         $datacase = DataCase::with('vehicle','weapon','criminalhistory','criminalhistory.dataspouse','criminalhistory.dataspouse'
-            ,'criminalhistory.nametitle','criminalhistory.addresspresent','criminalhistory.addressoriginal'
+           ,'criminalhistory.addresspresent','criminalhistory.addressoriginal'
             ,'criminalhistory.datamother' ,'criminalhistory.addressoffice','criminalhistory.datafather'
             ,'criminalhistory.datachild','criminalhistory.datacase')->find($id);
         //return $datacase;
@@ -155,7 +155,7 @@ class CaseApiController extends Controller
 
 
        //return $dataperson;
-//$pdf = \App::make('mpdf.wrapper',['ภาษา','ขนาดการดาษ-L=แนวนอน ไม่- แนวตั้ง','','',ขอบซ้ายกระดาษ,ขอบขวากระดาษ,ขอบขนกระดาษ,ขอบล่างกระดาษ,ระยะ title,ระยะ footter]);
+//$pdf = \App::make('mpdf.wrapper',['ภาษา','ขนาดกระดาษ-L=แนวนอน ไม่- แนวตั้ง','','',ขอบซ้ายกระดาษ,ขอบขวากระดาษ,ขอบขนกระดาษ,ขอบล่างกระดาษ,ระยะ title,ระยะ footter]);
 
         //return $datacase;
         $pdf = \App::make('mpdf.wrapper',['th','A4-L','','',20,15,20,25,10,10,]);
@@ -169,7 +169,7 @@ class CaseApiController extends Controller
         <table width="100%" style="vertical-align: bottom; font-family: TH SarabunPSK; font-size: 14pt; color: #000000; font-weight: bold; font-style: italic;"><tr>
         <td width="20%"></td>
         <td width="30%" style="text-align: right; ">{PAGENO}</td>
-        <td width="55%" style="text-align: right; "> ตรวจคนเข้าเมือง จังหวัด เชียงราย</td>
+        <td width="55%" style="text-align: right; "> ตรวจคนเข้าเมืองจังหวัดเชียงราย</td>
         </tr></table>
         ');
         $pdf->SetFooter('

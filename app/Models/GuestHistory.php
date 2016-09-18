@@ -9,13 +9,9 @@ class GuestHistory extends Model {
 
     public $timestamps = true;
     protected $table = 'guesthistory';
-    protected $fillable = array('date','name','surname','age','birth','idcard','typepeople'
+    protected $fillable = array('nametitle','date','name','surname','age','birth','idcard','typepeople'
     ,'career' ,'created_at','updated_at','other','status','typeidcard');
 
-    public function nametitle()
-    {
-        return $this->belongsTo('App\Models\NameTitle');
-    }
     public function dataspouse()
     {
         return $this->belongsTo('App\Models\DataSpouse');
