@@ -35,8 +35,8 @@
 
         <li>
             <a href="/police/mylog" class="<% Request::is('police/mylog') ? 'active' : '' %>">
-                <i class="fa fa-search"></i>
-                <span class="hidden-xs">ตรวจสอบและจัดการระบบ</span>
+                <i class="fa fa-desktop"></i>
+                <span class="hidden-xs">ตรวจสอบการทำงาน</span>
             </a>
         </li>
 
@@ -86,7 +86,7 @@
         <li>
             <a href="/police/case" class="<% Request::is('police/case') ? 'active' : '' %>">
                 <i class="fa  fa-laptop"></i>
-                <span class="hidden-xs">บันทึกคดี</span>
+                <span class="hidden-xs">คดี</span>
             </a>
         </li>
         <li>
