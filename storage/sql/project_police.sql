@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 18, 2016 at 06:11 AM
+-- Generation Time: Sep 19, 2016 at 06:32 AM
 -- Server version: 10.1.10-MariaDB
 -- PHP Version: 5.5.33
 
@@ -28,8 +28,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `addressoffice` (
   `id` int(11) NOT NULL,
-  `office` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `office_address` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `office` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `office_address` text COLLATE utf8_unicode_ci,
   `office_tel` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   `criminalhistory_id` int(11) DEFAULT NULL,
   `guesthistory_id` int(11) DEFAULT NULL,
@@ -61,7 +61,7 @@ CREATE TABLE `addressoriginal` (
 
 CREATE TABLE `addresspresent` (
   `id` int(11) NOT NULL,
-  `present_address` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `present_address` text COLLATE utf8_unicode_ci,
   `present_tel` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
@@ -142,7 +142,7 @@ CREATE TABLE `criminalhistory_datacase` (
 CREATE TABLE `datacase` (
   `id` int(11) NOT NULL,
   `file_case` text COLLATE utf8_unicode_ci,
-  `name_case` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `name_case` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `number_case` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   `year_number_case` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   `station_number_case` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -202,7 +202,7 @@ CREATE TABLE `datafather` (
   `father_surname` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   `father_age` int(11) DEFAULT NULL,
   `father_live_died` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `father_address` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `father_address` text COLLATE utf8_unicode_ci,
   `father_career` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   `father_nameoffice` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   `father_tel` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -210,7 +210,7 @@ CREATE TABLE `datafather` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
-  `nametitle` varchar(45) COLLATE utf8_unicode_ci NOT NULL
+  `nametitle` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -225,7 +225,7 @@ CREATE TABLE `datamother` (
   `mother_surname` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   `mother_age` int(11) DEFAULT NULL,
   `mother_live_died` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `mother_address` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `mother_address` text COLLATE utf8_unicode_ci,
   `mother_career` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   `mother_nameoffice` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   `mother_tel` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -233,7 +233,7 @@ CREATE TABLE `datamother` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
-  `nametitle` varchar(45) COLLATE utf8_unicode_ci NOT NULL
+  `nametitle` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -249,7 +249,7 @@ CREATE TABLE `dataspouse` (
   `spouse_surname` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   `spouse_age` int(11) DEFAULT NULL,
   `spouse_live_died` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `spouse_address` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `spouse_address` text COLLATE utf8_unicode_ci,
   `spouse_career` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   `spouse_nameoffice` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   `spouse_tel` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -372,7 +372,7 @@ CREATE TABLE `personfamily` (
   `personfamily_name` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   `personfamily_surname` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   `personfamily_age` int(11) DEFAULT NULL,
-  `personfamily_address` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `personfamily_address` text COLLATE utf8_unicode_ci,
   `personfamily_tel` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   `personfamily_nameoffice` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   `personfamily_nameoffice_tel` varchar(45) CHARACTER SET utf32 COLLATE utf32_unicode_ci DEFAULT NULL,
@@ -383,6 +383,42 @@ CREATE TABLE `personfamily` (
   `deleted_at` timestamp NULL DEFAULT NULL,
   `nametitle` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `place_general`
+--
+
+CREATE TABLE `place_general` (
+  `id` int(11) NOT NULL,
+  `place_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `place_number` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `place_tel` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `place_district` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `place_amphur` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `place_province` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `owner_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `owner_surname` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `owner_age` int(11) DEFAULT NULL,
+  `owner_idcard` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `owner_address` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `admin_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `admin_surname` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `admin_age` int(11) DEFAULT NULL,
+  `admin_idcard` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `admin_adress` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `admin_tel` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `admin_present_address` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `admin_address_tel` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `place_desc` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `place_activity` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `place_info` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT '0000-00-00 00:00:00',
+  `deleted_at` timestamp NULL DEFAULT '0000-00-00 00:00:00',
+  `police_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -660,6 +696,12 @@ ALTER TABLE `personfamily`
   ADD KEY `fk_personfamily_nametitle1_idx` (`nametitle`);
 
 --
+-- Indexes for table `place_general`
+--
+ALTER TABLE `place_general`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `policeimmigration`
 --
 ALTER TABLE `policeimmigration`
@@ -776,10 +818,15 @@ ALTER TABLE `mylog`
 ALTER TABLE `personfamily`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT for table `place_general`
+--
+ALTER TABLE `place_general`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `policeimmigration`
 --
 ALTER TABLE `policeimmigration`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
 --
 -- AUTO_INCREMENT for table `position`
 --

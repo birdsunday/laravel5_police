@@ -82,7 +82,7 @@ Route::group(['middleware'=>'member'],function(){
     Route::get('/police/person', 'Admin\PresonController@index');
     Route::get('/police/person_crime', 'Admin\PersonOneController@index');
     Route::get('/police/person_general', 'Admin\GuestHistoryController@index');
-    Route::get('/police/place_general', 'Admin\PlaceController@index');
+    Route::get('/police/place_general', 'Admin\PlaceGeneralController@index');
     Route::get('/police/statistics', 'Admin\StatisticsController@index');
 
 

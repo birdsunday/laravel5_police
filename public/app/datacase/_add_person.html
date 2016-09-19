@@ -84,24 +84,24 @@
                                     <div class="box-content">
                                         <h4 class="page-header">ค้นหาบุคคลที่เกี่ยวข้องกับอาชญากรรม</h4>
                                         <div class="text-right">
-                                            <a target="_blank" type="button" ng-href="/police/person_crime#/form_add/add" class="btn btn-primary"><i class="fa fa-user-plus"></i> เพิ่มใหม่</a>
+                                            <a target="_blank" type="button" ng-href="/police/person_crime#/form_add/add" class="btn btn-success"><i class="fa fa-user-plus"></i> เพิ่มใหม่</a>
                                         </div>
 
                                         <form class="form-horizontal" role="form">
                                             <table class="table table-striped table-hover ">
                                                 <thead>
-                                                <tr>รายชื่อบุคคลที่มีส่วนเกี่ยวข้องกับอาชญากรรมที่ถูกบันทึกข้อมูลใน<br/> วันที่ <% today | date: "EEEE d.MMMM.y" %>  คลิ๊ก>>><a ng-click="searchPerson(keyword)" type="submit" type="button" name="findPerson"><i
+                                                <tr>รายชื่อบุคคลที่มีส่วนเกี่ยวข้องกับอาชญากรรมที่ถูกบันทึกข้อมูลใน<br/> วันที่ <% today | date: "d MMMM y" %>  คลิ๊ก>>><a ng-click="searchPerson(keyword)" type="submit" type="button" name="findPerson"><i
                                                         class="fa fa-search fa-3x"></i></a></tr>
                                                 <tr>
 
                                                     <th>
-                                                        <input ng-change="searchPerson(keyword)" class="form-control" ng-model="keyword.idcard" type="text" placeholder="ค้นหา เลขบัตร...">
+                                                        <input disabled class="form-control" ng-model="keyword.idcard" type="text" placeholder="เลขบัตร/หนังสือเดินทาง">
                                                     </th>
                                                     <th>
-                                                        <input ng-change="searchPerson(keyword)" class="form-control" ng-model="keyword.name" type="text" placeholder="ค้นหา ชื่อ...">
+                                                        <input  ng-change="searchPerson(keyword)" class="form-control" ng-model="keyword.name" type="text" placeholder="ค้นหา ชื่อ...">
                                                     </th>
                                                     <th>
-                                                        <input ng-change="searchPerson(keyword)" class="form-control" ng-model="keyword.surname" type="text" placeholder="ค้นหา ชื่อสกุล...">
+                                                        <input  disabled  class="form-control" ng-model="keyword.surname" type="text" placeholder="ชื่อสกุล">
                                                     </th>
                                                     <th>วันที่บันทึกข้อมูล
                                                      </th>

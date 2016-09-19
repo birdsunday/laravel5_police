@@ -82,7 +82,7 @@ app.controller("HomeController", function ($scope,$state, $rootScope,$http,$stat
 
 
     $scope.deletePolice = function (police) {
-        savePolice = "ต้องการลบสมาชิกคนนี้ ใช่หรือ ไม่";
+        savePolice = "ต้องการลบสมาชิกคนนี้?";
         if (confirm(savePolice)) {
             var index = $scope.datapolices.indexOf(police);
             $scope.datapolices.splice(index,1);
@@ -92,7 +92,7 @@ app.controller("HomeController", function ($scope,$state, $rootScope,$http,$stat
                 method: "DELETE"
             }).success(function () {
 
-                massged = "ลบเสร็จแล้ว";
+                massged = "ลบประวัติเรียบร้อย";
                 alert(massged);
 
                 $state.go("home");
@@ -112,7 +112,7 @@ app.controller("AddController", function ($scope, $http,$state,positions,ranks,r
 
     $scope.savePolice = function () {
 
-        savePolice = "ต้องการบันทึกทะเบียร์ประวัตินี้ ใช่หรือ ไม่";
+        savePolice = "ต้องการบันทึกทะเบียนประวัตินี้?";
 
         if (confirm(savePolice)) {
             console.log($scope.police);
@@ -192,7 +192,7 @@ app.controller("EditController", function ($scope, $http,$stateParams,$state,
 
 
     $scope.editPolice = function () {
-        saveEditPolice = "ต้องการบันทึกทะเบียร์ประวัตินี้ ใช่หรือ ไม่";
+        saveEditPolice = "ต้องการบันทึกทะเบียนประวัตินี้?่";
         if (confirm(saveEditPolice)) {
             console.log($scope.police);
 
@@ -201,7 +201,7 @@ app.controller("EditController", function ($scope, $http,$stateParams,$state,
                 method: "PUT",
                 data: $scope.police
             }).success(function () {
-                massged = "แก้ไขข้อมูลเสร็จแล้ว";
+                massged = "แก้ไขข้อมูลเรียบร้อย";
                 alert(massged);
                 $state.go("home");
             }).error(function (response) {

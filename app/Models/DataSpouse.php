@@ -10,7 +10,7 @@ class DataSpouse extends Model {
     public $timestamps = true;
     protected $table = 'dataspouse';
     protected $fillable = array('nametitle','spouse_name','spouse_surname','spouse_age'
-    ,'spouse_live_died','mother_nameoffice_tel','spouse_nameoffice_tel','created_at','updated_at',
+    ,'spouse_live_died','spouse_address','spouse_nameoffice_tel','spouse_nameoffice_tel','created_at','updated_at',
         'spouse_career','spouse_nameoffice','spouse_tel');
     public function criminalhistory()
     {

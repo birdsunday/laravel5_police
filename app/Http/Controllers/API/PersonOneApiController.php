@@ -450,10 +450,10 @@ class PersonOneApiController extends Controller
     public function searchCasePerson()
     {
         //return Input::all();
-        $idcard_keyword = Input::get('idcard');
+        //$idcard_keyword = Input::get('idcard');
 
         $name_keyword = Input::get('name');
-        $surname_keyword = Input::get('surname');
+        //$surname_keyword = Input::get('surname');
 
 //        $person = DB::table('criminalhistory')
 //            ->orderBy('idcard', 'desc')
@@ -466,13 +466,13 @@ class PersonOneApiController extends Controller
                 array(Carbon::today()->toDateTimeString(),
                     Carbon::tomorrow()->toDateTimeString())
             )
-            ->where(function ($q) use ($idcard_keyword, $name_keyword, $surname_keyword) {
-                return $q->where('idcard', 'LIKE', "%$idcard_keyword%")
-                    ->where('name', 'LIKE', "%$name_keyword%")
-                    ->where('surname', 'LIKE', "%$surname_keyword%");
+            //->where(function ($q) use ($idcard_keyword, $name_keyword, $surname_keyword) {
+            ->where(function ($q) use ($name_keyword) {
+                return $q->where('name', 'LIKE', "%$name_keyword%");
             })
             ->orderBy('created_at','desc')
             ->get();
+
         return $person;
 
 

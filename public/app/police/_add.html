@@ -15,7 +15,7 @@
         <div class="box">
             <div class="box-header">
                 <div class="box-name">
-                    <i class="fa fa-search"></i>
+                    <i class="fa fa-user"></i>
                     <span>เพิ่มเจ้าหน้าที่</span>
                 </div>
 
@@ -26,7 +26,7 @@
                         <h4 class="">เพิ่มเจ้าหน้าที่</h4>
                     </div>
                     <div class="col-sm-6 text-right padding-top-20">
-                        <a class="btn btn-default" ui-sref="home" title="Back"><i class="fa fa-arrow-left" ></i> Back</a>
+                        <a class="btn btn-primary" ui-sref="home" title="Back"><i class="fa fa-arrow-left" ></i> Back</a>
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
@@ -134,13 +134,13 @@
 
 
                     <div class="form-group" ng-if="!error.surname_police">
-                        <label class="col-md-4 control-label">นามสกุล</label>
+                        <label class="col-md-4 control-label">ชื่อสกุล</label>
                         <div class="col-md-6">
                             <input placeholder="นามสกุล" ng-model="police.surname_police" type="text" class="form-control" name="email">
                         </div>
                     </div>
                     <div class="form-group has-error has-feedback" ng-if="error.surname_police" ng-repeat="error_surname_police in error.surname_police">
-                        <label class="col-md-4 control-label">นามสกุล</label>
+                        <label class="col-md-4 control-label">ชื่อสกุล</label>
                         <div class="col-md-6">
                             <input placeholder="นามสกุล" type="text" class="form-control" ng-model="police.surname_police">
                             <span class="fa fa-remove form-control-feedback" aria-hidden="true"></span>

@@ -20,115 +20,7 @@
     <favorites_list name="laravel5_police" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="personOne.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/PDF/personOne.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="280" column="55" selection-start-line="280" selection-start-column="41" selection-end-line="280" selection-end-column="55" />
-              <folding>
-                <element signature="e#1579#1585#0#HTML" expanded="true" />
-                <element signature="e#1738#1744#0#HTML" expanded="true" />
-                <element signature="e#7101#7107#0#HTML" expanded="true" />
-                <element signature="e#7107#7113#0#HTML" expanded="true" />
-                <element signature="e#7113#7119#0#HTML" expanded="true" />
-                <element signature="e#7249#7255#0#HTML" expanded="true" />
-                <element signature="e#7255#7261#0#HTML" expanded="true" />
-                <element signature="e#7261#7267#0#HTML" expanded="true" />
-                <element signature="e#9760#9766#0#HTML" expanded="true" />
-                <element signature="e#9766#9772#0#HTML" expanded="true" />
-                <element signature="e#9772#9778#0#HTML" expanded="true" />
-                <element signature="e#9908#9914#0#HTML" expanded="true" />
-                <element signature="e#9914#9920#0#HTML" expanded="true" />
-                <element signature="e#9920#9926#0#HTML" expanded="true" />
-                <element signature="e#12448#12454#0#HTML" expanded="true" />
-                <element signature="e#12454#12460#0#HTML" expanded="true" />
-                <element signature="e#12460#12466#0#HTML" expanded="true" />
-                <element signature="e#12596#12602#0#HTML" expanded="true" />
-                <element signature="e#12602#12608#0#HTML" expanded="true" />
-                <element signature="e#12608#12614#0#HTML" expanded="true" />
-                <element signature="e#15320#15326#0#HTML" expanded="true" />
-                <element signature="e#15326#15332#0#HTML" expanded="true" />
-                <element signature="e#15332#15338#0#HTML" expanded="true" />
-                <element signature="e#15462#15468#0#HTML" expanded="true" />
-                <element signature="e#15468#15474#0#HTML" expanded="true" />
-                <element signature="e#15474#15480#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PersonOneApiController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/PersonOneApiController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="505">
-              <caret line="496" column="46" selection-start-line="496" selection-start-column="46" selection-end-line="496" selection-end-column="46" />
-              <folding>
-                <marker date="1474171238581" expanded="true" signature="17342:17465" ph="..." />
-                <marker date="1474171238581" expanded="true" signature="17466:17669" ph="..." />
-                <marker date="1474171238581" expanded="true" signature="17470:17661" ph="..." />
-                <marker date="1474171238581" expanded="true" signature="17533:17552" ph="..." />
-                <marker date="1474171238581" expanded="true" signature="17591:17610" ph="..." />
-                <marker date="1474171238581" expanded="true" signature="18014:18129" ph="..." />
-                <marker date="1474171238581" expanded="true" signature="18130:18331" ph="..." />
-                <marker date="1474171238581" expanded="true" signature="18134:18323" ph="..." />
-                <marker date="1474171238581" expanded="true" signature="18259:18278" ph="..." />
-                <marker date="1474171238581" expanded="true" signature="20073:20196" ph="..." />
-                <marker date="1474171238581" expanded="true" signature="20197:20408" ph="..." />
-                <marker date="1474171238581" expanded="true" signature="20201:20400" ph="..." />
-                <marker date="1474171238581" expanded="true" signature="20264:20283" ph="..." />
-                <marker date="1474171238581" expanded="true" signature="20330:20349" ph="..." />
-                <marker date="1474171238581" expanded="true" signature="20753:20868" ph="..." />
-                <marker date="1474171238581" expanded="true" signature="20869:21070" ph="..." />
-                <marker date="1474171238581" expanded="true" signature="20873:21062" ph="..." />
-                <marker date="1474171238581" expanded="true" signature="20998:21017" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GuestHistoryApiController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/GuestHistoryApiController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="561" column="16" selection-start-line="561" selection-start-column="14" selection-end-line="561" selection-end-column="16" />
-              <folding>
-                <marker date="1473613534025" expanded="false" signature="14313:14436" ph="..." />
-                <marker date="1473613534025" expanded="true" signature="14437:14648" ph="..." />
-                <marker date="1473613534025" expanded="true" signature="14441:14640" ph="..." />
-                <marker date="1473613534025" expanded="false" signature="14504:14523" ph="..." />
-                <marker date="1473613534025" expanded="false" signature="14570:14589" ph="..." />
-                <marker date="1473613534025" expanded="false" signature="14993:15108" ph="..." />
-                <marker date="1473613534025" expanded="true" signature="15109:15310" ph="..." />
-                <marker date="1473613534025" expanded="true" signature="15113:15302" ph="..." />
-                <marker date="1473613534025" expanded="false" signature="15238:15257" ph="..." />
-                <marker date="1473613534025" expanded="false" signature="17059:17182" ph="..." />
-                <marker date="1473613534025" expanded="true" signature="17183:17386" ph="..." />
-                <marker date="1473613534025" expanded="true" signature="17187:17378" ph="..." />
-                <marker date="1473613534025" expanded="false" signature="17250:17269" ph="..." />
-                <marker date="1473613534025" expanded="false" signature="17308:17327" ph="..." />
-                <marker date="1473613534025" expanded="false" signature="17731:17846" ph="..." />
-                <marker date="1473613534025" expanded="true" signature="17847:18048" ph="..." />
-                <marker date="1473613534025" expanded="true" signature="17851:18040" ph="..." />
-                <marker date="1473613534025" expanded="false" signature="17976:17995" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="112" column="40" selection-start-line="112" selection-start-column="30" selection-end-line="112" selection-end-column="40" />
-              <folding>
-                <marker date="1474111827128" expanded="true" signature="6084:6122" ph="ALTER TABLE RANK... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -136,24 +28,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/app/person_general/_add_person_general/_comfirm_person_general/_comfirm_person.html" />
-        <option value="$PROJECT_DIR$/public/app/person_general/_add_person_general/_complete_person_general/_complete_person.html" />
-        <option value="$PROJECT_DIR$/public/app/person_general/_add_person_general/_add_person_general_vehicle.html" />
-        <option value="$PROJECT_DIR$/public/app/person_general/_add_person_general/_add_person_general_profile.html" />
-        <option value="$PROJECT_DIR$/public/app/person_general/_viewdata_person_general.html" />
-        <option value="$PROJECT_DIR$/public/app/person_general/_add_person_general/_add.html" />
-        <option value="$PROJECT_DIR$/public/app/person_general/_edit_person_general/_edit_person_general_address.html" />
-        <option value="$PROJECT_DIR$/public/app/person_general/_add_person_general/_add_person_general_family.html" />
-        <option value="$PROJECT_DIR$/public/app/person_general/_edit_person_general/_edit_person_general_vehicle.html" />
-        <option value="$PROJECT_DIR$/public/app/person_general/_add_person_general/_add_person_general_employee.html" />
-        <option value="$PROJECT_DIR$/public/app/person_general/_edit_person_general/_edit_person_general_other.html" />
-        <option value="$PROJECT_DIR$/public/app/person_general/_edit_person_general/_edit_person_general_profile.html" />
-        <option value="$PROJECT_DIR$/public/app/person_general/app.js" />
-        <option value="$PROJECT_DIR$/public/app/person_general/_edit_person_general/_edit_person_general_family.html" />
-        <option value="$PROJECT_DIR$/public/app/person_general/_edit_person_general/_edit_person_general_employee.html" />
-        <option value="$PROJECT_DIR$/public/app/person_general/_edit_person_general/_edit_person_general_photo.html" />
         <option value="$PROJECT_DIR$/public/app/person_general/_edit_person_general/_edit.html" />
-        <option value="$PROJECT_DIR$/public/app/person_crime/_home.html" />
         <option value="$PROJECT_DIR$/public/app/person_crime/_add_person/_add.html" />
         <option value="$PROJECT_DIR$/public/app/person_crime/_edit_person/_edit_person_profile.html" />
         <option value="$PROJECT_DIR$/public/app/person_crime/_add_person/_add_person_address.html" />
@@ -185,8 +60,25 @@
         <option value="$PROJECT_DIR$/public/app/datacase/_edit.html" />
         <option value="$PROJECT_DIR$/resources/views/PDF/summary.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/PDF/personOne.blade.php" />
+        <option value="$PROJECT_DIR$/public/app/datacase/_edit_person/_edit_person.html" />
+        <option value="$PROJECT_DIR$/public/app/datacase/app.js" />
+        <option value="$PROJECT_DIR$/public/app/datacase/_add.html" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/PersonOneApiController.php" />
+        <option value="$PROJECT_DIR$/public/app/datacase/_add_person.html" />
+        <option value="$PROJECT_DIR$/public/app/person_crime/_home.html" />
+        <option value="$PROJECT_DIR$/resources/views/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Models/DataMother.php" />
+        <option value="$PROJECT_DIR$/app/Models/DataSpouse.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/PlaceController.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/public/app/place_general/app.js" />
+        <option value="$PROJECT_DIR$/public/app/place_general/_add_place_general/_add.html" />
+        <option value="$PROJECT_DIR$/app/Models/PlaceGeneral.php" />
+        <option value="$PROJECT_DIR$/public/app/profile_police/app.js" />
+        <option value="$PROJECT_DIR$/public/app/police/app.js" />
+        <option value="$PROJECT_DIR$/public/app/police/_add.html" />
+        <option value="$PROJECT_DIR$/public/app/profile_police/_editProfile.html" />
+        <option value="$PROJECT_DIR$/public/app/police/_edit.html" />
       </list>
     </option>
   </component>
@@ -203,7 +95,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-11" />
     <option name="y" value="-11" />
-    <option name="width" value="1942" />
+    <option name="width" value="1934" />
     <option name="height" value="1046" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -231,6 +123,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -393,7 +287,95 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="person_general" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel5_police" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel5_police" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="person_crime" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel5_police" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel5_police" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="PDF" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel5_police" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel5_police" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="datacase" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel5_police" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel5_police" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="case" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -471,6 +453,50 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="profile_police" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel5_police" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel5_police" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="police" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel5_police" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel5_police" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="database" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -521,6 +547,24 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Models" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel5_police" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel5_police" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Http" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -544,32 +588,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Controllers" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="laravel5_police" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="laravel5_police" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controllers" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="API" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -601,8 +619,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -621,19 +637,19 @@
     <key name="OPEN_URL_DIALOG">
       <recent name="http://app.wisdomlanna.com/gotham/" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\Documents\GitHub\laravel5_police\app\Models" />
+      <recent name="C:\Users\Admin\Documents\GitHub\laravel5_police\public\app\person_crime\_edit_person" />
+      <recent name="C:\Users\Admin\Documents\GitHub\laravel5_police\public\app\person_general" />
+      <recent name="C:\Users\Admin\Documents\GitHub\laravel5_police\public\app\place_general\_add_place_general" />
+      <recent name="C:\Users\Admin\Documents\GitHub\laravel5_police\resources\views" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\laravel5_police\public\app\person_crime1\_add_person" />
       <recent name="C:\xampp\htdocs\laravel5_police\public\app\person_crime" />
       <recent name="C:\xampp\htdocs\laravel5_police\resources\views\layouts" />
       <recent name="C:\xampp\htdocs\laravel5_police\public\app" />
       <recent name="C:\xampp\htdocs\laravel5_police\public\app\person\_edit_person" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Admin\Documents\GitHub\laravel5_police\public\app\person_crime\_edit_person" />
-      <recent name="C:\Users\Admin\Documents\GitHub\laravel5_police\public\app\person_general" />
-      <recent name="C:\Users\Admin\Documents\GitHub\laravel5_police\public\app\place_general\_add_place_general" />
-      <recent name="C:\Users\Admin\Documents\GitHub\laravel5_police\resources\views" />
-      <recent name="C:\Users\Admin\Documents\GitHub\laravel5_police\app\Http\Controllers\Admin" />
     </key>
   </component>
   <component name="RunManager">
@@ -716,21 +732,24 @@
       <workItem from="1473587357009" duration="26710000" />
       <workItem from="1473666552386" duration="6631000" />
       <workItem from="1474102578224" duration="8484000" />
-      <workItem from="1474170068313" duration="1687000" />
+      <workItem from="1474170068313" duration="2077000" />
+      <workItem from="1474180967324" duration="7322000" />
+      <workItem from="1474255441685" duration="2164000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98093000" />
+    <option name="totallyTimeSpent" value="107969000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="-11" width="1942" height="1046" extended-state="7" />
-    <editor active="true" />
+    <frame x="-11" y="-11" width="1934" height="1046" extended-state="1" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26197916" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2615063" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33596215" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3238958" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -745,7 +764,6 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3238958" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
     </layout>
@@ -774,188 +792,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/app/person_crime/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="670" column="0" selection-start-line="670" selection-start-column="0" selection-end-line="670" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/person_general/_preview_person_general.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1525">
-          <caret line="61" column="0" selection-start-line="59" selection-start-column="30" selection-end-line="61" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/person_crime/_preview_person.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/person_crime/_add_person/_add_person_datacase.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/person_general/_photo_person_geneal.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/PDF/photo_person_general.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/PDF/statistic.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-135">
-          <caret line="69" column="49" selection-start-line="69" selection-start-column="49" selection-end-line="69" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/PDF/person_general.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/PDF/person.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7526">
-          <caret line="398" column="20" selection-start-line="398" selection-start-column="20" selection-end-line="398" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/datacase/_add.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6345">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/datacase/_add_file.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-45">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/datacase/_add_person.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-45">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/datacase/_add_preview.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-45">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/datacase/_add_preview_person.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-45">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/datacase/_add_print.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-45">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/datacase/_edit_case.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-45">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/datacase/_edit_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-45">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/datacase/_edit_number_case.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-45">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/datacase/_edit_preview_case.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-45">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/datacase/_edit_print_case.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/datacase/_home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="84" column="157" selection-start-line="84" selection-start-column="148" selection-end-line="84" selection-end-column="157" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/datacase/_view_case.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="75" column="170" selection-start-line="75" selection-start-column="170" selection-end-line="75" selection-end-column="170" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/datacase/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-45">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/datacase/_edit_person/_edit_person.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-45">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/CasePersonApiController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-45">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/CaseVehicleApiController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-45">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/CaseWeaponApiController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-45">
@@ -1015,20 +851,6 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/PersonOneController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-45">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/PlaceController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/PoliceController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
@@ -1105,100 +927,232 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/PDF/personOne.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
+        <state relative-caret-position="7000">
           <caret line="280" column="55" selection-start-line="280" selection-start-column="41" selection-end-line="280" selection-end-column="55" />
-          <folding>
-            <element signature="e#1579#1585#0#HTML" expanded="true" />
-            <element signature="e#1738#1744#0#HTML" expanded="true" />
-            <element signature="e#7101#7107#0#HTML" expanded="true" />
-            <element signature="e#7107#7113#0#HTML" expanded="true" />
-            <element signature="e#7113#7119#0#HTML" expanded="true" />
-            <element signature="e#7249#7255#0#HTML" expanded="true" />
-            <element signature="e#7255#7261#0#HTML" expanded="true" />
-            <element signature="e#7261#7267#0#HTML" expanded="true" />
-            <element signature="e#9760#9766#0#HTML" expanded="true" />
-            <element signature="e#9766#9772#0#HTML" expanded="true" />
-            <element signature="e#9772#9778#0#HTML" expanded="true" />
-            <element signature="e#9908#9914#0#HTML" expanded="true" />
-            <element signature="e#9914#9920#0#HTML" expanded="true" />
-            <element signature="e#9920#9926#0#HTML" expanded="true" />
-            <element signature="e#12448#12454#0#HTML" expanded="true" />
-            <element signature="e#12454#12460#0#HTML" expanded="true" />
-            <element signature="e#12460#12466#0#HTML" expanded="true" />
-            <element signature="e#12596#12602#0#HTML" expanded="true" />
-            <element signature="e#12602#12608#0#HTML" expanded="true" />
-            <element signature="e#12608#12614#0#HTML" expanded="true" />
-            <element signature="e#15320#15326#0#HTML" expanded="true" />
-            <element signature="e#15326#15332#0#HTML" expanded="true" />
-            <element signature="e#15332#15338#0#HTML" expanded="true" />
-            <element signature="e#15462#15468#0#HTML" expanded="true" />
-            <element signature="e#15468#15474#0#HTML" expanded="true" />
-            <element signature="e#15474#15480#0#HTML" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/GuestHistoryApiController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
+        <state relative-caret-position="13225">
           <caret line="561" column="16" selection-start-line="561" selection-start-column="14" selection-end-line="561" selection-end-column="16" />
-          <folding>
-            <marker date="1473613534025" expanded="false" signature="14313:14436" ph="..." />
-            <marker date="1473613534025" expanded="true" signature="14437:14648" ph="..." />
-            <marker date="1473613534025" expanded="true" signature="14441:14640" ph="..." />
-            <marker date="1473613534025" expanded="false" signature="14504:14523" ph="..." />
-            <marker date="1473613534025" expanded="false" signature="14570:14589" ph="..." />
-            <marker date="1473613534025" expanded="false" signature="14993:15108" ph="..." />
-            <marker date="1473613534025" expanded="true" signature="15109:15310" ph="..." />
-            <marker date="1473613534025" expanded="true" signature="15113:15302" ph="..." />
-            <marker date="1473613534025" expanded="false" signature="15238:15257" ph="..." />
-            <marker date="1473613534025" expanded="false" signature="17059:17182" ph="..." />
-            <marker date="1473613534025" expanded="true" signature="17183:17386" ph="..." />
-            <marker date="1473613534025" expanded="true" signature="17187:17378" ph="..." />
-            <marker date="1473613534025" expanded="false" signature="17250:17269" ph="..." />
-            <marker date="1473613534025" expanded="false" signature="17308:17327" ph="..." />
-            <marker date="1473613534025" expanded="false" signature="17731:17846" ph="..." />
-            <marker date="1473613534025" expanded="true" signature="17847:18048" ph="..." />
-            <marker date="1473613534025" expanded="true" signature="17851:18040" ph="..." />
-            <marker date="1473613534025" expanded="false" signature="17976:17995" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/datacase/main.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="112" column="40" selection-start-line="112" selection-start-column="30" selection-end-line="112" selection-end-column="40" />
-          <folding>
-            <marker date="1474111827128" expanded="true" signature="6084:6122" ph="ALTER TABLE RANK... " />
-          </folding>
+        <state relative-caret-position="-1564">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/search_police.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-375">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/search_preson.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2400">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/datacase/_edit_person/_edit_person.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="10" column="124" selection-start-line="10" selection-start-column="124" selection-end-line="10" selection-end-column="124" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/PDF/person.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3575">
+          <caret line="398" column="20" selection-start-line="398" selection-start-column="20" selection-end-line="398" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/datacase/_add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="56" column="38" selection-start-line="56" selection-start-column="38" selection-end-line="56" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/datacase/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="310" column="45" selection-start-line="310" selection-start-column="45" selection-end-line="310" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/datacase/_home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2100">
+          <caret line="84" column="157" selection-start-line="84" selection-start-column="148" selection-end-line="84" selection-end-column="157" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/PersonOneApiController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="505">
-          <caret line="496" column="46" selection-start-line="496" selection-start-column="46" selection-end-line="496" selection-end-column="46" />
-          <folding>
-            <marker date="1474171238581" expanded="true" signature="17342:17465" ph="..." />
-            <marker date="1474171238581" expanded="true" signature="17466:17669" ph="..." />
-            <marker date="1474171238581" expanded="true" signature="17470:17661" ph="..." />
-            <marker date="1474171238581" expanded="true" signature="17533:17552" ph="..." />
-            <marker date="1474171238581" expanded="true" signature="17591:17610" ph="..." />
-            <marker date="1474171238581" expanded="true" signature="18014:18129" ph="..." />
-            <marker date="1474171238581" expanded="true" signature="18130:18331" ph="..." />
-            <marker date="1474171238581" expanded="true" signature="18134:18323" ph="..." />
-            <marker date="1474171238581" expanded="true" signature="18259:18278" ph="..." />
-            <marker date="1474171238581" expanded="true" signature="20073:20196" ph="..." />
-            <marker date="1474171238581" expanded="true" signature="20197:20408" ph="..." />
-            <marker date="1474171238581" expanded="true" signature="20201:20400" ph="..." />
-            <marker date="1474171238581" expanded="true" signature="20264:20283" ph="..." />
-            <marker date="1474171238581" expanded="true" signature="20330:20349" ph="..." />
-            <marker date="1474171238581" expanded="true" signature="20753:20868" ph="..." />
-            <marker date="1474171238581" expanded="true" signature="20869:21070" ph="..." />
-            <marker date="1474171238581" expanded="true" signature="20873:21062" ph="..." />
-            <marker date="1474171238581" expanded="true" signature="20998:21017" ph="..." />
-          </folding>
+        <state relative-caret-position="155">
+          <caret line="469" column="52" selection-start-line="469" selection-start-column="52" selection-end-line="469" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/datacase/_add_person.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="97" column="166" selection-start-line="97" selection-start-column="166" selection-end-line="97" selection-end-column="166" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/person_crime/_home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="75" column="102" selection-start-line="75" selection-start-column="102" selection-end-line="75" selection-end-column="102" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="71" column="44" selection-start-line="71" selection-start-column="44" selection-end-line="71" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/DataChild.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/CriminalHistory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/DataMother.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/DataSpouse.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/PlaceGeneralController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="84" column="24" selection-start-line="84" selection-start-column="24" selection-end-line="84" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/place_general/_home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1200">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/place_general/_add_place_general/_form_add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/place_general/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/place_general/_add_place_general/_add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="217" column="105" selection-start-line="217" selection-start-column="105" selection-end-line="217" selection-end-column="105" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/PlaceGeneral.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="11" column="75" selection-start-line="11" selection-start-column="75" selection-end-line="11" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/PoliceController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/profile_police/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="83" column="47" selection-start-line="83" selection-start-column="47" selection-end-line="83" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/police/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="203" column="47" selection-start-line="203" selection-start-column="47" selection-end-line="203" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/profile_police/_profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="55" column="174" selection-start-line="55" selection-start-column="171" selection-end-line="55" selection-end-column="174" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/profile_police/_editProfile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="173" column="70" selection-start-line="173" selection-start-column="70" selection-end-line="173" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/police/_add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="136" column="70" selection-start-line="136" selection-start-column="62" selection-end-line="136" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/police/_edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="184" column="26" selection-start-line="184" selection-start-column="26" selection-end-line="184" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>

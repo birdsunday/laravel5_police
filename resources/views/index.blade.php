@@ -64,12 +64,12 @@
                             <i class="fa fa-laptop fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge">บันทึกคดี</div>
+                            <div class="huge">คดี</div>
                         </div>
                     </div>
                 </div>
                 <div class="panel-footer">
-                    <span class="pull-left">บันทึกคดี</span>
+                    <span class="pull-left">คดี</span>
                     <span class="pull-right"><i class="fa fa-arrow-circle-right" style="color: #5cb85c;"></i></span>
                     <div class="clearfix"></div>
                 </div>

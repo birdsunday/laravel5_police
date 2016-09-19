@@ -72,7 +72,7 @@ app.controller("EditProfileController", function ($scope,$state, $http,$statePar
 
 
     $scope.editPolice = function () {
-        saveEditPolice = "ต้องการบันทึกทะเบียร์ประวัตินี้ ใช่หรือ ไม่";
+        saveEditPolice = "ต้องการบันทึกทะเบียนประวัตินี้?";
         if (confirm(saveEditPolice)) {
             console.log($scope.police);
 
@@ -81,7 +81,7 @@ app.controller("EditProfileController", function ($scope,$state, $http,$statePar
                 method: "PUT",
                 data: $scope.police
             }).success(function () {
-                massged = "แก้ไขข้อมูลเสร็จแล้ว";
+                massged = "แก้ไขข้อมูลเรียบร้อย";
                 alert(massged);
                 $state.go("profile");
             }).error(function (response) {
