@@ -9,7 +9,7 @@ class DataChild extends Model {
 
     public $timestamps = true;
     protected $table = 'datachild';
-    protected $fillable = array('nametitle_id','child_name','child_surname','child_age','child_address'
+    protected $fillable = array('nametitle','child_name','child_surname','child_age','child_address'
     ,'child_live_died','created_at','updated_at','child_career','child_nameoffice','child_tel','criminalhistory_id'
     ,'guesthistory_id');
 
@@ -21,10 +21,6 @@ class DataChild extends Model {
     public function guesthistory()
     {
         return $this->belongsTo('App\Models\GuestHistory','guesthistory_id');
-    }
-    public function nametitle()
-    {
-        return $this->belongsTo('App\Models\NameTitle');
     }
 
 }

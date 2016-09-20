@@ -9,8 +9,8 @@ class DataMother extends Model {
 
     public $timestamps = true;
     protected $table = 'datamother';
-    protected $fillable = array('mother_name','mother_name','mother_surname','mother_age'
-    ,'mother_live_died','father_address','mother_nameoffice_tel',
+    protected $fillable = array('nametitle','mother_name','mother_surname','mother_age'
+    ,'mother_live_died','mother_address','mother_nameoffice_tel',
         'created_at','updated_at','mother_career','mother_nameoffice','mother_tel');
     public function criminalhistory()
     {

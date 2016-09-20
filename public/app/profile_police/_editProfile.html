@@ -2,7 +2,7 @@
 <div class="row">
     <div id="breadcrumb" class="col-xs-12">
         <ol class="breadcrumb">
-            <li><a href="/">หน้าหลัก</a></li>
+            <li><a href="/police/index">หน้าหลัก</a></li>
             <li><a ui-sref="home">จัดการข้อมูลสมาชิก</a></li>
             <li><a href="#">แก้ไขข้อมูลสมาชิก</a></li>
         </ol>
@@ -165,13 +165,13 @@
 
 
                     <div class="form-group" ng-if="!error.surname_police">
-                        <label class="col-md-4 control-label">นามสกุล</label>
+                        <label class="col-md-4 control-label">ชื่อสกุล</label>
                         <div class="col-md-6">
                             <input ng-model="police.surname_police" type="text" class="form-control" name="email">
                         </div>
                     </div>
                     <div class="form-group has-error has-feedback" ng-if="error.surname_police" ng-repeat="error_surname_police in error.surname_police">
-                        <label class="col-md-4 control-label">นามสกุล</label>
+                        <label class="col-md-4 control-label">ชื่อสกุล</label>
                         <div class="col-md-6">
                             <input type="text" class="form-control" ng-model="police.surname_police">
                             <span class="fa fa-remove form-control-feedback" aria-hidden="true"></span>

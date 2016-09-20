@@ -215,10 +215,21 @@ app.controller("HomeController",function($scope,$window,$http,datacase,$timeout,
 app.controller("AddPersonController",function($scope,$http,$stateParams,$timeout,$state,$window,
                                               datacase,caseperson){
     console.log("AddPersonController.start");
-    $scope.caseFile = datacase.data;
-    $scope.casePerson = caseperson.data;
-    console.log($scope.casePerson);
-    console.log($scope.caseFile);
+
+    function init(){
+        $scope.caseFile = datacase.data;
+        $scope.casePerson = caseperson.data;
+       // $searchPerson({"name":""});
+        //$scope.searchPerson({"name":""});
+        $scope.today = new Date();
+
+        console.log($scope.caseFile);
+        console.log($scope.casePerson);
+
+
+    }
+
+    init();
 
 
     $scope.cancelCase = function(){
@@ -486,8 +497,12 @@ app.controller("EditCaseController",function($scope,$http,$stateParams,$state,da
     function init(){
         $scope.caseFile = datacase.data;
         $scope.casePerson = caseperson.data;
+        //$scope.searchPerson({"name":""});
+
         console.log($scope.caseFile);
         console.log($scope.casePerson);
+
+
     }
 
     init();

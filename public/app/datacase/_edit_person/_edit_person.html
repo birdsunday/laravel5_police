@@ -6,8 +6,10 @@
         <div class="col-xs-12 col-sm-7">
             <div class="box">
                 <div class="box-content"  id="scroll_edit" >
-                    <h4 class="page-header">ค้นหาบุคคลที่เกี่ยวข้องกับอาชญกรรม</h4>
-
+                    <h4 class="page-header">ค้นหาบุคคลที่เกี่ยวข้องกับอาชญากรรม</h4>
+                    <div class="text-right">
+                        <a target="_blank" type="button" ng-href="/police/person_crime#/form_add/add" class="btn btn-success"><i class="fa fa-user-plus"></i> เพิ่มใหม่</a>
+                    </div>
                     <form class="form-horizontal" role="form">
                         <table class="table table-striped table-hover ">
                             <thead>
@@ -22,7 +24,7 @@
                                 <th>
                                     <input ng-change="pc.searchPerson(keyword)" class="form-control" ng-model="keyword.surname" type="text" placeholder="ค้นหา นามสกุล...">
                                 </th>
-                                <th>วันที่จับกุม
+                                <th>วันที่บันทึกข้อมูล
                                 </th>
                             </tr>
                             </thead>
@@ -69,14 +71,14 @@
         <div class="col-xs-12 col-sm-5">
             <div class="box">
                 <div class="box-content"  id="scroll_person" >
-                    <h4 class="page-header">รายการบุคคลที่เกี่ยวข้องกับอาชญกรรม</h4>
+                    <h4 class="page-header">รายการบุคคลที่เกี่ยวข้องกับอาชญากรรม</h4>
                     <table class="table table-striped table-hover">
                         <thead>
                         <tr>
 
                             <th>เลขบัตร</th>
                             <th>ชื่อ-สกุล</th>
-                            <th>วันที่จับกุม</th>
+                            <th>วันที่บันทึกข้อมูล</th>
                             <th>#</th>
                         </tr>
                         </thead>

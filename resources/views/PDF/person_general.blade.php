@@ -37,23 +37,6 @@
             </td>
 
         </tr>
-        <tr>
-            @if($dataperson->nametitle->name_title)
-                <td colspan="4"><li>ชื่อ-ชื่อสกุล : <label><?php echo $dataperson->nametitle->name_title ?> <?php echo $dataperson->name ?> <?php echo $dataperson->surname ?></label></td>
-            @else
-                <td colspan="4"><li>ชื่อ-ชื่อสกุล : <label> - </label></td>
-            @endif
-        </tr>
-        <tr>
-
-            @if($dataperson->age)
-                <td colspan="4"><li>อายุ : <label><?php echo $dataperson->age ?> </label></td>
-            @else
-                <td colspan="4"><li>อายุ : <label> - </label></td>
-            @endif
-
-        </tr>
-
         @if($dataperson->typeidcard == 0)
             <tr>
                 @if($dataperson->idcard)
@@ -85,8 +68,57 @@
 
             </tr>
         @endif
+        <tr>
+            @if($dataperson->name)
+                <td colspan="4"><li>ชื่อ-ชื่อสกุล : <label><?php echo $dataperson->nametitle ?> <?php echo $dataperson->name ?> <?php echo $dataperson->surname ?></label></td>
+            @else
+                <td colspan="4"><li>ชื่อ-ชื่อสกุล : <label> - </label></td>
+            @endif
+        </tr>
+        <tr>
+
+            @if($dataperson->age)
+                <td colspan="4">&nbsp;&nbsp;&nbsp;อายุ : <label><?php echo $dataperson->age ?> </label> ปี</td>
+            @else
+                <td colspan="4">&nbsp;&nbsp;&nbsp;อายุ : <label> - </label> ปี</td>
+            @endif
+
+        </tr>
 
 
+
+        <tr>
+            @if($dataperson->career)
+                <td colspan="4"><li>อาชีพ : <label><?php echo $dataperson->career ?></label></td>
+            @else
+                <td colspan="4"><li>อาชีพ : <label> - </label></td>
+            @endif
+        </tr>
+
+        <?php foreach($dataperson->addressoffice as $addressoffice) : ?>
+
+        <tr>
+            @if($addressoffice->office)
+                <td colspan="4"><li>สถานที่ทำงาน : <label><?php echo $addressoffice->office ?></label></td>
+            @else
+                <td colspan="4"><li>สถานที่ทำงาน : <label> - </label></td>
+            @endif
+        </tr>
+        <tr>
+            @if($addressoffice->office_address)
+                <td colspan="4">&nbsp;&nbsp;&nbsp;&nbsp;ตั้งอยู่ที่ : <label><?php echo $addressoffice->office_address ?> </label></td>
+            @else
+                <td colspan="4">&nbsp;&nbsp;&nbsp;&nbsp;ตั้งอยู่ที่ : <label> - </label></td>
+            @endif
+            @if($addressoffice->office_tel)
+                <td colspan="1">โทร : <label><?php echo $addressoffice->office_tel ?></label></td>
+            @else
+                <td colspan="1">โทร : <label> - </label></td>
+            @endif
+
+        </tr>
+
+        <?php endforeach; ?>
 
         <tr>
             @if($dataperson->addresspresent->present_address)
@@ -114,56 +146,21 @@
                 <td colspan="1">โทร : <label> - </label></td>
             @endif
         </tr>
-        <tr>
-            @if($dataperson->career)
-                <td colspan="4"><li>อาชีพ : <label><?php echo $dataperson->career ?></label></td>
-            @else
-                <td colspan="4"><li>อาชีพ : <label> - </label></td>
-            @endif
-        </tr>
 
 
-        <?php foreach($dataperson->addressoffice as $addressoffice) : ?>
 
-        <tr>
-            @if($addressoffice->office)
-                <td colspan="4">&nbsp;&nbsp;&nbsp;&nbsp;สถานที่ทำงาน : <label><?php echo $addressoffice->office ?></label></td>
-            @else
-                <td colspan="4">&nbsp;&nbsp;&nbsp;&nbsp;สถานที่ทำงาน : <label> - </label></td>
-            @endif
-        </tr>
-        <tr>
-            @if($addressoffice->office_address)
-                <td colspan="4">&nbsp;&nbsp;&nbsp;&nbsp;ตั้งอยู่ที่ : <label><?php echo $addressoffice->office_address ?> </label></td>
-            @else
-                <td colspan="4">&nbsp;&nbsp;&nbsp;&nbsp;ตั้งอยู่ที่ : <label> - </label></td>
-            @endif
-            @if($addressoffice->office_tel)
-                <td colspan="1">โทร : <label><?php echo $addressoffice->office_tel ?></label></td>
-            @else
-                <td colspan="1">โทร : <label> - </label></td>
-            @endif
 
-        </tr>
 
-        <?php endforeach; ?>
-        <tr>
-            @if($dataperson->education)
-                <td colspan="4"><li>การศึกษา : <label><?php echo $dataperson->education ?></label></td>
-            @else
-                <td colspan="4"><li>การศึกษา : <label> - </label></td>
-            @endif
-        </tr>
         <tr>
             @if($dataperson->datafather->father_name)
-                <td colspan="2"><li>ชื่อบิดา-สกุล : <label><?php echo $dataperson->datafather->father_name ?> <?php echo $dataperson->datafather->father_surname ?></label></td>
+                <td colspan="2"><li>ชื่อบิดา : <label><?php echo $dataperson->datafather->father_name ?> <?php echo $dataperson->datafather->father_surname ?></label></td>
             @else
-                <td colspan="2"><li>ชื่อบิดา-สกุล : <label> - </label></td>
+                <td colspan="2"><li>ชื่อบิดา : <label> - </label></td>
             @endif
             @if($dataperson->datafather->father_age)
-                <td colspan="1">อายุ : <label><?php echo $dataperson->datafather->father_age ?></label></td>
+                <td colspan="1">อายุ : <label><?php echo $dataperson->datafather->father_age ?></label> ปี</td>
             @else
-                <td colspan="1">อายุ : <label> - </label></td>
+                <td colspan="1">อายุ : <label> - </label> ปี</td>
             @endif
             @if($dataperson->datafather->father_live_died)
                 <td colspan="1"><label><?php echo $dataperson->datafather->father_live_died ?></label></td>
@@ -209,9 +206,9 @@
                 <td colspan="2"><li>ชื่อมารดา: <label> - </label></td>
             @endif
             @if($dataperson->datamother->mother_age)
-                <td colspan="1">อายุ : <label><?php echo $dataperson->datamother->mother_age ?></label></td>
+                <td colspan="1">อายุ : <label><?php echo $dataperson->datamother->mother_age ?></label> ปี</td>
             @else
-                <td colspan="1">อายุ: <label> - </label></td>
+                <td colspan="1">อายุ: <label> - </label> ปี</td>
             @endif
             @if($dataperson->datamother->mother_live_died)
                 <td colspan="1"><label><?php echo $dataperson->datamother->mother_live_died ?></label></td>
@@ -251,15 +248,15 @@
         </tr>
 
         <tr>
-            @if($dataperson->nametitle->name_title)
-                <td colspan="2"><li>ชื่อสามี/ภรรยา : <label><?php echo $dataperson->nametitle->name_title ?> <?php echo $dataperson->dataspouse->spouse_name ?> <?php echo $dataperson->dataspouse->spouse_surname ?></label></td>
+            @if($dataperson->dataspouse->spouse_name)
+                <td colspan="2"><li>ชื่อสามี/ภรรยา : <label><?php echo $dataperson->dataspouse->nametitle ?> <?php echo $dataperson->dataspouse->spouse_name ?> <?php echo $dataperson->dataspouse->spouse_surname ?></label></td>
             @else
                 <td colspan="2"><li>ชื่อสามี/ภรรยา: <label> - </label></td>
             @endif
             @if($dataperson->dataspouse->spouse_age)
-                <td colspan="1">อายุ : <label><?php echo $dataperson->dataspouse->spouse_age ?></label></td>
+                <td colspan="1">อายุ : <label><?php echo $dataperson->dataspouse->spouse_age ?></label> ปี</td>
             @else
-                <td colspan="1">อายุ: <label> - </label></td>
+                <td colspan="1">อายุ: <label> - </label> ปี</td>
             @endif
             @if($dataperson->dataspouse->spouse_live_died)
                 <td colspan="1"><label><?php echo $dataperson->dataspouse->spouse_live_died ?></label></td>
@@ -306,15 +303,15 @@
         <ol>
             <?php foreach($dataperson->datachild as $datachild) : ?>
             <tr>
-                @if($datachild->nametitle->name_title)
-                    <td colspan="2"><li>ชื่อบุตร : <label><?php echo $datachild->nametitle->name_title ?> <?php echo $datachild->child_name ?> <?php echo $datachild->child_surname ?></label></td>
+                @if($datachild->child_name)
+                    <td colspan="2"><li>ชื่อบุตร : <label><?php echo $datachild->nametitle ?> <?php echo $datachild->child_name ?> <?php echo $datachild->child_surname ?></label></td>
                 @else
                     <td colspan="2"><li>ชื่อบุตร: <label> - </label></td>
                 @endif
                 @if($dataperson->$datachild->child_age)
-                    <td colspan="1">อายุ : <label><?php echo $datachild->child_age ?></label></td>
+                    <td colspan="1">อายุ : <label><?php echo $datachild->child_age ?></label> ปี</td>
                 @else
-                    <td colspan="1">อายุ: <label> - </label></td>
+                    <td colspan="1">อายุ: <label> - </label> ปี</td>
                 @endif
                 @if($datachild->child_live_died)
                     <td colspan="1"><label><?php echo $datachild->child_live_died ?></label></td>
@@ -357,8 +354,9 @@
 
 
         <tr>
-            <td colspan="4"><li>พาหนะที่ใช้ :
+            <td colspan="4"><li>ยานพาหนะที่ใช้(ยี่ห้อ รุ่น สี หมายเลขทะเบียน) :
                     <?php foreach($dataperson->vehicle as $vehicle) : ?><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
                     <label> <?php if($vehicle->vehicle_brand ){ ?> - ยี่ห้อ <?php echo $vehicle->vehicle_brand ?><?php }else{  ?> - ยี่ห้อ -<?php } ?>
                         <?php if($vehicle->vehicle_generation ){ ?>  รุ่น <?php echo $vehicle->vehicle_generation ?><?php }else{  ?> รุ่น -<?php } ?>
                         <?php if($vehicle->vehicl_color ){ ?>  สี <?php echo $vehicle->vehicl_color ?><?php }else{  ?> สี -<?php } ?>
@@ -375,31 +373,31 @@
         <ol>
             <?php foreach($dataperson->personfamily as $personfamily) : ?>
             <tr>
-                @if($personfamily->nametitle->name_title)
-                    <td colspan="4"><li>ชื่อ-สกุล : <label><?php echo $personfamily->nametitle->name_title ?> <?php echo $personfamily->personfamily_name ?> <?php echo $datachild->personfamily_surname ?></label></td>
+                @if($personfamily->personfamily_name)
+                    <td colspan="4"><li>ชื่อ-สกุล : <label><?php echo $personfamily->nametitle ?> <?php echo $personfamily->personfamily_name ?> <?php echo $datachild->personfamily_surname ?></label></td>
                 @else
                     <td colspan="4"><li>ชื่อ-สกุล: <label> - </label></td>
                 @endif
 
                 @if($personfamily->personfamily_age)
-                    <td colspan="1">อายุ : <label><?php echo $personfamily->personfamily_age ?></label></td>
+                    <td colspan="1">อายุ : <label><?php echo $personfamily->personfamily_age ?> ปี</label></td>
                 @else
-                    <td colspan="1">อายุ: <label> - </label></td>
+                    <td colspan="1">อายุ: <label> - </label> ปี</td>
                 @endif
             </tr>
             <tr>
                 @if($personfamily->personfamily_idnumber)
-                    <td colspan="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;เลขบัตร : <label><?php echo $personfamily->personfamily_idnumber ?></label></td>
+                    <td colspan="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;หมายเลขประจำตัวประชาชน : <label><?php echo $personfamily->personfamily_idnumber ?></label></td>
                 @else
-                    <td colspan="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;เลขบัตร: <label> - </label></td>
+                    <td colspan="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;หมายเลขประจำตัวประชาชน: <label> - </label></td>
                 @endif
             </tr>
 
             <tr>
                 @if($personfamily->personfamily_nameoffice)
-                    <td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;สถานที่ทำงาน : <label><?php echo $personfamily->personfamily_nameoffice ?></label></td>
+                    <td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;สถานที่ทำงาน : <label><?php echo $personfamily->personfamily_nameoffice ?></label></td>
                 @else
-                    <td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;เลขบัตร: <label> - </label></td>
+                    <td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;สถานที่ทำงาน: <label> - </label></td>
                 @endif
                 @if($personfamily->personfamily_nameoffice_tel)
                     <td colspan="1">โทร : <label><?php echo $personfamily->personfamily_nameoffice_tel ?></label></td>
@@ -414,14 +412,14 @@
             </tr>
             <tr>
                 @if($personfamily->personfamily_address)
-                    <td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ที่อยู่ : <label><?php echo $personfamily->personfamily_address ?></label></td>
+                    <td colspan="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ที่อยู่ตามภูมิลำเนาเดิม : <label><?php echo $personfamily->personfamily_address ?></label></td>
                 @else
-                    <td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ที่อยู่: <label> - </label></td>
+                    <td colspan="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ที่อยู่ตามภูมิลำเนาเดิม: <label> - </label></td>
                 @endif
                 @if($personfamily->personfamily_tel)
-                    <td colspan="2">โทร : <label><?php echo $personfamily->personfamily_tel ?></label></td>
+                    <td colspan="4">โทร : <label><?php echo $personfamily->personfamily_tel ?></label></td>
                 @else
-                    <td colspan="2">โทร : <label> - </label></td>
+                    <td colspan="4">โทร : <label> - </label></td>
                 @endif
             </tr><?php endforeach; ?>
         </ol>
@@ -433,29 +431,29 @@
         <ol>
             <?php foreach($dataperson->employee as $employee) : ?>
             <tr>
-                @if($employee->nametitle->name_title)
-                    <td colspan="4"><li>ชื่อ-สกุล : <label><?php echo $employee->nametitle->name_title ?>  <?php echo $employee->employee_name ?> <?php echo $employee->employee_surname ?></label></td>
+                @if($employee->employee_name)
+                    <td colspan="4"><li>ชื่อ-สกุล : <label><?php echo $employee->nametitle ?>  <?php echo $employee->employee_name ?> <?php echo $employee->employee_surname ?></label></td>
                 @else
                     <td colspan="4"><li>ชื่อ-สกุล: <label> - </label></td>
                 @endif
                 @if($employee->employee_age)
-                    <td colspan="1">อายุ : <label><?php echo $employee->employee_age ?></label></td>
+                    <td colspan="1">อายุ : <label><?php echo $employee->employee_age ?></label>  ปี</td>
                 @else
-                    <td colspan="1">อายุ: <label> - </label></td>
+                    <td colspan="1">อายุ: <label> - </label> ปี</td>
                 @endif
             </tr>
             <tr>
                 @if($personfamily->employee_idnumber)
-                    <td colspan="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;เลขบัตร : <label><?php echo $personfamily->employee_idnumber ?></label></td>
+                    <td colspan="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;หมายเลขประจำตัวประชาชน : <label><?php echo $personfamily->employee_idnumber ?></label></td>
                 @else
-                    <td colspan="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;เลขบัตร: <label> - </label></td>
+                    <td colspan="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;หมายเลขประจำตัวประชาชน: <label> - </label></td>
                 @endif
             </tr>
             <tr>
                 @if($employee->employee_address)
-                    <td colspan="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ที่อยู่ : <label><?php echo $employee->employee_address ?></label></td>
+                    <td colspan="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ที่อยู่ตามภูมิลำเนาเดิม : <label><?php echo $employee->employee_address ?></label></td>
                 @else
-                    <td colspan="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ที่อยู่ : <label> - </label></td>
+                    <td colspan="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ที่อยู่ตามภูมิลำเนาเดิม : <label> - </label></td>
                 @endif
 
             </tr><?php endforeach; ?>
@@ -468,15 +466,6 @@
             @endif
         </tr>
 
-
-        <tr>
-            @if($dataperson->created_at)
-                <td colspan="4">วันเวลาที่บันทึก : <label><?php echo $dataperson->date ?></label></td>
-            @else
-                <td colspan="4">วันเวลาที่บันทึก : <label> - </label></td>
-            @endif
-        </tr>
-
         <tr>
             <td colspan="2"></td>
 
@@ -527,13 +516,25 @@
         </tr>
 
 
-        <tr>
-            <td colspan="2">ผู้จัดทำ</td>
-            <td colspan="2">วัน/เดือน/ปีที่จัดทำ:</td>
+        <?php
+        $user = Auth::user();
+        $rank = $user->rank->rank;
+        $position = $user->position->name_position;
+        \Carbon\Carbon::setLocale('th');
+        setlocale(LC_TIME,'th_TH');
+        $day = \Carbon\Carbon::now();
 
+
+        ?>
+        <tr>
+            <td colspan="8" align="center">ผู้จัดทำ: <?php echo "($rank $user->name_police $user->surname_police)";?></td>
         </tr>
         <tr>
-            <td colspan="4">ตำแหน่ง</td>
+            <td colspan="8" align="center">วัน/เดือน/ปี ที่จัดทำ: <?php echo $day->formatLocalized('%d/%m/');
+                echo $day->year+543; ?></td>
+        </tr>
+        <tr>
+            <td colspan="8" align="center">ตำแหน่ง: <?php echo $position;?></td>
 
 
         </tr>

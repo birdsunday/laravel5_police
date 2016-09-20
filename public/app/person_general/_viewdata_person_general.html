@@ -3,13 +3,14 @@
 
     <tr>
         <th class="text-center">ลำดับที่</th>
+        <th class="text-center">ประเภทบัตร</th>
         <th class="text-center">เลขบัตร</th>
         <th class="text-center" style="width: 15%">คำนำหน้า</th>
-        <th class="text-center">ชื่อ - นามสกุล</th>
-        <th class="text-center">ที่อยู่ปัจจุบัน</th>
-        <th class="text-center">อาชีพ</th>
-        <th class="text-center" style="width: 15%">พฤติการอื่นๆ</th>
-        <th class="text-center">วันเวลาที่บันทึกประวัติ</th>
+        <th class="text-center">ชื่อ - ชื่อสกุล</th>
+        <th class="text-center" style="width: 15%">อื่นๆ ที่น่าสนใจ</th>
+        <th class="text-center">แก้ไขล่าสุด</th>
+        <th class="text-center">ดูข้อมูล</th>
+
 
     </tr>
 
@@ -20,14 +21,18 @@
 
     <tr ng-repeat="person_general in dataperson_general">
         <td class="text-center"><% $index+1 %></td>
+        <td class="text-center"><label ng-if="person_general.typeidcard == 0" style="color: #0000C2">บัตรประชาชน</label>
+            <label ng-if="person_general.typeidcard == 1" style="color: #0000C2">หนังสือเดินทาง</label>
+        </td>
         <td class="text-center" ng-bind="person_general.idcard"></td>
-
-        <td class="text-center" ng-bind="person_general.nametitle.name_title"></td>
+        <td class="text-center" ng-bind="person_general.nametitle"></td>
         <td class="text-center" ng-bind="person_general.name+' '+ person_general.surname"></td>
-        <td class="text-center" ng-bind="person_general.addresspresent.present_address"></td>
-        <td class="text-center" ng-bind="person_general.career"></td>
         <td class="text-center" ng-bind="person_general.other"></td>
-        <td class="text-center" ng-bind="person_general.created_at | date : 'dd/MM/yyyy'"></td>
+        <td class="text-center" ng-bind="person_general.updated_at"></td>
+        <td><a ng-click="printPerson(person_general)"><i class="fa fa-print"
+                                                                      popover="พิมพ์ประวัติบุคคล" popover-trigger="mouseenter"></i></a></td>
+
+
 
 
         </td>

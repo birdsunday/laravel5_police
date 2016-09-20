@@ -17,9 +17,6 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             resolve: {
                 person_generals: function ($http, $stateParams) {
                     return $http.get('/api/guesthistory/');
-                },
-                nametitle: function ($http) {
-                    return $http.get('/nametitle');
                 }
 
             }
@@ -27,12 +24,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         .state('form_add', {
             url: "/form_add",
             templateUrl: "/app/person_general/_add_person_general/_form_add.html",
-            controller: "AddController",
-            resolve: {
-                nametitle: function ($http) {
-                    return $http.get('/nametitle');
-                }
-            }
+            controller: "AddController"
 
         })
         .state('form_add.add', {
@@ -79,9 +71,6 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             resolve: {
                 person_general: function ($http, $stateParams) {
                     return $http.get('/api/guesthistory/' + $stateParams.id);
-                },
-                nametitle: function ($http) {
-                    return $http.get('/nametitle');
                 }
 
             }
@@ -139,10 +128,10 @@ app.controller("AddPhotoPersonController", function ($scope, $http, $stateParams
 
 
 });
-app.controller("HomeController", function ($scope, $window, $http, $stateParams, person_generals, $rootScope, nametitle) {
+app.controller("HomeController", function ($scope, $window, $http, $stateParams, person_generals, $rootScope) {
     console.log("HomeController.start");
     $scope.data_person_generals = person_generals.data
-    $scope.nametitles = nametitle.data;
+
     $rootScope.current_role = current_role;
     console.log($rootScope.current_role);
 
@@ -155,7 +144,7 @@ app.controller("HomeController", function ($scope, $window, $http, $stateParams,
     }
     $scope.delete_person = function (person_general) {
         console.log(person_general);
-        saveCaseFile = "ต้องการลบประวัตินี้ใช่ หรือ ไม่";
+        saveCaseFile = "ลบทะเบียนประวัตินี้?";
 
         if (confirm(saveCaseFile)) {
             var index = $scope.data_person_generals.indexOf(person_general);
@@ -166,7 +155,7 @@ app.controller("HomeController", function ($scope, $window, $http, $stateParams,
                 data: person_general
             }).success(function (response) {
                 //console.log(response);
-                massged = "ลบประวัติเสร็จสมบูรณ์";
+                massged = "ลบทะเบียนประวัติแล้ว";
                 alert(massged);
                 //$state.go("home");
             })
@@ -186,7 +175,7 @@ app.controller("HomeController", function ($scope, $window, $http, $stateParams,
 
 });
 
-app.controller("AddController", function ($scope, $http, $state, $timeout, nametitle) {
+app.controller("AddController", function ($scope, $http, $state, $timeout) {
     console.log("AddController.start");
 
     $scope.guest = {};
@@ -202,9 +191,9 @@ app.controller("AddController", function ($scope, $http, $state, $timeout, namet
     $scope.guest.datachild = [];
     $scope.guest.vehicle = [];
     $scope.guest.employee = [];
-    $scope.guest.date = Date();
+    //$scope.guest.date =   Date();
 
-    $scope.nametitles = nametitle.data;
+
 
 
     $scope.showTab = function (tab) {
@@ -353,11 +342,11 @@ app.controller("AddController", function ($scope, $http, $state, $timeout, namet
     $scope.saveDataGuest = function () {
         if ($scope.guest.birth) {
             var dayBirth = $scope.guest.birth;
-            var getdayBirth = dayBirth.split("-");
-            var YB = getdayBirth[2] - 543;
-            var MB = getdayBirth[1];
-            var DB = getdayBirth[0];
-
+           // var getdayBirth = dayBirth.split("-");
+           // var YB = getdayBirth[2] - 543;
+           // var MB = getdayBirth[1];
+           // var DB = getdayBirth[0];
+/*
             var setdayBirth = moment(YB + "-" + MB + "-" + DB);
             var setNowDate = moment();
             var yearData = setNowDate.diff(setdayBirth, 'years', true); // ข้อมูลปีแบบทศนิยม
@@ -365,10 +354,14 @@ app.controller("AddController", function ($scope, $http, $state, $timeout, namet
             var yearReal = setNowDate.diff(setdayBirth, 'years'); // ปีจริง
             var monthDiff = Math.floor((yearData - yearReal) * 12); // เดือน
             var str_year_month = yearReal + " ปี " + monthDiff + " เดือน"; // ต่อวันเดือนปี
-            $scope.guest.age = str_year_month;
+
+            $scope.guest.age = str_year_month;*/
+           // var setdayBirth = moment(YB + "-" + MB + "-" + DB);
+           // var setNowDate = moment();
+            //$scope.guest.age = str_year_month
         }
         console.log($scope.guest.age);
-        saveCaseFile = "ต้องการบันทึกทะเบียร์ประวัตินี้ ใช่หรือ ไม่";
+        saveCaseFile = "บันทึกทะเบียนประวัติ?";
 
 
         if (confirm(saveCaseFile)) {
@@ -419,7 +412,7 @@ app.controller("PreviewPersonController", function ($scope, $window, $http, $sta
 });
 
 
-app.controller("EditController", function ($scope, $http, $stateParams, $state, person_general, nametitle) {
+app.controller("EditController", function ($scope, $http, $stateParams, $state, person_general, $timeout) {
     console.log("EditController.start");
 
     $scope.guest = {};
@@ -437,41 +430,21 @@ app.controller("EditController", function ($scope, $http, $stateParams, $state, 
     $scope.guest.employee = [];
 
     $scope.guest = person_general.data;
-    $scope.nametitles = nametitle.data;
+
 
 
     function init() {
-
-        if ($scope.guest.nametitle) {
-            for (i = 0; i < $scope.nametitles.length; i++) {
-
-                if ($scope.nametitles[i].id == $scope.guest.nametitle.id) {
-                    $scope.guest.nametitle = $scope.nametitles[i];
-
-                    break;
-                }
-            }
-        }
-
-        if ($scope.guest.dataspouse) {
-            if ($scope.guest.dataspouse.nametitle) {
-                for (a = 0; a < $scope.nametitles.length; a++) {
-
-                    if ($scope.nametitles[a].id == $scope.guest.dataspouse.nametitle.id) {
-                        $scope.guest.dataspouse.nametitle = $scope.nametitles[a];
-
-                        break;
-                    }
-                }
-            }
-
-        }
-
-
     }
 
     init();
+    $scope.showTab = function (tab) {
+        var x = '#' + tab + ' a';
+        var myElement = $(x)[0];
+        $timeout(function() {
+            angular.element(myElement).triggerHandler('click');
+        }, 0);
 
+    }
 
     $scope.saveDataOffice = function () {
 
@@ -605,7 +578,7 @@ app.controller("EditController", function ($scope, $http, $stateParams, $state, 
     $scope.editpreson = function () {
 
 
-        saveCaseFile = "ต้องการแก้ไขทะเบียร์ประวัตินี้ ใช่หรือ ไม่";
+        saveCaseFile = "บันทึกทะเบียนประวัติ?";
         if (confirm(saveCaseFile)) {
             $http({
                 url: "/api/guesthistory/" + $scope.guest.id,

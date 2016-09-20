@@ -2,7 +2,7 @@
 <div class="row">
     <div id="breadcrumb" class="col-xs-12">
         <ol class="breadcrumb">
-            <li><a href="#">หน้าหลัก</a></li>
+            <li><a href="/police/index">หน้าหลัก</a></li>
             <li><a href="#">จัดการประวัติบุคคลที่เกี่ยวข้องกับอาชญากรรม</a></li>
         </ol>
     </div>
@@ -32,8 +32,7 @@
                         <tr>
                             <th class="text-center">
                                 <select ng-model="search.typeidcard" class="form-control" >
-                                    <option value="" disabled selected>ค้นหา...</option>
-                                    <option></option>
+                                    <option value="" selected>ประเภทบัตร</option>
                                     <option value="0">บัตรประชาชน</option>
                                     <option value="1">หนังสือเดินทาง</option>
                                 </select>
@@ -41,26 +40,15 @@
                             <th class="text-center">
                                 <input placeholder="ค้นหาเลขบัตร..." ng-model="search.idcard" type="text" class="form-control"  />
                             </th>
-                            <th class="text-center">
-                                <input placeholder="ค้นหาประเภทบุคคล..." ng-model="search.typepeople" type="text" class="form-control"  />
-                            </th>
-                            <th class="text-center">
-                                <select ng-model="search.nametitle.name_title" class="form-control" >
 
-                                    <option value="" disabled selected>ค้นหา...</option>
-                                    <option></option>
-                                    <option ng-repeat="nametitle in nametitles" value="<% nametitle.name_title %>"><% nametitle.name_title %></option>
-
-                                </select>
+                            <th class="text-center">
+                                <input placeholder="ชื่อ" ng-model="search.name" type="text" class="form-control" />
                             </th>
                             <th class="text-center">
-                                <input placeholder="ค้นหาปชื่อ..." ng-model="search.name" type="text" class="form-control" />
+                                <input placeholder="ชื่อนามสกุล" ng-model="search.surname" type="text" class="form-control" />
                             </th>
                             <th class="text-center">
-                                <input placeholder="ค้นหานามสกุล..." ng-model="search.surname" type="text" class="form-control" />
-                            </th>
-                            <th class="text-center">
-                                <input placeholder="วันที่บันทึก" ng-model="search.date" id="mydateth" type="text" class="form-control"/>
+                                <input placeholder="วันที่จับกุม" ng-model="search.date" id="mydateth" type="text" class="form-control"/>
                             </th>
                             <th class="text-center">
                             </th>
@@ -72,10 +60,9 @@
 
                             <th class="text-center" style="width: 10%">ประเภทบัตร</th>
                             <th class="text-center" style="width: 10%">เลขบัตร</th>
-                            <th class="text-center" style="width: 15%">ประเภทบุคคล</th>
-                            <th class="text-center" style="width: 10%">คำนำหน้า</th>
+
                             <th class="text-center">ชื่อ</th>
-                            <th class="text-center">นามสกุล</th>
+                            <th class="text-center">ชื่อสกุล</th>
                             <th class="text-center" style="width: 15%">วันที่จับกุม</th>
                             <th class="text-center">สถานะ</th>
                             <th class="text-center" style="width: 11%"></th>
@@ -88,8 +75,6 @@
                             <td class="text-center" ng-if="person.typeidcard == 0">บัตรประชาชน</td>
                             <td class="text-center" ng-if="person.typeidcard == 1">หนังสือเดินทาง</td>
                             <td class="text-center" ng-bind="person.idcard"></td>
-                            <td class="text-center" ng-bind="person.typepeople"></td>
-                            <td class="text-center" ng-bind="person.nametitle.name_title"></td>
                             <td class="text-center" ng-bind="person.name"></td>
                             <td class="text-center" ng-bind="person.surname"></td>
                             <td class="text-center" ng-bind="person.date"></td>

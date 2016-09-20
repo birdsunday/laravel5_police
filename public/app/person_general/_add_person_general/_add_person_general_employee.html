@@ -50,10 +50,10 @@
                 <h4 class="page-header">เพิ่มคนรับใช้-ลูกจ้าง</h4>
                 <form class="form-horizontal" role="form">
                     <div class="form-group">
-                        <label class="col-sm-1 control-label" style="font-size: 11px;width: auto">เลขบัตร:</label>
+                        <label class="col-sm-1 control-label" style="font-size: 11px;width: auto">หมายเลขประจำตัวประชาชน:</label>
 
                         <div class="col-sm-6">
-                            <input placeholder="เลขบัตร" ng-model="employee.employee_idnumber" type="text" class="form-control">
+                            <input placeholder="หมายเลขประจำตัวประชาชน" ng-model="employee.employee_idnumber" type="text" class="form-control">
                         </div>
                     </div>
 
@@ -62,45 +62,42 @@
                         <label class="col-sm-1 control-label" style="font-size: 11px">คำนำหน้า:</label>
 
                         <div class="col-sm-3">
-                            <select ng-model="employee.nametitle" class="form-control css-require" ng-options="opt as opt.name_title for opt in nametitles">
-                                <option value="" disabled selected>คำนำหน้าชื่อ...</option>
-                            </select>
+
+                            <input placeholder="คำนำหน้า" ng-model="employee.nametitle" type="text" class="form-control">
                         </div>
                         <label class="col-sm-1 control-label" style="font-size: 11px">ชื่อ:</label>
 
                         <div class="col-sm-3">
                             <input placeholder="ชื่อ" ng-model="employee.employee_name" type="text" class="form-control">
                         </div>
-                        <label class="col-sm-1 control-label" style="font-size: 11px">สกุล:</label>
+                        <label class="col-sm-1 control-label" style="font-size: 11px">ชื่อสกุล:</label>
 
                         <div class="col-sm-3">
-                            <input placeholder="สกุล" ng-model="employee.employee_surname" type="text" class="form-control">
+                            <input placeholder="ชื่อสกุล" ng-model="employee.employee_surname" type="text" class="form-control">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-1 control-label" style="font-size: 11px">อายุ:</label>
 
                         <div class="col-sm-3">
-                            <input placeholder="อายุ" ng-model="employee.employee_age" type="text" class="form-control">
+                            <input placeholder="อายุ" ng-model="employee.employee_age" type="number" class="form-control">
                         </div>
                     </div>
 
                     <div class="form-group">
 
-                        <label class="col-sm-1 control-label" style="font-size: 11px">ที่อยู่:</label>
+                        <label class="col-sm-1 control-label" style="font-size: 11px">ที่อยู่ตามภูมิลำเนาเดิม:</label>
 
                         <div class="col-sm-7">
-                            <textarea placeholder="ที่อยู่" ng-model="employee.employee_address" type="text" class="form-control"></textarea>
+                            <textarea placeholder="ที่อยู่ตามภูมิลำเนาเดิม" ng-model="employee.employee_address" type="text" class="form-control"></textarea>
                         </div>
                     </div>
 
-                    <div class="form-group text-right">
-                        <button type="button" ng-click="saveDataEmployee()" class="btn btn-success"
-                                data-dismiss="modal">บันทึก
+                    <div class="form-group text-center">
+                        <button type="button"  ng-click="saveDataEmployee()" class="btn btn-success"
+                                data-dismiss="modal">เพิ่ม
                         </button>
-                        <button type="button" ng-click="cancelDataEmployee()" class="btn btn-default"
-                                data-dismiss="modal">ยกเลิก
-                        </button>
+
                     </div>
 
 
@@ -108,7 +105,9 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="pull-right">
-                            <button type="button" ng-click="showTab('tab5')" class="btn btn-primary">ก่อนหน้า</button>
+                            <button type="button" ng-click="showTab('tab4')" class="btn btn-primary">ก่อนหน้า</button>
+                            <button type="button" ng-click="showTab('tab6')" class="btn btn-primary">ถัดไป</button>
+
 
                         </div>
                     </div>

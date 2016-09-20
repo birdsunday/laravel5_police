@@ -9,7 +9,7 @@
     <meta name="Description" content="">
 
 
-    <title>ROYAL THAI POLICE IMMIGRATION</title>
+    <title>CHIANG RAI IMMIGRATION</title>
 
 
     <!-- Latest compiled and minified CSS -->

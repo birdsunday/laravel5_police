@@ -21,7 +21,6 @@ use App\Models\DataSpouse;
 use App\Models\DataSuspects;
 use App\Models\Employee;
 use App\Models\GuestHistory;
-use App\Models\NameTitle;
 use App\Models\PersonFamily;
 use App\Models\Policeimmigration;
 use App\Models\Profile;
@@ -43,10 +42,10 @@ class GuestHistoryApiController extends Controller {
 	 */
 	public function index()
 	{
-        return GuestHistory::with('datachild','datachild.nametitle','employee','employee.nametitle',
-            'personfamily','personfamily.nametitle','addresspresent','vehicle','addressoriginal',
-            'datafather','datamother','dataspouse','dataspouse.nametitle'
-            ,'nametitle','addressoffice')->get();
+        return GuestHistory::with('datachild','datachild','employee','employee',
+            'personfamily','personfamily','addresspresent','vehicle','addressoriginal',
+            'datafather','datamother','dataspouse','dataspouse'
+            ,'addressoffice')->get();
 	}
 
 	/**
@@ -111,10 +110,6 @@ class GuestHistoryApiController extends Controller {
         if($name_spouse!=null || $surname_spouse!=null){
             $dataspouse = new DataSpouse();
             $dataspouse->fill(Input::get('dataspouse'));
-            if(Input::has('dataspouse.nametitle.id')){
-                $nametitle = NameTitle::find(Input::get('dataspouse.nametitle.id'));
-                $dataspouse->nametitle()->associate($nametitle);
-            }
             $dataspouse->save();
         }
 
@@ -146,10 +141,7 @@ class GuestHistoryApiController extends Controller {
             $police = Policeimmigration::find($IdPolice);
             $guesthistory->policeimmigration()->associate($police);
         }
-        if(Input::has('nametitle.id')){
-            $nametitle = NameTitle::find(Input::get('nametitle.id'));
-            $guesthistory->nametitle()->associate($nametitle);
-        }
+
 
         $guesthistory->save();
 
@@ -165,10 +157,7 @@ class GuestHistoryApiController extends Controller {
         foreach ( $data_employee as $dataemployee) {
             $employee = new \App\Models\Employee();
             $employee->fill($dataemployee);
-            if(Input::has('nametitle.id')){
-                $nametitle = NameTitle::find(Input::get('nametitle.id'));
-                $employee->nametitle()->associate($nametitle);
-            }
+
             $employee->guesthistory()->associate($guesthistory);
             $employee->save();
         }
@@ -177,10 +166,7 @@ class GuestHistoryApiController extends Controller {
             $personfamily = new PersonFamily();
             $personfamily->fill($datafamily);
             $personfamily->guesthistory()->associate($guesthistory);
-            if(Input::has('nametitle.id')){
-                $nametitle = NameTitle::find(Input::get('nametitle.id'));
-                $personfamily->nametitle()->associate($nametitle);
-            }
+
             $personfamily->save();
         }
 
@@ -195,10 +181,7 @@ class GuestHistoryApiController extends Controller {
             $datachild = new DataChild();
             $datachild->fill($child);
             $datachild->guesthistory()->associate($guesthistory);
-            if(Input::has('nametitle.id')){
-                $nametitle = NameTitle::find(Input::get('nametitle.id'));
-                $datachild->nametitle()->associate($nametitle);
-            }
+
             $datachild->save();
         }
 
@@ -222,10 +205,10 @@ class GuestHistoryApiController extends Controller {
 	 */
 	public function show($id)
 	{
-        $guesthistory = GuestHistory::with('datachild','datachild.nametitle','employee','employee.nametitle',
-            'personfamily','personfamily.nametitle','addresspresent','vehicle','addressoriginal',
-            'datafather','datamother','dataspouse','dataspouse.nametitle'
-            ,'nametitle','addressoffice')->find($id);
+        $guesthistory = GuestHistory::with('datachild','datachild','employee','employee',
+            'personfamily','personfamily','addresspresent','vehicle','addressoriginal',
+            'datafather','datamother','dataspouse','dataspouse'
+            ,'addressoffice')->find($id);
 
         Event::fire(new ViewDataPersonGeneralHandler($guesthistory));
 
@@ -331,20 +314,14 @@ class GuestHistoryApiController extends Controller {
             if($name_spouse!=null || $surname_spouse!=null){
                 $dataspouse = new DataSpouse();
                 $dataspouse->fill($spouse);
-                if(Input::has('dataspouse.nametitle.id')){
-                    $nametitle = NameTitle::find(Input::get('dataspouse.nametitle.id'));
-                    $dataspouse->nametitle()->associate($nametitle);
-                }
+
 
                 $dataspouse->save();
             }
         }else{
             $dataspouse1 = DataSpouse::find($id_spouse);
             $dataspouse1->fill($spouse);
-            if(Input::has('dataspouse.nametitle.id')){
-                $nametitle = NameTitle::find(Input::get('dataspouse.nametitle.id'));
-                $dataspouse1->nametitle()->associate($nametitle);
-            }
+
 
             $dataspouse1->save();
         }
@@ -352,10 +329,7 @@ class GuestHistoryApiController extends Controller {
 
         $guesthistory = GuestHistory::find($id);
         $guesthistory->fill(Input::except(["addoffice","child","employee","family","vehicle"]));
-        if(Input::has('nametitle.id')){
-            $nametitle = NameTitle::find(Input::get('nametitle.id'));
-            $guesthistory->nametitle()->associate($nametitle);
-        }
+
 
 
         if($datamother!=null){
@@ -420,7 +394,7 @@ class GuestHistoryApiController extends Controller {
         }
         foreach ($guesthistory->personfamily as $personfamily) {
             $personfamilyId = $personfamily->id;
-            DataChild::find($personfamilyId)->delete();
+            PersonFamily::find($personfamilyId)->delete();
         }
 
         if($guesthistory){
@@ -474,10 +448,10 @@ class GuestHistoryApiController extends Controller {
     }
     public function generatedPdfCase($id)
     {
-        $guesthistory = GuestHistory::with('datachild','datachild.nametitle','employee','employee.nametitle',
-            'personfamily','personfamily.nametitle','addresspresent','vehicle','addressoriginal',
-            'datafather','datamother','dataspouse','dataspouse.nametitle'
-            ,'nametitle','addressoffice')->find($id);
+        $guesthistory = GuestHistory::with('datachild','datachild','employee','employee',
+            'personfamily','personfamily','addresspresent','vehicle','addressoriginal',
+            'datafather','datamother','dataspouse','dataspouse'
+            ,'addressoffice')->find($id);
 
         Event::fire(new PrintPdfDataPersonGeneralEvent($guesthistory));
 
@@ -486,7 +460,7 @@ class GuestHistoryApiController extends Controller {
 
         //return $datacase;
         $pdf = \App::make('mpdf.wrapper',['th','A4','','',20,15,20,25,10,10,]);
-        $pdf->setTitle("export");
+        $pdf->setTitle("export_profile");
 
         //$pdf->SetHeader('|{PAGENO}/{nbpg}|สำนักงานตำรวจตรวจคนเข้าเมือง จังหวัด เชียงราย');
 
@@ -496,16 +470,25 @@ class GuestHistoryApiController extends Controller {
         <table width="100%" style="vertical-align: bottom; font-family: TH SarabunPSK; font-size: 14pt; color: #000000; font-weight: bold; font-style: italic;"><tr>
         <td width="20%"></td>
         <td width="30%" style="text-align: right; ">{PAGENO}</td>
-        <td width="55%" style="text-align: right; "> ตรวจคนเข้าเมือง จังหวัด เชียงราย</td>
+        <td width="55%" style="text-align: right; "> ตรวจคนเข้าเมืองจังหวัดเชียงราย</td>
         </tr></table>
         ');
-        $pdf->SetFooter('
-        <table width="100%" style="vertical-align: bottom; font-family: garuda; font-size: 8pt; color: #000000; font-weight: bold; font-style: italic;"><tr>
-        <td width="33%"></td>
-        <td width="33%"></td>
-        <td width="55%" style="text-align: right; ">พิมพ์เมื่อ {DATE D} ที่ {DATE j-m-Y} เวลา {DATE H:i:s}  </td>
+
+        $user = Auth::user();
+        $rank = $user->rank->rank;
+        \Carbon\Carbon::setLocale('th');
+        setlocale(LC_TIME,'th_TH');
+        $date = \Carbon\Carbon::now();
+        $daymonth = $date->formatLocalized('%d/%m/');
+        $year = $date->year+543;
+
+        $pdf->SetFooter("
+        <table width='100%' style='vertical-align: bottom; font-family: garuda; font-size: 8pt; color: #000000; font-weight: bold; font-style: italic;'><tr>
+      
+        <td width='45%'>พิมพ์โดย $rank $user->name_police $user->surname_police</td>
+        <td width='55%' style='text-align: right; '>พิมพ์เมื่อ $daymonth$year</td>
         </tr></table>
-        ');
+        ");
 
 
         $pdf->SetWatermarkText("");
@@ -531,15 +514,17 @@ class GuestHistoryApiController extends Controller {
         $pdf->WriteHTML($html);
 
         $pdf->stream();
+
+        //dd(Auth::user()->name_police);
     }
 
     public function printPhotoPerson($id)
     {
         //return $id;
-        $guesthistory = GuestHistory::with('datachild','datachild.nametitle','employee','employee.nametitle',
-            'personfamily','personfamily.nametitle','addresspresent','vehicle','addressoriginal',
-            'datafather','datamother','dataspouse','dataspouse.nametitle'
-            ,'nametitle','addressoffice')->find($id);
+        $guesthistory = GuestHistory::with('datachild','datachild','employee','employee',
+            'personfamily','personfamily','addresspresent','vehicle','addressoriginal',
+            'datafather','datamother','dataspouse','dataspouse'
+            ,'addressoffice')->find($id);
 
         Event::fire(new PrintPhotoDataPersonGeneralEvent($guesthistory));
         //   return $criminalhistory;
@@ -547,7 +532,32 @@ class GuestHistoryApiController extends Controller {
 //$pdf = \App::make('mpdf.wrapper',['ภาษา','ขนาดการดาษ-L=แนวนอน ไม่- แนวตั้ง','','',ขอบซ้ายกระดาษ,ขอบขวากระดาษ,ขอบขนกระดาษ,ขอบล่างกระดาษ,ระยะ title,ระยะ footter]);
         $pdf = \App::make('mpdf.wrapper',['th','A4','','',20,15,20,25,10,10,]);
 
-        $pdf->setTitle("export");
+        $pdf->setTitle("export_annoucement");
+
+        $pdf->SetHeader('
+        <table width="100%" style="vertical-align: bottom; font-family: TH SarabunPSK; font-size: 14pt; color: #000000; font-weight: bold; font-style: italic;"><tr>
+        <td width="20%"></td>
+        <td width="30%" style="text-align: right; "></td>
+        <td width="55%" style="text-align: right; "> ตรวจคนเข้าเมืองจังหวัดเชียงราย</td>
+        </tr></table>
+        ');
+
+        $user = Auth::user();
+        $rank = $user->rank->rank;
+        \Carbon\Carbon::setLocale('th');
+        setlocale(LC_TIME,'th_TH');
+        $date = \Carbon\Carbon::now();
+        $daymonth = $date->formatLocalized('%d/%m/');
+        $year = $date->year+543;
+
+        $pdf->SetFooter("
+        <table width='100%' style='vertical-align: bottom; font-family: garuda; font-size: 8pt; color: #000000; font-weight: bold; font-style: italic;'><tr>
+      
+        <td width='45%'>พิมพ์โดย $rank $user->name_police $user->surname_police</td>
+        <td width='55%' style='text-align: right; '>พิมพ์เมื่อ $daymonth$year</td>
+        </tr></table>
+        ");
+
 
         $pdf->SetWatermarkText("");
 

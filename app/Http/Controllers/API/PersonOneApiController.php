@@ -22,12 +22,12 @@ use App\Models\DataChild;
 use App\Models\DataFather;
 use App\Models\DataMother;
 use App\Models\DataSpouse;
-use App\Models\NameTitle;
 use App\Models\Profile;
 use App\Models\Vehicle;
 use App\Models\Weapon;
 use Illuminate\Http\Request;
 use \Hash;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\View;
 use \Input;
@@ -44,9 +44,8 @@ class PersonOneApiController extends Controller
      */
     public function index()
     {
-        return CriminalHistory::with('datacase', 'nametitle', 'addresspresent',
-            'addressoriginal', 'datafather', 'datamother', 'dataspouse', 'dataspouse.nametitle', 'datachild', 'datachild.nametitle'
-            , 'addressoffice', 'datacase.vehicle', 'datacase.weapon')->get();
+        return CriminalHistory::with('datacase',  'addresspresent',
+            'addressoriginal', 'datafather', 'datamother', 'dataspouse', 'datachild', 'addressoffice', 'datacase.vehicle', 'datacase.weapon')->get();
     }
 
     /**
@@ -108,10 +107,6 @@ class PersonOneApiController extends Controller
         if ($name_spouse != null || $surname_spouse != null) {
             $dataspouse = new DataSpouse();
             $dataspouse->fill(Input::get('person.dataspouse'));
-            if (Input::has('person.dataspouse.nametitle.id')) {
-                $nametitle = NameTitle::find(Input::get('person.dataspouse.nametitle.id'));
-                $dataspouse->nametitle()->associate($nametitle);
-            }
             $dataspouse->save();
 
         }
@@ -138,10 +133,7 @@ class PersonOneApiController extends Controller
         if ($addresspresent != null) {
             $criminalhistory->addresspresent()->associate($addresspresent);
         }
-        if (Input::has('person.nametitle.id')) {
-            $nametitle = NameTitle::find(Input::get('person.nametitle.id'));
-            $criminalhistory->nametitle()->associate($nametitle);
-        }
+
         $criminalhistory->save();
 
 
@@ -211,8 +203,8 @@ class PersonOneApiController extends Controller
     {
 
 
-        $criminalhistory = CriminalHistory::with('datacase', 'nametitle', 'addresspresent',
-            'addressoriginal', 'datafather', 'datamother', 'dataspouse', 'dataspouse.nametitle', 'datachild', 'datachild.nametitle'
+        $criminalhistory = CriminalHistory::with('datacase',  'addresspresent',
+            'addressoriginal', 'datafather', 'datamother', 'dataspouse',  'datachild'
             , 'addressoffice', 'datacase.vehicle', 'datacase.weapon')->find($id);
 
 
@@ -321,19 +313,12 @@ class PersonOneApiController extends Controller
             if ($name_spouse != null || $surname_spouse != null) {
                 $dataspouse = new DataSpouse();
                 $dataspouse->fill($spouse);
-                if (Input::has('dataspouse.nametitle.id')) {
-                    $nametitle = NameTitle::find(Input::get('dataspouse.nametitle.id'));
-                    $dataspouse->nametitle()->associate($nametitle);
-                }
                 $dataspouse->save();
             }
         } else {
             $dataspouse1 = DataSpouse::find($id_spouse);
             $dataspouse1->fill($spouse);
-            if (Input::has('dataspouse.nametitle.id')) {
-                $nametitle = NameTitle::find(Input::get('dataspouse.nametitle.id'));
-                $dataspouse1->nametitle()->associate($nametitle);
-            }
+
             $dataspouse1->save();
         }
 
@@ -342,10 +327,6 @@ class PersonOneApiController extends Controller
         $criminalhistory->fill(Input::except(["datacase", "addressoffice", "addressoriginal", "addresspresent"
             , "datachild", "datafather", "datamother", "dataspouse"]));
 
-        if (Input::has('nametitle.id')) {
-            $nametitle = NameTitle::find(Input::get('nametitle.id'));
-            $criminalhistory->nametitle()->associate($nametitle);
-        }
         if ($datamother != null) {
             $criminalhistory->datamother()->associate($datamother);
         }
@@ -469,30 +450,29 @@ class PersonOneApiController extends Controller
     public function searchCasePerson()
     {
         //return Input::all();
-        $idcard_keyword = Input::get('idcard');
+        //$idcard_keyword = Input::get('idcard');
 
         $name_keyword = Input::get('name');
-        $surname_keyword = Input::get('surname');
+        //$surname_keyword = Input::get('surname');
 
 //        $person = DB::table('criminalhistory')
 //            ->orderBy('idcard', 'desc')
 //            ->distinct()
 //            ->get();
-        $person = CriminalHistory::with('datacase', 'nametitle', 'addresspresent',
+        $person = CriminalHistory::with('datacase',  'addresspresent',
             'addressoriginal', 'datafather', 'datamother', 'dataspouse', 'datachild', 'addressoffice',
             'datacase.vehicle', 'datacase.weapon')
             ->whereBetween('created_at',
                 array(Carbon::today()->toDateTimeString(),
                     Carbon::tomorrow()->toDateTimeString())
             )
-            ->where(function ($q) use ($idcard_keyword, $name_keyword, $surname_keyword) {
-                return $q->where('idcard', 'LIKE', "%$idcard_keyword%")
-                    ->where('name', 'LIKE', "%$name_keyword%")
-                    ->where('surname', 'LIKE', "%$surname_keyword%");
+            //->where(function ($q) use ($idcard_keyword, $name_keyword, $surname_keyword) {
+            ->where(function ($q) use ($name_keyword) {
+                return $q->where('name', 'LIKE', "%$name_keyword%");
             })
             ->orderBy('created_at','desc')
-            ->take(1)
             ->get();
+
         return $person;
 
 
@@ -504,7 +484,7 @@ class PersonOneApiController extends Controller
         $idcard_keyword = Input::get('idcard');
 
 
-        $person_crime = CriminalHistory::with('datacase', 'nametitle', 'addresspresent',
+        $person_crime = CriminalHistory::with('datacase',  'addresspresent',
             'addressoriginal', 'datafather', 'datamother', 'dataspouse', 'datachild', 'addressoffice',
             'datacase.vehicle', 'datacase.weapon')
             ->where(function ($q) use ($idcard_keyword) {
@@ -513,7 +493,7 @@ class PersonOneApiController extends Controller
             ->get();
 
 
-//        $dataperson = CriminalHistory::with('nametitle','addresspresent',
+//        $dataperson = CriminalHistory::with('addresspresent',
 //            'addressoriginal','datafather','datamother','dataspouse','dataspouse.nametitle','datachild','datachild.nametitle'
 //            ,'addressoffice')->find($person_crime);
 
@@ -527,10 +507,10 @@ class PersonOneApiController extends Controller
 
         $idcard_keyword = Input::get('idcard');
 
-        $person_general = GuestHistory::with('datachild', 'datachild.nametitle', 'employee', 'employee.nametitle',
-            'personfamily', 'personfamily.nametitle', 'addresspresent', 'vehicle', 'addressoriginal',
-            'datafather', 'datamother', 'dataspouse', 'dataspouse.nametitle'
-            , 'nametitle', 'addressoffice')
+        $person_general = GuestHistory::with('datachild',  'employee',
+            'personfamily',  'addresspresent', 'vehicle', 'addressoriginal',
+            'datafather', 'datamother', 'dataspouse'
+            ,  'addressoffice')
             ->where(function ($q) use ($idcard_keyword) {
                 return $q->where('idcard', '=', "$idcard_keyword");
             })
@@ -569,14 +549,40 @@ class PersonOneApiController extends Controller
     public function printPhotoPerson($id)
     {
         //return $id;
-        $criminalhistory = CriminalHistory::with('nametitle')->find($id);
+        $criminalhistory = CriminalHistory::find($id);
         Event::fire(new PrintPhotoDataPersonCrimeEvent($criminalhistory));
         //   return $criminalhistory;
 
 //$pdf = \App::make('mpdf.wrapper',['ภาษา','ขนาดการดาษ-L=แนวนอน ไม่- แนวตั้ง','','',ขอบซ้ายกระดาษ,ขอบขวากระดาษ,ขอบขนกระดาษ,ขอบล่างกระดาษ,ระยะ title,ระยะ footter]);
         $pdf = \App::make('mpdf.wrapper', ['th', 'A4', '', '', 20, 15, 20, 25, 10, 10,]);
-        $pdf->setTitle("export");
-       $pdf->SetWatermarkText("");
+        $pdf->setTitle("export_photo_criminal");
+
+        $pdf->SetHeader('
+        <table width="100%" style="vertical-align: bottom; font-family: TH SarabunPSK; font-size: 14pt; color: #000000; font-weight: bold; font-style: italic;"><tr>
+        <td width="20%"></td>
+        <td width="30%" style="text-align: right; "></td>
+        <td width="55%" style="text-align: right; "> ตรวจคนเข้าเมืองจังหวัดเชียงราย</td>
+        </tr></table>
+        ');
+
+        $user = Auth::user();
+        $rank = $user->rank->rank;
+        \Carbon\Carbon::setLocale('th');
+        setlocale(LC_TIME,'th_TH');
+        $date = \Carbon\Carbon::now();
+        $daymonth = $date->formatLocalized('%d/%m/');
+        $year = $date->year+543;
+
+        $pdf->SetFooter("
+        <table width='100%' style='vertical-align: bottom; font-family: garuda; font-size: 8pt; color: #000000; font-weight: bold; font-style: italic;'><tr>
+      
+        <td width='45%'>พิมพ์โดย $rank $user->name_police $user->surname_police</td>
+        <td width='55%' style='text-align: right; '>พิมพ์เมื่อ $daymonth$year</td>
+        </tr></table>
+        ");
+
+
+        $pdf->SetWatermarkText("");
 
         $pdf->SetDisplayMode('fullpage');
 
@@ -598,7 +604,7 @@ class PersonOneApiController extends Controller
         $idcard = $criminalhistory->idcard;
 
 
-        $datacasesPerson = CriminalHistory::with('datacase', 'nametitle', 'addresspresent',
+        $datacasesPerson = CriminalHistory::with('datacase',  'addresspresent',
             'addressoriginal', 'datafather', 'datamother', 'dataspouse', 'datachild'
             , 'addressoffice', 'datacase.vehicle', 'datacase.weapon')
             ->where(function ($q) use ($idcard) {
@@ -606,7 +612,7 @@ class PersonOneApiController extends Controller
             })
             ->get();
 
-        $criminalhistory = CriminalHistory::with('datacase', 'nametitle', 'addresspresent',
+        $criminalhistory = CriminalHistory::with('datacase',  'addresspresent',
             'addressoriginal', 'datafather', 'datamother', 'dataspouse', 'datachild'
             , 'addressoffice', 'datacase.vehicle', 'datacase.weapon')->find($id);
 
@@ -625,16 +631,25 @@ class PersonOneApiController extends Controller
         <table width="100%" style="vertical-align: bottom; font-family: TH SarabunPSK; font-size: 14pt; color: #000000; font-weight: bold; font-style: italic;"><tr>
         <td width="20%"></td>
         <td width="30%" style="text-align: right; ">{PAGENO}</td>
-        <td width="55%" style="text-align: right; "> ตำรวจตรวจคนเข้าเมือง จังหวัด เชียงราย</td>
+        <td width="55%" style="text-align: right; "> ตรวจคนเข้าเมืองจังหวัดเชียงราย</td>
         </tr></table>
         ');
-        $pdf->SetFooter('
-        <table width="100%" style="vertical-align: bottom; font-family: garuda; font-size: 8pt; color: #000000; font-weight: bold; font-style: italic;"><tr>
-        <td width="33%"></td>
-        <td width="33%"></td>
-        <td width="55%" style="text-align: right; ">พิมพ์เมื่อ {DATE D} ที่ {DATE j-m-Y} เวลา {DATE H:i:s}  </td>
+
+        $user = Auth::user();
+        $rank = $user->rank->rank;
+        \Carbon\Carbon::setLocale('th');
+        setlocale(LC_TIME,'th_TH');
+        $date = \Carbon\Carbon::now();
+        $daymonth = $date->formatLocalized('%d/%m/');
+        $year = $date->year+543;
+
+        $pdf->SetFooter("
+        <table width='100%' style='vertical-align: bottom; font-family: garuda; font-size: 8pt; color: #000000; font-weight: bold; font-style: italic;'><tr>
+      
+        <td width='45%'>พิมพ์โดย $rank $user->name_police $user->surname_police</td>
+        <td width='55%' style='text-align: right; '>พิมพ์เมื่อ $daymonth$year</td>
         </tr></table>
-        ');
+        ");
 
 
         $pdf->SetWatermarkText("");
